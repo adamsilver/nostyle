@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{% block title %}Unstyled{% endblock title %}</title>
+		<link rel="shortcut icon" href="/public/img/favicon.ico" type="image/ico">
+		<link rel="icon" href="/public/img/favicon.ico" type="image/ico">
+		<script>
+			document.documentElement.className = 'enhanced';
+		</script>
+
+		{% block css %}
+		<!-- build:css(src) /public/css/app.min.css -->
+			<link rel="stylesheet" href="/public/css/base.css">
+			<link rel="stylesheet" href="/public/css/buttons.css">
+			<link rel="stylesheet" href="/public/css/menu.css">
+			<link rel="stylesheet" href="/public/css/forms/elements.css">
+			<link rel="stylesheet" href="/public/css/forms/error-summary.css">
+			<link rel="stylesheet" href="/public/css/forms/autocomplete.css">
+			<link rel="stylesheet" href="/public/css/forms/date-picker.css">
+			<link rel="stylesheet" href="/public/css/forms/stepper.css">
+			<link rel="stylesheet" href="/public/css/forms/seat-chooser.css">
+			<link rel="stylesheet" href="/public/css/forms/add-another.css">
+		<!-- endbuild -->
+		{% endblock css %}
+		{% block pageCss %}
+		{% endblock pageCss %}
+	</head>
+	<body>
+		{% block header %}{% endblock header%}
+		<main class="main">
+			{% block content %}
+			{% endblock content %}
+		</main>
+
+		{% block script %}
+		<!-- build:js(src) /public/js/app.min.js -->
+			<script src="/public/js/vendor/jquery.js"></script>
+			<script src="/public/js/FormValidator.js"></script>
+			<script src="/public/js/CheckboxCollapser.js"></script>
+			<script src="/public/js/Stepper.js"></script>
+			<script src="/public/js/CharacterCountdown.js"></script>
+			<script src="/public/js/Autocomplete.js"></script>
+			<script src="/public/js/DatePicker.js"></script>
+			<script src="/public/js/SeatLayoutEnhancer.js"></script>
+			<script src="/public/js/SeatLimiter.js"></script>
+			<script src="/public/js/Menu.js"></script>
+			<script src="/public/js/AddAnother.js"></script>
+			<script src="/public/js/Dropzone.js"></script>
+			<script src="/public/js/SearchForm.js"></script>
+		<!-- endbuild -->
+		{% endblock script %}
+
+		{% block pageScript %}
+		{% endblock pageScript %}
+	</body>
+</html>

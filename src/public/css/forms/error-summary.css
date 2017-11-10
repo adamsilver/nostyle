@@ -1,0 +1,30 @@
+.errorSummary {
+	border: 5px solid #B10E1E;
+	padding: 20px;
+	margin-bottom: 40px;
+	max-width: 40em;
+}
+
+.errorSummary-isHidden {
+	display: none;
+}
+
+.errorSummary h2 {
+	margin-bottom: 10px;
+}
+
+.errorSummary ul {
+	color: #B10E1E;
+	list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+.errorSummary li {
+	font-size: 1.2em;
+}
+
+.errorSummary a {
+	color: #B10E1E;
+	font-weight: bold;
+}

@@ -1,0 +1,51 @@
+.menu {
+	margin-bottom: 20px;
+	padding: 20px 0;
+	position: relative;
+}
+
+.menu button {
+	border: none;
+}
+
+.menu button span {
+	font-size: 1.2em;
+	position: relative;
+	top: 0px;
+	left: 2px;
+}
+
+[role=menu] [role=menuitem] {
+	display: block;
+	text-align: left;
+	width: 100%;
+	border-right: none;
+}
+
+@media(min-width: 45em) {
+	[role=menubar] [role=menuitem] {
+		width: auto;
+		display: inline-block;
+	}
+}
+
+.menu-items {
+	border: 2px solid #bbb;
+	border-bottom: none;
+	width: 10em;
+}
+
+@media(min-width: 45em) {
+	.menu-items {
+		border: none;
+		width: auto;
+	}
+}
+
+[aria-expanded="true"] + .menu-items {
+	display: block;
+}
+
+[aria-expanded="false"] + .menu-items {
+	display: none;
+}

@@ -1,0 +1,32 @@
+{% extends 'layouts/raw.html' %}
+{% set cnav = "memorable-date-field" %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
+{% import "macros/navigation.html" as navigation %}
+
+{% block pageHeader %}
+	{{headings.h1('Memorable date')}}
+{% endblock pageHeader %}
+
+{% block mainContent %}
+
+	<div class="example">
+		{{formElements.memorableDateField('Date of birth', {
+			day: {
+				name: 'day',
+				label: "Day"
+			},
+			month: {
+				name: 'month',
+				label: "Month"
+			},
+			year: {
+				name: 'year',
+				label: "Year"
+			},
+			hint: 'DD MM YYYY'
+		})}}
+	</div>
+
+{% endblock mainContent %}

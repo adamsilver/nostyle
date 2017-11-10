@@ -1,0 +1,12 @@
+{% extends 'layouts/default.html' %}
+{% set nav = "styles" %}
+
+{% import "macros/headings.html" as headings %}
+
+{% block mainContent %}
+	<h1>Styles</h1>
+	
+	<ul>
+		<li><a {% if cnav == 'colours'%}class="active"{%endif%} href="/styles/colours">Colours</a></li>
+	</ul>
+{% endblock mainContent %}

@@ -1,0 +1,81 @@
+{% extends 'layouts/raw.html' %}
+{% set cnav = "validation" %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
+{% import "macros/buttons.html" as buttons %}
+{% import "macros/navigation.html" as navigation %}
+
+{% block pageScript %}
+	<script>
+		var validator = new FormValidator(document.forms[0]);
+		validator.addValidator('email', [{
+		 	method: function(field) {
+		    	return field.value.trim().length > 0;
+			},
+			message: 'Enter your email address.'
+		},{
+			method: function(field) {
+		    	return (field.value.indexOf('@') > -1);
+		  	},
+			message: 'You need to enter the ‘at’ symbol in the email address.'
+		}]);
+	</script>
+{% endblock pageScript %}
+
+{% block mainContent %}
+
+	{{navigation.breadcrumb([{
+		text: 'Validation'
+	}])}}
+
+	{{headings.h1('Questions')}}
+
+		<form novalidate>
+			{{formElements.errorSummary('Fix the following errors', [{
+				fieldName: 'email',
+				message: 'Enter your email address.'
+			}, {
+				fieldName: 'like',
+				message: 'Select your favourite item.'
+			}, {
+				fieldName: 'colours',
+				message: 'Select at least one favourite colour.'
+			}, {
+				fieldName: 'country',
+				message: 'Choose a country.'
+			}])}}
+
+			{{formElements.textBox('email', 'Email address', {error: 'Enter your email address.'})}}
+
+			{{formElements.radioButtons('like', 'What do you like the most?', [{
+				label: 'Chocolate',
+				id: 'like'
+			}, {
+				label: 'Beer',
+				id: 'like1'
+			}], {error: 'Select your favourite item.'})}}
+
+			{{formElements.checkboxes('colours', 'Favourite colours', [{
+				label: 'Red',
+				id: 'colours'
+			}, {
+				label: 'Blue',
+				id: 'colours1'
+			},  {
+				label: 'Green',
+				id: 'colours2'
+			}], { error: 'Select at least one favourite colour.'})}}
+
+			{{formElements.selectBox('country', 'Country',[{
+				text: 'Select',
+				value: ''
+			}, {
+				text: 'Brazil',
+				value: 'Brazil'
+			}], {error: 'Choose a country.'})}}
+
+			{{buttons.primaryButton('Continue')}}
+		</form>
+
+{% endblock mainContent %}

@@ -1,0 +1,14 @@
+{% extends 'layouts/default.html' %}
+
+{% import "macros/headings.html" as headings %}
+
+{% block mainContent %}
+	{{headings.h1('Colours')}}
+
+	<div class="example">
+		<div style="display: inline-block;height: 100px; width: 100px; border-radius: 50%; background-color: #000"></div>
+		<div style="display: inline-block;height: 100px; width: 100px; border-radius: 50%; background-color: #f00"></div>
+		<div style="display: inline-block;height: 100px; width: 100px; border-radius: 50%; background-color: #fd0ede"></div>
+	</div>
+
+{% endblock mainContent %}

@@ -1,0 +1,59 @@
+/**************************************
+* Primary button
+**************************************/
+
+.primaryButton {
+	background-color: #0074D9;
+	border: none;
+	appearance: none;
+	-webkit-appearance: none;
+	color: white;
+	font-size: 1.2em;
+	padding: 8px 16px;
+	border-bottom: 2px solid #005096;
+	border-right: 2px solid #005096;
+}
+
+.primaryButton:hover {
+	background-color: #005096;
+}
+
+/**************************************
+* Secondary button
+**************************************/
+
+.secondaryButton {
+	background-color: #ddd;
+	border: none;
+	appearance: none;
+	-webkit-appearance: none;
+	color: #222;
+	font-size: 1.2em;
+	padding: 8px 16px;
+	border-bottom: 2px solid #bbb;
+	border-right: 2px solid #bbb;
+}
+
+.secondaryButton:hover {
+	background-color: #bbb;
+}
+
+/**************************************
+* Tertiary button
+**************************************/
+
+.tertiaryButton {
+	background-color: #ddd;
+	border: none;
+	appearance: none;
+	-webkit-appearance: none;
+	color: #222;
+	font-size: 1.2em;
+	padding: 8px 16px;
+	border-bottom: 2px solid #ddd;
+	border-right: 2px solid #ddd;
+}
+
+.tertiaryButton:hover {
+	background-color: #ddd;
+}

@@ -1,0 +1,16 @@
+{% extends 'layouts/default.html' %}
+{% set cnav = "tbd" %}
+
+{% import "macros/headings.html" as headings %}
+
+{% block mainContent %}
+
+	{{headings.h1('Handling form errors')}}
+	<p>Etc:</p>
+
+	<div class="example">
+		<iframe src="/examples/validation" width="400" height="400"></iframe>
+		<p><a href="/examples/validation">Standalone</a></p>
+	</div>
+
+{% endblock mainContent %}

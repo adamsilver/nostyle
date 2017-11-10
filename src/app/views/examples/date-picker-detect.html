@@ -1,0 +1,30 @@
+{% extends 'layouts/raw.html' %}
+
+{% import "macros/form-elements.html" as formElements %}
+
+{% block pageScript %}
+	<script>
+		function supportsDateInput() {
+			var el = document.createElement('input');
+			try {
+				el.type = 'date';
+			} catch(e) {
+
+			}
+			return el.type == 'date';
+		}
+
+		if(!supportsDateInput()) {
+			new DatePicker(document.getElementById('date'));
+		}
+
+	</script>
+{% endblock pageScript %}
+
+{% block mainContent %}
+
+	{{formElements.textBox('date', 'Date', type='date')}}
+
+	<p><a href="http://google.co.uk">Raise issue</a></p>
+
+{% endblock mainContent %}

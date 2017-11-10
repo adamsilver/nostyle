@@ -1,0 +1,63 @@
+{% extends 'layouts/raw.html' %}
+{% set cnav = "" %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
+
+{% block mainContent %}
+
+	{{formElements.textBox('email', 'Email address', type='email')}}
+	
+
+	<!-- {{headings.h2('Variants')}}
+	<ul>
+		<li><a href="">With hint</a></li>
+		<li><a href="">With error</a></li>
+		<li><a href="">With hint and error</a></li>
+	</ul> -->
+
+	<!-- <div class="example example--html">
+		<pre><code>{% raw %}formElements.textBox('email', 'Email address'){% endraw %}</code></pre>
+	</div>
+
+	<div class="example example--html">
+		<pre><code>{{(""+formElements.textBox('email', 'Email address') )}}</code></pre>
+	</div> -->
+
+	<!-- {{headings.h2('With hint')}}
+
+	{% raw %}
+		{{formElements.textBox('email2', 'Email address', {hint: 'Some hint'})}}
+	{% endraw %}
+
+	<div class="example">
+		{{formElements.textBox('email2', 'Email address', {hint: 'Some hint'})}}
+	</div> -->
+
+	<!-- {{headings.h2('With error')}}
+
+	{% raw %}
+		{{formElements.textBox('email3', 'Email address', {error: 'You need to enter the ‘at’ symbol (@) for the email address.'})}}
+	{% endraw %}
+
+	<div class="example">
+		{{formElements.textBox('email3', 'Email address', {error: 'You need to enter the ‘at’ symbol (@) for the email address.'})}}
+	</div>
+
+	{{headings.h2('With hint and error')}}
+
+	{% raw %}
+		{{formElements.textBox('email4', 'Email address', {
+			hint: 'Some hint',
+			error: 'You need to enter the ‘at’ symbol (@) in the email address.'
+		})}}
+	{% endraw %}
+
+	<div class="example">
+		{{formElements.textBox('email4', 'Email address', {
+			hint: 'Some hint',
+			error: 'You need to enter the ‘at’ symbol (@) in the email address.'
+		})}}
+	</div> -->
+
+{% endblock mainContent %}

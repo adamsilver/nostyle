@@ -1,0 +1,9 @@
+{% extends 'layouts/raw.html' %}
+{% set cnav = "primary-button" %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/buttons.html" as buttons %}
+
+{% block mainContent %}
+	{{buttons.primaryButton('Save', 'save')}}
+{% endblock mainContent %}

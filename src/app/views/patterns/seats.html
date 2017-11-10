@@ -1,0 +1,22 @@
+{% extends 'layouts/default.html' %}
+{% set cnav = "tbd" %}
+
+{% import "macros/headings.html" as headings %}
+
+{% block mainContent %}
+
+	{{headings.h1('Choosing a seat')}}
+
+	{{headings.h2('Example 1')}}	
+	<div class="example">
+		<iframe src="/examples/seat-chooser" width="400" height="400"></iframe>
+		<p><a href="/examples/seat-chooser">Standalone</a></p>
+	</div>
+
+	{{headings.h2('Example 2 (nested)')}}	
+	<div class="example">
+		<iframe src="/examples/seat-chooser-nested" width="400" height="400"></iframe>
+		<p><a href="/examples/seat-chooser-nested">Standalone</a></p>
+	</div>
+
+{% endblock mainContent %}

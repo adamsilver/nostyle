@@ -1,0 +1,22 @@
+{% extends 'layouts/default.html' %}
+{% set nav = "home" %}
+
+{% import "macros/headings.html" as headings %}
+
+{% block mainContent %}
+
+	{{headings.h1('Design system')}}
+
+	<p>Use this design system to make your service or application consistent. Learn from the research and experience of other service teams and avoid repeating work that’s already been done.</p>
+
+	{{headings.h2('Styles')}}
+
+	<p>The core styles that will make your service look and feel like one of these. This includes Colour, Typography and Layout.</p>
+
+	{{headings.h2('Components')}}
+	<p>Re-usable parts of the user interface. From small form elements like Radio buttons to larger ones such as Autocomplete.</p>
+
+	{{headings.h2('Patterns')}}
+	<p>Best practice design solutions for specific user-focused tasks and scenarios such as asking for addresses or getting user feedback.</p>
+
+{% endblock mainContent %}

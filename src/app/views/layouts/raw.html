@@ -1,0 +1,15 @@
+{% extends 'layouts/base.html' %}
+{% set nav = "" %}
+
+{% import "macros/headings.html" as headings %}
+
+{% block content %}
+
+<div class="mainContent">
+	<div class="pageContent">
+		{% block mainContent %}
+		{% endblock%}
+	</div>
+</div>
+
+{% endblock content %}

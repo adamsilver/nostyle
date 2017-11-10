@@ -1,0 +1,18 @@
+{% macro breadcrumb(items) %}
+	<!-- <div>
+		<a href="/">Home</a>
+		{% for item in items %}
+			{% if loop.first %}
+				>
+			{% endif %}
+			{% if item.href %}
+				<a href="{{item.href}}">{{item.text}}</a>
+			{% else %}
+				<span>{{item.text}}</span>
+			{% endif %}
+			{% if not loop.last %}
+				>
+			{% endif %}
+		{% endfor %}
+	</div> -->
+{% endmacro %}

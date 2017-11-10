@@ -1,0 +1,67 @@
+{
+  "name": "nostyle",
+  "version": "1.1.0",
+  "description": "No style",
+  "main": "index.js",
+  "engines": {
+    "node": "6.10.2",
+    "npm": "3.10.10"
+  },
+  "scripts": {
+    "test": "JASMINE_CONFIG_PATH=src/test/app/jasmine.json jasmine",
+    "test-client": "karma start",
+    "start": "NODE_ENV=production node --use-strict dist/server.js",
+    "app": "node --use-strict src/app/app.js",
+    "watch": "nodemon src/app/app.js --ignore 'src/public/**/*'",
+    "build:dist": "grunt dist && npm run dist-install",
+    "dist-install": "cd dist && npm install --production",
+    "dist": "npm run build:dist && npm run start",
+    "heroku-postbuild": "npm run build:dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-bert/example-node-app.git"
+  },
+  "keywords": [
+    "node",
+    "skeleton",
+    "app"
+  ],
+  "author": "Adam Silver",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamsilver/nostyle/issues"
+  },
+  "homepage": "https://github.com/adamsilver/nostyle#readme",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "morgan": "*",
+    "multer": "1.3.0",
+    "nunjucks": "*",
+    "serve-static": "*"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-cli": "1.2.0",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-compress": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-filerev": "*",
+    "grunt-mkdir": "*",
+    "grunt-usemin": "*",
+    "jasmine": "*",
+    "jasmine-core": "*",
+    "karma": "*",
+    "karma-chrome-launcher": "*",
+    "karma-jasmine": "*",
+    "load-grunt-tasks": "*",
+    "nodemon": "*"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
+  }
+}

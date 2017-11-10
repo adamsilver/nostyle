@@ -1,0 +1,8 @@
+{% extends 'layouts/raw.html' %}
+{% set cnav = "file-input" %}
+
+{% import "macros/form-elements.html" as formElements %}
+
+{% block mainContent %}
+	{{formElements.fileInput('file', 'Attach file')}}
+{% endblock mainContent %}

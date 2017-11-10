@@ -1,0 +1,35 @@
+{% extends 'layouts/raw.html' %}
+{% set cnav = "addanother" %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
+{% import "macros/buttons.html" as buttons %}
+
+{% block pageScript %}
+	<script>
+		new AddAnother($('.addAnother'));
+	</script>
+{% endblock pageScript %}
+
+{% block mainContent %}
+
+	<form method="post" action="/examples/add-another/">
+		<div class="addAnother">
+			<h1 tabindex="-1" class="addAnother-heading">Expenses</h1>
+			<!-- <p>Enter your expenses for the month.</p> -->
+			<div class="addAnother-items">
+				<div class="addAnother-item">
+					{{formElements.textBox('items[0][description]', 'Description', { id: 'items[0][description]', attributes: 'data-name="items[%index%][description]" data-id="items[%index%][description]"' })}}
+
+					{{formElements.textBox('items[0][amount]', 'Amount (£)', type='number', { id: 'items[0][amount]', attributes: 'data-name="items[%index%][amount]" data-id="items[%index%][amount]"' })}}
+				</div>
+			</div>
+			{{buttons.secondaryButton('Add another', 'add', {
+				class: 'addAnother-addButton'
+			})}}
+		</div>
+
+		{{buttons.primaryButton('Submit expenses', 'submitExpenses')}}
+	</form>
+
+{% endblock mainContent %}

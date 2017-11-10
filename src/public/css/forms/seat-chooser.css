@@ -1,0 +1,86 @@
+.firstClass .field-legend,
+.economyClass .field-legend {
+	font-weight: normal;
+	font-style: italic;
+}
+
+.plane-row {
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.plane-seat {
+	float: left;
+	margin-right: 3px;
+}
+
+.plane-seat--economyClass:nth-child(3) {
+	margin-right: 10px;
+}
+
+.plane-seat--firstClass:nth-child(2) {
+	margin-right: 30px;
+}
+
+.plane-seat label {
+	padding: 0.5em;
+	margin-bottom: 0;
+	background-color: #eee;
+	position: relative;
+}
+
+.plane-seat label:hover {
+	background-color: #ddd;
+}
+
+.enhanced .plane-seat input {
+	position: absolute;
+	left: -9999em;
+}
+
+/*.plane-seat-isTaken label:after {
+	content: "X";
+    text-indent: 0;
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}*/
+
+.enhanced .plane-seat label {
+	border-radius: 5px;
+	margin: 5px 1px 3px 0px;
+	border: 3px solid #DDDDDD;
+	border-top: 3px solid #eee;
+	width: 1.3em;
+	padding: 0.3em;
+	text-align: center;
+}
+
+.enhanced .plane-seat-isTaken label {
+	text-decoration: line-through;
+	background-color: #f5f5f5;
+	border-color: #f5f5f5;
+	color: #ccc;
+}
+
+.enhanced .plane-seat label:hover {
+	border-color: #ddd;
+}
+
+.enhanced .plane-seat-isTaken label:hover {
+	border-color: #f5f5f5;
+}
+
+.enhanced .plane-seat-isSelected label {
+	background-color: #005EA5;
+    border-color: #005EA5;
+    color: white;
+}
+
+.enhanced .plane-seat-isFocussed label {
+	box-shadow: 0 0 5px #ffbf47;
+  	border: 3px solid #ffbf47;
+
+  	
+}

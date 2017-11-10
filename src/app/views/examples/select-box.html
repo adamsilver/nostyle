@@ -1,0 +1,25 @@
+{% extends 'layouts/raw.html' %}
+{% set cnav = "select-box" %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
+
+{% block mainContent %}
+	{{formElements.selectBox('menu', 'Menu',[{
+		text: 'Archive',
+		value: ''
+	}, {
+		text: 'Argentia',
+		value: 'Argentia'
+	}, {
+		text: 'Brazil',
+		value: 'Brazil'
+	}, {
+		text: 'France',
+		value: 'France'
+	}, {
+		text: 'Germany',
+		value: 'Germany'
+	}])}}
+
+{% endblock mainContent %}

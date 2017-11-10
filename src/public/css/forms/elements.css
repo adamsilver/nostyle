@@ -1,0 +1,252 @@
+/**************************************
+* General
+**************************************/
+
+fieldset {
+	border: none;
+	padding: 0;
+}
+
+.field {
+	max-width: 32em;
+	margin-bottom: 2em;
+}
+
+.field--inline {
+    margin-bottom: 0;
+    display: inline-block;
+    max-width: auto;
+}
+
+.field label,
+.field legend {
+	font-size: 1.2em;
+	margin-bottom: 6px;
+	display: block;
+}
+
+.field-label {
+	display: block;
+	font-weight: bold;
+}
+
+.field-legend {
+	display: block;
+	font-weight: bold;
+}
+
+.field-hint {
+	color: #000;
+	margin-bottom: 2px;
+	display: block;
+}
+
+.field-error {
+	color: #b10e1e;
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+
+.field-hasError {
+	border-left: 5px solid #b10e1e;
+	padding-left: 10px;
+}
+
+/**************************************
+* Select box
+**************************************/
+
+.field-selectBox {
+	width: 100%;
+	font-size: 1.1em;
+}
+
+/**************************************
+* Text box
+**************************************/
+
+.field-textBox {
+	-webkit-appearance: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: 1.25;
+    padding: 0.5em;
+    border: 2px solid #222;
+}
+
+/**************************************
+* File input
+**************************************/
+
+.field-file {
+	-webkit-appearance: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: 1.25;
+    padding: 0.5em;
+    border: 2px solid #eee;
+    background-color: #eee;
+}
+
+/**************************************
+* Textarea
+**************************************/
+
+.field-textarea {
+	-webkit-appearance: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    height: 10em;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: 1.25;
+    padding: 0.5em;
+    border: 2px solid #222;
+}
+
+/**************************************
+* Radio buttons
+**************************************/
+
+.field-radioButton label {
+	padding: 12px;
+    background-color: #eee;
+    margin-bottom: 7px;
+    display: block;
+    padding: 1.2em;
+}
+
+.field-radioButton input {
+	margin-right: 5px;
+}
+
+.field-radioButton label:hover {
+	background-color: #ddd;
+}
+
+/**************************************
+* Radio buttons
+**************************************/
+
+.field-checkbox label {
+	padding: 10px;
+    background-color: #eee;
+    border: 2px solid #eee;
+    margin-bottom: 7px;
+    display: block;
+    padding: 1.2em;
+}
+
+.field-checkbox input {
+	margin-right: 5px;
+}
+
+.field-checkbox label:hover {
+	background-color: #ddd;
+    border: 2px solid #000;
+}
+
+/**************************************
+* Date
+**************************************/
+
+.field-dayWrapper,
+.field-monthWrapper,
+.field-yearWrapper {
+	display: inline-block;
+}
+
+.field-dayWrapper,
+.field-monthWrapper {
+	width: 4em;
+}
+
+.field-yearWrapper {
+	width: 5em;
+}
+
+
+.field-dayWrapper label,
+.field-monthWrapper label,
+.field-yearWrapper label {
+	display: block;
+}
+
+.field-dayBox,
+.field-monthBox,
+.field-yearBox {
+	-webkit-appearance: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: 1.25;
+    padding: 0.5em;
+    border: 2px solid #222;
+    -moz-appearance:textfield;
+}
+
+.field-dayBox {
+	width: 3em;
+}
+
+.field-monthBox {
+	width: 3em;
+}
+
+.field-yearBox {
+	width: 4.5em;
+}
+
+/*input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}*/
+
+/**************************************
+* Focus
+**************************************/
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline-offset: 0;
+    outline: 3px solid #ffbf47;
+}
+
+/**************************************
+* Width overrides
+**************************************/
+
+#expiry {
+	width: 5em;
+}
+
+#cvc {
+	width: 4em;
+}
+
+#postcode {
+    width: 8em;
+}
+
+#tdate {
+    width: 10em;
+}

@@ -1,0 +1,27 @@
+{% extends 'layouts/default.html' %}
+
+{% import "macros/headings.html" as headings %}
+
+{% block mainContent %}
+	{{headings.h1('Date picker')}}
+
+	<p>Use this when:</p>
+	<ul>
+		<li>User is trying to find a date.</li>
+	</ul>
+
+	{{headings.h2('With detection')}}	
+	<p>This picker is only applied if the browser doesn't provide its own native picker.</p>
+	<div class="example">
+		<iframe src="/examples/date-picker-detect" width="400" height="200"></iframe>
+		<p><a href="/examples/date-picker-detect">Standalone</a></p>
+	</div>
+
+	{{headings.h2('Always applied')}}	
+	<p>This is always applied, even if the browser can provide its own native picker.</p>
+	<div class="example">
+		<iframe src="/examples/date-picker-always" width="400" height="200"></iframe>
+		<p><a href="/examples/date-picker-always">Standalone</a></p>
+	</div>
+
+{% endblock mainContent %}

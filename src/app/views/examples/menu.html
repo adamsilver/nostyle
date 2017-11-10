@@ -1,0 +1,16 @@
+{% extends 'layouts/raw.html' %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/menus.html" as menus %}
+
+{% block pageScript %}
+	<script>
+		new Menu($('.menu'), { mq: '(min-width: 45em)' });
+	</script>
+{% endblock pageScript %}
+
+{% block mainContent %}
+
+	{{menus.actionMenu()}}
+
+{% endblock mainContent %}

@@ -1,0 +1,21 @@
+{% extends 'layouts/default.html' %}
+
+{% import "macros/headings.html" as headings %}
+
+{% block mainContent %}
+	{{headings.h1('Buttons')}}
+
+	{{headings.h2('Primary button')}}	
+
+	<div class="example">
+		<iframe src="/examples/primary-button" width="400" height="200"></iframe>
+		<p><a href="/examples/primary-button">Standalone</a></p>
+	</div>
+
+	{{headings.h2('Secondary button')}}
+
+	<div class="example">
+		<iframe src="/examples/secondary-button" width="400" height="200"></iframe>
+		<p><a href="/examples/secondary-button">Standalone</a></p>
+	</div>
+{% endblock mainContent %}

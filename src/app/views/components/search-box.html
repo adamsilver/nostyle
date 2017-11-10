@@ -1,0 +1,23 @@
+{% extends 'layouts/default.html' %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
+
+{% block mainContent %}
+	{{headings.h1('Search box')}}
+
+	<p>Use this when:</p>
+	<ul>
+		<li>Blah</li>
+	</ul>
+
+	<div class="example">
+		<iframe src="/examples/search-box" width="400" height="200"></iframe>
+		<p><a href="/examples/search-box">Standalone</a></p>
+	</div>
+
+	<div class="html">
+	<pre>{{(""+formElements.textBox('search', 'Search products', type='search') )}}</pre>
+	</div>
+
+{% endblock mainContent %}

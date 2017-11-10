@@ -1,0 +1,15 @@
+{% extends 'layouts/default.html' %}
+{% set cnav = "tbd" %}
+
+{% import "macros/headings.html" as headings %}
+
+{% block mainContent %}
+
+	{{headings.h1('Asking for payment')}}
+
+	<div class="example">
+		<iframe src="/examples/payment" width="400" height="400"></iframe>
+		<p><a href="/examples/payment">Standalone</a></p>
+	</div>
+
+{% endblock mainContent %}

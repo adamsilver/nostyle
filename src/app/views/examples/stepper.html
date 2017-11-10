@@ -1,0 +1,40 @@
+{% extends 'layouts/raw.html' %}
+{% set cnav = "stepper" %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
+
+{% block pageScript %}
+	<script>
+		new Stepper(document.getElementById('adults'), {
+			decrementLabel: 'Decrement adults aged 16 and over',
+			incrementLabel: 'Increment adults aged 16 and over'
+		});
+		new Stepper(document.getElementById('children'), {
+			decrementLabel: 'Decrement children aged between 2 and 16 and over',
+			incrementLabel: 'Increment children aged 16 and over'
+		});
+		new Stepper(document.getElementById('infants'), {
+			decrementLabel: 'Decrement infants aged 16 and over',
+			incrementLabel: 'Increment infants aged 16 and over'
+		});
+	</script>
+{% endblock pageScript %}
+
+{% block pageHeader %}
+{% endblock pageHeader %}
+
+{% block mainContent %}
+	{{formElements.textBox('adults', 'How many people aged 16 and over are flying?', type='number', {
+		value: '0',
+		attributes: 'min="0" max="9"'
+	})}}
+	{{formElements.textBox('children', 'How many children, aged between 2 and 15 years old, are flying?', type='number', {
+		value: '0',
+		attributes: 'min="0" max="9"'
+	})}}
+	{{formElements.textBox('infants', 'How many infants, under 2 years old, are flying?', type='number', {
+		value: '0',
+		attributes: 'min="0" max="9"'
+	})}}
+{% endblock mainContent %}

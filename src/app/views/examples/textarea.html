@@ -1,0 +1,9 @@
+{% extends 'layouts/raw.html' %}
+{% set cnav = "textarea" %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
+
+{% block mainContent %}
+	{{formElements.textarea('notes', 'Delivery notes')}}
+{% endblock mainContent %}

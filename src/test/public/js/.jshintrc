@@ -1,0 +1,4 @@
+{
+    "extends" : "../../../public/js/.jshintrc",
+    "jasmine": true
+}

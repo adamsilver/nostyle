@@ -1,0 +1,8 @@
+node_modules
+*.DS_Store
+.tmp
+src/config/config.json
+npm-debug.log
+dist
+.env
+tmp-uploads

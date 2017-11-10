@@ -1,0 +1,19 @@
+{% extends 'layouts/default.html' %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
+
+{% block mainContent %}
+	{{headings.h1('Text box')}}
+	<p>Use this to create different types of text input.</p>
+
+	<div class="example">
+		<iframe src="/examples/text-box" width="400" height="200"></iframe>
+		<p><a href="/examples/text-box">Standalone</a></p>
+	</div>
+	<div class="html">
+	<pre>{{(""+formElements.textBox('email', 'Email address', type='email') )}}</pre>
+	</div>
+
+
+{% endblock mainContent %}

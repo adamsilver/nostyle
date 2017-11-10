@@ -1,0 +1,25 @@
+{% extends 'layouts/default.html' %}
+{% set cnav = "tbd" %}
+
+{% import "macros/headings.html" as headings %}
+
+{% block mainContent %}
+
+	{{headings.h1('Upload')}}
+
+	{{headings.h2('Dropzone')}}
+	<p>Uses the ever present form pattern</p>	
+	<div class="example">
+		<iframe src="/examples/dropzone" width="400" height="400"></iframe>
+		<p><a href="/examples/dropzone">Standalone</a></p>
+	</div>
+
+	{{headings.h2('Download to upload')}}	
+	<p>Download a thing, make edits, upload it again</p>
+	<div class="example">
+		<iframe src="/examples/1" width="400" height="400"></iframe>
+		<p><a href="/examples/1">Standalone</a></p>
+	</div>
+
+
+{% endblock mainContent %}

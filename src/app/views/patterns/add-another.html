@@ -1,0 +1,39 @@
+{% extends 'layouts/default.html' %}
+{% set cnav = "tbd" %}
+
+{% import "macros/headings.html" as headings %}
+
+{% block mainContent %}
+
+	{{headings.h1('Add another')}}
+	<p>There are three patterns for adding another item:</p>
+	<ul>
+		<li>Dynamic form</li>
+		<li>Ever present form</li>
+		<li>One Thing Per Page flow</li>
+	</ul>
+
+	{{headings.h2('Dynamic form')}}
+
+	<div class="example">
+		<iframe src="/examples/add-another" width="400" height="400"></iframe>
+		<p><a href="/examples/add-another">Standalone</a></p>
+	</div>
+
+	{{headings.h2('Ever-present form')}}
+
+	<div class="example">
+		<iframe src="/examples/ever-present" width="400" height="400"></iframe>
+		<p><a href="/examples/ever-present">Standalone</a></p>
+	</div>
+
+	{{headings.h2('One Thing Per Page flow')}}
+
+	<div class="example">
+		<iframe src="/components/add-another-one-thing" width="400" height="400"></iframe>
+		<p><a href="/components/add-another-one-thing">Standalone</a></p>
+	</div>
+
+
+
+{% endblock mainContent %}

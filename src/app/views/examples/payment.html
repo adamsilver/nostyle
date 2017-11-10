@@ -1,0 +1,48 @@
+{% extends 'layouts/raw.html' %}
+{% set cnav = "payment" %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
+{% import "macros/buttons.html" as buttons %}
+{% import "macros/navigation.html" as navigation %}
+
+{% block pageScript %}
+	<script>
+		var validator = new FormValidator(document.forms[0]);
+		var collapser = new CheckboxCollapser(document.getElementById('same'), document.getElementsByClassName('billingAddress')[0]);
+	</script>
+{% endblock pageScript %}
+
+{% block pageHeader %}
+	{{headings.h1('Payment form')}}
+{% endblock pageHeader %}
+
+{% block mainContent %}
+	<h1>Payment details</h2>
+		<form novalidate>
+			{{formElements.textBox('cardnumber', 'Card number', {
+				hint: 'The long number on the front of your card'
+			})}}
+			{{formElements.textBox('expiry', 'Expiry date', {
+				hint: 'MMYY'
+			})}}
+			{{formElements.textBox('cvc', 'Card', {
+				hint: 'The last 3 numbers on the back of your card'
+			})}}
+
+			{{formElements.checkboxes('same', 'Is your billing address the same as delivery?', [{
+				label: 'Yes, my billing address is the same',
+				id: 'same',
+				checked: true
+			}])}}
+
+			<div class="billingAddress">
+				{{formElements.textBox('address1', 'Street')}}
+				{{formElements.textBox('address2', 'Town')}}
+				{{formElements.textBox('postcode', 'Postcode')}}
+			</div>
+
+			{{buttons.primaryButton('Continue')}}
+		</form>
+
+{% endblock mainContent %}

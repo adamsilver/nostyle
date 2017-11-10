@@ -1,0 +1,21 @@
+{% import "macros/buttons.html" as buttons %}
+
+{% macro actionMenu() %}
+	<div class="menu">
+		<div class="menu-items" role="menubar">
+			{{buttons.secondaryButton('Archive', 'arc', {
+				role: 'menuitem'
+			})}}
+			{{buttons.secondaryButton('Delete', 'del', {
+				role: 'menuitem'
+			})}}
+			{{buttons.secondaryButton('Mark as spam', 'spam', {
+				role: 'menuitem'
+			})}}
+		</div>
+	</div>
+{% endmacro %}
+
+
+
+

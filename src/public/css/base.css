@@ -1,0 +1,354 @@
+/**********************************************************
+* Open Sans
+**********************************************************/
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('/public/fonts/OpenSans/OpenSans-Regular.woff2') format('woff2'),
+		url('/public/fonts/OpenSans/OpenSans-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('/public/fonts/OpenSans/OpenSans-Italic.woff2') format('woff2'),
+		url('/public/fonts/OpenSans/OpenSans-Italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('/public/fonts/OpenSans/OpenSans-Bold.woff2') format('woff2'),
+		url('/public/fonts/OpenSans/OpenSans-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('/public/fonts/OpenSans/OpenSans-BoldItalic.woff2') format('woff2'),
+		url('/public/fonts/OpenSans/OpenSans-BoldItalic.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Open sans', helvetica, arial, sans-serif;
+    text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+    font-size: 62.5%;
+    font-size: 100%;
+}
+
+a:link, a:visited {
+	color: #0074D9;
+}
+
+.vh {
+	border: 0!important;
+    clip: rect(0 0 0 0)!important;
+    height: 1px!important;
+    margin: -1px!important;
+    overflow: hidden!important;
+    padding: 0!important;
+    position: absolute!important;
+    width: 1px!important;
+}
+
+
+.header {
+	background-color: #222;
+	padding: 20px 20px;
+	overflow: hidden;
+}
+
+.logo {
+	font-size: 1.5em;
+	font-weight: bold;
+	float: left;
+}
+
+.logo a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.main {
+
+}
+
+h1 {
+	font-size: 2.2em;
+	line-height: 1;
+	color: #222;
+	margin-bottom: 40px;
+}
+
+@media(min-width: 30em) {
+	h1 {
+		font-size: 2.8em;
+		margin-bottom: 60px;
+	}
+}
+
+h2 {
+	font-size: 1.2em;
+	line-height: 1;
+	color: #222;
+	margin-bottom: 10px;
+}
+
+@media(min-width: 30em) {
+	h2 {
+		font-size: 1.6em;
+	}
+}
+
+
+p {
+	margin-bottom: 20px;
+}
+
+ul {
+	margin-bottom: 30px;
+	margin-left: 25px;
+}
+
+.wifi-icon {
+	padding-left: 135px;
+	height: 128px;
+	background: transparent url( /public/img/wifi_icon.png ) 0 0 no-repeat;
+}
+
+.example {
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.example iframe {
+	width: 100%;
+}
+
+.html {
+	border: 1px solid #bfc1c3;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    font-size: 1.5em;
+    overflow: auto;
+}
+
+.primaryNav {
+	border-top: 7px solid #0074D9; 
+	padding: 20px 20px 25px;
+	background-color: #f5f5f5;
+}
+
+.primaryNav ul {
+	list-style: none;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+.primaryNav li {
+	display: inline-block;
+	font-size: 1.2em;
+	margin-right: 15px;
+}
+
+.primaryNav a {
+	text-decoration: none;
+}
+
+.active {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+main {
+	/*width: 100%;*/
+    /*display: flex;*/
+}
+
+.componentNav {
+	border-right: 2px solid #f5f7fa;
+	height: 100%;
+	width: 15rem;
+}
+
+.componentNav-inner {
+	padding: 40px 25px;
+}
+
+.componentNav p {
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.componentNav ul {
+	list-style: none;
+	margin-left: 0;
+}
+
+.componentNav li {
+	margin-bottom: 6px;
+}
+
+.mainContent {
+}
+
+.pageHeader {
+	padding: 30px 20px 50px;
+    background-color: #f5f7fa;
+    border-bottom: 1px solid #5596e6;
+    padding-bottom: 1rem;
+}
+
+.pageContent {
+	padding: 50px 20px;
+}
+
+.pageContent p {
+	max-width: 40em;
+}
+
+.dropzone {
+	margin-bottom: 40px;
+}
+
+.dropzone .field {
+	margin-bottom: 20px;
+}
+
+.dropzone--enhanced {
+	outline: 2px dashed #111;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	padding: 70px 40px 55px;
+	max-width: 520px;
+	
+	background-color: #f5f5f5;
+	transition: outline-offset .15s ease-in-out, background-color .15s linear;
+}
+
+.dropzone--enhanced .secondaryButton {
+	display: none;
+}
+
+.dropzone .field-file {
+	border: none;
+	text-align: center;
+}
+
+.dropzone--enhanced .field-file {
+	position: absolute;
+	left: -9999em;
+}
+
+.dropzone--enhanced .field-label {
+	line-height: 1.6em;
+}
+
+.dropzone--dragOver {
+	background: #fff;
+	outline: 2px dashed #000;
+	outline-offset: -20px;
+}
+
+.hidden {
+	display: none;
+}
+
+.fileList {
+	max-width: 600px;
+	list-style: none;
+	margin-left: 0;
+	margin-bottom: 30px;
+}
+
+.fileList ul {
+	list-style: none;
+	margin: 0;
+	border-top: 1px solid #ccc;
+}
+
+.fileList li {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+}
+
+.fileList-file a {
+	display: block;
+}
+
+.fileList-name {
+	float: left;
+	width: 40%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.fileList progress {
+	width: 20%;
+	margin-top: 4px;
+}
+
+.fileList button {
+	float: right;
+	font-size: 1em;
+	padding: 4px 8px;
+}
+
+.focus .attach {
+	outline-offset: 0;
+  outline: 3px solid #ffbf47;
+}
+
+.attach {
+	display: block;
+	background-color: #ddd;
+	border: none;
+	appearance: none;
+	-webkit-appearance: none;
+	color: #222;
+	font-size: 1em;
+	padding: 8px 16px;
+	border-bottom: 2px solid #999;
+	border-right: 2px solid #999;
+	line-height: 1;
+	font-weight: normal;
+	width: 110px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.attach:hover {
+	background-color: #d5d5d5;
+}
+
+
+#adults,
+#children,
+#infants {
+	width: 50px;
+}
+
+input[id$="[amount]"] {
+	width: 100px;
+}
