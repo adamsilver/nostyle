@@ -151,6 +151,11 @@ fieldset {
 
 .field-checkbox input {
 	margin-right: 5px;
+    -ms-transform: scale(1.5); /* IE */
+    -moz-transform: scale(1.5); /* FF */
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+    -o-transform: scale(1.5); /* Opera */
+    transform: scale(1.5);
 }
 
 .field-checkbox label:hover {
@@ -223,12 +228,22 @@ input::-webkit-inner-spin-button {
 * Focus
 **************************************/
 
-input:focus,
+[type=text]:focus,
+[type=password]:focus,
+[type=number]:focus,
+[type=tel]:focus,
+[type=email]:focus,
+[type=date]:focus,
+[type=radio]:focus,
+[type=checkbox]:focus,
+[type=file]:focus,
+[type=search]:focus,
 textarea:focus,
 select:focus,
-button:focus {
-    outline-offset: 0;
-    outline: 3px solid #ffbf47;
+.primaryButton:focus,
+.secondaryButton:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px #ffdc00;
 }
 
 /**************************************

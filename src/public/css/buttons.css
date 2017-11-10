@@ -10,8 +10,18 @@
 	color: white;
 	font-size: 1.2em;
 	padding: 8px 16px;
-	border-bottom: 2px solid #005096;
-	border-right: 2px solid #005096;
+	border-left: 1px solid #005096;
+	border-top: 1px solid #005096;
+	border-bottom: 3px solid #005096;
+	border-right: 3px solid #005096;
+	border-radius: 4px;
+}
+
+.primaryButton:active {
+	border-left: 3px solid #005096;
+	border-top: 3px solid #005096;
+	border-bottom: 1px solid #005096;
+	border-right: 1px solid #005096;
 }
 
 .primaryButton:hover {
@@ -30,8 +40,18 @@
 	color: #222;
 	font-size: 1.2em;
 	padding: 8px 16px;
-	border-bottom: 2px solid #bbb;
-	border-right: 2px solid #bbb;
+	border-left: 1px solid #bbb;
+	border-top: 1px solid #bbb;
+	border-bottom: 3px solid #bbb;
+	border-right: 3px solid #bbb;
+	border-radius: 4px;
+}
+
+.secondaryButton:active {
+	border-left: 3px solid #bbb;
+	border-top: 3px solid #bbb;
+	border-bottom: 1px solid #bbb;
+	border-right: 1px solid #bbb;
 }
 
 .secondaryButton:hover {

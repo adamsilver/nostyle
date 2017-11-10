@@ -11,22 +11,20 @@
 
 {% block mainContent %}
 
-	<div class="example">
-		{{formElements.memorableDateField('Date of birth', {
-			day: {
-				name: 'day',
-				label: "Day"
-			},
-			month: {
-				name: 'month',
-				label: "Month"
-			},
-			year: {
-				name: 'year',
-				label: "Year"
-			},
-			hint: 'DD MM YYYY'
-		})}}
-	</div>
+	{{formElements.memorableDateField('Date of birth', {
+		day: {
+			name: 'day',
+			label: "Day"
+		},
+		month: {
+			name: 'month',
+			label: "Month"
+		},
+		year: {
+			name: 'year',
+			label: "Year"
+		},
+		hint: 'DD MM YYYY'
+	})}}
 
 {% endblock mainContent %}

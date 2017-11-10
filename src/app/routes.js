@@ -141,6 +141,10 @@ module.exports = function( express, app ){
 		res.render('patterns/upload.html');
 	});
 
+	app.get('/patterns/search', function( req, res ){
+		res.render('patterns/search.html');
+	});
+
 	//
 	//
 	// Examples

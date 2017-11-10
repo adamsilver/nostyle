@@ -1,8 +1,5 @@
 {% extends 'layouts/raw.html' %}
 
-{% import "macros/headings.html" as headings %}
-{% import "macros/menus.html" as menus %}
-
 {% block pageScript %}
 	<script>
 		new Menu($('.menu'), { mq: '(min-width: 45em)' });
@@ -11,6 +8,16 @@
 
 {% block mainContent %}
 
-	{{menus.actionMenu()}}
+	<div class="menu">
+		<div class="menu-items" role="menubar">
+			<input type="submit" name="archive" value="Archive" role="menuitem"> 
+			<input type="submit" name="delete" value="Delete" role="menuitem"> 
+			<input type="submit" name="spam" value="Mark as spam" role="menuitem"> 
+		</div>
+	</div>
+
+	<div>
+		Inbox emails
+	</div>
 
 {% endblock mainContent %}

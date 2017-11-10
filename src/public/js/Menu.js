@@ -21,7 +21,7 @@ Menu.prototype.setupResponsiveChecks = function() {
 };
 
 Menu.prototype.createToggleButton = function() {
-	this.menuButton = $('<button class="secondaryButton" type="button" aria-haspopup="true" aria-expanded="false">Actions<span aria-hidden="true">&#x25be;</span></button>');
+	this.menuButton = $('<button class="menu-button" type="button" aria-haspopup="true" aria-expanded="false">Actions<span aria-hidden="true">&#x25be;</span></button>');
 	this.menuButton.on('click', $.proxy(this, 'onMenuButtonClick'));
 };
 

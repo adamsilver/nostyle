@@ -169,19 +169,19 @@
 			{% if options.day %}
 				<div class="field-dayWrapper">
 					<label for="{{options.day.name}}">{{options.day.label}}</label>
-					<input class="field-dayBox" type="number" pattern="[0-9]*" name="{{options.day.name}}" value="{{options.day.value}}" id="{{options.day.name}}" min="0" max="31">
+					<input class="field-dayBox" type="text" pattern="[0-9]*" name="{{options.day.name}}" value="{{options.day.value}}" id="{{options.day.name}}" min="0" max="31">
 				</div>
 			{% endif %}
 			{% if options.month %}
 				<div class="field-monthWrapper">
 					<label for="{{options.month.name}}">{{options.month.label}}</label>
-					<input class="field-monthBox" type="number" pattern="[0-9]*" name="{{options.month.name}}" value="{{options.month.value}}" id="{{options.month.name}}" min="0" max="12">
+					<input class="field-monthBox" type="text" pattern="[0-9]*" name="{{options.month.name}}" value="{{options.month.value}}" id="{{options.month.name}}" min="0" max="12">
 				</div>
 			{% endif %}
 			{% if options.year %}
 				<div class="field-yearWrapper">
 					<label for="{{options.year.name}}">{{options.year.label}}</label>
-					<input class="field-yearBox" type="number" pattern="[0-9]*" name="{{options.year.name}}" value="{{options.year.valye}}" id="{{options.year.name}}" min="0" max="2050">
+					<input class="field-yearBox" type="text" pattern="[0-9]*" name="{{options.year.name}}" value="{{options.year.valye}}" id="{{options.year.name}}" min="0" max="2050">
 				</div>
 			{% endif %}
 		</fieldset>

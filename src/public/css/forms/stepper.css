@@ -31,4 +31,6 @@
 	display: inline-block;
 	width: 4em;
 	text-align: center;
+	z-index: 2;
+	position: relative;
 }
