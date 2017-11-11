@@ -5,6 +5,11 @@
 	max-width: 40em;
 }
 
+.errorSummary:focus {
+	outline: none;
+  box-shadow: 0 0 1px 4px #ffbf47;
+}
+
 .errorSummary-isHidden {
 	display: none;
 }
@@ -27,4 +32,9 @@
 .errorSummary a {
 	color: #B10E1E;
 	font-weight: bold;
+}
+
+.errorSummary a:focus {
+	outline: none;
+  box-shadow: 0 0 1px 4px #ffbf47;
 }

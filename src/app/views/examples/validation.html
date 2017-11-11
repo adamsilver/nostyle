@@ -25,57 +25,65 @@
 
 {% block mainContent %}
 
+	<svg style="display: none">
+	  <symbol id="bin-icon" viewBox="0 0 10 10">
+	   <path d="m5 1-4 8h8zm-.36 2.6h.7v3h-.7v-2.8594zm.36 3.4c.4 0 .5.3.5.6-.1.3-.4.45-.63.4-.27-.1-.47-.4-.37-.63.07-.17.20-.37.50-.37z">
+	  </symbol>
+	</svg>
+
 	{{navigation.breadcrumb([{
 		text: 'Validation'
 	}])}}
 
-	{{headings.h1('Questions')}}
+	{{formElements.errorSummary("There's a problem", [{
+		fieldName: 'email',
+		message: 'Enter your email address.'
+	}, {
+		fieldName: 'like',
+		message: 'Select your favourite item.'
+	}, {
+		fieldName: 'colours',
+		message: 'Select at least one favourite colour.'
+	}, {
+		fieldName: 'country',
+		message: 'Choose a country.'
+	}])}}
 
-		<form novalidate>
-			{{formElements.errorSummary('Fix the following errors', [{
-				fieldName: 'email',
-				message: 'Enter your email address.'
-			}, {
-				fieldName: 'like',
-				message: 'Select your favourite item.'
-			}, {
-				fieldName: 'colours',
-				message: 'Select at least one favourite colour.'
-			}, {
-				fieldName: 'country',
-				message: 'Choose a country.'
-			}])}}
+	{{headings.h1('Page title')}}
 
-			{{formElements.textBox('email', 'Email address', {error: 'Enter your email address.'})}}
+	<form novalidate>
+		{{formElements.textBox('email', 'Email address', {error: 'Enter your email address.'})}}
 
-			{{formElements.radioButtons('like', 'What do you like the most?', [{
-				label: 'Chocolate',
-				id: 'like'
-			}, {
-				label: 'Beer',
-				id: 'like1'
-			}], {error: 'Select your favourite item.'})}}
+		{{formElements.fileInput('document', 'Upload file', {error: 'The file is too large.'})}}
 
-			{{formElements.checkboxes('colours', 'Favourite colours', [{
-				label: 'Red',
-				id: 'colours'
-			}, {
-				label: 'Blue',
-				id: 'colours1'
-			},  {
-				label: 'Green',
-				id: 'colours2'
-			}], { error: 'Select at least one favourite colour.'})}}
+		{{formElements.radioButtons('like', 'What do you like the most?', [{
+			label: 'Chocolate',
+			id: 'like'
+		}, {
+			label: 'Beer',
+			id: 'like1'
+		}], {error: 'Select your favourite item.'})}}
 
-			{{formElements.selectBox('country', 'Country',[{
-				text: 'Select',
-				value: ''
-			}, {
-				text: 'Brazil',
-				value: 'Brazil'
-			}], {error: 'Choose a country.'})}}
+		{{formElements.checkboxes('colours', 'Favourite colours', [{
+			label: 'Red',
+			id: 'colours'
+		}, {
+			label: 'Blue',
+			id: 'colours1'
+		},  {
+			label: 'Green',
+			id: 'colours2'
+		}], { error: 'Select at least one favourite colour.'})}}
 
-			{{buttons.primaryButton('Continue')}}
-		</form>
+		{{formElements.selectBox('country', 'Country',[{
+			text: 'Select',
+			value: ''
+		}, {
+			text: 'Brazil',
+			value: 'Brazil'
+		}], {error: 'Choose a country.'})}}
+
+		{{buttons.primaryButton('Continue')}}
+	</form>
 
 {% endblock mainContent %}

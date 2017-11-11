@@ -79,6 +79,5 @@
 }
 
 .enhanced .plane-seat-isFocussed label {
-  border: 3px solid #ffdc00;
-	/*box-shadow: 0 0 3px 2px #ffdc00;*/
+  border: 3px solid #ffbf47;
 }

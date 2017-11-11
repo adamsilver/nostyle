@@ -45,12 +45,22 @@ fieldset {
 	color: #b10e1e;
 	font-weight: bold;
 	margin-bottom: 2px;
+    display: block;
 }
 
-.field-hasError {
+.field-error svg {
+    margin-top: 3px;
+    vertical-align: bottom;
+    width: 1.8rem;
+    height: auto;
+    fill: #b10e1e;
+}
+
+/*.field-hasError .field-wrap {
 	border-left: 5px solid #b10e1e;
 	padding-left: 10px;
-}
+    margin-left: 11px;
+}*/
 
 /**************************************
 * Select box
@@ -65,7 +75,13 @@ fieldset {
 * Text box
 **************************************/
 
-.field-textBox {
+[type=text],
+[type=password],
+[type=number],
+[type=tel],
+[type=email],
+[type=date],
+[type=search] {
 	-webkit-appearance: none;
     border-radius: 0;
     box-sizing: border-box;
@@ -95,6 +111,7 @@ fieldset {
     padding: 0.5em;
     border: 2px solid #eee;
     background-color: #eee;
+    width: 100%;
 }
 
 /**************************************
@@ -130,6 +147,11 @@ fieldset {
 
 .field-radioButton input {
 	margin-right: 5px;
+    -ms-transform: scale(1.5); /* IE */
+    -moz-transform: scale(1.5); /* FF */
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+    -o-transform: scale(1.5); /* Opera */
+    transform: scale(1.5);
 }
 
 .field-radioButton label:hover {
@@ -243,7 +265,7 @@ select:focus,
 .primaryButton:focus,
 .secondaryButton:focus {
     outline: none;
-    box-shadow: 0 0 3px 2px #ffdc00;
+    box-shadow: 0 0 1px 4px #ffbf47;
 }
 
 /**************************************
