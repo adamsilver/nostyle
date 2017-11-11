@@ -1,0 +1,57 @@
+.inbox {
+	list-style: none;
+	margin-left: 0px;
+}
+
+.inbox li {
+	overflow: hidden;
+	border-bottom: 1px solid #ccc;
+	
+}
+
+.inbox li a {
+	color: #000;
+	overflow: hidden;
+	display: block;
+	padding-bottom: 8px;
+	padding-top: 8px;
+}
+
+.inbox li:hover {
+	background-color: #ddd;
+}
+
+.inbox li label {
+	display: none;
+}
+
+.inbox li input {
+	float: left;
+	margin-right: 10px;
+	margin-top: 14px;
+	margin-left: 10px;
+}
+
+.inbox-recipient,
+.inbox-subject,
+.inbox-date {
+	float: left;
+	padding-right: 10px;
+	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.inbox-recipient {
+	width: 15%;
+}
+
+.inbox-subject {
+	width: 50%;
+}
+
+.inbox-date {
+	width: 30%;
+	text-align: right;
+}

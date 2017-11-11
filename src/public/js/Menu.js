@@ -1,6 +1,6 @@
 function Menu(container, options) {
 	this.container = container;
-	this.menu = this.container.find('.menu-items');
+	this.menu = this.container.find('[role=menu]');
 	this.setupOptions(options);
 	this.setupKeys();
 	this.menu.on('keydown', 'input', $.proxy(this, 'onButtonKeydown'));
@@ -23,6 +23,7 @@ Menu.prototype.setupResponsiveChecks = function() {
 Menu.prototype.createToggleButton = function() {
 	this.menuButton = $('<button class="menu-button" type="button" aria-haspopup="true" aria-expanded="false">Actions<span aria-hidden="true">&#x25be;</span></button>');
 	this.menuButton.on('click', $.proxy(this, 'onMenuButtonClick'));
+	this.menuButton.on('keydown', $.proxy(this, 'onMenuKeyDown'));
 };
 
 Menu.prototype.checkMode = function(mq) {
@@ -36,13 +37,13 @@ Menu.prototype.checkMode = function(mq) {
 Menu.prototype.enableSmallMode = function() {
 	this.container.prepend(this.menuButton);
 	this.hideMenu();
-	this.menu.attr('role', 'menu');
+	// this.menu.attr('role', 'menu');
 };
 
 Menu.prototype.enableBigMode = function() {
 	this.menuButton.detach();
 	this.showMenu();
-	this.menu.attr('role', 'menubar');
+	// this.menu.attr('role', 'menubar');
 };
 
 Menu.prototype.hideMenu = function() {
@@ -54,12 +55,24 @@ Menu.prototype.showMenu = function(first_argument) {
 };
 
 Menu.prototype.onMenuButtonClick = function() {
+	this.toggle();
+};
+
+Menu.prototype.toggle = function() {
 	if(this.menuButton.attr('aria-expanded') == 'false') {
 		this.showMenu();
 		this.menu.find('input').first().focus();
 	} else {
 		this.hideMenu();
 		this.menuButton.focus();
+	}
+};
+
+Menu.prototype.onMenuKeyDown = function(e) {
+	switch (e.keyCode) {
+		case this.keys.down:
+			this.toggle();
+			break;
 	}
 };
 

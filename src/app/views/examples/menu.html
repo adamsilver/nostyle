@@ -8,16 +8,43 @@
 
 {% block mainContent %}
 
-	<div class="menu">
-		<div class="menu-items" role="menubar">
-			<input type="submit" name="archive" value="Archive" role="menuitem"> 
-			<input type="submit" name="delete" value="Delete" role="menuitem"> 
-			<input type="submit" name="spam" value="Mark as spam" role="menuitem"> 
+	<form>
+		<div class="menu">
+			<div class="menu-items" role="menu">
+				<input type="submit" name="archive" value="Archive" role="menuitem"> 
+				<input type="submit" name="delete" value="Delete" role="menuitem"> 
+				<input type="submit" name="spam" value="Mark as spam" role="menuitem"> 
+			</div>
 		</div>
-	</div>
 
-	<div>
-		Inbox emails
-	</div>
-
+		<ul class="inbox">
+			<li>
+			  <input type="checkbox" name="email" id="email1">
+			  <label for="email1">From John Oates, subject ‘Your Amazon.co.uk order #123 is out for delivery’ (10 August 2017)</label>
+			  <a href="/emails/1/">
+			    <div class="inbox-recipient">John Oates</div>
+			    <div class="inbox-subject">Your Amazon.co.uk order #123 is out for delivery</div>
+			    <div class="inbox-date">10 Aug</div>
+			  </a>
+			</li>
+			<li>
+			  <input type="checkbox" name="email" id="email2">
+			  <label for="email2">From Heydon Pickering, subject ‘Book Review’ (9 August 2017)</label>
+			  <a href="/emails/2/">
+			    <div class="inbox-recipient">Heydon Pickering</div>
+			    <div class="inbox-subject">Book Review</div>
+			    <div class="inbox-date">9 Aug</div>
+			  </a>
+			</li>
+			<li>
+			  <input type="checkbox" name="email" id="email3">
+			  <label for="email3">From David Smith, subject ‘Promo offer’ (7 August 2017)</label>
+			  <a href="/emails/3/">
+			    <div class="inbox-recipient">David Smith</div>
+			    <div class="inbox-subject">Promo offer</div>
+			    <div class="inbox-date">7 Aug</div>
+			  </a>
+			</li>
+		</ul>
+	</form>
 {% endblock mainContent %}

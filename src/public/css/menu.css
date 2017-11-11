@@ -4,7 +4,7 @@
 	position: relative;
 }
 
-.menu button {
+.menu-button {
 	background-color: #ddd;
 	border: none;
 	appearance: none;
@@ -19,25 +19,25 @@
 	border-radius: 4px;
 }
 
-.menu button:active {
+.menu-button:active {
 	border-left: 3px solid #bbb;
 	border-top: 3px solid #bbb;
 	border-bottom: 1px solid #bbb;
 	border-right: 1px solid #bbb;
 }
 
-.menu button:hover {
+.menu-button:hover {
 	background-color: #bbb;
 }
 
-.menu button span {
+.menu-button span {
 	font-size: 1.2em;
 	position: relative;
 	top: 0px;
 	left: 2px;
 }
 
-[role=menu] [role=menuitem] {
+[role=menuitem] {
 	display: block;
 	text-align: left;
 	width: 100%;
@@ -54,27 +54,30 @@
 	border-radius: 4px;
 }
 
-[role=menu] [role=menuitem]:hover {
+[role=menuitem]:hover {
 	background-color: #bbb;
 }
 
 @media(min-width: 45em) {
-	[role=menubar] [role=menuitem] {
+	[role=menuitem] {
 		width: auto;
 		display: inline-block;
 		vertical-align: top;
 	}
 }
 
-.menu-items {
+[role=menu] {
 	padding-top: 5px;
 	width: 10em;
+	position: absolute;
+	background-color: #fff;
 }
 
 @media(min-width: 45em) {
-	.menu-items {
+	[role=menu] {
 		border: none;
 		width: auto;
+		position: static;
 	}
 }
 
