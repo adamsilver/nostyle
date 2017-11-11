@@ -66,7 +66,7 @@ fieldset {
 * Select box
 **************************************/
 
-.field-selectBox {
+select {
 	width: 100%;
 	font-size: 1.1em;
 }
@@ -99,7 +99,7 @@ fieldset {
 * File input
 **************************************/
 
-.field-file {
+[type=file] {
 	-webkit-appearance: none;
     border-radius: 0;
     box-sizing: border-box;
@@ -118,7 +118,7 @@ fieldset {
 * Textarea
 **************************************/
 
-.field-textarea {
+textarea {
 	-webkit-appearance: none;
     border-radius: 0;
     box-sizing: border-box;

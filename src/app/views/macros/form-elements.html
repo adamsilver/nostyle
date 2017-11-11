@@ -26,12 +26,10 @@
 			<span class="field-hint">{{options.hint}}</span>
 		{% endif %}
 		{% if options.error %}
-			<span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bin-icon"></use></svg> {{options.error}}</span>
+			<span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
 		{% endif %}
 	</label>
-	<div class="field-wrap">
-		<input class="field-file" type="file" id="{{name}}" name="{{name}}" value="{{options.value}}" {% if options.multiple %}multiple{%endif%}>
-	</div>
+	<input type="file" id="{{name}}" name="{{name}}" value="{{options.value}}" {% if options.multiple %}multiple{%endif%}>
 </div>
 {% endmacro %}
 
@@ -43,12 +41,10 @@
 				<span class="field-hint">{{options.hint}}</span>
 			{% endif %}
 			{% if options.error %}
-				<span class="field-error"> <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bin-icon"></use></svg> {{options.error}}</span>
+				<span class="field-error"> <svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
 			{% endif %}
 		</label>
-		<div class="field-wrap">
-			<textarea class="field-textarea" id="{{name}}" name="{{name}}">{{options.value}}</textarea>
-		</div>
+		<textarea id="{{name}}" name="{{name}}">{{options.value}}</textarea>
 	</div>
 {% endmacro %}
 
@@ -60,16 +56,14 @@
 				<span class="field-hint">{{options.hint}}</span>
 			{% endif %}
 			{% if options.error %}
-				<span class="field-error"> <svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bin-icon"></use></svg> {{options.error}}</span>
+				<span class="field-error"> <svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
 			{% endif %}
 		</label>
-		<div class="field-wrap">
-			<select id="{{name}}" name="{{name}}" class="field-selectBox">
-				{% for choice in choices %}
-					<option value="{{choice.value}}" {% if choice.selected%}selected{% endif %}>{{choice.text}}</option>
-				{% endfor %}
-			</select>
-		</div>
+		<select id="{{name}}" name="{{name}}">
+			{% for choice in choices %}
+				<option value="{{choice.value}}" {% if choice.selected%}selected{% endif %}>{{choice.text}}</option>
+			{% endfor %}
+		</select>
 	</div>
 {% endmacro %}
 
@@ -82,19 +76,17 @@
 					<span class="field-hint">{{options.hint}}</span>
 				{% endif %}
 				{% if options.error %}
-					<span class="field-error"> <svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bin-icon"></use></svg> {{options.error}}</span>
+					<span class="field-error"> <svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
 				{% endif %}
 			</legend>
-			<div class="field-wrap">
-				{% for choice in choices %}
-					<div class="field-radioButton">
-						<label for="{{choice.id}}">
-							<input type="radio" name="{{name}}" value="{{choice.value}}" id="{{choice.id}}" {% if choice.checked %}checked{% endif %}>
-							{{choice.label}}
-						</label>
-					</div>
-				{% endfor %}
-			</div>
+			{% for choice in choices %}
+				<div class="field-radioButton">
+					<label for="{{choice.id}}">
+						<input type="radio" name="{{name}}" value="{{choice.value}}" id="{{choice.id}}" {% if choice.checked %}checked{% endif %}>
+						{{choice.label}}
+					</label>
+				</div>
+			{% endfor %}
 		</fieldset>
 	</div>
 {% endmacro %}
@@ -108,26 +100,24 @@
 					<span class="field-hint">{{options.hint}}</span>
 				{% endif %}
 				{% if options.error %}
-					<span class="field-error"> <svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bin-icon"></use></svg> {{options.error}}</span>
+					<span class="field-error"> <svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
 				{% endif %}
 			</legend>
-			<div class="field-wrap">
-				{% for choice in choices %}
-					<div class="field-checkbox">
-						<label for="{{choice.id}}">
-							<input
-								type="checkbox"
-								name="{{name}}"
-								value="{{choice.value}}"
-								id="{{choice.id}}"
-								{% if choice.disabled %}disabled{% endif%}
-								{% if choice.attributes %}{{choice.attributes | safe}}{%endif%}
-								{% if choice.checked %}checked{% endif%}>
-							{{choice.label}}
-						</label>
-					</div>
-				{% endfor %}
-			</div>
+			{% for choice in choices %}
+				<div class="field-checkbox">
+					<label for="{{choice.id}}">
+						<input
+							type="checkbox"
+							name="{{name}}"
+							value="{{choice.value}}"
+							id="{{choice.id}}"
+							{% if choice.disabled %}disabled{% endif%}
+							{% if choice.attributes %}{{choice.attributes | safe}}{%endif%}
+							{% if choice.checked %}checked{% endif%}>
+						{{choice.label}}
+					</label>
+				</div>
+			{% endfor %}
 		</fieldset>
 	</div>
 {% endmacro %}
