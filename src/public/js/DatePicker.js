@@ -112,7 +112,7 @@ DatePicker.prototype.getCalendarTableRows = function(month, year) {
 		var daysToSubtract = firstDay - i;
 		var paddedDate = new Date(year, month);
 		paddedDate.setDate(d.getDate()-daysToSubtract);
-		html += '<td class="calendarControl-previousMonthDay">'+paddedDate.getDate()+'</td>';
+		html += '<td class="datepicker-previousMonthDay">'+paddedDate.getDate()+'</td>';
 		i++;
 	}
 
@@ -142,7 +142,7 @@ DatePicker.prototype.getCalendarTableRows = function(month, year) {
 	while (i % 7 !== 0) {
 		var firstDate = this.getFirstDateOfMonth(month, year);
 		firstDate.setDate(firstDate.getDate()+(i-daysToIgnore));
-		html += '<td class="calendarControl-nextMonthDay">'+firstDate.getDate()+'</td>';
+		html += '<td class="datepicker-nextMonthDay">'+firstDate.getDate()+'</td>';
 		i++;
 	}
 	html += '</tr>';

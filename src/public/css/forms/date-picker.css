@@ -12,67 +12,67 @@
 }
 
 .datepicker-calendar {
-	border: 3px solid #222;
-	padding: 10px;
+	border: 1px solid #ccc;
 	max-width: 400px;
 }
 
 .datepicker-calendar:focus {
 	outline-offset: 0;
-    outline: 3px solid #ffbf47;
+  outline: 3px solid #ffbf47;
 }
 
 .datepicker-actions {
 	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
 }
 
 .datepicker-title {
-	margin-top: 4px;
-	margin-bottom: 16px;
 	display: inline-block;
-}
-
-.datepicker-back {
-	float: left;
-}
-
-.datepicker-next {
-	float: right;
+	font-weight: bold;
+	font-size: 1.2em;
+	padding-top: 12px;
 }
 
 .datepicker-next,
 .datepicker-back {
 	-webkit-appearance: none;
-    background: none;
-    font-size: 1em;
-    line-height: 1.25;
-    padding: 0.4em 0.9em;
-    vertical-align: bottom;
-    font-weight: bold;
-    border: 2px solid #222;
+  background: none;
+  font-size: 1em;
+  line-height: 1.25;
+  padding: 1em 1.3em;
+  vertical-align: bottom;
+  font-weight: bold;
+  border: none;
+}
+
+.datepicker-back {
+	float: left;
+	border-right: 1px solid #ccc;
+}
+
+.datepicker-next {
+	float: right;
+	border-left: 1px solid #ccc;
 }
 
 .datepicker-next:hover,
 .datepicker-back:hover {
-    background-color: #222;
-    color: #fff;
+   background-color: #eee;
+   color: #222 !important;
 }
 
 .datepicker-next:focus,
 .datepicker-back:focus {
 	outline-offset: 0;
-    outline: 3px solid #ffbf47;
+  outline: 3px solid #ffbf47;
 }
 
 .datepicker-day {
-	border: 2px solid white;
+	cursor: default;
 }
 
 .datepicker-day:focus {
 	outline-offset: 0;
-    outline: 3px solid #ffbf47;
+  outline: 3px solid #ffbf47;
 }
 
 .datepicker-previousMonthDay,
@@ -86,12 +86,13 @@
 
 .datepicker-day-isSelected {
 	background-color: #005EA5;
-    border-color: #005EA5;
-    color: white;
+  border-color: #005EA5;
+  color: white;
 }
 
 .datepicker-day:hover {
 	background-color: #DEE0E2;
+	color: #222;
 }
 
 .datepicker table {
@@ -104,5 +105,11 @@
 .datepicker th {
 	padding: 9px 0px;
 	text-align: center;
-	border: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-size: 1.2em;
+}
+
+.datepicker tr:last-child td {
+	border-bottom: none;
 }
