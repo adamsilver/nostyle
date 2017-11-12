@@ -204,7 +204,7 @@ module.exports = function( express, app ){
 		res.render('examples/select-box.html');
 	});
 
-	app.get('/examples/select-box', function( req, res ){
+	app.get('/examples/search-box', function( req, res ){
 		res.render('examples/search-box.html');
 	});
 
@@ -254,6 +254,10 @@ module.exports = function( express, app ){
 
 	app.get('/examples/dropzone', function( req, res ){
 		res.render('examples/dropzone.html');
+	});
+
+	app.get('/examples/download-to-upload', function( req, res ){
+		res.render('examples/download-to-upload.html');
 	});
 
 	app.post('/examples/upload', upload.array( 'documents', 10 ), function( req, res ){

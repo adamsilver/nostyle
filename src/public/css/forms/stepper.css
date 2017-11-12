@@ -4,27 +4,35 @@
 	font-family: inherit;
 	line-height: 1.25;
 	padding: 0.5em;
-	border: 2px solid #333;
+	border: 2px solid #222;
 	background: #fff;
 	position: relative;
 	width: 3em;
 	font-weight: bold;
+	background-color: #222;
+	color: #fff;
 }
 
 .stepper-decrementButton:hover,
 .stepper-incrementButton:hover {
-	background-color: #333;
-	color: #fff;
+	background-color: #0074D9;
+	border-color: #0074D9;
+}
+
+.stepper-decrementButton:focus,
+.stepper-incrementButton:focus {
+	outline: none;
+  box-shadow: 0 0 1px 4px #ffbf47;
 }
 
 .stepper-decrementButton {
 	right: -2px;
-	border-radius: 10px 0 0 10px;
+	border-radius: 6px 0 0 6px;
 }
 
 .stepper-incrementButton {
 	left: -2px;
-	border-radius: 0 10px 10px 0;
+	border-radius: 0 6px 6px 0;
 }
 
 .stepper input {
@@ -33,4 +41,10 @@
 	text-align: center;
 	z-index: 2;
 	position: relative;
+}
+
+.stepper input[type=number]::-webkit-inner-spin-button, 
+.stepper input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

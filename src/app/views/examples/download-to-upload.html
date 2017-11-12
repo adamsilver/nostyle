@@ -1,0 +1,19 @@
+{% extends 'layouts/raw.html' %}
+{% set cnav = "upload" %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
+{% import "macros/buttons.html" as buttons %}
+
+{% block mainContent %}
+
+	{{headings.h1('Download to upload')}}
+
+	<p><a href="#">Download previous version</a></p>
+
+	<form novalidate enctype="multipart/form-data" method="post" action="/">
+		{{formElements.fileInput('documents', 'Upload file')}}	
+		{{buttons.primaryButton('Continue', 'continue')}}
+	</form>
+
+{% endblock mainContent %}
