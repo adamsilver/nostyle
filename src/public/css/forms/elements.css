@@ -260,10 +260,9 @@ input::-webkit-inner-spin-button {
 [type=checkbox]:focus,
 [type=file]:focus,
 [type=search]:focus,
+[type=submit]:focus,
 textarea:focus,
-select:focus,
-.primaryButton:focus,
-.secondaryButton:focus {
+select:focus {
     outline: none;
     box-shadow: 0 0 1px 4px #ffbf47;
 }

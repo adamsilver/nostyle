@@ -13,7 +13,7 @@ if(isAdvancedUpload) {
   	this.dropzone.on('dragleave', $.proxy(this, 'onDragLeave'));
   	this.dropzone.on('drop', $.proxy(this, 'onDrop'));
 
-    this.fileInput = this.dropzone.find('.field-file');
+    this.fileInput = this.dropzone.find('[type=file]');
     this.fileInput.on('change', $.proxy(this, 'onFileChange'));
     this.fileInput.on('focus', $.proxy(this, 'onFileFocus'));
     this.fileInput.on('blur', $.proxy(this, 'onFileBlur'));
@@ -52,11 +52,11 @@ if(isAdvancedUpload) {
   };
 
   Dropzone.prototype.onFileFocus = function(e) {
-    this.dropzone.find('label').addClass('focus');
+    this.dropzone.find('label').addClass('dropzone--focused');
   };
 
   Dropzone.prototype.onFileBlur = function(e) {
-    this.dropzone.find('label').removeClass('focus');
+    this.dropzone.find('label').removeClass('dropzone--focused');
   };
 
   Dropzone.prototype.makeRequest = function(formData) {
