@@ -195,7 +195,7 @@ DatePicker.prototype.addEventListeners = function() {
 };
 
 DatePicker.prototype.createToggleButton = function() {
-	this.toggleButton = $('<button class="'+this.calendarClass+'-toggleButton" type="button">Choose</button>');
+	this.toggleButton = $('<button class="secondaryButton" type="button">Choose</button>');
 	this.wrapper.append(this.toggleButton);
 	this.toggleButton.on('click', $.proxy(this, 'onToggleButtonClick'));
 };

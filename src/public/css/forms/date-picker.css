@@ -1,22 +1,7 @@
-.datepicker .field-textBox {
+.datepicker [type=text] {
 	max-width: 10em;
-}
-
-.datepicker-toggleButton {
-	font-size: inherit;
-	font-family: inherit;
-	line-height: 1.25;
-	padding: 0.5em;
-	border: 2px solid #333;
-	background: #fff;
-	position: relative;
-	left: -2px;
-	border-radius: 0 10px 10px 0;
-}
-
-.datepicker-toggleButton:hover {
-	background-color: #333;
-	color: #fff;
+	margin-right: 10px;
+	vertical-align: top;
 }
 
 .datepicker-wrapper {
