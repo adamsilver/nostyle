@@ -56,13 +56,11 @@ FormValidator.prototype.showInlineErrors = function() {
 };
 
 FormValidator.prototype.showInlineError = function (error) {
-  var errorSpan = '<span class="field-error">'+error.message+'</span>';
+  var errorSpan = '<span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg>'+error.message+'</span>';
   var fieldContainer = $("#" + error.fieldName).parents(".field");
-  fieldContainer.addClass('field-hasError');
   var label = fieldContainer.find('label');
   var legend = fieldContainer.find("legend");
-  var errorContainer = fieldContainer.find(".error");
-  errorContainer.remove();
+  fieldContainer.find(".field-error").remove();
   if(legend.length) {
     legend.append(errorSpan);
   } else {
@@ -71,8 +69,7 @@ FormValidator.prototype.showInlineError = function (error) {
 };
 
 FormValidator.prototype.removeInlineErrors = function () {
-  $(this.form).find(".field .field-error").remove();
-  $(this.form).find(".field-hasError").removeClass('field-hasError');
+  $(this.form).find(".field-error").remove();
 };
 
 FormValidator.prototype.addValidator = function(fieldName, rules) {

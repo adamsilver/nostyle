@@ -274,7 +274,9 @@ DatePicker.prototype.onGridKeyDown = function(e) {
 			this.onDayUpSpacePressed(e);
 			break;
 		case this.keys.tab:
-			this.hide();
+			if(!e.shiftKey) {
+				this.hide();
+			}
 			break;
 	}
 };
