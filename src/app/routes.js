@@ -82,6 +82,10 @@ module.exports = function( express, app ){
 		res.render('components/menu.html');
 	});
 
+	app.get( '/components/password-reveal', function( req, res ){
+		res.render('components/password-reveal.html');
+	});
+
 	app.get( '/components/radio-buttons', function( req, res ){
 		res.render('components/radio-buttons.html');
 	});
@@ -234,6 +238,10 @@ module.exports = function( express, app ){
 
 	app.get('/examples/character-countdown', function( req, res ){
 		res.render('examples/character-countdown.html');
+	});
+
+	app.get('/examples/password-reveal', function( req, res ){
+		res.render('examples/password-reveal.html');
 	});
 
 	app.get('/examples/stepper', function( req, res ){

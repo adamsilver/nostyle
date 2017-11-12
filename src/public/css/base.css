@@ -235,3 +235,8 @@ main {
 input[id$="[amount]"] {
 	width: 100px;
 }
+
+.passwordRevealer input {
+	vertical-align: top;
+	max-width: 200px;
+}
