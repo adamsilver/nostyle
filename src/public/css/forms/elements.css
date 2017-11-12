@@ -108,12 +108,12 @@ textarea {
     line-height: 1.25;
     padding: 0.5em;
     border: 2px solid #eee;
-    background-color: #f5f5f5;
+    background-color: #eee;
     width: 100%;
 }
 
 [type=file]:hover {
-    background-color: #eee;
+    border: 2px solid #222;
 }
 
 /**************************************
@@ -129,16 +129,15 @@ textarea {
 **************************************/
 
 .field-radioButton label {
-	padding: 12px;
     background-color: #eee;
     margin-bottom: 7px;
     display: block;
-    padding: 1.2em;
+    padding: 0.7em 1.2em;
     border: 2px solid #eee;
 }
 
 .field-radioButton input {
-    margin-right: 5px;
+    margin-right: 10px;
     -ms-transform: scale(1.5); /* IE */
     -moz-transform: scale(1.5); /* FF */
     -webkit-transform: scale(1.5); /* Safari and Chrome */
@@ -147,7 +146,6 @@ textarea {
 }
 
 .field-radioButton label:hover {
-	background-color: #ddd;
     border-color: #222;
 }
 
@@ -156,17 +154,16 @@ textarea {
 **************************************/
 
 .field-checkbox label {
-	padding: 10px;
     background-color: #eee;
     border: 2px solid #eee;
     margin-bottom: 7px;
     display: block;
-    padding: 1.2em;
+    padding: 0.7em 1.2em;
     border: 2px solid #eee;
 }
 
 .field-checkbox input {
-	margin-right: 5px;
+	margin-right: 10px;
     -ms-transform: scale(1.5); /* IE */
     -moz-transform: scale(1.5); /* FF */
     -webkit-transform: scale(1.5); /* Safari and Chrome */
@@ -175,7 +172,6 @@ textarea {
 }
 
 .field-checkbox label:hover {
-	background-color: #ddd;
     border-color: #222;
 }
 
