@@ -139,15 +139,31 @@ ul {
 }
 
 .html {
-	border: 1px solid #bfc1c3;
+  border: 1px solid #bfc1c3;
   margin-top: 15px;
   margin-bottom: 40px;
-  padding-top: 20px;
+  padding-top: 35px;
   padding-right: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
   font-size: 1.5em;
   overflow: auto;
+  position: relative;
+}
+
+.html:before {
+	content: "HTML";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.21053em 0.78947em 0.21053em 0.78947em;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 12px;
+    line-height: 1.25;
+    background: #bfc1c3;
+    color: white;
 }
 
 .primaryNav {
