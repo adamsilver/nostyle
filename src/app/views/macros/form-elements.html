@@ -1,7 +1,7 @@
 {% import "macros/headings.html" as headings %}
 
 {% macro textBox(name, label, type='text', options) %}
-<div class="field {%- if options.error %}field-hasError{%endif-%} {% if options.modifierClasses %}{{options.modifierClasses}}{% endif %}">
+<div class="field {% if options.error %}field-hasError{%endif-%} {% if options.modifierClasses %}{{options.modifierClasses}}{% endif %}">
   <label for="{% if options.id %}{{options.id}}{%else%}{{name}}{%endif%}">
     <span class="field-label">{{label}}</span>
     {%- if options.hint %}
@@ -17,7 +17,7 @@
 
 
 {% macro fileInput(name, label, options) %}
-<div class="field {%- if options.error %}field-hasError{%endif-%}">
+<div class="field {% if options.error %}field-hasError{%endif-%}">
   <label for="{{name}}">
     <span class="field-label">{{label}}</span>
     {% if options.hint %}
@@ -32,7 +32,7 @@
 {% endmacro %}
 
 {% macro textarea(name, label, options) %}
-<div class="field {%- if options.error %}field-hasError{%endif-%}">
+<div class="field {% if options.error %}field-hasError{%endif-%}">
   <label for="{{name}}">
     <span class="field-label">{{label}}</span>
     {%- if options.hint %}
