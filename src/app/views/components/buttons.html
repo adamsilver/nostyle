@@ -5,6 +5,17 @@
 {% block mainContent %}
 	{{headings.h1('Buttons')}}
 
+	<p>Includes:</p>
+	<ul>
+		<li>Submit buttons (<code>&lt;input type="submit"&gt;</code> or <code>&lt;button type="submit"&gt;</code>)</li>
+		<li>Buttons (<code>&lt;button type="button"&gt;</code>) - only applicable in progressively enhanced Javascript interfaces.</li>
+	</ul>
+	<p>Doesn't include:</p>
+	<ul>
+		<li>Links (<code>&lt;a&gt;</code>)</li>
+		<li>Calls to action (links that are styled to look like buttons)</li>
+	</ul>
+
 	{{headings.h2('Primary button')}}	
 
 	<div class="example">

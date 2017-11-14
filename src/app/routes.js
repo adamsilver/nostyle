@@ -168,6 +168,11 @@ module.exports = function( express, app ){
 		res.render('examples/primary-button.html');
 	});
 
+	app.get('/examples/secondary-button', function( req, res ){
+		res.render('examples/secondary-button.html');
+	});
+
+
 	app.get('/examples/payment', function( req, res ){
 		res.render('examples/payment.html');
 	});
