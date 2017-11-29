@@ -51,8 +51,7 @@ fieldset {
 .field-error svg {
     margin-top: 3px;
     vertical-align: bottom;
-    width: 1.8rem;
-    height: auto;
+    width: 1.5em;
     fill: #b10e1e;
 }
 

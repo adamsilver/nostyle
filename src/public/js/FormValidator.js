@@ -5,6 +5,7 @@ function FormValidator(form) {
   $(this.form).on("submit", $.proxy(this, "onFormSubmit"));
   this.summary = $(".errorSummary");
   this.summary.on('click', 'a', $.proxy(this, 'onErrorClicked'));
+  this.originalTitle = document.title;
 };
 
 FormValidator.prototype.onErrorClicked = function(e) {
@@ -12,6 +13,14 @@ FormValidator.prototype.onErrorClicked = function(e) {
     var href = e.target.href;
     href = href.substring(href.indexOf("#")+1, href.length);
     document.getElementById(href).focus();
+};
+
+FormValidator.prototype.resetTitle = function() {
+  document.title = this.originalTitle;
+};
+
+FormValidator.prototype.updateTitle = function() {
+  document.title = "(" + this.errors.length + " errors) - " + document.title;
 };
 
 FormValidator.prototype.showSummary = function () {
@@ -42,8 +51,10 @@ FormValidator.prototype.hideSummary = function() {
 FormValidator.prototype.onFormSubmit = function (e) {
   this.removeInlineErrors();
   this.hideSummary();
+  this.resetTitle();
   if(!this.validate()) {
     e.preventDefault();
+    this.updateTitle();
     this.showSummary();
     this.showInlineErrors();
   }

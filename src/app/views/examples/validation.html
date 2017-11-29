@@ -20,6 +20,12 @@
 		  	},
 			message: 'You need to enter the ‘at’ symbol in the email address.'
 		}]);
+		validator.addValidator('notes', [{
+			method: function(field) {
+				return field.value.trim().length > 0; 
+			},
+			message: 'Enter notes'
+		}])
 	</script>
 {% endblock pageScript %}
 
