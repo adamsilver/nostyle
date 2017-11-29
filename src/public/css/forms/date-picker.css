@@ -14,15 +14,27 @@
 .datepicker-calendar {
 	border: 1px solid #ccc;
 	max-width: 400px;
+	padding-bottom: 20px;
 }
 
 .datepicker-calendar:focus {
-	outline-offset: 0;
+  outline-offset: 0;
   outline: 3px solid #ffbf47;
 }
 
 .datepicker-actions {
 	text-align: center;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 6px;
+}
+
+.datepicker-actions:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
 
 .datepicker-title {
@@ -34,24 +46,22 @@
 
 .datepicker-next,
 .datepicker-back {
-	-webkit-appearance: none;
+  -webkit-appearance: none;
   background: none;
   font-size: 1em;
   line-height: 1.25;
-  padding: 1em 1.3em;
+  padding: 1.1em 1.3em 0.8em;
   vertical-align: bottom;
   font-weight: bold;
   border: none;
 }
 
 .datepicker-back {
-	float: left;
-	border-right: 1px solid #ccc;
+  float: left;
 }
 
 .datepicker-next {
-	float: right;
-	border-left: 1px solid #ccc;
+  float: right;
 }
 
 .datepicker-next:hover,
@@ -85,7 +95,7 @@
 }
 
 .datepicker-day-isSelected {
-	background-color: #005EA5;
+  background-color: #005EA5;
   border-color: #005EA5;
   color: white;
 }
@@ -97,7 +107,9 @@
 
 .datepicker table {
 	table-layout: fixed;
-	width: 100%;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
 	border-collapse: collapse;
 }
 
@@ -105,8 +117,6 @@
 .datepicker th {
 	padding: 9px 0px;
 	text-align: center;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
 	font-size: 1.2em;
 }
 

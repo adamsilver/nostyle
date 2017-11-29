@@ -250,6 +250,7 @@ input::-webkit-inner-spin-button {
 [type=file]:focus,
 [type=search]:focus,
 [type=submit]:focus,
+button:focus,
 textarea:focus,
 select:focus {
     outline: none;

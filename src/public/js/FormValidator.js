@@ -11,8 +11,8 @@ function FormValidator(form) {
 FormValidator.prototype.onErrorClicked = function(e) {
     e.preventDefault();
     var href = e.target.href;
-    href = href.substring(href.indexOf("#")+1, href.length);
-    document.getElementById(href).focus();
+    var id = href.substring(href.indexOf("#")+1, href.length);
+    document.getElementById(id).focus();
 };
 
 FormValidator.prototype.resetTitle = function() {

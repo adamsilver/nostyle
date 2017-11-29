@@ -1,6 +1,7 @@
 {% extends 'layouts/default.html' %}
 
 {% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
 
 {% block mainContent %}
 	{{headings.h1('Textarea')}}
@@ -13,6 +14,9 @@
 	<div class="example">
 		<iframe src="/examples/textarea" width="400" height="200"></iframe>
 		<p><a href="/examples/textarea">Standalone</a></p>
+	</div>
+	<div class="html">
+	<pre>{{""+formElements.textarea('delivery', 'Delivery notes')}}</pre>
 	</div>
 
 {% endblock mainContent %}

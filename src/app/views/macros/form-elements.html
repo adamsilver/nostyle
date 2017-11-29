@@ -1,204 +1,204 @@
 {% import "macros/headings.html" as headings %}
 
 {% macro textBox(name, label, type='text', options) %}
-<div class="field {% if options.error %}field-hasError{%endif%} {% if options.modifierClasses %}{{options.modifierClasses}}{% endif %}">
-	<label for="{% if options.id %}{{options.id}}{%else%}{{name}}{%endif%}">
-		<span class="field-label">{{label}}</span>
-		{% if options.hint %}
-			<span class="field-hint">{{options.hint}}</span>
-		{% endif %}
-		{% if options.error %}
-			<span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
-		{% endif %}
-	</label>
-	<input type="{{type}}" id="{% if options.id %}{{options.id}}{%else%}{{name}}{%endif%}" name="{{name}}" value="{{options.value}}" {% if options.attributes %}{{options.attributes | safe}}{%endif%}>
+<div class="field {% if options.error %}field-hasError{%endif-%} {% if options.modifierClasses %}{{options.modifierClasses}}{% endif %}">
+  <label for="{% if options.id %}{{options.id}}{%else%}{{name}}{%endif%}">
+    <span class="field-label">{{label}}</span>
+    {%- if options.hint %}
+      <span class="field-hint">{{ options.hint }}</span>
+    {% endif %}
+    {%- if options.error %}
+      <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+    {% endif %}
+  </label>
+  <input type="{{type}}" id="{% if options.id %}{{options.id}}{%else%}{{name}}{%endif%}" name="{{name}}" value="{{options.value}}" {%- if options.attributes -%}{{options.attributes | safe}}{%endif%}>
 </div>
 {% endmacro %}
 
 
 {% macro fileInput(name, label, options) %}
-<div class="field {% if options.error %}field-hasError{%endif%}">
-	<label for="{{name}}">
-		<span class="field-label">{{label}}</span>
-		{% if options.hint %}
-			<span class="field-hint">{{options.hint}}</span>
-		{% endif %}
-		{% if options.error %}
-			<span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
-		{% endif %}
-	</label>
-	<input type="file" id="{{name}}" name="{{name}}" value="{{options.value}}" {% if options.multiple %}multiple{%endif%}>
+<div class="field {% if options.error %}field-hasError{%endif-%}">
+  <label for="{{name}}">
+    <span class="field-label">{{label}}</span>
+    {% if options.hint %}
+      <span class="field-hint">{{options.hint}}</span>
+    {% endif %}
+    {% if options.error %}
+      <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+    {% endif %}
+  </label>
+  <input type="file" id="{{name}}" name="{{name}}" value="{{options.value}}" {% if options.multiple %}multiple{%endif%}>
 </div>
 {% endmacro %}
 
 {% macro textarea(name, label, options) %}
-	<div class="field {% if options.error %}field-hasError{%endif%}">
-		<label for="{{name}}">
-			<span class="field-label">{{label}}</span>
-			{% if options.hint %}
-				<span class="field-hint">{{options.hint}}</span>
-			{% endif %}
-			{% if options.error %}
-				<span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
-			{% endif %}
-		</label>
-		<textarea id="{{name}}" name="{{name}}">{{options.value}}</textarea>
-	</div>
+<div class="field {% if options.error %}field-hasError{%endif-%}">
+  <label for="{{name}}">
+    <span class="field-label">{{label}}</span>
+    {%- if options.hint %}
+      <span class="field-hint">{{options.hint}}</span>
+    {% endif %}
+    {%- if options.error %}
+      <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+    {% endif %}
+  </label>
+  <textarea id="{{name}}" name="{{name}}">{{options.value}}</textarea>
+</div>
 {% endmacro %}
 
 {% macro selectBox(name, label, choices, options) %}
-	<div class="field {% if options.error %}field-hasError{% endif %}">
-		<label for="{{name}}">
-			<span class="field-label">{{label}}</span>
-			{% if options.hint %}
-				<span class="field-hint">{{options.hint}}</span>
-			{% endif %}
-			{% if options.error %}
-				<span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
-			{% endif %}
-		</label>
-		<select id="{{name}}" name="{{name}}">
-			{% for choice in choices %}
-				<option value="{{choice.value}}" {% if choice.selected%}selected{% endif %}>{{choice.text}}</option>
-			{% endfor %}
-		</select>
-	</div>
+  <div class="field {% if options.error %}field-hasError{% endif %}">
+    <label for="{{name}}">
+      <span class="field-label">{{label}}</span>
+      {% if options.hint %}
+        <span class="field-hint">{{options.hint}}</span>
+      {% endif %}
+      {% if options.error %}
+        <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+      {% endif %}
+    </label>
+    <select id="{{name}}" name="{{name}}">
+      {% for choice in choices %}
+        <option value="{{choice.value}}" {% if choice.selected%}selected{% endif %}>{{choice.text}}</option>
+      {% endfor %}
+    </select>
+  </div>
 {% endmacro %}
 
 {% macro radioButtons(name, legend, choices, options) %}
-	<div class="field {% if options.error%}field-hasError{% endif %}">
-		<fieldset>
-			<legend>
-				<span class="field-legend">{{legend}}</span>
-				{% if options.hint %}
-					<span class="field-hint">{{options.hint}}</span>
-				{% endif %}
-				{% if options.error %}
-					<span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
-				{% endif %}
-			</legend>
-			{% for choice in choices %}
-				<div class="field-radioButton">
-					<label for="{{choice.id}}">
-						<input type="radio" name="{{name}}" value="{{choice.value}}" id="{{choice.id}}" {% if choice.checked %}checked{% endif %}>
-						{{choice.label}}
-					</label>
-				</div>
-			{% endfor %}
-		</fieldset>
-	</div>
+<div class="field {% if options.error%}field-hasError{% endif %}">
+  <fieldset>
+    <legend>
+      <span class="field-legend">{{legend}}</span>
+      {% if options.hint %}
+        <span class="field-hint">{{options.hint}}</span>
+      {% endif %}
+      {% if options.error %}
+        <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+      {% endif %}
+    </legend>
+    {% for choice in choices %}
+      <div class="field-radioButton">
+        <label for="{{choice.id}}">
+          <input type="radio" name="{{name}}" value="{{choice.value}}" id="{{choice.id}}" {% if choice.checked %}checked{% endif %}>
+          {{choice.label}}
+        </label>
+      </div>
+    {% endfor %}
+  </fieldset>
+</div>
 {% endmacro %}
 
 {% macro checkboxes(name, legend, choices, options) %}
-	<div class="field {% if options.error%}field-hasError{% endif %}">
-		<fieldset>
-			<legend>
-				<span class="field-legend">{{legend}}</span>
-				{% if options.hint %}
-					<span class="field-hint">{{options.hint}}</span>
-				{% endif %}
-				{% if options.error %}
-					<span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
-				{% endif %}
-			</legend>
-			{% for choice in choices %}
-				<div class="field-checkbox">
-					<label for="{{choice.id}}">
-						<input
-							type="checkbox"
-							name="{{name}}"
-							value="{{choice.value}}"
-							id="{{choice.id}}"
-							{% if choice.disabled %}disabled{% endif%}
-							{% if choice.attributes %}{{choice.attributes | safe}}{%endif%}
-							{% if choice.checked %}checked{% endif%}>
-						{{choice.label}}
-					</label>
-				</div>
-			{% endfor %}
-		</fieldset>
-	</div>
+<div class="field {% if options.error%}field-hasError{% endif %}">
+  <fieldset>
+    <legend>
+      <span class="field-legend">{{legend}}</span>
+      {% if options.hint %}
+        <span class="field-hint">{{options.hint}}</span>
+      {% endif %}
+      {% if options.error %}
+        <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+      {% endif %}
+    </legend>
+    {% for choice in choices %}
+      <div class="field-checkbox">
+        <label for="{{choice.id}}">
+          <input
+            type="checkbox"
+            name="{{name}}"
+            value="{{choice.value}}"
+            id="{{choice.id}}"
+            {% if choice.disabled %}disabled{% endif%}
+            {% if choice.attributes %}{{choice.attributes | safe}}{%endif%}
+            {% if choice.checked %}checked{% endif%}>
+          {{choice.label}}
+        </label>
+      </div>
+    {% endfor %}
+  </fieldset>
+</div>
 {% endmacro %}
 
 {% macro seats(name, legend, rows, options) %}
-	<div class="field {% if options.error%}field-hasError{% endif %}">
-		<fieldset>
-			<legend>
-				<span class="field-legend">{{legend}}</span>
-				{% if options.hint %}
-					<span class="field-hint">{{options.hint | safe}}</span>
-				{% endif %}
-				{% if options.error %}
-					<span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
-				{% endif %}
-			</legend>
-			{% for row in rows %}
-				<div class="plane-row">
-					{% for choice in row.seats %}
-						<div class="plane-seat {{options.seatModifier}} {% if choice.disabled %}plane-seat-isTaken{% endif%}">
-							<label for="{{choice.id}}">
-								<input
-									type="checkbox"
-									name="{{name}}"
-									value="{{choice.value}}"
-									id="{{choice.id}}"
-									{% if choice.disabled %}disabled{% endif%}
-									{% if choice.checked %}checked{% endif%}>
-								{{choice.label | safe}}
-							</label>
-						</div>
-					{% endfor %}
-				</div>
-			{% endfor %}
-		</fieldset>
-	</div>
+<div class="field {% if options.error%}field-hasError{% endif %}">
+  <fieldset>
+    <legend>
+      <span class="field-legend">{{legend}}</span>
+      {% if options.hint %}
+        <span class="field-hint">{{options.hint | safe}}</span>
+      {% endif %}
+      {% if options.error %}
+        <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+      {% endif %}
+    </legend>
+    {% for row in rows %}
+      <div class="plane-row">
+        {% for choice in row.seats %}
+          <div class="plane-seat {{options.seatModifier}} {% if choice.disabled %}plane-seat-isTaken{% endif%}">
+            <label for="{{choice.id}}">
+              <input
+                type="checkbox"
+                name="{{name}}"
+                value="{{choice.value}}"
+                id="{{choice.id}}"
+                {% if choice.disabled %}disabled{% endif%}
+                {% if choice.checked %}checked{% endif%}>
+              {{choice.label | safe}}
+            </label>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </fieldset>
+</div>
 {% endmacro %}
 
 {% macro memorableDateField(legend, options) %}
-	<div class="field {% if options.error %}field-hasError{% endif %}">
-		<fieldset>
-			<legend>
-				<span class="field-legend">{{legend}}</span>
-				{% if options.hint %}
-					<span class="field-hint">{{options.hint}}</span>
-				{% endif %}
-				{% if options.error %}
-					<span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
-				{% endif %}
-			</legend>
-			{% if options.day %}
-				<div class="field-dayWrapper">
-					<label for="{{options.day.name}}">{{options.day.label}}</label>
-					<input class="field-dayBox" type="text" pattern="[0-9]*" name="{{options.day.name}}" value="{{options.day.value}}" id="{{options.day.name}}" min="0" max="31">
-				</div>
-			{% endif %}
-			{% if options.month %}
-				<div class="field-monthWrapper">
-					<label for="{{options.month.name}}">{{options.month.label}}</label>
-					<input class="field-monthBox" type="text" pattern="[0-9]*" name="{{options.month.name}}" value="{{options.month.value}}" id="{{options.month.name}}" min="0" max="12">
-				</div>
-			{% endif %}
-			{% if options.year %}
-				<div class="field-yearWrapper">
-					<label for="{{options.year.name}}">{{options.year.label}}</label>
-					<input class="field-yearBox" type="text" pattern="[0-9]*" name="{{options.year.name}}" value="{{options.year.valye}}" id="{{options.year.name}}" min="0" max="2050">
-				</div>
-			{% endif %}
-		</fieldset>
-	</div>
+<div class="field {% if options.error %}field-hasError{% endif %}">
+  <fieldset>
+    <legend>
+      <span class="field-legend">{{legend}}</span>
+      {% if options.hint %}
+        <span class="field-hint">{{options.hint}}</span>
+      {% endif %}
+      {% if options.error %}
+        <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+      {% endif %}
+    </legend>
+    {% if options.day %}
+      <div class="field-dayWrapper">
+        <label for="{{options.day.name}}">{{options.day.label}}</label>
+        <input class="field-dayBox" type="text" pattern="[0-9]*" name="{{options.day.name}}" value="{{options.day.value}}" id="{{options.day.name}}" min="0" max="31">
+      </div>
+    {% endif %}
+    {% if options.month %}
+      <div class="field-monthWrapper">
+        <label for="{{options.month.name}}">{{options.month.label}}</label>
+        <input class="field-monthBox" type="text" pattern="[0-9]*" name="{{options.month.name}}" value="{{options.month.value}}" id="{{options.month.name}}" min="0" max="12">
+      </div>
+    {% endif %}
+    {% if options.year %}
+      <div class="field-yearWrapper">
+        <label for="{{options.year.name}}">{{options.year.label}}</label>
+        <input class="field-yearBox" type="text" pattern="[0-9]*" name="{{options.year.name}}" value="{{options.year.valye}}" id="{{options.year.name}}" min="0" max="2050">
+      </div>
+    {% endif %}
+  </fieldset>
+</div>
 {% endmacro %}
 
 {% macro errorSummary(heading, errors) %}
-	<div tabindex="0" role="alert" class="errorSummary {% if not errors %}errorSummary-isHidden{%endif%}">
-		{% if errors %}
-			{{headings.h2(heading)}}
-			<ul>
-				{% for error in errors %}
-					<li><a href="#{{error.fieldName}}">{{error.message}}</a></li>
-				{% endfor %}
-			</ul>
-		{% endif %}
-	</div>
+<div tabindex="0" role="alert" class="errorSummary {% if not errors %}errorSummary-isHidden{%endif%}">
+  {% if errors %}
+    {{headings.h2(heading)}}
+    <ul>
+      {% for error in errors %}
+        <li><a href="#{{error.fieldName}}">{{error.message}}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
 {% endmacro %}
 
 
