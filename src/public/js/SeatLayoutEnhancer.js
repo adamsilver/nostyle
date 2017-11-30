@@ -6,11 +6,11 @@ function SeatLayoutEnhancer() {
 }
 
 SeatLayoutEnhancer.prototype.onCheckboxFocus = function(e) {
-	$(e.target).parents('.plane-seat').addClass('plane-seat-isFocussed');
+	$(e.target).parents('.plane-seat').addClass('plane-seat-isFocused');
 };
 
 SeatLayoutEnhancer.prototype.onCheckboxBlur = function(e) {
-	$(e.target).parents('.plane-seat').removeClass('plane-seat-isFocussed');
+	$(e.target).parents('.plane-seat').removeClass('plane-seat-isFocused');
 };
 
 SeatLayoutEnhancer.prototype.check = function(checkbox) {

@@ -5,21 +5,12 @@
 {% import "macros/form-elements.html" as formElements %}
 
 {% block mainContent %}
-	{{formElements.selectBox('menu', 'Menu',[{
-		text: 'Archive',
+	{{formElements.selectBox('fruit', 'Fruit',[{
+		text: 'Bananas',
 		value: ''
 	}, {
-		text: 'Argentia',
+		text: 'Apples',
 		value: 'Argentia'
-	}, {
-		text: 'Brazil',
-		value: 'Brazil'
-	}, {
-		text: 'France',
-		value: 'France'
-	}, {
-		text: 'Germany',
-		value: 'Germany'
 	}])}}
 
 {% endblock mainContent %}

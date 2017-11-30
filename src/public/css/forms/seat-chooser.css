@@ -78,6 +78,6 @@
     color: white;
 }
 
-.enhanced .plane-seat-isFocussed label {
+.enhanced .plane-seat-isFocused label {
   border: 3px solid #ffbf47;
 }
