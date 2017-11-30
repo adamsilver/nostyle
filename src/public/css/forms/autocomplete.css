@@ -91,7 +91,7 @@
 }
 
 .autocomplete-option:hover,
-.autocomplete-option-isActive {
+.autocomplete-option[aria-selected="true"] {
     background-color: #005EA5;
     border-color: #005EA5;
     color: white;

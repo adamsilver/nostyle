@@ -275,11 +275,9 @@ Autocomplete.prototype.getNextOption = function() {
 Autocomplete.prototype.highlightOption = function(option) {
 	if(this.activeOptionId) {
 		var activeOption = this.getOptionById(this.activeOptionId);
-		activeOption.removeClass('autocomplete-option-isActive');
 		activeOption.attr('aria-selected', 'false');
 	}
 
-	option.addClass('autocomplete-option-isActive');
 	option.attr('aria-selected', 'true');
 
 	if(!this.isElementVisible(option.parent(), option)) {
