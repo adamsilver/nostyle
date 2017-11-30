@@ -48,6 +48,11 @@
 }*/
 
 .enhanced .plane-seat label {
+	padding: 0;
+	background: none;
+}
+
+.enhanced .plane-seatNumber {
 	border-radius: 5px;
 	margin: 5px 1px 3px 0px;
 	border: 3px solid #DDDDDD;
@@ -55,29 +60,28 @@
 	width: 1.3em;
 	padding: 0.3em;
 	text-align: center;
+	display: block;
+	background-color: #eee;
 }
 
-.enhanced .plane-seat-isTaken label {
+.enhanced label:hover .plane-seatNumber {
+	border-color: #ddd;
+	background-color: #ddd;
+}
+
+.enhanced .plane-seat [type="checkbox"]:focus + .plane-seatNumber {
+	border: 3px solid #ffbf47;
+}
+
+.enhanced .plane-seat [type="checkbox"]:checked + .plane-seatNumber {
+	background-color: #005EA5;
+  border-color: #005EA5;
+  color: white;
+}
+
+.enhanced .plane-seat [type="checkbox"]:disabled + .plane-seatNumber {
 	text-decoration: line-through;
 	background-color: #f5f5f5;
 	border-color: #f5f5f5;
 	color: #ccc;
-}
-
-.enhanced .plane-seat label:hover {
-	border-color: #ddd;
-}
-
-.enhanced .plane-seat-isTaken label:hover {
-	border-color: #f5f5f5;
-}
-
-.enhanced .plane-seat-isSelected label {
-	background-color: #005EA5;
-    border-color: #005EA5;
-    color: white;
-}
-
-.enhanced .plane-seat-isFocused label {
-  border: 3px solid #ffbf47;
 }

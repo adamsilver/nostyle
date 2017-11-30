@@ -144,7 +144,7 @@
                 id="{{choice.id}}"
                 {% if choice.disabled %}disabled{% endif%}
                 {% if choice.checked %}checked{% endif%}>
-              {{choice.label | safe}}
+              <span class="plane-seatNumber">{{choice.label | safe}}</span>
             </label>
           </div>
         {% endfor %}
