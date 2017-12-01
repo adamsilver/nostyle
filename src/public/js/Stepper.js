@@ -31,7 +31,7 @@ Stepper.prototype.createDecrementButton = function() {
 };
 
 Stepper.prototype.createIncrementButton = function() {
-	this.incrementButton = $('<button aria-label="'+this.options.incrementLabel+'" class="stepper-incrementButton" type="button">&plus;</button>');
+	this.incrementButton = $('<button aria-label="'+this.options.incrementLabel+'" class="stepper-incrementButton" type="button">&#43;</button>');
 	this.wrapper.append(this.incrementButton);
 };
 

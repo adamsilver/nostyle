@@ -2,7 +2,7 @@
 
 {% macro textBox(name, label, type='text', options) %}
 <div class="field {% if options.error %}field-hasError{%endif-%} {% if options.modifierClasses %}{{options.modifierClasses}}{% endif %}">
-  <label for="{% if options.id %}{{options.id}}{%else%}{{name}}{%endif%}">
+  <label for="{% if options.id %}{{options.id}}{%else%}{{name}}{%endif%}" {% if options.labelId %}id="{{options.labelId}}"{% endif %}>
     <span class="field-label">{{label}}</span>
     {%- if options.hint %}
       <span class="field-hint">{{ options.hint }}</span>
