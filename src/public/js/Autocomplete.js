@@ -187,7 +187,6 @@ Autocomplete.prototype.selectOption = function() {
 
 Autocomplete.prototype.selectSuggestion = function(suggestion) {
 	var value = suggestion.attr('data-option-value');
-	this.textBox.val(value);
 	this.setValue(value);
 	this.hideMenu();
 	this.focusTextBox();
