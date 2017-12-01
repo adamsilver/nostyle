@@ -80,32 +80,18 @@ Autocomplete.prototype.addSuggestionEvents = function() {
 Autocomplete.prototype.onTextBoxKeyUp = function(e) {
 	switch (e.keyCode) {
 		case this.keys.esc:
-			// we ignore when users presses escape
-			break;
 		case this.keys.up:
-			// we ignore when the user presses up when on textbox
-			break;
 		case this.keys.left:
-			// we ignore when the user presses left when on textbox
-			break;
 		case this.keys.right:
-			// we ignore when the user presses right when on textbox
+		case this.keys.space:
+		case this.keys.enter:
+			// ignore these keys otherwise
+			// the menu will show briefly
 			break;
 		case this.keys.down:
-			// we want to handle this one
 			this.onTextBoxDownPressed(e);
 			break;
-		case this.keys.space:
-			// ignore this because otherwise the
-			// the menu will show again.
-			break;
-		case this.keys.enter:
-			// we ignore when the user presses enter here,
-			// otherwise the menu will show briefly before
-			// submission completes
-			break;
 		default:
-			// show suggestion
 			this.onTextBoxType(e);
 	}
 };
@@ -220,7 +206,7 @@ Autocomplete.prototype.onTextBoxDownPressed = function(e) {
 		option = this.getFirstOption();
 		this.highlightOption(option);
 	} else {
-		options = this.getOptions(this.textBox.val().trim());
+		options = this.getOptions(value);
 		if(options.length > 0) {
 			this.buildMenu(options);
 			this.showMenu();
