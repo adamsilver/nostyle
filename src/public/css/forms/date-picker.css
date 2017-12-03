@@ -1,4 +1,5 @@
-.datepicker [type=text] {
+.datepicker [type=text],
+.datepicker [type=date] {
 	max-width: 10em;
 	margin-right: 10px;
 	vertical-align: top;

@@ -273,6 +273,7 @@ select:focus {
     width: 8em;
 }
 
-#tdate {
+#tdate,
+#date {
     width: 10em;
 }

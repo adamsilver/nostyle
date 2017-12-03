@@ -23,7 +23,9 @@
 
 {% block mainContent %}
 
-	{{formElements.textBox('date', 'Date', type='date')}}
+	{{formElements.textBox('date', 'Date', type='date', {
+		placeholder: 'DD/MM/YYYY'
+	})}}
 
 	<p><a href="http://google.co.uk">Raise issue</a></p>
 
