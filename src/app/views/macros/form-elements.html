@@ -189,9 +189,9 @@
 {% endmacro %}
 
 {% macro errorSummary(heading, errors) %}
-<div tabindex="0" role="alert" class="errorSummary {% if not errors %}errorSummary-isHidden{%endif%}">
+<div tabindex="-1" role="alert" class="errorSummary {% if not errors %}errorSummary-isHidden{%endif%}" aria-labelledby="errorSummary-heading">
   {% if errors %}
-    {{headings.h2(heading)}}
+    {{headings.h2(heading, { id: 'errorSummary-heading' })}}
     <ul>
       {% for error in errors %}
         <li><a href="#{{error.fieldName}}">{{error.message}}</a></li>

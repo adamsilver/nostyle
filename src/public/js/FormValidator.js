@@ -30,7 +30,7 @@ FormValidator.prototype.showSummary = function () {
 };
 
 FormValidator.prototype.getSummaryHtml = function() {
-  var html = '<h2>Fix the following errors</h2>';
+  var html = '<h2>There\'s a problem</h2>';
   html += '<ul>';
   for (var i = 0, j = this.errors.length; i < j; i++) {
     var error = this.errors[i];

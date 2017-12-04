@@ -2,6 +2,6 @@
 	<h1>{{text}}</h1>
 {% endmacro %}
 
-{% macro h2(text) %}
-	<h2>{{text}}</h2>
+{% macro h2(text, options) %}
+	<h2 {% if options.id %}id="{{options.id}}"{%endif%}>{{text}}</h2>
 {% endmacro %}

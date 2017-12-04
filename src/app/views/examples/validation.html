@@ -24,7 +24,7 @@
 			method: function(field) {
 				return field.value.trim().length > 0; 
 			},
-			message: 'Enter notes'
+			message: 'Enter notes.'
 		}])
 	</script>
 {% endblock pageScript %}
@@ -40,6 +40,8 @@
 	{{navigation.breadcrumb([{
 		text: 'Validation'
 	}])}}
+	
+	{{headings.h1('Page title')}}
 
 	{{formElements.errorSummary("There's a problem", [{
 		fieldName: 'email',
@@ -61,7 +63,6 @@
 		message: 'Choose a country.'
 	}])}}
 
-	{{headings.h1('Page title')}}
 
 	<form novalidate>
 		{{formElements.textBox('email', 'Email address', {error: 'Enter your email address.'})}}
