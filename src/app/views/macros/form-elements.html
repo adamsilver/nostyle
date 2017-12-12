@@ -8,7 +8,7 @@
       <span class="field-hint">{{ options.hint }}</span>
     {% endif %}
     {%- if options.error %}
-      <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
     {% endif %}
   </label>
   <input type="{{type}}" id="{% if options.id %}{{options.id}}{%else%}{{name}}{%endif%}" name="{{name}}" value="{{options.value}}" {%- if options.attributes -%}{{options.attributes | safe}}{%endif%} {% if options.placeholder %}placeholder="{{options.placeholder}}"{%endif%} {% if options.error %}aria-invalid="true"{%endif%}>
@@ -24,7 +24,7 @@
       <span class="field-hint">{{options.hint}}</span>
     {% endif %}
     {% if options.error %}
-      <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
     {% endif %}
   </label>
   <input type="file" id="{{name}}" name="{{name}}" value="{{options.value}}" {% if options.multiple %}multiple{%endif%} {% if options.error %}aria-invalid="true"{%endif%}>
@@ -39,7 +39,7 @@
       <span class="field-hint">{{options.hint}}</span>
     {% endif %}
     {%- if options.error %}
-      <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
     {% endif %}
   </label>
   <textarea id="{{name}}" name="{{name}}" {% if options.error %}aria-invalid="true"{%endif%}>{{options.value}}</textarea>
@@ -54,7 +54,7 @@
         <span class="field-hint">{{options.hint}}</span>
       {% endif %}
       {% if options.error %}
-        <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+        <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
       {% endif %}
     </label>
     <select id="{{name}}" name="{{name}}" {% if options.error %}aria-invalid="true"{%endif%}>
@@ -74,7 +74,7 @@
         <span class="field-hint">{{options.hint}}</span>
       {% endif %}
       {% if options.error %}
-        <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+        <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
       {% endif %}
     </legend>
     {% for choice in choices %}
@@ -98,7 +98,7 @@
         <span class="field-hint">{{options.hint}}</span>
       {% endif %}
       {% if options.error %}
-        <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+        <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
       {% endif %}
     </legend>
     {% for choice in choices %}
@@ -129,7 +129,7 @@
         <span class="field-hint">{{options.hint | safe}}</span>
       {% endif %}
       {% if options.error %}
-        <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+        <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
       {% endif %}
     </legend>
     {% for row in rows %}
@@ -163,7 +163,7 @@
         <span class="field-hint">{{options.hint}}</span>
       {% endif %}
       {% if options.error %}
-        <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+        <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
       {% endif %}
     </legend>
     {% if options.day %}
