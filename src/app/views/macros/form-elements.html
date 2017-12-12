@@ -11,7 +11,7 @@
       <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
     {% endif %}
   </label>
-  <input type="{{type}}" id="{% if options.id %}{{options.id}}{%else%}{{name}}{%endif%}" name="{{name}}" value="{{options.value}}" {%- if options.attributes -%}{{options.attributes | safe}}{%endif%} {% if options.placeholder %}placeholder="{{options.placeholder}}"{%endif%}>
+  <input type="{{type}}" id="{% if options.id %}{{options.id}}{%else%}{{name}}{%endif%}" name="{{name}}" value="{{options.value}}" {%- if options.attributes -%}{{options.attributes | safe}}{%endif%} {% if options.placeholder %}placeholder="{{options.placeholder}}"{%endif%} {% if options.error %}aria-invalid="true"{%endif%}>
 </div>
 {% endmacro %}
 
@@ -27,7 +27,7 @@
       <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
     {% endif %}
   </label>
-  <input type="file" id="{{name}}" name="{{name}}" value="{{options.value}}" {% if options.multiple %}multiple{%endif%}>
+  <input type="file" id="{{name}}" name="{{name}}" value="{{options.value}}" {% if options.multiple %}multiple{%endif%} {% if options.error %}aria-invalid="true"{%endif%}>
 </div>
 {% endmacro %}
 
@@ -42,7 +42,7 @@
       <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
     {% endif %}
   </label>
-  <textarea id="{{name}}" name="{{name}}">{{options.value}}</textarea>
+  <textarea id="{{name}}" name="{{name}}" {% if options.error %}aria-invalid="true"{%endif%}>{{options.value}}</textarea>
 </div>
 {% endmacro %}
 
@@ -57,7 +57,7 @@
         <span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
       {% endif %}
     </label>
-    <select id="{{name}}" name="{{name}}">
+    <select id="{{name}}" name="{{name}}" {% if options.error %}aria-invalid="true"{%endif%}>
       {% for choice in choices %}
         <option value="{{choice.value}}" {% if choice.selected%}selected{% endif %}>{{choice.text}}</option>
       {% endfor %}
@@ -67,7 +67,7 @@
 
 {% macro radioButtons(name, legend, choices, options) %}
 <div class="field {% if options.error%}field-hasError{% endif %}">
-  <fieldset>
+  <fieldset {% if options.error %}aria-invalid="true"{%endif%}>
     <legend>
       <span class="field-legend">{{legend}}</span>
       {% if options.hint %}
@@ -91,7 +91,7 @@
 
 {% macro checkboxes(name, legend, choices, options) %}
 <div class="field {% if options.error%}field-hasError{% endif %}">
-  <fieldset>
+  <fieldset {% if options.error %}aria-invalid="true"{%endif%}>
     <legend>
       <span class="field-legend">{{legend}}</span>
       {% if options.hint %}
@@ -122,7 +122,7 @@
 
 {% macro seats(name, legend, rows, options) %}
 <div class="field {% if options.error%}field-hasError{% endif %}">
-  <fieldset>
+  <fieldset {% if options.error %}aria-invalid="true"{%endif%}>
     <legend>
       <span class="field-legend">{{legend}}</span>
       {% if options.hint %}
@@ -156,7 +156,7 @@
 
 {% macro memorableDateField(legend, options) %}
 <div class="field {% if options.error %}field-hasError{% endif %}">
-  <fieldset>
+  <fieldset {% if options.error %}aria-invalid="true"{%endif%}>
     <legend>
       <span class="field-legend">{{legend}}</span>
       {% if options.hint %}

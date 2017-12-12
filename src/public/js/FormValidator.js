@@ -67,20 +67,24 @@ FormValidator.prototype.showInlineErrors = function() {
 };
 
 FormValidator.prototype.showInlineError = function (error) {
-  var errorSpan = '<span class="field-error"><svg width="1.8rem" height="1.8rem"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg>'+error.message+'</span>';
-  var fieldContainer = $("#" + error.fieldName).parents(".field");
+  var errorSpan = '<span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg>'+error.message+'</span>';
+  var control = $("#" + error.fieldName);
+  var fieldContainer = control.parents(".field");
   var label = fieldContainer.find('label');
   var legend = fieldContainer.find("legend");
   fieldContainer.find(".field-error").remove();
   if(legend.length) {
     legend.append(errorSpan);
+    fieldContainer.find('fieldset').attr('aria-invalid', 'true');
   } else {
     label.append(errorSpan);
+    control.attr('aria-invalid', 'true');
   }
 };
 
 FormValidator.prototype.removeInlineErrors = function () {
   $(this.form).find(".field-error").remove();
+  $(this.form).find(".field [aria-invalid]").attr('aria-invalid', 'false');
 };
 
 FormValidator.prototype.addValidator = function(fieldName, rules) {

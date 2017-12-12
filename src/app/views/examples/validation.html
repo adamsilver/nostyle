@@ -25,7 +25,13 @@
 				return field.value.trim().length > 0; 
 			},
 			message: 'Enter notes.'
-		}])
+		}]);
+		validator.addValidator('like', [{
+			method: function(field) {
+				return field.value.trim().length > 0; 
+			},
+			message: 'Select your favourite item.'
+		}]);
 	</script>
 {% endblock pageScript %}
 
@@ -73,10 +79,12 @@
 
 		{{formElements.radioButtons('like', 'What do you like the most?', [{
 			label: 'Chocolate',
-			id: 'like'
+			id: 'like',
+			value: 'Chocolate'
 		}, {
 			label: 'Beer',
-			id: 'like1'
+			id: 'like1',
+			value: 'Beer'
 		}], {error: 'Select your favourite item.'})}}
 
 		{{formElements.checkboxes('colours', 'Favourite colours', [{
