@@ -1,12 +1,12 @@
 function SearchForm() {
 	this.header = $('header');
 	this.form = $('.searchForm');
-	this.createButton();
 	this.form.addClass('hidden');
+	this.createButton();
 }
 
 SearchForm.prototype.createButton = function() {
-	this.button = $('<button type="button" aria-haspopup="true" aria-expanded="false"><img src="/public/img/magnifying-glass.png" width="20" height="20"></button>');
+	this.button = $('<button type="button" aria-haspopup="true" aria-expanded="false"><img src="/public/img/magnifying-glass.png" width="20" height="20" alt="Search products"></button>');
 	this.button.on('click', $.proxy(this, 'onButtonClick'));
 	this.header.append(this.button);
 };

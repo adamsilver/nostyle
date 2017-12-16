@@ -9,12 +9,14 @@
 	<header>
 		<div>Logo</div>
 	</header>
-	<form class="searchForm">
-		{{formElements.textBox('search', 'Search products', type='search', {
-			hint: 'For example, “black wallet”'
-		})}}
-		{{buttons.primaryButton('Search')}}
-	</form>
+	<div role="search">
+		<form class="searchForm">
+			{{formElements.textBox('search', 'Search products', type='search', {
+				hint: 'For example, “black wallet”'
+			})}}
+			{{buttons.primaryButton('Search')}}
+		</form>
+	</div>
 {% endblock header %}
 
 {% block pageCss %}
@@ -46,7 +48,6 @@
 			border-bottom: 2px solid #000;
 			background-color: #ddd;
 		}
-
 	</style>
 {% endblock pageCss %}
 
