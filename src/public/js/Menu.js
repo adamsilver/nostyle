@@ -37,13 +37,11 @@ Menu.prototype.checkMode = function(mq) {
 Menu.prototype.enableSmallMode = function() {
 	this.container.prepend(this.menuButton);
 	this.hideMenu();
-	// this.menu.attr('role', 'menu');
 };
 
 Menu.prototype.enableBigMode = function() {
 	this.menuButton.detach();
 	this.showMenu();
-	// this.menu.attr('role', 'menubar');
 };
 
 Menu.prototype.hideMenu = function() {

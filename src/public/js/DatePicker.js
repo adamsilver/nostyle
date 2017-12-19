@@ -62,7 +62,7 @@ DatePicker.prototype.setupOptions = function(options) {
 };
 
 DatePicker.prototype.getCalendarHtml = function(year, month) {
-	var html = '<div class="'+this.calendarClass+'-calendar" aria-label="date picker" role="dialog">';
+	var html = '<div class="'+this.calendarClass+'-calendar" aria-label="date picker" role="group">';
 	html +=		'<div class="'+this.calendarClass+'-actions">';
 	html +=			'<button aria-label="Previous month" type="button" class="'+this.calendarClass+'-back"><svg focusable="false" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17" width="1em" height="1em"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></button>';
 	html += 		'<div role="status" aria-live="polite" aria-atomic="true" class="'+this.calendarClass+'-title">';
@@ -273,11 +273,6 @@ DatePicker.prototype.onGridKeyDown = function(e) {
 		case this.keys.space:
 		case this.keys.enter:
 			this.onDayUpSpacePressed(e);
-			break;
-		case this.keys.tab:
-			if(!e.shiftKey) {
-				this.hide();
-			}
 			break;
 	}
 };
