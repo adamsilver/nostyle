@@ -26,12 +26,18 @@ Stepper.prototype.setOptions = function(options) {
 };
 
 Stepper.prototype.createDecrementButton = function() {
-	this.decrementButton = $('<button aria-label="'+this.options.decrementLabel+'" class="stepper-decrementButton" type="button">&minus;</button>');
+	this.decrementButton = $('<button class="stepper-decrementButton" type="button" aria-label="'+this.options.decrementLabel+'">&minus;</button>');
+	if(this.options.labelId) {
+		this.decrementButton.attr('aria-describedby', this.options.labelId);
+	}
 	this.wrapper.prepend(this.decrementButton);
 };
 
 Stepper.prototype.createIncrementButton = function() {
-	this.incrementButton = $('<button aria-label="'+this.options.incrementLabel+'" class="stepper-incrementButton" type="button">&#43;</button>');
+	this.incrementButton = $('<button class="stepper-incrementButton" type="button" aria-label="'+this.options.incrementLabel+'">&#43;</button>');
+	if(this.options.labelId) {
+		this.incrementButton.attr('aria-describedby', this.options.labelId);
+	}
 	this.wrapper.append(this.incrementButton);
 };
 

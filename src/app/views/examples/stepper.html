@@ -7,16 +7,13 @@
 {% block pageScript %}
 	<script>
 		new Stepper(document.getElementById('adults'), {
-			decrementLabel: 'Decrement adults aged 16 and over',
-			incrementLabel: 'Increment adults aged 16 and over'
+			labelId: 'adults-label'
 		});
 		new Stepper(document.getElementById('children'), {
-			decrementLabel: 'Decrement children aged between 2 and 16 and over',
-			incrementLabel: 'Increment children aged 16 and over'
+			labelId: 'children-label'
 		});
 		new Stepper(document.getElementById('infants'), {
-			decrementLabel: 'Decrement infants aged 16 and over',
-			incrementLabel: 'Increment infants aged 16 and over'
+			labelId: 'infants-label'
 		});
 	</script>
 {% endblock pageScript %}
@@ -27,22 +24,18 @@
 {% block mainContent %}
 	{{formElements.textBox('adults', 'How many people aged 16 and over are flying?', type='number', {
 		value: '0',
-		attributes: 'min="0" max="9"'
+		attributes: 'min="0" max="9"',
+		labelId: 'adults-label'
 	})}}
 	{{formElements.textBox('children', 'How many children, aged between 2 and 15 years old, are flying?', type='number', {
 		value: '0',
-		attributes: 'min="0" max="9"'
+		attributes: 'min="0" max="9"',
+		labelId: 'children-label'
 	})}}
 	{{formElements.textBox('infants', 'How many infants, under 2 years old, are flying?', type='number', {
 		value: '0',
-		attributes: 'min="0" max="9"'
+		attributes: 'min="0" max="9"',
+		labelId: 'infants-label'
 	})}}
-
-	<fieldset>
-    <legend id="under-two">How many infants, under two years old, are traveling?</legend>
-    <button type="button" aria-label="Decrement">&minus;</button>
-    <input type="number" id="adults" name="adults" aria-labelledby="under-two">
-    <button type="button" aria-label="Increment">&plus;</button>
-</fieldset>
 
 {% endblock mainContent %}
