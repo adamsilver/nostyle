@@ -1,6 +1,5 @@
 .menu {
-	margin-bottom: 20px;
-	padding: 20px 0;
+	padding: 0 0 20px;
 	position: relative;
 }
 
@@ -12,22 +11,22 @@
 	color: #222;
 	font-size: 1.2em;
 	padding: 7px 16px;
-	border-left: 1px solid #bbb;
-	border-top: 1px solid #bbb;
-	border-bottom: 3px solid #bbb;
-	border-right: 3px solid #bbb;
+	border-left: 1px solid #aaa;
+	border-top: 1px solid #aaa;
+	border-bottom: 3px solid #aaa;
+	border-right: 1px solid #aaa;
 	border-radius: 4px;
 }
 
 .menu-button:active {
-	border-left: 3px solid #bbb;
-	border-top: 3px solid #bbb;
-	border-bottom: 1px solid #bbb;
-	border-right: 1px solid #bbb;
+	border-left: 1px solid #aaa;
+	border-top: 3px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	border-right: 1px solid #aaa;
 }
 
 .menu-button:hover {
-	background-color: #bbb;
+	background-color: #aaa;
 }
 
 .menu-button span {
@@ -49,13 +48,13 @@
 	margin-bottom: 4px;
 	border-left: 1px solid #bbb;
 	border-top: 1px solid #bbb;
-	border-bottom: 3px solid #bbb;
-	border-right: 3px solid #bbb;
+	border-bottom: 3px solid #aaa;
+	border-right: 1px solid #bbb;
 	border-radius: 4px;
 }
 
 [role=menuitem]:hover {
-	background-color: #bbb;
+	background-color: #aaa;
 }
 
 @media(min-width: 45em) {
@@ -69,12 +68,16 @@
 [role=menu] {
 	padding-top: 5px;
 	width: 10em;
-	position: absolute;
 	background-color: #fff;
 }
 
+.enhanced [role=menu] {
+	position: absolute;
+}
+
+
 @media(min-width: 45em) {
-	[role=menu] {
+	.enhanced [role=menu] {
 		border: none;
 		width: auto;
 		position: static;

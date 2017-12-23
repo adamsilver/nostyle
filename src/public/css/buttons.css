@@ -10,22 +10,22 @@
 	color: white;
 	font-size: 1.2em;
 	padding: 7px 16px;
-	border-left: 1px solid #005096;
-	border-top: 1px solid #005096;
-	border-bottom: 3px solid #005096;
-	border-right: 3px solid #005096;
+	border-left: 1px solid #004077;
+	border-top: 1px solid #004077;
+	border-bottom: 3px solid #004077;
+	border-right: 1px solid #004077;
 	border-radius: 4px;
 }
 
 .primaryButton:active {
-	border-left: 3px solid #005096;
-	border-top: 3px solid #005096;
-	border-bottom: 1px solid #005096;
-	border-right: 1px solid #005096;
+	border-left: 3px solid #004077;
+	border-top: 3px solid #004077;
+	border-bottom: 1px solid #004077;
+	border-right: 1px solid #004077;
 }
 
 .primaryButton:hover {
-	background-color: #005096;
+	background-color: #004077;
 }
 
 /**************************************
@@ -43,7 +43,7 @@
 	border-left: 1px solid #bbb;
 	border-top: 1px solid #bbb;
 	border-bottom: 3px solid #bbb;
-	border-right: 3px solid #bbb;
+	border-right: 1px solid #bbb;
 	border-radius: 4px;
 }
 
