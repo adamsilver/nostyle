@@ -104,21 +104,18 @@
 					id: 'size2'
 				}])}}
 
-				{{formElements.checkboxes('popularity', 'Popularity', [{
-					label: '5 stars',
-					id: 'popularity'
-				}, {
-					label: '4 stars',
-					id: 'popularity1'
+				{{formElements.radioButtons('rating', 'Average rating', [{
+					label: '4 stars and up',
+					id: 'popularity0'
 				},  {
-					label: '3 stars',
+					label: '3 stars and up',
+					id: 'popularity1'
+				}, {
+					label: '2 stars and up',
 					id: 'popularity2'
 				}, {
-					label: '2 stars',
+					label: '1 star and up',
 					id: 'popularity3'
-				}, {
-					label: '1 star',
-					id: 'popularity4'
 				}])}}
 
 			</form>
