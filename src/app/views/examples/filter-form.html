@@ -1,0 +1,99 @@
+{% extends 'layouts/raw.html' %}
+
+{% import "macros/form-elements.html" as formElements %}
+
+{% block mainContent %}
+	<div class="search">
+		<h1>T-shirts</h1>
+
+		<div class="filter">
+			<h2>Filters</h2>
+			<form>
+				
+				{{formElements.checkboxes('colours', 'Colour', [{
+					label: 'Red',
+					id: 'colours'
+				}, {
+					label: 'Blue',
+					id: 'colours1'
+				},  {
+					label: 'Green',
+					id: 'colours2'
+				}])}}
+
+				{{formElements.checkboxes('size', 'Size', [{
+					label: 'Small',
+					id: 'size'
+				}, {
+					label: 'Medium',
+					id: 'size1'
+				},  {
+					label: 'Large',
+					id: 'size2'
+				}])}}
+
+				{{formElements.checkboxes('popularity', 'Popularity', [{
+					label: '5 stars',
+					id: 'popularity'
+				}, {
+					label: '4 stars',
+					id: 'popularity1'
+				},  {
+					label: '3 stars',
+					id: 'popularity2'
+				}, {
+					label: '2 stars',
+					id: 'popularity3'
+				}, {
+					label: '1 star',
+					id: 'popularity4'
+				}])}}
+
+			</form>
+		</div>
+		<div class="results">
+			<h2>Products</h2>
+		</div>
+	</div>
+{% endblock mainContent %}
+
+{% block pageCss %}
+<style>
+	.search:after {
+	  visibility: hidden;
+	  display: block;
+	  font-size: 0;
+	  content: " ";
+	  clear: both;
+	  height: 0;
+	}
+
+	.filter {
+		float: left;
+		width: 20%;
+		padding-right: 5%;
+	}
+
+	.results {
+		float: left;
+		width: 75%;
+	}
+</style>
+{% endblock pageCss %}
+
+{% block pageScript %}
+<script>
+	function FilterCollapser(fieldset) {
+		this.fieldset = fieldset;
+		this.legend = this.fieldset.find('legend');
+		this.createButton();
+	}
+
+	FilterCollapser.prototype.createButton = function() {
+		this.legend.html('<button aria-expanded="false">'+this.legend.text()+'<svg viewBox="0 0 10 10" aria-hidden="true" focusable="false"><rect class="vert" height="8" width="2" y="1" x="4" /> <rect height="2" width="8" y="4" x="1" /></svg></button>');
+	};
+
+	new FilterCollapser($('fieldset:first'));
+
+</script>
+{% endblock pageScript %}

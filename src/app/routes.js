@@ -265,6 +265,10 @@ module.exports = function( express, app ){
 		res.render('examples/download-to-upload.html');
 	});
 
+	app.get('/examples/filter-form/', function( req, res ){
+		res.render( 'examples/filter-form.html');
+	} );
+
 	app.post('/examples/upload', upload.array( 'documents', 10 ), function( req, res ){
 		console.log(req.files);
 		res.render( 'examples/dropzone.html', { files: req.files } );
