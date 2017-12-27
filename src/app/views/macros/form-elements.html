@@ -94,7 +94,7 @@
 {% macro checkboxes(name, legend, choices, options) %}
 <div class="field {% if options.error%}field-hasError{% endif %}">
   <fieldset {% if options.error %}aria-invalid="true"{%endif%}>
-    <legend role="button">
+    <legend>
       <span class="field-legend">{{legend}}</span>
       {% if options.hint %}
         <span class="field-hint">{{options.hint}}</span>
