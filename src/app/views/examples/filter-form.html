@@ -2,6 +2,78 @@
 
 {% import "macros/form-elements.html" as formElements %}
 
+{% block pageCss %}
+<style>
+	.search:after {
+	  visibility: hidden;
+	  display: block;
+	  font-size: 0;
+	  content: " ";
+	  clear: both;
+	  height: 0;
+	}
+
+	.filter {
+		float: left;
+		width: 20%;
+		padding-right: 5%;
+	}
+
+	.filter h2 {
+		margin-bottom: 30px;
+	}
+
+	.results {
+		float: left;
+		width: 75%;
+	}
+
+	.filter .field {
+		margin-bottom: 0;
+	}
+
+	.filter .field-options {
+		margin-bottom: 30px;
+	}
+
+	.filter legend {
+		display: block;
+		width: 100%;
+	}
+
+	.filter button {
+		all: inherit;
+		border: 0;
+	  display: flex;
+	  justify-content: space-between;
+	  font-weight: bold;
+	}
+
+	.filter button svg {
+		height: 1.2em;
+  	margin-left: 0.5em;
+  	margin-top: 0.2em;
+	}
+
+	[aria-expanded="true"] .vert {
+	  display: none;
+	}
+
+	.filter button:focus svg {  
+    box-shadow: 0 0 1px 4px #ffbf47;
+	}
+
+</style>
+{% endblock pageCss %}
+
+{% block pageScript %}
+<script>
+	new FilterCollapser($('fieldset').eq(0));
+	new FilterCollapser($('fieldset').eq(1));
+	new FilterCollapser($('fieldset').eq(2));
+</script>
+{% endblock pageScript %}
+
 {% block mainContent %}
 	<div class="search">
 		<h1>T-shirts</h1>
@@ -56,44 +128,3 @@
 		</div>
 	</div>
 {% endblock mainContent %}
-
-{% block pageCss %}
-<style>
-	.search:after {
-	  visibility: hidden;
-	  display: block;
-	  font-size: 0;
-	  content: " ";
-	  clear: both;
-	  height: 0;
-	}
-
-	.filter {
-		float: left;
-		width: 20%;
-		padding-right: 5%;
-	}
-
-	.results {
-		float: left;
-		width: 75%;
-	}
-</style>
-{% endblock pageCss %}
-
-{% block pageScript %}
-<script>
-	function FilterCollapser(fieldset) {
-		this.fieldset = fieldset;
-		this.legend = this.fieldset.find('legend');
-		this.createButton();
-	}
-
-	FilterCollapser.prototype.createButton = function() {
-		this.legend.html('<button aria-expanded="false">'+this.legend.text()+'<svg viewBox="0 0 10 10" aria-hidden="true" focusable="false"><rect class="vert" height="8" width="2" y="1" x="4" /> <rect height="2" width="8" y="4" x="1" /></svg></button>');
-	};
-
-	new FilterCollapser($('fieldset:first'));
-
-</script>
-{% endblock pageScript %}

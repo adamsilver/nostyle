@@ -77,14 +77,16 @@
         <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
       {% endif %}
     </legend>
-    {% for choice in choices %}
-      <div class="field-radioButton">
-        <label for="{{choice.id}}">
-          <input type="radio" name="{{name}}" value="{{choice.value}}" id="{{choice.id}}" {% if choice.checked %}checked{% endif %}>
-          {{choice.label}}
-        </label>
-      </div>
-    {% endfor %}
+    <div class="field-options">
+      {% for choice in choices %}
+        <div class="field-radioButton">
+          <label for="{{choice.id}}">
+            <input type="radio" name="{{name}}" value="{{choice.value}}" id="{{choice.id}}" {% if choice.checked %}checked{% endif %}>
+            {{choice.label}}
+          </label>
+        </div>
+      {% endfor %}
+    </div>
   </fieldset>
 </div>
 {% endmacro %}
@@ -101,21 +103,23 @@
         <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
       {% endif %}
     </legend>
-    {% for choice in choices %}
-      <div class="field-checkbox">
-        <label for="{{choice.id}}">
-          <input
-            type="checkbox"
-            name="{{name}}"
-            value="{{choice.value}}"
-            id="{{choice.id}}"
-            {% if choice.disabled %}disabled{% endif%}
-            {% if choice.attributes %}{{choice.attributes | safe}}{%endif%}
-            {% if choice.checked %}checked{% endif%}>
-          {{choice.label}}
-        </label>
-      </div>
-    {% endfor %}
+    <div class="field-options">
+      {% for choice in choices %}
+        <div class="field-checkbox">
+          <label for="{{choice.id}}">
+            <input
+              type="checkbox"
+              name="{{name}}"
+              value="{{choice.value}}"
+              id="{{choice.id}}"
+              {% if choice.disabled %}disabled{% endif%}
+              {% if choice.attributes %}{{choice.attributes | safe}}{%endif%}
+              {% if choice.checked %}checked{% endif%}>
+            {{choice.label}}
+          </label>
+        </div>
+      {% endfor %}
+    </div>
   </fieldset>
 </div>
 {% endmacro %}
