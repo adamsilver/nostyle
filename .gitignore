@@ -6,3 +6,4 @@ npm-debug.log
 dist
 .env
 tmp-uploads
+src/public/css
