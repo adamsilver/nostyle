@@ -51,6 +51,17 @@ a:link, a:visited {
 	color: #0074D9;
 }
 
+@mixin clearfix {
+  &:after {
+    visibility: hidden;
+	  display: block;
+	  font-size: 0;
+	  content: " ";
+	  clear: both;
+	  height: 0;
+  }
+}
+
 .vh {
 	border: 0!important;
   clip: rect(0 0 0 0)!important;
