@@ -79,7 +79,7 @@ module.exports = function( grunt ){
 				length: 8
 			},
 			pub: {
-				src: [ 'dist/public/**/*' ]
+				src: [ 'dist/public/**/*', '!**/*.scss' ]
 			}
 		}
 	});
