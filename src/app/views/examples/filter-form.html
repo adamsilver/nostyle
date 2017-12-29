@@ -1,6 +1,7 @@
 {% extends 'layouts/raw.html' %}
 
 {% import "macros/form-elements.html" as formElements %}
+{% import "macros/buttons.html" as buttons %}
 
 {% block pageCss %}
 <style>
@@ -19,13 +20,22 @@
 		padding-right: 5%;
 	}
 
-	.filter h2 {
+	.search h2 {
 		margin-bottom: 30px;
 	}
 
 	.results {
 		float: left;
 		width: 75%;
+	}
+
+	.result {
+		float: left;
+		background-color: #eee;
+		height: 200px;
+		width: 200px;
+		margin-right: 20px;
+		margin-bottom: 20px;
 	}
 
 	.filter .field {
@@ -63,6 +73,25 @@
     box-shadow: 0 0 1px 4px #ffbf47;
 	}
 
+	.filter form {
+		position: relative;
+	}
+
+	.filter .secondaryButton:first-child {
+		position: sticky;
+		top: 0;
+		z-index: 2;
+		margin-bottom: 20px;
+		
+	}
+
+	.filter .secondaryButton:last-child {
+		position: sticky;
+		bottom: 0;
+		z-index: 2;
+		margin-top: 10px;
+	}
+
 </style>
 {% endblock pageCss %}
 
@@ -80,7 +109,9 @@
 
 		<div class="filter">
 			<h2>Filters</h2>
-			<form>
+			<form role="form">
+
+				{{buttons.secondaryButton('Apply filters')}}
 				
 				{{formElements.checkboxes('colours', 'Colour', [{
 					label: 'Red',
@@ -118,10 +149,29 @@
 					id: 'popularity3'
 				}])}}
 
+				{{buttons.secondaryButton('Apply filters')}}
+
+
+
 			</form>
 		</div>
 		<div class="results">
 			<h2>Products</h2>
+			<div class="result">
+			</div>
+			<div class="result">
+			</div>
+			<div class="result">
+			</div>
+			<div class="result">
+			</div>
+			<div class="result">
+			</div>
+			<div class="result">
+			</div>
+			<div class="result">
+			</div>
+
 		</div>
 	</div>
 {% endblock mainContent %}
