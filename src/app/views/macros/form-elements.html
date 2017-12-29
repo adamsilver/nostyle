@@ -1,7 +1,7 @@
 {% import "macros/headings.html" as headings %}
 
 {% macro textBox(name, label, type='text', options) %}
-<div class="field {% if options.error %}field-hasError{%endif-%} {% if options.modifierClasses %}{{options.modifierClasses}}{% endif %}">
+<div class="field {% if options.modifierClasses %}{{options.modifierClasses}}{% endif %}">
   <label for="{% if options.id %}{{options.id}}{%else%}{{name}}{%endif%}" {% if options.labelId %}id="{{options.labelId}}"{% endif %}>
     <span class="field-label">{{label}}</span>
     {%- if options.hint %}
@@ -17,7 +17,7 @@
 
 
 {% macro fileInput(name, label, options) %}
-<div class="field {% if options.error %}field-hasError{%endif-%}">
+<div class="field">
   <label for="{{name}}">
     <span class="field-label">{{label}}</span>
     {% if options.hint %}
@@ -32,7 +32,7 @@
 {% endmacro %}
 
 {% macro textarea(name, label, options) %}
-<div class="field {% if options.error %}field-hasError{%endif-%}">
+<div class="field">
   <label for="{{name}}">
     <span class="field-label">{{label}}</span>
     {%- if options.hint %}
@@ -47,7 +47,7 @@
 {% endmacro %}
 
 {% macro selectBox(name, label, choices, options) %}
-  <div class="field {% if options.error %}field-hasError{% endif %}">
+  <div class="field">
     <label for="{{name}}">
       <span class="field-label">{{label}}</span>
       {% if options.hint %}
@@ -66,46 +66,75 @@
 {% endmacro %}
 
 {% macro radioButtons(name, legend, choices, options) %}
-<div class="field {% if options.error%}field-hasError{% endif %}">
-  <fieldset {% if options.error %}aria-invalid="true"{%endif%}>
-    <legend>
-      <span class="field-legend">{{legend}}</span>
-      {% if options.hint %}
-        <span class="field-hint">{{options.hint}}</span>
-      {% endif %}
-      {% if options.error %}
-        <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
-      {% endif %}
-    </legend>
-    <div class="field-options">
-      {% for choice in choices %}
-        <div class="field-radioButton">
-          <label for="{{choice.id}}">
-            <input type="radio" name="{{name}}" value="{{choice.value}}" id="{{choice.id}}" {% if choice.checked %}checked{% endif %}>
-            {{choice.label}}
-          </label>
-        </div>
-      {% endfor %}
-    </div>
-  </fieldset>
-</div>
+<fieldset class="field" {% if options.error %}aria-invalid="true"{%endif%}>
+  <legend>
+    <span class="field-legend">{{legend}}</span>
+    {% if options.hint %}
+      <span class="field-hint">{{options.hint}}</span>
+    {% endif %}
+    {% if options.error %}
+      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+    {% endif %}
+  </legend>
+  <div class="field-options">
+    {% for choice in choices %}
+      <div class="field-radioButton">
+        <label for="{{choice.id}}">
+          <input type="radio" name="{{name}}" value="{{choice.value}}" id="{{choice.id}}" {% if choice.checked %}checked{% endif %}>
+          {{choice.label}}
+        </label>
+      </div>
+    {% endfor %}
+  </div>
+</fieldset>
 {% endmacro %}
 
 {% macro checkboxes(name, legend, choices, options) %}
-<div class="field {% if options.error%}field-hasError{% endif %}">
-  <fieldset {% if options.error %}aria-invalid="true"{%endif%}>
-    <legend>
-      <span class="field-legend">{{legend}}</span>
-      {% if options.hint %}
-        <span class="field-hint">{{options.hint}}</span>
-      {% endif %}
-      {% if options.error %}
-        <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
-      {% endif %}
-    </legend>
-    <div class="field-options">
-      {% for choice in choices %}
-        <div class="field-checkbox">
+<fieldset class="field" {% if options.error %}aria-invalid="true"{%endif%}>
+  <legend>
+    <span class="field-legend">{{legend}}</span>
+    {% if options.hint %}
+      <span class="field-hint">{{options.hint}}</span>
+    {% endif %}
+    {% if options.error %}
+      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+    {% endif %}
+  </legend>
+  <div class="field-options">
+    {% for choice in choices %}
+      <div class="field-checkbox">
+        <label for="{{choice.id}}">
+          <input
+            type="checkbox"
+            name="{{name}}"
+            value="{{choice.value}}"
+            id="{{choice.id}}"
+            {% if choice.disabled %}disabled{% endif%}
+            {% if choice.attributes %}{{choice.attributes | safe}}{%endif%}
+            {% if choice.checked %}checked{% endif%}>
+          {{choice.label}}
+        </label>
+      </div>
+    {% endfor %}
+  </div>
+</fieldset>
+{% endmacro %}
+
+{% macro seats(name, legend, rows, options) %}
+<fieldset class="field" {% if options.error %}aria-invalid="true"{%endif%}>
+  <legend>
+    <span class="field-legend">{{legend}}</span>
+    {% if options.hint %}
+      <span class="field-hint">{{options.hint | safe}}</span>
+    {% endif %}
+    {% if options.error %}
+      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
+    {% endif %}
+  </legend>
+  {% for row in rows %}
+    <div class="plane-row">
+      {% for choice in row.seats %}
+        <div class="plane-seat {{options.seatModifier}} {% if choice.disabled %}plane-seat-isTaken{% endif%}">
           <label for="{{choice.id}}">
             <input
               type="checkbox"
@@ -113,83 +142,46 @@
               value="{{choice.value}}"
               id="{{choice.id}}"
               {% if choice.disabled %}disabled{% endif%}
-              {% if choice.attributes %}{{choice.attributes | safe}}{%endif%}
               {% if choice.checked %}checked{% endif%}>
-            {{choice.label}}
+            <span class="plane-seatNumber">{{choice.label | safe}}</span>
           </label>
         </div>
       {% endfor %}
     </div>
-  </fieldset>
-</div>
-{% endmacro %}
-
-{% macro seats(name, legend, rows, options) %}
-<div class="field {% if options.error%}field-hasError{% endif %}">
-  <fieldset {% if options.error %}aria-invalid="true"{%endif%}>
-    <legend>
-      <span class="field-legend">{{legend}}</span>
-      {% if options.hint %}
-        <span class="field-hint">{{options.hint | safe}}</span>
-      {% endif %}
-      {% if options.error %}
-        <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
-      {% endif %}
-    </legend>
-    {% for row in rows %}
-      <div class="plane-row">
-        {% for choice in row.seats %}
-          <div class="plane-seat {{options.seatModifier}} {% if choice.disabled %}plane-seat-isTaken{% endif%}">
-            <label for="{{choice.id}}">
-              <input
-                type="checkbox"
-                name="{{name}}"
-                value="{{choice.value}}"
-                id="{{choice.id}}"
-                {% if choice.disabled %}disabled{% endif%}
-                {% if choice.checked %}checked{% endif%}>
-              <span class="plane-seatNumber">{{choice.label | safe}}</span>
-            </label>
-          </div>
-        {% endfor %}
-      </div>
-    {% endfor %}
-  </fieldset>
-</div>
+  {% endfor %}
+</fieldset>
 {% endmacro %}
 
 {% macro memorableDateField(legend, options) %}
-<div class="field {% if options.error %}field-hasError{% endif %}">
-  <fieldset {% if options.error %}aria-invalid="true"{%endif%}>
-    <legend>
-      <span class="field-legend">{{legend}}</span>
-      {% if options.hint %}
-        <span class="field-hint">{{options.hint}}</span>
-      {% endif %}
-      {% if options.error %}
-        <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
-      {% endif %}
-    </legend>
-    {% if options.day %}
-      <div class="field-dayWrapper">
-        <label for="{{options.day.name}}">{{options.day.label}}</label>
-        <input class="field-dayBox" type="text" pattern="[0-9]*" name="{{options.day.name}}" value="{{options.day.value}}" id="{{options.day.name}}" min="0" max="31">
-      </div>
+<fieldset class="field" {% if options.error %}aria-invalid="true"{%endif%}>
+  <legend>
+    <span class="field-legend">{{legend}}</span>
+    {% if options.hint %}
+      <span class="field-hint">{{options.hint}}</span>
     {% endif %}
-    {% if options.month %}
-      <div class="field-monthWrapper">
-        <label for="{{options.month.name}}">{{options.month.label}}</label>
-        <input class="field-monthBox" type="text" pattern="[0-9]*" name="{{options.month.name}}" value="{{options.month.value}}" id="{{options.month.name}}" min="0" max="12">
-      </div>
+    {% if options.error %}
+      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{options.error}}</span>
     {% endif %}
-    {% if options.year %}
-      <div class="field-yearWrapper">
-        <label for="{{options.year.name}}">{{options.year.label}}</label>
-        <input class="field-yearBox" type="text" pattern="[0-9]*" name="{{options.year.name}}" value="{{options.year.valye}}" id="{{options.year.name}}" min="0" max="2050">
-      </div>
-    {% endif %}
-  </fieldset>
-</div>
+  </legend>
+  {% if options.day %}
+    <div class="field-dayWrapper">
+      <label for="{{options.day.name}}">{{options.day.label}}</label>
+      <input class="field-dayBox" type="text" pattern="[0-9]*" name="{{options.day.name}}" value="{{options.day.value}}" id="{{options.day.name}}" min="0" max="31">
+    </div>
+  {% endif %}
+  {% if options.month %}
+    <div class="field-monthWrapper">
+      <label for="{{options.month.name}}">{{options.month.label}}</label>
+      <input class="field-monthBox" type="text" pattern="[0-9]*" name="{{options.month.name}}" value="{{options.month.value}}" id="{{options.month.name}}" min="0" max="12">
+    </div>
+  {% endif %}
+  {% if options.year %}
+    <div class="field-yearWrapper">
+      <label for="{{options.year.name}}">{{options.year.label}}</label>
+      <input class="field-yearBox" type="text" pattern="[0-9]*" name="{{options.year.name}}" value="{{options.year.valye}}" id="{{options.year.name}}" min="0" max="2050">
+    </div>
+  {% endif %}
+</fieldset>
 {% endmacro %}
 
 {% macro errorSummary(heading, errors) %}

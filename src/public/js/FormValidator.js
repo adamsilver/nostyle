@@ -75,7 +75,7 @@ FormValidator.prototype.showInlineError = function (error) {
   fieldContainer.find(".field-error").remove();
   if(legend.length) {
     legend.append(errorSpan);
-    fieldContainer.find('fieldset').attr('aria-invalid', 'true');
+    fieldContainer.attr('aria-invalid', 'true');
   } else {
     label.append(errorSpan);
     control.attr('aria-invalid', 'true');
@@ -84,7 +84,7 @@ FormValidator.prototype.showInlineError = function (error) {
 
 FormValidator.prototype.removeInlineErrors = function () {
   $(this.form).find(".field-error").remove();
-  $(this.form).find(".field [aria-invalid]").attr('aria-invalid', 'false');
+  $(this.form).find("[aria-invalid]").attr('aria-invalid', 'false');
 };
 
 FormValidator.prototype.addValidator = function(fieldName, rules) {
