@@ -266,14 +266,29 @@ module.exports = function( express, app ){
 	});
 
 	app.get('/examples/filter-form/', function( req, res ){
+		var nunjucks = require('nunjucks');
+
+		var products = [1, 2, 3];
+
+		if(req.query.color) {
+			products = [1, 2, 3, 4, 5, 6];
+		}
+		if(req.query.color && req.query.rating) {
+			products = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+		}
+
+		var query = (Object.keys(req.query).length > 0) ? req.query : { color: 'red' };
 		if(req.headers['x-requested-with'] === 'XMLHttpRequest') {
 			res.json({
-				query: req.query,
-				// query: {'rating': '3', 'color': 'green'},
-				products: [{}, {}]
+				query: query,
+				productsHtml: JSON.stringify(nunjucks.render('partials/products.html', {
+					products: products
+				}))
 			});
 		} else {
-			res.render( 'examples/filter-form.html');
+			res.render( 'examples/filter-form.html', {
+				products: products
+			});
 		}
 	} );
 
