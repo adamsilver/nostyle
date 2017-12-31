@@ -15,11 +15,15 @@
 		// alert(document.forms[0].submit());
 		// form.submit();
 
-		// history.pushState('adam', 'test', '/blah?yeh=1');
+		history.pushState('adam', 'test', '/blah?yeh=1');
 		// $('h1').html('yeh');
+
+		$('.product:first').remove();
+
 	});
 
 	window.addEventListener('popstate', function(e) {
+		// make ajax request now otherwise it breaks
 	});
 
 	// var form = $('.filter form');
