@@ -5,16 +5,40 @@
 
 {% block pageScript %}
 <script>
-	new FilterCollapser($('fieldset').eq(0));
-	new FilterCollapser($('fieldset').eq(1));
-	new FilterCollapser($('fieldset').eq(2));
+	// new FilterCollapser($('fieldset').eq(0));
+	// new FilterCollapser($('fieldset').eq(1));
+	// new FilterCollapser($('fieldset').eq(2));
+
+	var form = $('.filter form');
+
+	$('.filter input').on('change', function() {
+		// alert(document.forms[0].submit());
+		// form.submit();
+
+		// history.pushState('adam', 'test', '/blah?yeh=1');
+		// $('h1').html('yeh');
+	});
+
+	window.addEventListener('popstate', function(e) {
+	});
+
+	// var form = $('.filter form');
+
+	// $('[type=checkbox]').on('click', function() {
+	// 	form.submit();
+	// });
+
+	// $('[type=radio]').on('click', function() {
+	// 	form.submit();
+	// });
+
 </script>
 {% endblock pageScript %}
 
 {% block mainContent %}
 		<h1>Wallets</h1>
 
-		<aside class="filter" aria-labelledby="filter-heading">
+		<div class="filter" aria-labelledby="filter-heading">
 			<h2 id="filter-heading">Filter</h2>
 			<!-- <div class="current-filters">
 				<h3>Current filters</h3>
@@ -25,50 +49,46 @@
 
 		
 
-			<form role="form" method="get">
+			<form role="form" method="get" action="/examples/filter-form">
 
 				<!-- {{buttons.secondaryButton('Apply filters')}} -->
 				
 				{{formElements.checkboxes('colours', 'Colour', [{
 					label: 'Red',
 					id: 'colours',
+					value: 'red',
 					checked: true
 				}, {
 					label: 'Blue',
-					id: 'colours1'
+					id: 'colours1',
+					value: 'blue'
 				},  {
 					label: 'Green',
-					id: 'colours2'
-				}])}}
-
-				{{formElements.checkboxes('size', 'Size', [{
-					label: 'Small',
-					id: 'size'
-				}, {
-					label: 'Medium',
-					id: 'size1'
-				},  {
-					label: 'Large',
-					id: 'size2'
+					id: 'colours2',
+					value: 'green'
 				}])}}
 
 				{{formElements.radioButtons('rating', 'Average rating', [{
 					label: '4 stars and up',
-					id: 'popularity0'
+					id: 'popularity0',
+					value: '4'
 				},  {
 					label: '3 stars and up',
-					id: 'popularity1'
+					id: 'popularity1',
+					value: '3'
 				}, {
 					label: '2 stars and up',
-					id: 'popularity2'
+					id: 'popularity2',
+					value: '2'
 				}, {
 					label: '1 star and up',
-					id: 'popularity3'
+					id: 'popularity3',
+					value: '1'
 				}])}}
 
-				{{buttons.secondaryButton('Apply filters')}}
+				{{buttons.secondaryButton('Apply filters', 'apply')}}
 			</form>
-		</aside>
+		</div>
 		<div class="products">
 			<h2>Products</h2>
 			<div class="product"></div>
@@ -79,4 +99,15 @@
 			<div class="product"></div>
 			<div class="product"></div>
 		</div>
+
 {% endblock mainContent %}
+
+{% block header %}
+	<header style="clear: both;height: 100px; background: #ccc">
+	</header>
+{% endblock header %}
+
+{% block footer %}
+	<footer style="clear: both;height: 200px; background: #ccc">
+	</footer>
+{% endblock footer %}
