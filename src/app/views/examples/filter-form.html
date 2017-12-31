@@ -11,22 +11,9 @@
 
 	var form = $('.filter form');
 
-	$('.filter input').on('change', function() {
-		// alert(document.forms[0].submit());
-		// form.submit();
-
-		history.pushState('adam', 'test', '/blah?yeh=1');
-		// $('h1').html('yeh');
-
-		$('.product:first').remove();
-
-	});
-
-	window.addEventListener('popstate', function(e) {
-		// make ajax request now otherwise it breaks
-	});
-
-	// var form = $('.filter form');
+	// $('.filter input').on('change', function() {
+	// 	form.submit();
+	// });
 
 	// $('[type=checkbox]').on('click', function() {
 	// 	form.submit();
@@ -35,6 +22,67 @@
 	// $('[type=radio]').on('click', function() {
 	// 	form.submit();
 	// });
+
+	$('.filter input').on('change', function() {
+		history.pushState(form.serialize(), null, '/examples/filter-form?'+form.serialize());
+		$.ajax({
+			url: '/examples/filter-form',
+      type: 'get',
+      data: form.serialize(),
+      error: function() {
+      	console.log(arguments);
+      },
+      success: function(data){
+      	updateFilterForm(data.query);
+        console.log(data.products);
+      }
+		});
+	});
+
+	function updateFilterForm(query) {
+		$('.filter input').prop('checked', false);
+		Object.keys(query).forEach(function(key) {
+			var controlValue = query[key];
+			if($.isArray(controlValue)) {
+				controlValue.forEach(function(value) {
+					console.log(key, value);
+					console.log('yay');
+					$('.filter [name='+key+']').each(function(i, input) {
+						console.log(input, value);
+						if(input.value == value) {
+							input.checked = true;
+						}
+					});
+				});
+			} else {
+				console.log(key, controlValue);
+				$('.filter [name='+key+']').each(function(i, input) {
+					console.log(input, controlValue);
+					if(input.value == controlValue) {
+						input.checked = true;
+					}
+				});
+			}
+		});
+	}
+
+	window.addEventListener('popstate', function(e) {
+		// make ajax request now otherwise it breaks
+
+		$.ajax({
+			url: '/examples/filter-form',
+      type: 'get',
+      data: e.state,
+      error: function() {
+      	console.log(arguments);
+      },
+      success: function(data){
+      	updateFilterForm(data.query);
+        console.log(data.products);
+      }
+		});
+
+	});
 
 </script>
 {% endblock pageScript %}
@@ -57,18 +105,18 @@
 
 				<!-- {{buttons.secondaryButton('Apply filters')}} -->
 				
-				{{formElements.checkboxes('colours', 'Colour', [{
+				{{formElements.checkboxes('color', 'Color', [{
 					label: 'Red',
-					id: 'colours',
+					id: 'color',
 					value: 'red',
 					checked: true
 				}, {
 					label: 'Blue',
-					id: 'colours1',
+					id: 'color1',
 					value: 'blue'
 				},  {
 					label: 'Green',
-					id: 'colours2',
+					id: 'color2',
 					value: 'green'
 				}])}}
 

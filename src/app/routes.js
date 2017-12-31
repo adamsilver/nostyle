@@ -266,7 +266,15 @@ module.exports = function( express, app ){
 	});
 
 	app.get('/examples/filter-form/', function( req, res ){
-		res.render( 'examples/filter-form.html');
+		if(req.headers['x-requested-with'] === 'XMLHttpRequest') {
+			res.json({
+				query: req.query,
+				// query: {'rating': '3', 'color': 'green'},
+				products: [{}, {}]
+			});
+		} else {
+			res.render( 'examples/filter-form.html');
+		}
 	} );
 
 	app.post('/examples/upload', upload.array( 'documents', 10 ), function( req, res ){
