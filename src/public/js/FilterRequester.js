@@ -3,6 +3,7 @@ function FilterRequester() {
 	this.products = $('.products');
 	this.form.find('input').on('change', $.proxy(this, 'onInputChange'));
 	$(window).on('popstate', $.proxy(this, 'onPopState'));
+	this.form.find('[type=submit]').addClass('vh').attr('tabindex', '-1');
 }
 
 FilterRequester.prototype.onInputChange = function(e) {
@@ -29,7 +30,7 @@ FilterRequester.prototype.onRequestSuccess = function(data) {
 };
 
 FilterRequester.prototype.updateFilterForm = function(query) {
-	this.form.find('input').prop('checked', false);
+	this.form.find('input[type=radio], input[type=checkbox]').prop('checked', false);
 	Object.keys(query).forEach(function(key) {
 		var controlValue = query[key];
 		if($.isArray(controlValue)) {
