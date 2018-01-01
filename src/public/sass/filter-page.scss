@@ -53,6 +53,10 @@
   font-weight: bold;
 }
 
+.filter button:focus {
+	box-shadow: none;
+}
+
 .filter button svg {
 	height: 1.2em;
 	margin-left: 0.5em;

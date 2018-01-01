@@ -13,12 +13,7 @@ FilterCollapser.prototype.createButton = function() {
 };
 
 FilterCollapser.prototype.onButtonClick = function(e) {
-	e.preventDefault();
-	if(this.button.attr('aria-expanded') === 'true') {
-		this.hide();
-	} else {
-		this.show();
-	}
+	 this[this.button.attr('aria-expanded') == 'true' ? 'hide' : 'show']();
 };
 
 FilterCollapser.prototype.hide = function() {
