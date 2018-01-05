@@ -87,7 +87,7 @@
 	padding: 4px 8px;
 }
 
-.attach {
+.dropzone--enhanced label {
 	@include button;
 	font-size: 1em;
 	background-color: #ddd;
@@ -96,12 +96,11 @@
 	border-color: #bbb;
 }
 
-.attach:hover {
+.dropzone--enhanced label:hover {
 	background-color: #bbb;
 }
 
-.dropzone--focused .attach {
+.dropzone--focused {
 	outline: none;
   box-shadow: 0 0 1px 4px #ffbf47;
 }
-

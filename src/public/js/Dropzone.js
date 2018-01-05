@@ -12,7 +12,7 @@ if(isAdvancedUpload) {
   }
 
   Dropzone.prototype.setupDropzone = function() {
-    this.dropzone.find('label span').html('<span class="attach">Upload file</span>');
+    this.dropzone.find('label').html('Upload file');
     this.dropzone.on('dragover', $.proxy(this, 'onDragOver'));
     this.dropzone.on('dragleave', $.proxy(this, 'onDragLeave'));
     this.dropzone.on('drop', $.proxy(this, 'onDrop'));
