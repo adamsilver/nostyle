@@ -7,17 +7,23 @@ if(isAdvancedUpload) {
   function Dropzone(container) {
   	this.dropzone = container;
     this.dropzone.addClass('dropzone--enhanced');
+    this.setupDropzone();
+    this.setupFileInput();
+  }
+
+  Dropzone.prototype.setupDropzone = function() {
     this.dropzone.find('label span').html('<span class="attach">Upload file</span>');
+    this.dropzone.on('dragover', $.proxy(this, 'onDragOver'));
+    this.dropzone.on('dragleave', $.proxy(this, 'onDragLeave'));
+    this.dropzone.on('drop', $.proxy(this, 'onDrop'));
+  };
 
-  	this.dropzone.on('dragover', $.proxy(this, 'onDragOver'));
-  	this.dropzone.on('dragleave', $.proxy(this, 'onDragLeave'));
-  	this.dropzone.on('drop', $.proxy(this, 'onDrop'));
-
+  Dropzone.prototype.setupFileInput = function() {
     this.fileInput = this.dropzone.find('[type=file]');
     this.fileInput.on('change', $.proxy(this, 'onFileChange'));
     this.fileInput.on('focus', $.proxy(this, 'onFileFocus'));
     this.fileInput.on('blur', $.proxy(this, 'onFileBlur'));
-  }
+  };
 
   Dropzone.prototype.onDragOver = function(e) {
   	e.preventDefault();
@@ -68,9 +74,6 @@ if(isAdvancedUpload) {
       data: formData,
       processData: false,
       contentType: false,
-      error: function() {
-      	console.log(arguments);
-      },
       success: function(data){
         li.find('.fileList-name').remove();
         li.prepend('<a class="fileList-name" href="/'+data.files[0].path+'">'+data.files[0].originalname+'</a>')
@@ -78,19 +81,15 @@ if(isAdvancedUpload) {
       },
       xhr: function() {
         var xhr = new XMLHttpRequest();
-
         xhr.upload.addEventListener('progress', function(evt) {
           if (evt.lengthComputable) {
             // calculate the percentage of upload completed
             var percentComplete = evt.loaded / evt.total;
             percentComplete = parseInt(percentComplete * 100);
-
             li.find('progress').text(percentComplete + '%');
             li.find('progress')[0].value = percentComplete;
           }
-
         }, false);
-
         return xhr;
       }
     });

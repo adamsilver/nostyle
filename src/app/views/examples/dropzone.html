@@ -7,11 +7,11 @@
 {% import "macros/navigation.html" as navigation %}
 
 {% block pageScript %}
-	<script>
-		if(typeof Dropzone != 'undefined') {
-			new Dropzone($('.dropzone'));
-		}
-	</script>
+<script>
+	if(typeof Dropzone != 'undefined') {
+		new Dropzone($('.dropzone'));
+	}
+</script>
 {% endblock pageScript %}
 
 {% block mainContent %}
@@ -33,15 +33,12 @@
 		</ul>
 	</div>
 
-	<form novalidate enctype="multipart/form-data" method="post" action="/examples/upload">
-
+	<form enctype="multipart/form-data" method="post" action="/examples/upload">
 		<div class="dropzone">
-			<div>
-				{{formElements.fileInput('documents', 'Attach file', {
-					multiple: true
-				})}}
-				{{buttons.secondaryButton('Upload file', 'upload')}}
-			</div>
+			{{formElements.fileInput('documents', 'Attach file', {
+				multiple: true
+			})}}
+			{{buttons.secondaryButton('Upload file', 'upload')}}
 		</div>
 		{{buttons.primaryButton('Continue', 'continue')}}
 	</form>
