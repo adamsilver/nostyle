@@ -6,7 +6,7 @@
 	margin-bottom: 20px;
 }
 
-.dropzone--enhanced {
+.dropzone-enhanced {
 	outline: 2px dashed #777;
 	display: flex;
 	justify-content: center;
@@ -17,7 +17,7 @@
 	transition: outline-offset .1s ease-in-out, background-color .1s linear;
 }
 
-.dropzone--enhanced .secondaryButton {
+.dropzone-enhanced .secondaryButton {
 	display: none;
 }
 
@@ -26,16 +26,16 @@
 	text-align: center;
 }
 
-.dropzone--enhanced [type=file] {
+.dropzone-enhanced [type=file] {
 	position: absolute;
 	left: -9999em;
 }
 
-.dropzone--enhanced .field-label {
+.dropzone-enhanced .field-label {
 	line-height: 1.6em;
 }
 
-.dropzone--dragOver {
+.dropzone-dragover {
 	background: #eee;
 	background: #333;
 	outline: 2px dashed #111;
@@ -87,7 +87,7 @@
 	padding: 4px 8px;
 }
 
-.dropzone--enhanced label {
+.dropzone-enhanced label {
 	@include button;
 	font-size: 1em;
 	background-color: #ddd;
@@ -96,11 +96,11 @@
 	border-color: #bbb;
 }
 
-.dropzone--enhanced label:hover {
+.dropzone-enhanced label:hover {
 	background-color: #bbb;
 }
 
-.dropzone--focused {
+.dropzone-focused {
 	outline: none;
   box-shadow: 0 0 1px 4px #ffbf47;
 }

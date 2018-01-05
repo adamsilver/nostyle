@@ -6,7 +6,7 @@ var isAdvancedUpload = function() {
 if(isAdvancedUpload) {
   function Dropzone(container) {
   	this.dropzone = container;
-    this.dropzone.addClass('dropzone--enhanced');
+    this.dropzone.addClass('dropzone-enhanced');
     this.setupDropzone();
     this.setupFileInput();
   }
@@ -26,49 +26,50 @@ if(isAdvancedUpload) {
   };
 
   Dropzone.prototype.onDragOver = function(e) {
+    // prevent default to allow the drop to happen
   	e.preventDefault();
-  	this.dropzone.addClass('dropzone--dragOver');
+  	this.dropzone.addClass('dropzone-dragover');
   };
 
   Dropzone.prototype.onDragLeave = function() {
-  	this.removeHighlight();
+  	this.dropzone.removeClass('dropzone-dragover');
   };
 
   Dropzone.prototype.onDrop = function(e) {
+    // prevent default to allow the drop to happen
   	e.preventDefault();
-  	this.removeHighlight();
-  	this.upload(e.originalEvent.dataTransfer.files);
-  };
-
-  Dropzone.prototype.removeHighlight = function() {
-  	this.dropzone.removeClass('dropzone--dragOver');
-  };
-
-  Dropzone.prototype.upload = function(files) {
-    for(var i = 0; i < files.length; i++) {
-      var formData = new FormData();
-      formData.append('documents', files[i]);
-      this.makeRequest(formData);
-    }
+  	this.dropzone.removeClass('dropzone-dragover');
     $('.fileList').removeClass('hidden');
+  	this.uploadFiles(e.originalEvent.dataTransfer.files);
+  };
+
+  Dropzone.prototype.uploadFiles = function(files) {
+    for(var i = 0; i < files.length; i++) {
+      this.uploadFile(files[i]);
+    }
   };
 
   Dropzone.prototype.onFileChange = function(e) {
-    this.upload(e.currentTarget.files);
+    $('.fileList').removeClass('hidden');
+    this.uploadFiles(e.currentTarget.files);
   };
 
   Dropzone.prototype.onFileFocus = function(e) {
-    this.dropzone.find('label').addClass('dropzone--focused');
+    this.dropzone.find('label').addClass('dropzone-focused');
   };
 
   Dropzone.prototype.onFileBlur = function(e) {
-    this.dropzone.find('label').removeClass('dropzone--focused');
+    this.dropzone.find('label').removeClass('dropzone-focused');
   };
 
-  Dropzone.prototype.makeRequest = function(formData) {
+  Dropzone.prototype.uploadFile = function(file) {
+    var formData = new FormData();
+    formData.append('documents', file);
+
     var li = $('<li><span class="fileList-name">'+ formData.get('documents').name +'</span><progress value="0" max="100">0%</progress></li>');
     $('.fileList ul').append(li);
-  	$.ajax({
+  	
+    $.ajax({
       url: '/ajax-upload',
       type: 'post',
       data: formData,
@@ -81,10 +82,10 @@ if(isAdvancedUpload) {
       },
       xhr: function() {
         var xhr = new XMLHttpRequest();
-        xhr.upload.addEventListener('progress', function(evt) {
-          if (evt.lengthComputable) {
+        xhr.upload.addEventListener('progress', function(e) {
+          if (e.lengthComputable) {
             // calculate the percentage of upload completed
-            var percentComplete = evt.loaded / evt.total;
+            var percentComplete = e.loaded / e.total;
             percentComplete = parseInt(percentComplete * 100);
             li.find('progress').text(percentComplete + '%');
             li.find('progress')[0].value = percentComplete;
