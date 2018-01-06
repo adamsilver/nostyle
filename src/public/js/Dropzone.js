@@ -62,6 +62,20 @@ if(isAdvancedUpload) {
     this.dropzone.find('label').removeClass('dropzone-focused');
   };
 
+  Dropzone.prototype.getSuccessHtml = function(file) {
+    var html = '<a class="fileList-name" href="/'+file.path+'">'+file.originalname+'</a>';
+    html += '<span class="fileList-success"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tick"></use></svg>File uploaded</span>';
+    html += '<button type="button" class="secondaryButton">Remove</button>';
+    return html;
+  };
+
+  Dropzone.prototype.getErrorHtml = function(error) {
+    var html = '<span class="fileList-name">'+error.file.originalname+'</span>';
+    html += '<span class="fileList-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg>'+error.text+'</span>';
+    html += '<button type="button" class="secondaryButton">Dimiss</button>';
+    return html;
+  };
+
   Dropzone.prototype.uploadFile = function(file) {
     var formData = new FormData();
     formData.append('documents', file);
@@ -83,17 +97,13 @@ if(isAdvancedUpload) {
       // True: Content-Type:application/x-www-form-urlencoded
       // False: Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryBEAjAVnRD6Wsgymr
       contentType: false,
-      success: function(response){
+      success: $.proxy(function(response){
         if(response.error) {
-          li.find('progress').remove();
-          li.append('<span class="fileList-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg>'+response.error.text+'</span>');
-          li.append('<button type="button" class="secondaryButton">Dismiss</button>');
+          li.html(this.getErrorHtml(response.error));
         } else {
-          li.find('.fileList-name').remove();
-          li.prepend('<a class="fileList-name" href="/'+response.file.path+'">'+response.file.originalname+'</a>');
-          li.append('<button type="button" class="secondaryButton">Remove</button>');
+          li.html(this.getSuccessHtml(response.file));
         }
-      },
+      }, this),
       xhr: function() {
         var xhr = new XMLHttpRequest();
         xhr.upload.addEventListener('progress', function(e) {

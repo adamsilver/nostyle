@@ -342,7 +342,8 @@ module.exports = function( express, app ){
 			if( file.mimetype !== 'image/png' ){
 				return cb({
 					code: 'FILE_TYPE',
-					field: 'documents'
+					field: 'documents',
+					file: file
 				}, false);
 			} else {
 				return cb(null, true);

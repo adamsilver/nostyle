@@ -85,6 +85,18 @@
   fill: #b10e1e;
 }
 
+.fileList-success {
+	color: green;
+	font-weight: bold;
+}
+
+.fileList-success svg {
+  margin-top: 3px;
+  vertical-align: bottom;
+  width: 1.5em;
+  fill: green;
+}
+
 .fileList progress {
 	width: 20%;
 	margin-top: 4px;
