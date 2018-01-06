@@ -73,12 +73,26 @@ if(isAdvancedUpload) {
       url: '/ajax-upload',
       type: 'post',
       data: formData,
+
+      // Tell jQuery not to convert the data into a querystring
+      // We want it to send formdata
       processData: false,
+
+      // Tell jQuery not to override the implicit boundary string
+      // which is generated automatically
+      // True: Content-Type:application/x-www-form-urlencoded
+      // False: Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryBEAjAVnRD6Wsgymr
       contentType: false,
-      success: function(data){
-        li.find('.fileList-name').remove();
-        li.prepend('<a class="fileList-name" href="/'+data.files[0].path+'">'+data.files[0].originalname+'</a>')
-        li.append('<button type="button" class="secondaryButton">Remove</button>');
+      success: function(response){
+        if(response.error) {
+          li.find('progress').remove();
+          li.append('<span class="fileList-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg>'+response.error.text+'</span>');
+          li.append('<button type="button" class="secondaryButton">Dismiss</button>');
+        } else {
+          li.find('.fileList-name').remove();
+          li.prepend('<a class="fileList-name" href="/'+response.file.path+'">'+response.file.originalname+'</a>');
+          li.append('<button type="button" class="secondaryButton">Remove</button>');
+        }
       },
       xhr: function() {
         var xhr = new XMLHttpRequest();
@@ -87,8 +101,9 @@ if(isAdvancedUpload) {
             // calculate the percentage of upload completed
             var percentComplete = e.loaded / e.total;
             percentComplete = parseInt(percentComplete * 100);
-            li.find('progress').text(percentComplete + '%');
-            li.find('progress')[0].value = percentComplete;
+            li.find('progress')
+              .prop('value', percentComplete)
+              .text(percentComplete + '%');
           }
         }, false);
         return xhr;

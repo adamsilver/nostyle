@@ -64,16 +64,25 @@
 	overflow: hidden;
 }
 
-.fileList-file a {
-	display: block;
-}
-
 .fileList-name {
-	float: left;
-	width: 40%;
+	display: inline-block;
+	width: 100px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+	vertical-align: top;
+}
+
+.fileList-error {
+	color: #b10e1e;
+	font-weight: bold;
+}
+
+.fileList-error svg {
+  margin-top: 3px;
+  vertical-align: bottom;
+  width: 1.5em;
+  fill: #b10e1e;
 }
 
 .fileList progress {

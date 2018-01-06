@@ -1,20 +1,7 @@
 const multer = require( 'multer' );
 const bodyParser = require('body-parser');
 
-const upload = multer( {
-	dest: './tmp-uploads'//,
-	// limits: '1mb',
-	// fileFilter: function( req, file, cb ){
 
-	// 	let ok = false;
-
-	// 	if( file.mimetype === 'image/jpeg' ){
-	// 		ok = true;
-	// 	}
-
-	// 	cb( null, ok );
-	// }
-} );
 
 const urlBodyParser = bodyParser.urlencoded({ extended: true, limit: '1mb' });
 const jsonBodyParser = bodyParser.json();
@@ -292,16 +279,91 @@ module.exports = function( express, app ){
 		}
 	} );
 
-	app.post('/examples/upload', upload.array( 'documents', 10 ), function( req, res ){
-		console.log(req.files);
-		res.render( 'examples/dropzone.html', { files: req.files } );
+
+	// const upload = multer( {
+	// 	dest: './tmp-uploads',
+	// 	limits: { fileSize: 20000000 },
+	// 	fileFilter: function( req, file, cb ){
+
+	// 		let ok = false;
+
+	// 		if( file.mimetype !== 'image/png' ){
+	// 			ok = true;
+	// 		} else {
+	// 			req.failedfiles = req.failedfiles || [];
+	// 			req.failedfiles.push(file);
+	// 		}
+	// 		cb( null, ok );
+	// 	}
+	// } ).array('documents', 10);
+
+	const upload = multer( {
+		dest: './tmp-uploads',
+		limits: { fileSize: 000000 },
+		fileFilter: function( req, file, cb ){
+			let ok = false;
+
+			if(!req.rejectedFiles) {
+				req.rejectedFiles = [];
+			}
+
+			if( file.mimetype !== 'image/png') {
+				cb(null, false);
+				req.rejectedFiles.push({
+					file: file,
+					error: {
+						code: 'FILE_TYPE'
+					}
+				});
+			} else {
+				cb(null, true);
+			}
+		}
+	} ).array('documents', 10);
+
+	// degraded
+	app.post('/examples/upload', function( req, res ){
+		upload(req, res, function(err) {
+			console.log(req.rejectedFiles);
+
+			if(err) {
+				console.log(err)
+			}
+			res.render( 'examples/dropzone.html', { files: req.files } );
+		});
 	} );
 
-	app.post('/ajax-upload', upload.array( 'documents', 10 ), function( req, res ){
-		console.log(req.files);
 
-		res.json({ files: req.files });
+	const uploadAjax = multer( {
+		dest: './tmp-uploads',
+		limits: { fileSize: 2000000 },
+		fileFilter: function( req, file, cb ){
+			let ok = false;
+			if( file.mimetype !== 'image/png' ){
+				return cb({
+					code: 'FILE_TYPE',
+					field: 'documents'
+				}, false);
+			} else {
+				return cb(null, true);
+			}
+		}
+	} ).single('documents');
 
+	// ajax
+	app.post('/ajax-upload', function( req, res ){
+		uploadAjax(req, res, function(error) {
+			if(error) {
+				if(error.code == 'FILE_TYPE') {
+					error.text = 'You can only upload PNG files.';
+				} else if(error.code == 'LIMIT_FILE_SIZE') {
+					error.text = 'The file must be less than 2MB.';
+				}
+				res.json({ error });
+			} else {
+				res.json({ file: req.file });
+			}
+		} )
 	} );
 
 };
