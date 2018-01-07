@@ -1,9 +1,19 @@
-var isAdvancedUpload = function() {
-  var div = document.createElement( 'div' );
-  return ( ( 'draggable' in div ) || ( 'ondragstart' in div && 'ondrop' in div ) ) && 'FormData' in window && 'FileReader' in window;
-}();
+function dragAndDropSupported() {
+  var div = document.createElement('div');
+  return typeof div.ondrop != 'undefined';
+}
 
-if(isAdvancedUpload) {
+function formDataSupported() {
+  return typeof FormData == 'function';
+}
+
+function fileApiSupported() {
+  var input = document.createElement('input');
+  input.type = 'file';
+  return typeof input.files != 'undefined';
+};
+
+if(dragAndDropSupported() && formDataSupported() && fileApiSupported()) {
   function Dropzone(container) {
   	this.dropzone = container;
     this.dropzone.addClass('dropzone-enhanced');
