@@ -384,7 +384,7 @@ Autocomplete.prototype.updateStatus = function(resultCount) {
 Autocomplete.prototype.hideSelectBox = function() {
 	$(this.select).attr('aria-hidden', 'true');
 	$(this.select).attr('tabindex', '-1');
-	$(this.select).addClass('vh');
+	$(this.select).addClass('visually-hidden');
 	this.select.id = '';
 };
 

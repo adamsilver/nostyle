@@ -13,7 +13,7 @@ function Stepper(input, options) {
 }
 
 Stepper.prototype.createStatusBox = function() {
-	this.statusBox = $('<div role="status" aria-live="polite" class="vh" />');
+	this.statusBox = $('<div role="status" aria-live="polite" class="visually-hidden" />');
 	this.wrapper.append(this.statusBox);
 };
 

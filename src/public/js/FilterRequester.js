@@ -3,7 +3,7 @@ function FilterRequester() {
 	this.products = $('.products');
 	this.form.find('input').on('change', $.proxy(this, 'onInputChange'));
 	$(window).on('popstate', $.proxy(this, 'onPopState'));
-	this.form.find('[type=submit]').addClass('vh').attr('tabindex', '-1');
+	this.form.find('[type=submit]').addClass('visually-hidden').attr('tabindex', '-1');
 }
 
 FilterRequester.prototype.onInputChange = function(e) {
