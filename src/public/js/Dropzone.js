@@ -14,12 +14,12 @@ function fileApiSupported() {
 };
 
 if(dragAndDropSupported() && formDataSupported() && fileApiSupported()) {
-  function Dropzone(container) {
-  	this.dropzone = container;
+  var Dropzone = function(container) {
+    this.dropzone = container;
     this.dropzone.addClass('dropzone-enhanced');
     this.setupDropzone();
     this.setupFileInput();
-  }
+  };
 
   Dropzone.prototype.setupDropzone = function() {
     this.dropzone.find('label').html('Upload file');
@@ -49,7 +49,7 @@ if(dragAndDropSupported() && formDataSupported() && fileApiSupported()) {
     // prevent default to allow the drop to happen
   	e.preventDefault();
   	this.dropzone.removeClass('dropzone-dragover');
-    $('.fileList').removeClass('hidden');
+    $('.files').removeClass('hidden');
   	this.uploadFiles(e.originalEvent.dataTransfer.files);
   };
 
@@ -60,7 +60,7 @@ if(dragAndDropSupported() && formDataSupported() && fileApiSupported()) {
   };
 
   Dropzone.prototype.onFileChange = function(e) {
-    $('.fileList').removeClass('hidden');
+    $('.files').removeClass('hidden');
     this.uploadFiles(e.currentTarget.files);
   };
 
@@ -73,25 +73,24 @@ if(dragAndDropSupported() && formDataSupported() && fileApiSupported()) {
   };
 
   Dropzone.prototype.getSuccessHtml = function(file) {
-    var html = '<a class="fileList-name" href="/'+file.path+'">'+file.originalname+'</a>';
-    html += '<span class="fileList-success"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tick"></use></svg>File uploaded</span>';
-    html += '<button type="button" class="secondaryButton">Remove</button>';
+    var html = '<a class="file-name" href="/'+file.path+'">'+file.originalname+'</a>';
+    html += '<span class="success"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tick"></use></svg>File uploaded</span>';
+    html += '<button type="button">Remove</button>';
     return html;
   };
 
   Dropzone.prototype.getErrorHtml = function(error) {
-    var html = '<span class="fileList-name">'+error.file.originalname+'</span>';
-    html += '<span class="fileList-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg>'+error.text+'</span>';
-    html += '<button type="button" class="secondaryButton">Dimiss</button>';
+    var html = '<span class="file-name">'+error.file.originalname+'</span>';
+    html += '<span class="error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg>'+error.text+'</span>';
+    html += '<button type="button">Remove</button>';
     return html;
   };
 
   Dropzone.prototype.uploadFile = function(file) {
     var formData = new FormData();
     formData.append('documents', file);
-
-    var li = $('<li><span class="fileList-name">'+ formData.get('documents').name +'</span><progress value="0" max="100">0%</progress></li>');
-    $('.fileList ul').append(li);
+    var li = $('<li><span class="file-name">'+ formData.get('documents').name +'</span><progress value="0" max="100">0%</progress></li>');
+    $('.files ul').append(li);
   	
     $.ajax({
       url: '/ajax-upload',

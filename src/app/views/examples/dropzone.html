@@ -30,13 +30,13 @@
 
 	<h1>Upload files</h1>
 	
-	<div class="fileList {% if not files.length %}hidden{% endif%}">
+	<div class="files {% if not files.length %}hidden{% endif%}">
 		<h2>Files</h2>
 		<ul>
 			{% if files.length > 0 %}
 				{% for file in files %}
-					<li class="fileList-file">
-						<a href="{{file.path}}" class="fileList-name">{{file.originalname}}</a>
+					<li>
+						<a href="{{file.path}}">{{file.originalname}}</a>
 						<progress value="100" max="100">100%</progress>
 						<button class="secondaryButton">Delete</button>
 					</li>

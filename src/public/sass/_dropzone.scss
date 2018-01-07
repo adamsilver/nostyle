@@ -43,20 +43,20 @@
 	outline-offset: -10px;
 }
 
-.fileList {
+.files {
 	max-width: 600px;
 	list-style: none;
 	margin-left: 0;
 	margin-bottom: 30px;
 }
 
-.fileList ul {
+.files ul {
 	list-style: none;
 	margin: 0;
 	border-top: 1px solid #ccc;
 }
 
-.fileList li {
+.files li {
 	padding-bottom: 10px;
 	margin-bottom: 10px;
 	padding-top: 10px;
@@ -64,7 +64,7 @@
 	overflow: hidden;
 }
 
-.fileList-name {
+.file-name {
 	display: inline-block;
 	width: 100px;
 	text-overflow: ellipsis;
@@ -73,36 +73,37 @@
 	vertical-align: top;
 }
 
-.fileList-error {
+.files .error {
 	color: #b10e1e;
 	font-weight: bold;
 }
 
-.fileList-error svg {
+.files .error svg {
   margin-top: 3px;
   vertical-align: bottom;
   width: 1.5em;
   fill: #b10e1e;
 }
 
-.fileList-success {
+.files .success {
 	color: green;
 	font-weight: bold;
 }
 
-.fileList-success svg {
+.files .success svg {
   margin-top: 3px;
   vertical-align: bottom;
   width: 1.5em;
   fill: green;
 }
 
-.fileList progress {
+.files progress {
 	width: 20%;
 	margin-top: 4px;
 }
 
-.fileList button {
+.files button {
+	@include button;
 	float: right;
 	font-size: 1em;
 	padding: 4px 8px;
