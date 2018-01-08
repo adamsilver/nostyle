@@ -10,6 +10,7 @@
 	// new FilterCollapser($('fieldset').eq(2));
 
 	new FilterRequester();
+	new FilterMenu();
 </script>
 {% endblock pageScript %}
 
@@ -17,55 +18,58 @@
 		<h1>Wallets</h1>
 
 		<div class="filter" aria-labelledby="filter-heading">
-			<h2 id="filter-heading">Filter</h2>
-			<!-- <div class="current-filters">
-				<h3>Current filters</h3>
-				<ul>
-					<li><a href="">Color: Red (Remove)</a></li>
-				</ul>
-			</div> -->
+
+			<div class="filter-wrapper">
+
+				<h2 id="filter-heading">Filter</h2>
+				<!-- <div class="current-filters">
+					<h3>Current filters</h3>
+					<ul>
+						<li><a href="">Color: Red (Remove)</a></li>
+					</ul>
+				</div> -->
 
 		
 
-			<form role="form" method="get" action="/examples/filter-form">
+				<form role="form" method="get" action="/examples/filter-form">
 
-				<!-- {{buttons.secondaryButton('Apply filters')}} -->
-				
-				{{formElements.checkboxes('color', 'Color', [{
-					label: 'Red',
-					id: 'color',
-					value: 'red',
-					checked: true
-				}, {
-					label: 'Blue',
-					id: 'color1',
-					value: 'blue'
-				},  {
-					label: 'Green',
-					id: 'color2',
-					value: 'green'
-				}])}}
+					<!-- {{buttons.secondaryButton('Apply filters')}} -->
+					
+					{{formElements.checkboxes('color', 'Color', [{
+						label: 'Red',
+						id: 'color',
+						value: 'red'
+					}, {
+						label: 'Blue',
+						id: 'color1',
+						value: 'blue'
+					},  {
+						label: 'Green',
+						id: 'color2',
+						value: 'green'
+					}])}}
 
-				{{formElements.radioButtons('rating', 'Average rating', [{
-					label: '4 stars and up',
-					id: 'popularity0',
-					value: '4'
-				},  {
-					label: '3 stars and up',
-					id: 'popularity1',
-					value: '3'
-				}, {
-					label: '2 stars and up',
-					id: 'popularity2',
-					value: '2'
-				}, {
-					label: '1 star and up',
-					id: 'popularity3',
-					value: '1'
-				}])}}
+					{{formElements.radioButtons('rating', 'Average rating', [{
+						label: '4 stars and up',
+						id: 'popularity0',
+						value: '4'
+					},  {
+						label: '3 stars and up',
+						id: 'popularity1',
+						value: '3'
+					}, {
+						label: '2 stars and up',
+						id: 'popularity2',
+						value: '2'
+					}, {
+						label: '1 star and up',
+						id: 'popularity3',
+						value: '1'
+					}])}}
 
-				{{buttons.secondaryButton('Apply filters', 'apply')}}
-			</form>
+					{{buttons.secondaryButton('Apply filters', 'apply')}}
+				</form>
+			</div>
 		</div>
 		<div class="products">
 			{% include "partials/products.html" %}

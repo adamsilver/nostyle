@@ -264,7 +264,7 @@ module.exports = function( express, app ){
 			products = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 		}
 
-		var query = (Object.keys(req.query).length > 0) ? req.query : { color: 'red' };
+		var query = (Object.keys(req.query).length > 0) ? req.query : { };
 		if(req.headers['x-requested-with'] === 'XMLHttpRequest') {
 			res.json({
 				query: query,

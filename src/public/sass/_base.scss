@@ -190,8 +190,15 @@ ul {
 
 .primaryNav li {
 	display: inline-block;
-	font-size: 1.2em;
-	margin-right: 15px;
+	font-size: 1em;
+	margin-right: 10px;
+}
+
+@media(min-width: 37.5em) {
+	.primaryNav li {
+		font-size: 1.2em;
+		margin-right: 15px;
+	}
 }
 
 .primaryNav a {

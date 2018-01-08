@@ -1,35 +1,72 @@
-.search:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
+.search {
+  @include clearfix;
 }
 
 .filter {
-	float: left;
-	width: 20%;
-	padding-right: 5%;
 	padding-bottom: 30px;
+}
+
+.enhanced .filter {
+	position: relative;
+}
+
+@media(min-width: 50em) {
+	.filter {
+		float: left;
+		width: 20%;
+		padding-right: 5%;
+	}
+}
+
+.filter-wrapper {
+	padding-top: 20px;
+	margin-top: 10px;
+	background-color: #fff;
+}
+
+.enhanced .filter-wrapper {
+	position: absolute;
+	box-shadow: 0 0 1px 4px #ddd;
+	padding: 10px 10px 0;
+	max-height: 50vh;
+	max-width: 45vw;
+	overflow: scroll;
+}
+
+@media(min-width: 50em) {
+	.enhanced .filter-wrapper {
+		position: static;
+		box-shadow: none;
+		padding: 0;
+		overflow: auto;
+		max-height: 100%;
+		max-width: 100%;
+	}
 }
 
 .filter h2 {
 	margin-bottom: 30px;
 }
 
-.products {
-	float: left;
-	width: 75%;
+@media(min-width: 50em) {
+	.products {
+		float: left;
+		width: 75%;
+	}
 }
 
 .product {
-	float: left;
 	background-color: #eee;
 	height: 200px;
-	width: 200px;
 	margin-right: 20px;
 	margin-bottom: 20px;
+}
+
+@media(min-width: 30em) {
+	.product {
+		float: left;
+		width: 200px;
+	}
 }
 
 .filter .field {
@@ -45,7 +82,7 @@
 	width: 100%;
 }
 
-.filter button {
+.filter legend button {
 	all: inherit;
 	border: 0;
   display: flex;
@@ -53,11 +90,11 @@
   font-weight: bold;
 }
 
-.filter button:focus {
+.filter legend button:focus {
 	box-shadow: none;
 }
 
-.filter button svg {
+.filter legend button svg {
 	height: 1.2em;
 	margin-left: 0.5em;
 	margin-top: 0.2em;
@@ -67,8 +104,17 @@
   display: none;
 }
 
-.filter button:focus svg {  
+.filter legend button:focus svg {  
   box-shadow: 0 0 1px 4px #ffbf47;
+}
+
+
+[aria-expanded="true"] + .filter-wrapper {
+	display: block;
+}
+
+[aria-expanded="false"] + .filter-wrapper {
+	display: none;
 }
 
 .filter form {
