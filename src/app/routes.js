@@ -299,7 +299,7 @@ module.exports = function( express, app ){
 
 	const upload = multer( {
 		dest: './tmp-uploads',
-		limits: { fileSize: 000000 },
+		limits: { fileSize: 2000000 },
 		fileFilter: function( req, file, cb ){
 			let ok = false;
 
