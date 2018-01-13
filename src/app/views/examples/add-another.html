@@ -20,6 +20,17 @@
 				{{formElements.textBox('items[0][description]', 'Description', { id: 'items[0][description]', attributes: 'data-name="items[%index%][description]" data-id="items[%index%][description]"' })}}
 
 				{{formElements.textBox('items[0][amount]', 'Amount (£)', type='number', { id: 'items[0][amount]', attributes: 'data-name="items[%index%][amount]" data-id="items[%index%][amount]"' })}}
+
+
+				<!-- {{formElements.radioButtons('choice', 'Favourite colour', [{
+					label: 'Blue',
+					id: 'choice',
+					attributes: 'data-name="items[%index%][choice]" data-id="items[%index%][choice]"'
+				}, {
+					label: 'Red',
+					id: 'choice1',
+					attributes: 'data-name="items[%index%][choice]" data-id="items[%index%][choice1]"'
+				}])}} -->
 			</div>
 			{{buttons.secondaryButton('Add another', 'add', {
 				class: 'addAnother-addButton'

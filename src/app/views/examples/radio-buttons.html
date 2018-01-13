@@ -11,14 +11,12 @@
 
 {% block mainContent %}
 
-	<div class="example">
-		{{formElements.radioButtons('choice', 'Favourite colour', [{
-			label: 'Blue',
-			id: 'choice'
-		}, {
-			label: 'Red',
-			id: 'choice1'
-		}])}}
-	</div>
+	{{formElements.radioButtons('choice', 'Favourite colour', [{
+		label: 'Blue',
+		id: 'choice'
+	}, {
+		label: 'Red',
+		id: 'choice1'
+	}])}}
 
 {% endblock mainContent %}

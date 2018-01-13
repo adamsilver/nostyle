@@ -80,7 +80,11 @@
     {% for choice in choices %}
       <div class="field-radioButton">
         <label for="{{choice.id}}">
-          <input type="radio" name="{{name}}" value="{{choice.value}}" id="{{choice.id}}" {% if choice.checked %}checked{% endif %}>
+          <input type="radio" name="{{name}}" value="{{choice.value}}" id="{{choice.id}}" 
+
+          {% if choice.attributes %}{{choice.attributes | safe}}{%endif%}
+          
+          {% if choice.checked %}checked{% endif %}>
           {{choice.label}}
         </label>
       </div>
