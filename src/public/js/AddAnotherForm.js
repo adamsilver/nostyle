@@ -2,7 +2,7 @@ function AddAnotherForm(container) {
 	this.container = $(container);
 	this.container.on('click', '.addAnother-removeButton', $.proxy(this, 'onRemoveButtonClick'));
 	this.container.on('click', '.addAnother-addButton', $.proxy(this, 'onAddButtonClick'));
-	this.container.find('.addAnother-addButton').prop('type', 'button');
+	this.container.find('.addAnother-addButton, .addAnother-removeButton').prop('type', 'button');
 }
 
 AddAnotherForm.prototype.onAddButtonClick = function(e) {
@@ -45,12 +45,6 @@ AddAnotherForm.prototype.createRemoveButton = function(item) {
 	item.append('<button type="button" class="secondaryButton addAnother-removeButton">Remove</button>');
 };
 
-AddAnotherForm.prototype.updateAllAttributes = function() {
-	this.container.find('.addAnother-item').each($.proxy(function(index, el) {
-		this.updateAttributes(index, $(el));
-	}, this));
-};
-
 AddAnotherForm.prototype.resetItem = function(item) {
 	item.find('[data-name], [data-id]').each(function(index, el) {
 		if(el.type == 'checkbox' || el.type == 'radio') {
@@ -62,13 +56,14 @@ AddAnotherForm.prototype.resetItem = function(item) {
 };
 
 AddAnotherForm.prototype.onRemoveButtonClick = function(e) {
-	e.preventDefault();
 	$(e.currentTarget).parents('.addAnother-item').remove();
 	var items = this.getItems();
-	if(items.length == 2) {
+	if(items.length === 1) {
 		items.find('.addAnother-removeButton').remove();
 	}
-	this.updateAllAttributes();
+	items.each($.proxy(function(index, el) {
+		this.updateAttributes(index, $(el));
+	}, this));
 	this.focusHeading();
 };
 
