@@ -1,8 +1,8 @@
 function CheckboxCollapser(checkbox, container) {
 	this.checkbox = checkbox;
-	this.container = $(container);
+	this.container = container;
 	this.check();
-	$(this.checkbox).on('click', $.proxy(this, 'onCheckboxClick'));
+	this.checkbox.on('click', $.proxy(this, 'onCheckboxClick'));
 };
 
 CheckboxCollapser.prototype.onCheckboxClick = function(e) {
@@ -10,5 +10,5 @@ CheckboxCollapser.prototype.onCheckboxClick = function(e) {
 };
 
 CheckboxCollapser.prototype.check = function() {
-	this.container[this.checkbox.checked ? 'hide' : 'show']();
+	this.container[this.checkbox.prop('checked') ? 'hide' : 'show']();
 };

@@ -9,7 +9,7 @@
 {% block pageScript %}
 	<script>
 		var validator = new FormValidator(document.forms[0]);
-		var collapser = new CheckboxCollapser(document.getElementById('same'), document.getElementsByClassName('billingAddress')[0]);
+		var collapser = new CheckboxCollapser($('#same'), $('.billingAddress'));
 	</script>
 {% endblock pageScript %}
 
