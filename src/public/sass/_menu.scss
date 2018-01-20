@@ -3,7 +3,7 @@
 	position: relative;
 }
 
-.menu-button {
+.menu [type=button] {
 	background-color: #ddd;
 	border: none;
 	appearance: none;
@@ -18,18 +18,18 @@
 	border-radius: 4px;
 }
 
-.menu-button:active {
+.menu [type=button]:active {
 	border-left: 1px solid #aaa;
 	border-top: 3px solid #aaa;
 	border-bottom: 1px solid #aaa;
 	border-right: 1px solid #aaa;
 }
 
-.menu-button:hover {
+.menu [type=button]:hover {
 	background-color: #aaa;
 }
 
-.menu-button span {
+.menu [type=button] span {
 	font-size: 1.2em;
 	position: relative;
 	top: 0px;
@@ -84,10 +84,10 @@
 	}
 }
 
-[aria-expanded="true"] + .menu-items {
+[aria-expanded="true"] + [role=menu] {
 	display: block;
 }
 
-[aria-expanded="false"] + .menu-items {
+[aria-expanded="false"] + [role=menu] {
 	display: none;
 }

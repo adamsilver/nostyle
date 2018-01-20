@@ -1,33 +1,27 @@
-function Menu(container, options) {
+function Menu(container, mq) {
 	this.container = container;
 	this.menu = this.container.find('[role=menu]');
-	this.setupOptions(options);
-	this.setupKeys();
-	this.menu.on('keydown', 'input', $.proxy(this, 'onButtonKeydown'));
+	this.mq = mq;
+	this.keys = { esc: 27, up: 38, down: 40, tab: 9 };
+	this.menu.on('keydown', '[role=menuitem]', $.proxy(this, 'onButtonKeydown'));
 	this.createToggleButton();
 	this.setupResponsiveChecks();
 }
 
-Menu.prototype.setupOptions = function(options) {
-	options = options || {};
-	options.mq = options.mq || '(min-width: 40em)';
-	this.options = options;
-};
-
-Menu.prototype.setupResponsiveChecks = function() {
-	this.mq = window.matchMedia(this.options.mq);
-	this.mq.addListener($.proxy(this, 'checkMode'));
-	this.checkMode(this.mq);
-};
-
 Menu.prototype.createToggleButton = function() {
-	this.menuButton = $('<button class="menu-button" type="button" aria-haspopup="true" aria-expanded="false">Actions<span aria-hidden="true">&#x25be;</span></button>');
+	this.menuButton = $('<button type="button" aria-haspopup="true" aria-expanded="false">Actions<span aria-hidden="true">&#x25be;</span></button>');
 	this.menuButton.on('click', $.proxy(this, 'onMenuButtonClick'));
 	this.menuButton.on('keydown', $.proxy(this, 'onMenuKeyDown'));
 };
 
-Menu.prototype.checkMode = function(mq) {
-	if(mq.matches) {
+Menu.prototype.setupResponsiveChecks = function() {
+	this.mql = window.matchMedia(this.mq);
+	this.mql.addListener($.proxy(this, 'checkMode'));
+	this.checkMode(this.mql);
+};
+
+Menu.prototype.checkMode = function(mql) {
+	if(mql.matches) {
 		this.enableBigMode();
 	} else {
 		this.enableSmallMode();
@@ -72,19 +66,6 @@ Menu.prototype.onMenuKeyDown = function(e) {
 			this.toggle();
 			break;
 	}
-};
-
-Menu.prototype.setupKeys = function() {
-	this.keys = {
-		enter: 13,
-		esc: 27,
-		space: 32,
-		left: 37,
-		up: 38,
-		right: 39,
-		down: 40,
-		tab: 9
-   };
 };
 
 Menu.prototype.onButtonKeydown = function(e) {

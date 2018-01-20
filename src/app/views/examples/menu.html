@@ -2,7 +2,7 @@
 
 {% block pageScript %}
 	<script>
-		new Menu($('.menu'), { mq: '(min-width: 45em)' });
+		new Menu($('.menu'), '(min-width: 45em)');
 	</script>
 {% endblock pageScript %}
 
@@ -12,7 +12,7 @@
 
 	<form>
 		<div class="menu">
-			<div class="menu-items" role="menu">
+			<div role="menu">
 				<input type="submit" name="archive" value="Archive" role="menuitem"> 
 				<input type="submit" name="delete" value="Delete" role="menuitem"> 
 				<input type="submit" name="spam" value="Mark as spam" role="menuitem"> 
