@@ -2,8 +2,8 @@
 value.replace(/^\s+|\s+$/g, '').replace(/\s+/g, ' ');
 */
 function Autocomplete(select) {
-	this.select = select;
-	this.container = $(select).parent();
+	this.select = select[0];
+	this.container = select.parent();
 	this.wrapper = $('<div class="autocomplete"></div>');
 	this.container.append(this.wrapper);
 	this.createTextBox();
@@ -68,12 +68,12 @@ Autocomplete.prototype.onTextBoxClick = function(e) {
 	this.updateStatus(options.length);
 	this.showMenu();
 	if(typeof e.currentTarget.select === 'function') {
-        e.currentTarget.select();
-    }
+    e.currentTarget.select();
+  }
 };
 
 Autocomplete.prototype.addSuggestionEvents = function() {
-	this.optionsUl.on('click', '.autocomplete-option', $.proxy(this, 'onSuggestionClick'));
+	this.optionsUl.on('click', '[role=option]', $.proxy(this, 'onSuggestionClick'));
 	this.optionsUl.on('keydown', $.proxy(this, 'onSuggestionsKeyDown'));
 };
 
@@ -278,14 +278,14 @@ Autocomplete.prototype.getOptionById = function(id) {
 };
 
 Autocomplete.prototype.showMenu = function() {
-	this.optionsUl.removeClass('autocomplete-options-isHidden');
+	this.optionsUl.removeClass('hidden');
 	this.optionsUl.attr('aria-hidden', 'false');
 	this.textBox.attr('aria-expanded', 'true');
 	this.textBox.attr('tabindex', '0');
 };
 
 Autocomplete.prototype.hideMenu = function() {
-	this.optionsUl.addClass('autocomplete-options-isHidden');
+	this.optionsUl.addClass('hidden');
 	this.optionsUl.attr('aria-hidden', 'true');
 	this.textBox.attr('aria-expanded', 'false');
 	this.activeOptionId = null;
@@ -361,15 +361,15 @@ Autocomplete.prototype.buildMenu = function(options) {
 };
 
 Autocomplete.prototype.getNoResultsOptionHtml = function() {
-	return '<li class="autocomplete-optionNoResults" role="option">' + 'No results' + '</li>';
+	return '<li class="autocomplete-optionNoResults">' + 'No results' + '</li>';
 };
 
 Autocomplete.prototype.getOptionHtml = function(i, option) {
-	return '<li tabindex="-1" class="autocomplete-option" aria-selected="false" role="option" data-option-value="'+ option.value +'" id="autocomplete-option--' + i + '">' + option.text + '</li>';
+	return '<li tabindex="-1" aria-selected="false" role="option" data-option-value="'+ option.value +'" id="autocomplete-option--' + i + '">' + option.text + '</li>';
 };
 
 Autocomplete.prototype.createStatusBox = function() {
-	this.status = $('<div aria-live="polite" role="status" aria-atomic="true" class="autocomplete-status" />');
+	this.status = $('<div aria-live="polite" role="status" aria-atomic="true" class="visually-hidden" />');
 	this.wrapper.append(this.status);
 };
 
@@ -389,7 +389,7 @@ Autocomplete.prototype.hideSelectBox = function() {
 };
 
 Autocomplete.prototype.createTextBox = function() {
-	this.textBox = $('<input autocapitalize="none" class="autocomplete-textBox" type="text" autocomplete="off">');
+	this.textBox = $('<input autocapitalize="none" type="text" autocomplete="off">');
 
 	this.textBox.attr('aria-owns', this.getOptionsId());
 	this.textBox.attr('aria-autocomplete', 'list');
@@ -412,7 +412,7 @@ Autocomplete.prototype.getOptionsId = function() {
 };
 
 Autocomplete.prototype.createArrowIcon = function() {
-	var arrow = $('<svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="autocomplete-downArrow"><g stroke="none" fill="none" fill-rule="evenodd"><polygon fill="#000000" points="0 0 22 0 11 17"></polygon></g></svg>');
+	var arrow = $('<svg version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" fill="none" fill-rule="evenodd"><polygon fill="#000000" points="0 0 22 0 11 17"></polygon></g></svg>');
 	this.wrapper.append(arrow);
 	arrow.on('click', $.proxy(this, 'onArrowClick'));
 };
@@ -427,7 +427,7 @@ Autocomplete.prototype.onArrowClick = function(e) {
 };
 
 Autocomplete.prototype.createOptionsUl = function() {
-	this.optionsUl = $('<ul id="'+this.getOptionsId()+'" role="listbox" class="autocomplete-options autocomplete-options-isHidden" aria-hidden="true"></ul>');
+	this.optionsUl = $('<ul id="'+this.getOptionsId()+'" role="listbox" class="hidden" aria-hidden="true"></ul>');
 	this.wrapper.append(this.optionsUl);
 	this.addSuggestionEvents();
 };
