@@ -5,6 +5,10 @@
 	vertical-align: top;
 }
 
+.datepicker button[aria-haspopup] {
+	@include secondaryButton;
+}
+
 .datepicker-wrapper {
 	border-left: 6px solid #222;
 	padding: 0px 10px;
@@ -33,15 +37,14 @@
   @include clearfix;
 }
 
-.datepicker-title {
+.datepicker [role=status] {
 	display: inline-block;
 	font-weight: bold;
 	font-size: 1.2em;
 	padding-top: 12px;
 }
 
-.datepicker-next,
-.datepicker-back {
+.datepicker-actions button {
   -webkit-appearance: none;
   background: none;
   font-size: 1em;
@@ -50,14 +53,13 @@
   vertical-align: bottom;
   font-weight: bold;
   border: none;
-}
+  &:first-child {
+		float: left;
+  }
 
-.datepicker-back {
-  float: left;
-}
-
-.datepicker-next {
-  float: right;
+  &:last-child {
+		float: right;
+  }
 }
 
 .datepicker-next:hover,
@@ -72,13 +74,12 @@
   outline: 3px solid #ffbf47;
 }
 
-.datepicker-day {
+.datepicker [role=gridcell] {
 	cursor: default;
-}
-
-.datepicker-day:focus {
-	outline-offset: 0;
-  outline: 3px solid #ffbf47;
+	&:focus {
+		outline-offset: 0;
+  	outline: 3px solid #ffbf47;
+	}
 }
 
 .datepicker-previousMonthDay,

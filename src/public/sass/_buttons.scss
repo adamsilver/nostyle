@@ -21,23 +21,25 @@
 	background-color: #0074D9;
 	color: white;
 	border-color: #004077;
-}
-
-.primaryButton:hover {
-	background-color: #004077;
+	&:hover {
+		background-color: #004077;
+	}
 }
 
 /**************************************
 * Secondary button
 **************************************/
 
-.secondaryButton {
+@mixin secondaryButton {
 	@include button;
 	background-color: #ddd;
 	color: #222;
 	border-color: #bbb;
 }
 
-.secondaryButton:hover {
-	background-color: #bbb;
-}
+.secondaryButton {
+	@include secondaryButton;
+	&:hover {
+		background-color: #bbb;
+	}
+} 
