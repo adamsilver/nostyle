@@ -1,0 +1,11 @@
+{% extends 'layouts/raw.html' %}
+
+{% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
+
+{% block mainContent %}
+	{{formElements.datalist('destination', 'Destination', [{ value: "1", text: "Afghanistan" },
+{ value: "2", text: "Åland Islands" },
+{ value: "3", text: "Albania" },
+{ value: "4", text: "Algeria" }])}}
+{% endblock mainContent %}

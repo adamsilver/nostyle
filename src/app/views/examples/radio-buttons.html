@@ -11,12 +11,12 @@
 
 {% block mainContent %}
 
-	{{formElements.radioButtons('choice', 'Favourite colour', [{
-		label: 'Blue',
-		id: 'choice'
-	}, {
-		label: 'Red',
-		id: 'choice1'
-	}])}}
+	{{formElements.radioButtons('destination', 'Destination', [	{ id: "destination", label: "Afghanistan" },
+{ id: "destination2", label: "Åland Islands" },
+{ id: "destination3",  label: "Albania" },
+{ id: "destination4",  label: "Algeria" }])}}
+
+
+
 
 {% endblock mainContent %}

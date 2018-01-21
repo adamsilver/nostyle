@@ -5,18 +5,11 @@
 {% import "macros/form-elements.html" as formElements %}
 
 {% block mainContent %}
-	{{formElements.selectBox('fruit', 'Fruit',[{
-		text: 'Apples',
-		value: 'Apples'
-	},{
-		text: 'Bananas',
-		value: 'Bananas'
-	}, {
-		text: 'Blueberries',
-		value: 'Blueberries'
-	}, {
-		text: 'Strawberries',
-		value: 'Strawberries'
-	}])}}
+	{{formElements.selectBox('destination', 'Destination', [
+{ value: "", text: "Select" },
+{ value: "1", alt:"AF", text: "Afghanistan" },
+{ value: "2", alt:"AX Aaland Aland" , text: "Åland Islands" },
+{ value: "3", alt:"AL", text: "Albania" },
+{ value: "4", alt:"DZ", text: "Algeria" }])}}
 
 {% endblock mainContent %}

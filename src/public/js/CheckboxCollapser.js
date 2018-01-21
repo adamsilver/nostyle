@@ -1,6 +1,6 @@
-function CheckboxCollapser(checkbox, container) {
+function CheckboxCollapser(checkbox, toggleElement) {
 	this.checkbox = checkbox;
-	this.container = container;
+	this.toggleElement = toggleElement;
 	this.check();
 	this.checkbox.on('click', $.proxy(this, 'onCheckboxClick'));
 };
@@ -10,5 +10,9 @@ CheckboxCollapser.prototype.onCheckboxClick = function(e) {
 };
 
 CheckboxCollapser.prototype.check = function() {
-	this.container[this.checkbox.prop('checked') ? 'hide' : 'show']();
+	if(this.checkbox.prop('checked')) {
+		this.toggleElement.addClass('hidden');
+	} else {
+		this.toggleElement.removeClass('hidden');
+	}
 };
