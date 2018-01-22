@@ -17,9 +17,9 @@ function Autocomplete(select) {
 
 Autocomplete.prototype.onDocumentClick = function(e) {
 	if(!$.contains(this.container[0], e.target)) {
-        this.hideMenu();
-        this.removeTextBoxFocus();
-    }
+	  this.hideMenu();
+    this.removeTextBoxFocus();
+  }
 };
 
 Autocomplete.prototype.setupKeys = function() {
@@ -279,14 +279,12 @@ Autocomplete.prototype.getOptionById = function(id) {
 
 Autocomplete.prototype.showMenu = function() {
 	this.optionsUl.removeClass('hidden');
-	this.optionsUl.attr('aria-hidden', 'false');
 	this.textBox.attr('aria-expanded', 'true');
 	this.textBox.attr('tabindex', '0');
 };
 
 Autocomplete.prototype.hideMenu = function() {
 	this.optionsUl.addClass('hidden');
-	this.optionsUl.attr('aria-hidden', 'true');
 	this.textBox.attr('aria-expanded', 'false');
 	this.activeOptionId = null;
 	this.clearOptions();
@@ -369,7 +367,7 @@ Autocomplete.prototype.getOptionHtml = function(i, option) {
 };
 
 Autocomplete.prototype.createStatusBox = function() {
-	this.status = $('<div aria-live="polite" role="status" aria-atomic="true" class="visually-hidden" />');
+	this.status = $('<div aria-live="polite" role="status" class="visually-hidden" />');
 	this.wrapper.append(this.status);
 };
 
@@ -427,7 +425,7 @@ Autocomplete.prototype.onArrowClick = function(e) {
 };
 
 Autocomplete.prototype.createOptionsUl = function() {
-	this.optionsUl = $('<ul id="'+this.getOptionsId()+'" role="listbox" class="hidden" aria-hidden="true"></ul>');
+	this.optionsUl = $('<ul id="'+this.getOptionsId()+'" role="listbox" class="hidden"></ul>');
 	this.wrapper.append(this.optionsUl);
 	this.addSuggestionEvents();
 };
