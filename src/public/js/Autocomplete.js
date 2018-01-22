@@ -280,7 +280,6 @@ Autocomplete.prototype.getOptionById = function(id) {
 Autocomplete.prototype.showMenu = function() {
 	this.optionsUl.removeClass('hidden');
 	this.textBox.attr('aria-expanded', 'true');
-	this.textBox.attr('tabindex', '0');
 };
 
 Autocomplete.prototype.hideMenu = function() {
@@ -288,7 +287,6 @@ Autocomplete.prototype.hideMenu = function() {
 	this.textBox.attr('aria-expanded', 'false');
 	this.activeOptionId = null;
 	this.clearOptions();
-	this.textBox.removeAttr('tabindex', '-1');
 };
 
 Autocomplete.prototype.clearOptions = function() {
@@ -437,14 +435,14 @@ Autocomplete.prototype.isElementVisible = function(container, element) {
 	var elementPaddingTop = parseInt($(element).css('padding-top'), 10);
 	var elementPaddingBottom = parseInt($(element).css('padding-bottom'), 10);
 	var elementHeight = $(element).height() + elementPaddingTop + elementPaddingBottom;
-    var visible;
+  var visible;
 
-    if ((elementTop - containerTop < 0) || (elementTop - containerTop + elementHeight > containerHeight)) {
+  if ((elementTop - containerTop < 0) || (elementTop - containerTop + elementHeight > containerHeight)) {
 		visible = false;
-    } else {
+  } else {
 		visible = true;
-    }
-    return visible;
+  }
+  return visible;
 };
 
 Autocomplete.prototype.getOption = function(value) {
