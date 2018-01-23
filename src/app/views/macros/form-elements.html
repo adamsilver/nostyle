@@ -59,7 +59,7 @@
     </label>
     <select id="{{name}}" name="{{name}}" {% if options.error %}aria-invalid="true"{%endif%}>
       {% for choice in choices %}
-        <option value="{{choice.value}}" {% if choice.selected%}selected{% endif %}>{{choice.text}}</option>
+        <option value="{{choice.value}}" {% if choice.selected%}selected{% endif %} {% if choice.alt%}data-alt="{{choice.alt}}"{% endif %}>{{choice.text}}</option>
       {% endfor %}
     </select>
   </div>
