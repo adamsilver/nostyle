@@ -8,7 +8,7 @@ function Autocomplete(select) {
 	this.container.append(this.wrapper);
 	this.createTextBox();
 	this.createArrowIcon();
-	this.createOptionsUl();
+	this.createMenu();
 	this.hideSelectBox();
 	this.createStatusBox();
 	this.setupKeys();
@@ -230,7 +230,7 @@ Autocomplete.prototype.getActiveOption = function() {
 };
 
 Autocomplete.prototype.getFirstOption = function() {
-	return this.optionsUl.find('li').first();
+	return this.menu.find('li').first();
 };
 
 Autocomplete.prototype.getPreviousOption = function() {
@@ -249,8 +249,8 @@ Autocomplete.prototype.highlightOption = function(option) {
 
 	option.attr('aria-selected', 'true');
 
-	if(!this.isElementVisible(this.optionsUl, option)) {
-		this.optionsUl.scrollTop(this.optionsUl.scrollTop() + option.position().top) ;
+	if(!this.isElementVisible(this.menu, option)) {
+		this.menu.scrollTop(this.menu.scrollTop() + option.position().top) ;
 	}
 
 	this.activeOptionId = option[0].id;
@@ -262,19 +262,19 @@ Autocomplete.prototype.getOptionById = function(id) {
 };
 
 Autocomplete.prototype.showMenu = function() {
-	this.optionsUl.removeClass('hidden');
+	this.menu.removeClass('hidden');
 	this.textBox.attr('aria-expanded', 'true');
 };
 
 Autocomplete.prototype.hideMenu = function() {
-	this.optionsUl.addClass('hidden');
+	this.menu.addClass('hidden');
 	this.textBox.attr('aria-expanded', 'false');
 	this.activeOptionId = null;
 	this.clearOptions();
 };
 
 Autocomplete.prototype.clearOptions = function() {
-	this.optionsUl.empty();
+	this.menu.empty();
 };
 
 Autocomplete.prototype.getOptions = function(value) {
@@ -330,12 +330,12 @@ Autocomplete.prototype.buildMenu = function(options) {
 
 	if(options.length) {
 		for(var i = 0; i < options.length; i++) {
-			this.optionsUl.append(this.getOptionHtml(i, options[i]));
+			this.menu.append(this.getOptionHtml(i, options[i]));
 		}
 	} else {
-		this.optionsUl.append(this.getNoResultsOptionHtml());
+		this.menu.append(this.getNoResultsOptionHtml());
 	}
-	this.optionsUl.scrollTop(this.optionsUl.scrollTop());
+	this.menu.scrollTop(this.menu.scrollTop());
 };
 
 Autocomplete.prototype.getNoResultsOptionHtml = function() {
@@ -417,11 +417,11 @@ Autocomplete.prototype.onArrowClick = function(e) {
 	this.textBox.focus();
 };
 
-Autocomplete.prototype.createOptionsUl = function() {
-	this.optionsUl = $('<ul id="'+this.getOptionsId()+'" role="listbox" class="hidden"></ul>');
-	this.wrapper.append(this.optionsUl);
-	this.optionsUl.on('click', '[role=option]', $.proxy(this, 'onOptionClick'));
-	this.optionsUl.on('keydown', $.proxy(this, 'onOptionMenuKeyDown'));
+Autocomplete.prototype.createMenu = function() {
+	this.menu = $('<ul id="'+this.getOptionsId()+'" role="listbox" class="hidden"></ul>');
+	this.wrapper.append(this.menu);
+	this.menu.on('click', '[role=option]', $.proxy(this, 'onOptionClick'));
+	this.menu.on('keydown', $.proxy(this, 'onOptionMenuKeyDown'));
 };
 
 Autocomplete.prototype.isElementVisible = function(container, element) {
