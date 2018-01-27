@@ -36,10 +36,6 @@ Autocomplete.prototype.setupKeys = function() {
    };
 };
 
-Autocomplete.prototype.addTextBoxEvents = function() {
-	
-};
-
 Autocomplete.prototype.onTextBoxFocus = function() {
 	this.textBox.addClass('autocomplete-isFocused');
 };
