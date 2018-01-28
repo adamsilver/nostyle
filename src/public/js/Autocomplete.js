@@ -76,7 +76,7 @@ Autocomplete.prototype.onTextBoxKeyUp = function(e) {
 	}
 };
 
-Autocomplete.prototype.onOptionMenuKeyDown = function(e) {
+Autocomplete.prototype.onMenuKeyDown = function(e) {
 	switch (e.keyCode) {
 		case this.keys.up:
 			// want to highlight previous option
@@ -274,17 +274,17 @@ Autocomplete.prototype.clearOptions = function() {
 };
 
 Autocomplete.prototype.getOptions = function(value) {
-	var filtered = [];
+	var matches = [];
 	this.select.find('option').each(function(i, el) {
 		if($(el).val().trim().length > 0 && $(el).text().toLowerCase().indexOf(value.toLowerCase()) > -1
 				|| $(el).attr('data-alt') && $(el).attr('data-alt').toLowerCase().indexOf(value.toLowerCase()) > -1) {
-			filtered.push({ 
+			matches.push({ 
 				text: $(el).text(), 
 				value: $(el).val() 
 			});
 		}
 	});
-	return filtered;
+	return matches;
 };
 
 Autocomplete.prototype.getAllOptions = function() {
@@ -417,7 +417,7 @@ Autocomplete.prototype.createMenu = function() {
 	this.menu = $('<ul id="'+this.getOptionsId()+'" role="listbox" class="hidden"></ul>');
 	this.wrapper.append(this.menu);
 	this.menu.on('click', '[role=option]', $.proxy(this, 'onOptionClick'));
-	this.menu.on('keydown', $.proxy(this, 'onOptionMenuKeyDown'));
+	this.menu.on('keydown', $.proxy(this, 'onMenuKeyDown'));
 };
 
 Autocomplete.prototype.isElementVisible = function(container, element) {
