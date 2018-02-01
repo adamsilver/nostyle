@@ -4,20 +4,9 @@
 
 {% block pageScript %}
 	<script>
-		function supportsDateInput() {
-			var el = document.createElement('input');
-			try {
-				el.type = 'date';
-			} catch(e) {
-
-			}
-			return el.type == 'date';
-		}
-
-		if(!supportsDateInput()) {
+		if(typeof DatePicker !== 'undefined') {
 			new DatePicker(document.getElementById('date'));
 		}
-
 	</script>
 {% endblock pageScript %}
 
