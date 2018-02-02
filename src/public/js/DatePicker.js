@@ -5,6 +5,7 @@ function supportsDateInput() {
 	} catch(e) {
 
 	}
+	return false;
 	return el.type == 'date';
 }
 
@@ -68,18 +69,17 @@ if(!supportsDateInput()) {
 
 		options = options || {};
 		options.currentDate = options.currentDate || defaults.currentDate;
-		options.startHidden = options.startHidden || true;
 		this.options = options;
 	};
 
 	DatePicker.prototype.getCalendarHtml = function(year, month) {
 		var html = '<div class="'+this.calendarClass+'-calendar" aria-label="date picker" role="group">';
 		html +=		'<div class="'+this.calendarClass+'-actions">';
-		html +=			'<button type="button" aria-label="Previous month"><svg focusable="false" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17" width="1em" height="1em"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></button>';
-		html += 		'<div role="status" aria-live="polite" aria-atomic="true">';
+		html +=			'<button type="button" aria-label="previous month"><svg focusable="false" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17" width="1em" height="1em"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></button>';
+		html += 		'<div role="status" aria-live="polite">';
 		html += 			this.monthNames[month] + " " + year;
 		html += 		'</div>';
-		html +=			'<button type="button" aria-label="Next month"><svg focusable="false" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17" width="1em" height="1em"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></button>';
+		html +=			'<button type="button" aria-label="next month"><svg focusable="false" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17" width="1em" height="1em"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></button>';
 		html +=		'</div>';
 		html += 	'<table role="grid">';
 		html += 		'<thead>';
@@ -186,13 +186,7 @@ if(!supportsDateInput()) {
 	};
 
 	DatePicker.prototype.buildCalendar = function() {
-		this.calendar = $('<div class="'+this.calendarClass+'-wrapper">');
-		if(this.options.startHidden) {
-			this.hide();
-		} else {
-			this.show();
-		}
-
+		this.calendar = $('<div class="'+this.calendarClass+'-wrapper hidden">');
 		this.calendar.html(this.getCalendarHtml(this.selectedDate.getFullYear(), this.selectedDate.getMonth()));
 		this.addEventListeners();
 		this.wrapper.append(this.calendar);
@@ -212,17 +206,23 @@ if(!supportsDateInput()) {
 		this.toggleButton.on('click', $.proxy(this, 'onToggleButtonClick'));
 	};
 
-	DatePicker.prototype.focusButton = function() {
-		this.toggleButton.focus();
-	};
-
-	DatePicker.prototype.onToggleButtonClick = function(e) {
-		if(this.showing) {
+	DatePicker.prototype.onToggleButtonClick = function() {
+		if(this.toggleButton.attr('aria-expanded') == 'true') {
 			this.hide();
 		} else {
 			this.show();
 			this.calendar.find('button:first-child').focus();
 		}
+	};
+
+	DatePicker.prototype.hide = function() {
+		this.calendar.addClass('hidden');
+		this.toggleButton.attr('aria-expanded', 'false');
+	};
+
+	DatePicker.prototype.show = function() {
+		this.calendar.removeClass('hidden');
+		this.toggleButton.attr('aria-expanded', 'true');
 	};
 
 	DatePicker.prototype.onDayClick = function(e) {
@@ -262,7 +262,7 @@ if(!supportsDateInput()) {
 		switch(e.keyCode) {
 			case this.keys.esc:
 				this.hide();
-				this.focusButton();
+				this.toggleButton.focus();
 				break
 		}
 	};
@@ -435,17 +435,5 @@ if(!supportsDateInput()) {
 		d = new Date(d);
 		d.setDate(1);
 		return d;
-	};
-
-	DatePicker.prototype.show = function() {
-		this.calendar.removeClass('hidden');
-		this.showing = true;
-		this.toggleButton.attr('aria-expanded', 'true');
-	};
-
-	DatePicker.prototype.hide = function() {
-		this.calendar.addClass('hidden');
-		this.showing = false;
-		this.toggleButton.attr('aria-expanded', 'false');
 	};
 }
