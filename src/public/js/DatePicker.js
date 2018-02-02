@@ -115,7 +115,14 @@ if(!supportsDateInput()) {
 		var now = new Date();
 		now.setHours(0,0,0,0);
 
+
+		var monthHasSelectedDate = false;
+		if(this.selectedDate && this.selectedDate.getMonth() === d.getMonth()) {
+			monthHasSelectedDate = true;
+		}
+
 		var highlightedDay;
+		
 		// make the highlighted day today if
 		// looking at current month
 		if(now.getMonth() == d.getMonth()) {
@@ -124,6 +131,7 @@ if(!supportsDateInput()) {
 			// else make it the first of the month
 			highlightedDay = new Date(d);
 		}
+		
 
 		while (i < firstDay) {
 			var daysToSubtract = firstDay - i;
@@ -147,12 +155,14 @@ if(!supportsDateInput()) {
 				cellOptions.today = true;
 			}
 
-			if (d.getTime() === highlightedDay.getTime()) {
+			if(!monthHasSelectedDate && highlightedDay.getTime() === d.getTime()) {
 				cellOptions.highlighted = true;
+				cellOptions.focusable = true;
 			}
 
 			if(this.selectedDate && this.selectedDate.getTime() === d.getTime()) {
 				cellOptions.selected = true;
+				cellOptions.focusable = true;
 			}
 
 			html += this.getCellHtml(d, cellOptions);
@@ -187,7 +197,7 @@ if(!supportsDateInput()) {
 		var html = '';
 		html += '<td';
 
-		if(options.highlighted) {
+		if(options.focusable) {
 			html += ' tabindex="0" ';
 		} else {
 			html += ' tabindex="-1" ';
@@ -306,6 +316,7 @@ if(!supportsDateInput()) {
 		this.hide();
 		this.focusTextBox();
 		this.selectedDate = d;
+		this.selectDate(d);
 	};
 
 	DatePicker.prototype.onBackClick = function(e) {
@@ -324,18 +335,18 @@ if(!supportsDateInput()) {
 		this.hide();
 		this.focusTextBox();
 		this.selectedDate = d;
+		this.selectDate(d);
 	};
 
 	DatePicker.prototype.selectDate = function(date) {
-		// this.unhighlightCell(this.selectedDate);
-		// this.highlightCell(date);
+		this.calendar.find('[aria-selected=true]').attr('aria-selected', 'false');
+		this.getDayCell(date).attr('aria-selected', 'true');
 	};
 
 	DatePicker.prototype.unhighlightCell = function(date) {
 		var cell = this.getDayCell(date);
 		cell.attr('tabindex', '-1');
 		cell.removeClass(this.calendarClass+'-day-isSelected');
-		cell.attr('aria-selected', 'false');
 	};
 
 	DatePicker.prototype.highlightCell = function(date) {
@@ -343,12 +354,15 @@ if(!supportsDateInput()) {
 		var cell = this.getDayCell(date);
 		cell.attr('tabindex', '0');
 		cell.addClass(this.calendarClass+'-day-isSelected');
-		cell.attr('aria-selected', 'true');
 		cell.focus();
 	};
 
+	DatePicker.prototype.getFocusedCell = function() {
+		return this.calendar.find('.'+this.calendarClass+'-day-isSelected');
+	};
+
 	DatePicker.prototype.getFocusedCellDate = function() {
-		return new Date(this.calendar.find('.'+this.calendarClass+'-day-isSelected').attr('data-date'));
+		return new Date(this.getFocusedCell().attr('data-date'));
 	};
 
 	DatePicker.prototype.onDayDownPressed = function(e) {

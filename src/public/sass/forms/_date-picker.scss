@@ -22,11 +22,6 @@
 	padding-bottom: 20px;
 }
 
-.datepicker-calendar:focus {
-  outline-offset: 0;
-  outline: 3px solid #ffbf47;
-}
-
 .datepicker-actions {
 	text-align: center;
 	border-bottom: 1px solid #ccc;
@@ -94,6 +89,11 @@
 .datepicker-day-isSelected {
   background-color: #005EA5;
   border-color: #005EA5;
+  color: white;
+}
+
+.datepicker [aria-selected=true] {
+  background-color: pink;
   color: white;
 }
 
