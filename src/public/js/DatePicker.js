@@ -11,17 +11,17 @@ function supportsDateInput() {
 
 if(!supportsDateInput()) {
 	function DatePicker(control, options) {
-		this.control = control;
+		this.input = control;
 		this.container = control.parent();
 		this.wrapper = $('<div class="datepicker"></div>');
 		this.container.append(this.wrapper);
-		this.wrapper.append(this.control);
+		this.wrapper.append(this.input);
 		options = options || {};
 		this.setupOptions(options);
 		this.calendarClass = 'datepicker';
 		this.setupKeys();
 		this.setupMonthNames();
-		this.monthDate = this.options.currentDate // stores in view month
+		this.monthDate = this.options.currentDate
 		this.selectedDate = null;
 		this.createToggleButton();
 		this.buildCalendar();
@@ -115,23 +115,17 @@ if(!supportsDateInput()) {
 		var now = new Date();
 		now.setHours(0,0,0,0);
 
-
-		var monthHasSelectedDate = false;
+		var focusableDate;
+		// selected
 		if(this.selectedDate && this.selectedDate.getMonth() === d.getMonth()) {
-			monthHasSelectedDate = true;
+			focusableDate = this.selectedDate;
+		// today
+		} else if(now.getMonth() === d.getMonth()) {
+			focusableDate = now;
+		// 1st of month
+		} else{
+			focusableDate = new Date(d);
 		}
-
-		var highlightedDay;
-		
-		// make the highlighted day today if
-		// looking at current month
-		if(now.getMonth() == d.getMonth()) {
-			highlightedDay = now;
-		} else {
-			// else make it the first of the month
-			highlightedDay = new Date(d);
-		}
-		
 
 		while (i < firstDay) {
 			var daysToSubtract = firstDay - i;
@@ -155,14 +149,12 @@ if(!supportsDateInput()) {
 				cellOptions.today = true;
 			}
 
-			if(!monthHasSelectedDate && highlightedDay.getTime() === d.getTime()) {
-				cellOptions.highlighted = true;
+			if(focusableDate.getTime() === d.getTime()) {
 				cellOptions.focusable = true;
 			}
 
 			if(this.selectedDate && this.selectedDate.getTime() === d.getTime()) {
 				cellOptions.selected = true;
-				cellOptions.focusable = true;
 			}
 
 			html += this.getCellHtml(d, cellOptions);
@@ -190,8 +182,8 @@ if(!supportsDateInput()) {
 		if(options.today) {
 			tdClass += ' '+this.calendarClass+'-day-isToday';
 		}
-		if(options.highlighted) {
-			tdClass += ' '+this.calendarClass+'-day-isSelected';
+		if(options.focusable) {
+			tdClass += ' '+this.calendarClass+'-day-isFocused';
 		}
 
 		var html = '';
@@ -214,6 +206,11 @@ if(!supportsDateInput()) {
 		html += ' data-date="'+date.toString()+'" ';
 		html += ' class="'+tdClass+'" ';
 		html += '>';
+
+		if(options.today) {
+			html += '<span class="datepicker-today">Today</span>';
+		}
+
 		html += '<span aria-hidden="true">';
 		html += date.getDate();
 		html += '</span';
@@ -230,7 +227,7 @@ if(!supportsDateInput()) {
 	};
 
 	DatePicker.prototype.addEventListeners = function() {
-		this.calendar.on('click', 'button:first-child', $.proxy(this, 'onBackClick'));
+		this.calendar.on('click', 'button:first-child', $.proxy(this, 'onPreviousClick'));
 		this.calendar.on('click', 'button:last-child', $.proxy(this, 'onNextClick'));
 		this.calendar.on('click', '[role=gridcell]', $.proxy(this, 'onCellClick'));
 		this.calendar.on('keydown', '[role=gridcell]', $.proxy(this, 'onCellKeyDown'));
@@ -311,15 +308,14 @@ if(!supportsDateInput()) {
 
 	DatePicker.prototype.onCellClick = function(e) {
 		var d = new Date($(e.currentTarget).attr('data-date'));
-		this.highlightCell(d);
 		this.updateTextBoxDate(d);
 		this.hide();
-		this.focusTextBox();
+		this.input.focus();
 		this.selectedDate = d;
 		this.selectDate(d);
 	};
 
-	DatePicker.prototype.onBackClick = function(e) {
+	DatePicker.prototype.onPreviousClick = function(e) {
 		this.showPreviousMonth();
 	};
 
@@ -330,10 +326,9 @@ if(!supportsDateInput()) {
 	DatePicker.prototype.onDaySpacePressed = function(e) {
 		e.preventDefault();
 		var d = new Date($(e.currentTarget).attr('data-date'));
-		this.highlightCell(d);
 		this.updateTextBoxDate(d);
 		this.hide();
-		this.focusTextBox();
+		this.input.focus();
 		this.selectedDate = d;
 		this.selectDate(d);
 	};
@@ -346,19 +341,19 @@ if(!supportsDateInput()) {
 	DatePicker.prototype.unhighlightCell = function(date) {
 		var cell = this.getDayCell(date);
 		cell.attr('tabindex', '-1');
-		cell.removeClass(this.calendarClass+'-day-isSelected');
+		cell.removeClass(this.calendarClass+'-day-isFocused');
 	};
 
 	DatePicker.prototype.highlightCell = function(date) {
 		this.unhighlightCell(this.getFocusedCellDate());
 		var cell = this.getDayCell(date);
 		cell.attr('tabindex', '0');
-		cell.addClass(this.calendarClass+'-day-isSelected');
+		cell.addClass(this.calendarClass+'-day-isFocused');
 		cell.focus();
 	};
 
 	DatePicker.prototype.getFocusedCell = function() {
-		return this.calendar.find('.'+this.calendarClass+'-day-isSelected');
+		return this.calendar.find('.'+this.calendarClass+'-day-isFocused');
 	};
 
 	DatePicker.prototype.getFocusedCellDate = function() {
@@ -451,11 +446,7 @@ if(!supportsDateInput()) {
 	};
 
 	DatePicker.prototype.updateTextBoxDate = function(date) {
-		this.control.val(date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear());
-	};
-
-	DatePicker.prototype.focusTextBox = function() {
-		this.control.focus();
+		this.input.val(date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear());
 	};
 
 	DatePicker.prototype.showPreviousMonth = function() {

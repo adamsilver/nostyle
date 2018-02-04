@@ -83,23 +83,23 @@
 }
 
 .datepicker-day-isToday {
-	background-color: #FFDC00;
+	position: relative;
 }
 
-.datepicker-day-isSelected {
+.datepicker-today {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	font-size: 0.5em;
+	text-align: center;
+}
+
+.datepicker [aria-selected=true],
+.datepicker [role=gridcell]:hover {
   background-color: #005EA5;
   border-color: #005EA5;
   color: white;
-}
-
-.datepicker [aria-selected=true] {
-  background-color: pink;
-  color: white;
-}
-
-.datepicker-day:hover {
-	background-color: #DEE0E2;
-	color: #222;
 }
 
 .datepicker table {
