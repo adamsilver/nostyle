@@ -10,9 +10,9 @@ function supportsDateInput() {
 }
 
 if(!supportsDateInput()) {
-	function DatePicker(control, options) {
-		this.input = control;
-		this.container = control.parent();
+	function DatePicker(input, options) {
+		this.input = input;
+		this.container = input.parent();
 		this.wrapper = $('<div class="datepicker"></div>');
 		this.container.append(this.wrapper);
 		this.wrapper.append(this.input);
