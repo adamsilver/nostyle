@@ -10,21 +10,19 @@ function supportsDateInput() {
 }
 
 if(!supportsDateInput()) {
-	function DatePicker(control, options) {
-		this.control = control;
-		this.container = $(control).parent();
+	function DatePicker(input, options) {
+		this.input = input;
+		this.container = input.parent();
 		this.wrapper = $('<div class="datepicker"></div>');
 		this.container.append(this.wrapper);
-		this.wrapper.append(this.control);
+		this.wrapper.append(this.input);
 		options = options || {};
 		this.setupOptions(options);
 		this.calendarClass = 'datepicker';
 		this.setupKeys();
 		this.setupMonthNames();
-		this.state = {
-			currentSelectedDate: options.currentDate // stores in view month
-		};
-		this.selectedDate = this.options.currentDate; // stores selected date (including day)
+		this.monthDate = this.options.currentDate
+		this.selectedDate = null;
 		this.createToggleButton();
 		this.buildCalendar();
 	}
@@ -67,9 +65,7 @@ if(!supportsDateInput()) {
 			return d;
 		}());
 
-		options = options || {};
-		options.currentDate = options.currentDate || defaults.currentDate;
-		this.options = options;
+		this.options = $.extend(defaults, options);
 	};
 
 	DatePicker.prototype.getCalendarHtml = function(year, month) {
@@ -119,6 +115,18 @@ if(!supportsDateInput()) {
 		var now = new Date();
 		now.setHours(0,0,0,0);
 
+		var focusableDate;
+		// selected
+		if(this.selectedDate && this.selectedDate.getMonth() === d.getMonth()) {
+			focusableDate = this.selectedDate;
+		// today
+		} else if(now.getMonth() === d.getMonth()) {
+			focusableDate = now;
+		// 1st of month
+		} else{
+			focusableDate = new Date(d);
+		}
+
 		while (i < firstDay) {
 			var daysToSubtract = firstDay - i;
 			var paddedDate = new Date(year, month);
@@ -134,16 +142,22 @@ if(!supportsDateInput()) {
 				html += '</tr><tr>';
 			}
 
+			var cellOptions = {};
+
 			var tdClass = tdClassDefault;
 			if (d.getTime() === now.getTime()) {
-				tdClass += ' '+this.calendarClass+'-day-isToday';
+				cellOptions.today = true;
 			}
 
-			if (d.getTime() === this.selectedDate.getTime()) {
-				tdClass += ' '+this.calendarClass+'-day-isSelected';
+			if(focusableDate.getTime() === d.getTime()) {
+				cellOptions.focusable = true;
 			}
 
-			html += this.getCellHtml(d, tdClass, d.getTime() === this.selectedDate.getTime());
+			if(this.selectedDate && this.selectedDate.getTime() === d.getTime()) {
+				cellOptions.selected = true;
+			}
+
+			html += this.getCellHtml(d, cellOptions);
 
 			d.setDate( d.getDate()+1 );
 
@@ -160,16 +174,31 @@ if(!supportsDateInput()) {
 		return html;
 	};
 
-	DatePicker.prototype.getCellHtml = function(date, tdClass, selected) {
+	DatePicker.prototype.getCellHtml = function(date, options) {
 		var label = date.getDate() + ' ' + this.monthNames[date.getMonth()] + ', ' + date.getFullYear();
 		var shortLabel = ' ' + this.monthNames[date.getMonth()] + ', ' + date.getFullYear();
+		
+		var tdClass = '';
+		if(options.today) {
+			tdClass += ' '+this.calendarClass+'-day-isToday';
+		}
+		if(options.focusable) {
+			tdClass += ' '+this.calendarClass+'-day-isFocused';
+		}
+
 		var html = '';
 		html += '<td';
 
-		if(selected) {
+		if(options.focusable) {
 			html += ' tabindex="0" ';
 		} else {
 			html += ' tabindex="-1" ';
+		}
+
+		if(options.selected) {
+			html += ' aria-selected="true" ';
+		} else {
+			html += ' aria-selected="false" ';
 		}
 
 		html += ' aria-label="'+label+'" ';
@@ -177,6 +206,11 @@ if(!supportsDateInput()) {
 		html += ' data-date="'+date.toString()+'" ';
 		html += ' class="'+tdClass+'" ';
 		html += '>';
+
+		if(options.today) {
+			html += '<span class="datepicker-today">Today</span>';
+		}
+
 		html += '<span aria-hidden="true">';
 		html += date.getDate();
 		html += '</span';
@@ -187,16 +221,16 @@ if(!supportsDateInput()) {
 
 	DatePicker.prototype.buildCalendar = function() {
 		this.calendar = $('<div class="'+this.calendarClass+'-wrapper hidden">');
-		this.calendar.html(this.getCalendarHtml(this.selectedDate.getFullYear(), this.selectedDate.getMonth()));
+		this.calendar.html(this.getCalendarHtml(this.monthDate.getFullYear(), this.monthDate.getMonth()));
 		this.addEventListeners();
 		this.wrapper.append(this.calendar);
 	};
 
 	DatePicker.prototype.addEventListeners = function() {
-		this.calendar.on('click', 'button:first-child', $.proxy(this, 'onBackClick'));
+		this.calendar.on('click', 'button:first-child', $.proxy(this, 'onPreviousClick'));
 		this.calendar.on('click', 'button:last-child', $.proxy(this, 'onNextClick'));
-		this.calendar.on('click', '[role=gridcell]', $.proxy(this, 'onDayClick'));
-		this.calendar.on('keydown', 'table', $.proxy(this, 'onGridKeyDown'));
+		this.calendar.on('click', '[role=gridcell]', $.proxy(this, 'onCellClick'));
+		this.calendar.on('keydown', '[role=gridcell]', $.proxy(this, 'onCellKeyDown'));
 		this.calendar.on('keydown', $.proxy(this, 'onCalendarKeyDown'));
 	};
 
@@ -225,22 +259,6 @@ if(!supportsDateInput()) {
 		this.toggleButton.attr('aria-expanded', 'true');
 	};
 
-	DatePicker.prototype.onDayClick = function(e) {
-		var d = new Date($(e.currentTarget).attr('data-date'));
-		this.selectDate(d);
-		this.updateTextBoxDate(d);
-		this.hide();
-		this.focusTextBox();
-	};
-
-	DatePicker.prototype.onBackClick = function(e) {
-		this.showPreviousMonth();
-	};
-
-	DatePicker.prototype.onNextClick = function(e) {
-		this.showNextMonth();
-	};
-
 	DatePicker.prototype.setupKeys = function() {
 		this.keys = {
 			tab:       9,
@@ -267,7 +285,7 @@ if(!supportsDateInput()) {
 		}
 	};
 
-	DatePicker.prototype.onGridKeyDown = function(e) {
+	DatePicker.prototype.onCellKeyDown = function(e) {
 		switch(e.keyCode) {
 			case this.keys.down:
 				this.onDayDownPressed(e);
@@ -283,88 +301,139 @@ if(!supportsDateInput()) {
 				break;
 			case this.keys.space:
 			case this.keys.enter:
-				this.onDayUpSpacePressed(e);
+				this.onDaySpacePressed(e);
 				break;
 		}
 	};
 
-	DatePicker.prototype.onDayUpSpacePressed = function(e) {
-		e.preventDefault();
-		this.updateTextBoxDate(this.selectedDate);
+	DatePicker.prototype.onCellClick = function(e) {
+		var d = new Date($(e.currentTarget).attr('data-date'));
+		this.updateTextBoxDate(d);
 		this.hide();
-		this.focusTextBox();
+		this.input.focus();
+		this.selectedDate = d;
+		this.selectDate(d);
+	};
+
+	DatePicker.prototype.onPreviousClick = function(e) {
+		this.showPreviousMonth();
+	};
+
+	DatePicker.prototype.onNextClick = function(e) {
+		this.showNextMonth();
+	};
+
+	DatePicker.prototype.onDaySpacePressed = function(e) {
+		e.preventDefault();
+		var d = new Date($(e.currentTarget).attr('data-date'));
+		this.updateTextBoxDate(d);
+		this.hide();
+		this.input.focus();
+		this.selectedDate = d;
+		this.selectDate(d);
+	};
+
+	DatePicker.prototype.selectDate = function(date) {
+		this.calendar.find('[aria-selected=true]').attr('aria-selected', 'false');
+		this.getDayCell(date).attr('aria-selected', 'true');
+	};
+
+	DatePicker.prototype.unhighlightCell = function(date) {
+		var cell = this.getDayCell(date);
+		cell.attr('tabindex', '-1');
+		cell.removeClass(this.calendarClass+'-day-isFocused');
+	};
+
+	DatePicker.prototype.highlightCell = function(date) {
+		this.unhighlightCell(this.getFocusedCellDate());
+		var cell = this.getDayCell(date);
+		cell.attr('tabindex', '0');
+		cell.addClass(this.calendarClass+'-day-isFocused');
+		cell.focus();
+	};
+
+	DatePicker.prototype.getFocusedCell = function() {
+		return this.calendar.find('.'+this.calendarClass+'-day-isFocused');
+	};
+
+	DatePicker.prototype.getFocusedCellDate = function() {
+		return new Date(this.getFocusedCell().attr('data-date'));
 	};
 
 	DatePicker.prototype.onDayDownPressed = function(e) {
 		e.preventDefault();
-		var date = new Date(this.selectedDate);
+		var date = this.getFocusedCellDate();
 		var newDate = this.getSameDayNextWeek(date);
-		if(newDate.getMonth() == this.state.currentSelectedDate.getMonth()) {
-			this.selectDate(newDate);
+		if(newDate.getMonth() == date.getMonth()) {
+			this.highlightCell(newDate);
 		} else {
-			this.state.currentSelectedDate = newDate;
+			this.monthDate = newDate;
 			this.updateCalendarHtml(newDate.getFullYear(), newDate.getMonth());
-			this.selectDate(newDate);
+			this.highlightCell(newDate);
 		}
 	};
 
 	DatePicker.prototype.onDayUpPressed = function(e) {
 		e.preventDefault();
-		var date = new Date(this.selectedDate);
+		var date = this.getFocusedCellDate();
 		var newDate = this.getSameDayLastWeek(date);
-		if(newDate.getMonth() == this.state.currentSelectedDate.getMonth()) {
-			this.selectDate(newDate);
+		if(newDate.getMonth() == this.monthDate.getMonth()) {
+			this.highlightCell(newDate);
 		} else {
-			this.state.currentSelectedDate = newDate;
+			this.monthDate = newDate;
 			this.updateCalendarHtml(newDate.getFullYear(), newDate.getMonth());
-			this.selectDate(newDate);
+			this.highlightCell(newDate);
 		}
 	};
 
 	DatePicker.prototype.onDayLeftPressed = function(e) {
 		e.preventDefault();
-		var date = new Date(this.selectedDate);
+		var date = this.getFocusedCellDate();
 		var newDate = this.getPreviousDay(date);
-		if(newDate.getMonth() == this.state.currentSelectedDate.getMonth()) {
-			this.selectDate(newDate);
+		if(newDate.getMonth() == this.monthDate.getMonth()) {
+			this.highlightCell(newDate);
 		} else {
-			this.state.currentSelectedDate = newDate;
+			this.monthDate = newDate;
 			this.updateCalendarHtml(newDate.getFullYear(), newDate.getMonth());
-			this.selectDate(newDate);
+			this.highlightCell(newDate);
 		}
 	};
 
 	DatePicker.prototype.onDayRightPressed = function(e) {
 		e.preventDefault();
-		var date = new Date(this.selectedDate);
+		var date = this.getFocusedCellDate();
 		var newDate = this.getNextDay(date);
-		if(newDate.getMonth() == this.state.currentSelectedDate.getMonth()) {
-			this.selectDate(newDate);
+		if(newDate.getMonth() == this.monthDate.getMonth()) {
+			this.highlightCell(newDate);
 		} else {
-			this.state.currentSelectedDate = newDate;
+			this.monthDate = newDate;
 			this.updateCalendarHtml(newDate.getFullYear(), newDate.getMonth());
-			this.selectDate(newDate);
+			this.highlightCell(newDate);
 		}
 	};
 
 	DatePicker.prototype.getPreviousDay = function(date) {
-		date.setDate(date.getDate()-1);
-		return date;
+		var d = new Date(date);
+		d.setDate(d.getDate()-1);
+		return d;
 	};
 
 	DatePicker.prototype.getSameDayLastWeek = function(date) {
-		date.setDate(date.getDate()-7);
-		return date;
+		var d = new Date(date);
+		d.setDate(d.getDate()-7);
+		return d;
 	};
 
 	DatePicker.prototype.getNextDay = function(date) {
-		date.setDate(date.getDate()+1);
-		return date;
+		var d = new Date(date);
+		d.setDate(d.getDate()+1);
+		return d;
 	};
 
 	DatePicker.prototype.getSameDayNextWeek = function(date) {
-		date.setDate(date.getDate()+7);
-		return date;
+		var d = new Date(date);
+		d.setDate(d.getDate()+7);
+		return d;
 	};
 
 	DatePicker.prototype.getDayCell = function(date) {
@@ -376,53 +445,25 @@ if(!supportsDateInput()) {
 		this.calendar.find("tbody").html(this.getCalendarTableRows(month, year));
 	};
 
-	DatePicker.prototype.selectDate = function(date) {
-		this.unhighlightSelectedDate(this.selectedDate);
-		this.highlightSelectedDate(date);
-	};
-
 	DatePicker.prototype.updateTextBoxDate = function(date) {
-		this.control.value = date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear();
-	};
-
-	DatePicker.prototype.focusTextBox = function() {
-		this.control.focus();
-	};
-
-	DatePicker.prototype.unhighlightSelectedDate = function(date) {
-		var cell = this.getDayCell(date);
-		cell.attr('tabindex', '-1');
-		cell.removeClass(this.calendarClass+'-day-isSelected');
-		cell.attr('aria-selected', 'false');
-		this.selectedDate = null;
-	};
-
-	DatePicker.prototype.highlightSelectedDate = function(date) {
-		var cell = this.getDayCell(date);
-		cell.attr('tabindex', '0');
-		cell.addClass(this.calendarClass+'-day-isSelected');
-		cell.attr('aria-selected', 'true');
-		cell.focus();
-		this.selectedDate = date;
+		this.input.val(date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear());
 	};
 
 	DatePicker.prototype.showPreviousMonth = function() {
 		var pm = this.getPreviousMonth();
-		this.state.currentSelectedDate = pm;
-		this.selectedDate = pm;
+		this.monthDate = pm;
 		this.updateCalendarHtml(pm.getFullYear(), pm.getMonth());
 	};
 
 	DatePicker.prototype.showNextMonth = function() {
 		var nm = this.getNextMonth();
-		this.state.currentSelectedDate = nm;
-		this.selectedDate = nm;
+		this.monthDate = nm;
 		this.updateCalendarHtml(nm.getFullYear(), nm.getMonth());
 	};
 
 	DatePicker.prototype.getPreviousMonth = function() {
 		var dayInMs = 86400000;
-		var d = new Date(this.state.currentSelectedDate.getFullYear(), this.state.currentSelectedDate.getMonth(),1);
+		var d = new Date(this.monthDate.getFullYear(), this.monthDate.getMonth(),1);
 		d = d.getTime() - dayInMs;
 		d = new Date(d);
 		d.setDate(1);
@@ -430,7 +471,7 @@ if(!supportsDateInput()) {
 	};
 
 	DatePicker.prototype.getNextMonth = function() {
-		var d = new Date(this.state.currentSelectedDate.getFullYear(), this.state.currentSelectedDate.getMonth());
+		var d = new Date(this.monthDate.getFullYear(), this.monthDate.getMonth());
 		d = d.setMonth(d.getMonth()+1);
 		d = new Date(d);
 		d.setDate(1);
