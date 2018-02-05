@@ -19,6 +19,7 @@ if(dragAndDropSupported() && formDataSupported() && fileApiSupported()) {
     this.dropzone.addClass('dropzone-enhanced');
     this.setupDropzone();
     this.setupFileInput();
+    this.setupStatusBox();
   };
 
   Dropzone.prototype.setupDropzone = function() {
@@ -33,6 +34,11 @@ if(dragAndDropSupported() && formDataSupported() && fileApiSupported()) {
     this.fileInput.on('change', $.proxy(this, 'onFileChange'));
     this.fileInput.on('focus', $.proxy(this, 'onFileFocus'));
     this.fileInput.on('blur', $.proxy(this, 'onFileBlur'));
+  };
+
+  Dropzone.prototype.setupStatusBox = function() {
+    this.status = $('<div aria-live="polite" role="status" class="visually-hidden" />');
+    this.dropzone.append(this.status);
   };
 
   Dropzone.prototype.onDragOver = function(e) {
@@ -50,6 +56,7 @@ if(dragAndDropSupported() && formDataSupported() && fileApiSupported()) {
   	e.preventDefault();
   	this.dropzone.removeClass('dropzone-dragover');
     $('.files').removeClass('hidden');
+    this.status.html('Uploading files, please wait.');
   	this.uploadFiles(e.originalEvent.dataTransfer.files);
   };
 
@@ -61,6 +68,7 @@ if(dragAndDropSupported() && formDataSupported() && fileApiSupported()) {
 
   Dropzone.prototype.onFileChange = function(e) {
     $('.files').removeClass('hidden');
+    this.status.html('Uploading files, please wait.');
     this.uploadFiles(e.currentTarget.files);
   };
 
@@ -109,8 +117,10 @@ if(dragAndDropSupported() && formDataSupported() && fileApiSupported()) {
       success: $.proxy(function(response){
         if(response.error) {
           li.html(this.getErrorHtml(response.error));
+          this.status.html(response.error);
         } else {
           li.html(this.getSuccessHtml(response.file));
+          this.status.html(response.file.originalname + ' has been uploaded.');
         }
       }, this),
       xhr: function() {

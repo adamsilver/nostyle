@@ -119,9 +119,9 @@ module.exports = function( express, app ){
 		uploadAjax(req, res, function(error) {
 			if(error) {
 				if(error.code == 'FILE_TYPE') {
-					error.text = 'You can only upload PNG files.';
+					error.text = error.file.originalname + ' is in the wrong format. You can only upload PNG files.';
 				} else if(error.code == 'LIMIT_FILE_SIZE') {
-					error.text = 'The file must be less than 2MB.';
+					error.text = error.file.originalname + ' is too big. The file must be less than 2MB.';
 				}
 				res.json({ error });
 			} else {
