@@ -40,7 +40,7 @@
 
 {% block mainContent %}
 
-	{{headings.h1('Register')}}
+	{{headings.h1('Sign in')}}
 
 	{{formElements.errorSummary("There's a problem", [{
 		fieldName: 'email',
@@ -53,7 +53,7 @@
 	<form novalidate>
 		{{formElements.textBox('email', 'Email address', {error: 'Enter your email address.'})}}
 		{{formElements.textBox('password', 'Password', type='password', {error: 'Enter your password.', hint: 'Must contain 8+ characters with at least 1 number.'})}}
-		{{buttons.primaryButton('Register')}}
+		{{buttons.primaryButton('Sign in')}}
 	</form>
 
 {% endblock mainContent %}
