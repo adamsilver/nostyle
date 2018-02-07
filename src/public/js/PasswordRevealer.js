@@ -6,7 +6,7 @@ function PasswordRevealer(el) {
 };
 
 PasswordRevealer.prototype.createButton = function() {
-  this.button = $('<button type="button" class="secondaryButton">Show password</button>');
+  this.button = $('<button type="button" class="secondaryButton">Show</button>');
   this.container.append(this.button);
   this.button.on('click', $.proxy(this, 'onButtonClick'));
 };
@@ -14,9 +14,9 @@ PasswordRevealer.prototype.createButton = function() {
 PasswordRevealer.prototype.onButtonClick = function(e) {
   if(this.el.type === 'password') {
     this.el.type = 'text';
-    this.button.text('Hide password');
+    this.button.text('Hide');
   } else {
     this.el.type = 'password';
-    this.button.text('Show password');
+    this.button.text('Show');
   }
 };

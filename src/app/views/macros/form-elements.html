@@ -209,7 +209,7 @@
 {% endmacro %}
 
 {% macro errorSummary(heading, errors) %}
-<div tabindex="-1" role="group" class="errorSummary {% if not errors %}errorSummary-isHidden{%endif%}" aria-labelledby="errorSummary-heading">
+<div tabindex="-1" role="group" class="errorSummary {% if not errors %}hidden{%endif%}" aria-labelledby="errorSummary-heading">
   {% if errors %}
     {{headings.h2(heading, { id: 'errorSummary-heading' })}}
     <ul>

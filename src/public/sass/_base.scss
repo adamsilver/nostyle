@@ -98,13 +98,13 @@ h1 {
 	font-size: 2.2em;
 	line-height: 1;
 	color: #222;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 
 @media(min-width: 30em) {
 	h1 {
 		font-size: 2.8em;
-		margin-bottom: 60px;
+		margin-bottom: 40px;
 	}
 }
 
@@ -234,5 +234,8 @@ input[id$="[amount]"] {
 
 .passwordRevealer input {
 	vertical-align: top;
-	max-width: 200px;
+	max-width: 180px;
+	@media(min-width: 30em) {
+		max-width: 250px;
+	}
 }

@@ -35,25 +35,25 @@
 			},
 			message: 'Your password must contain at least one number.'
 		}]);
+
+		new PasswordRevealer(document.getElementById('password'));
+
 	</script>
 {% endblock pageScript %}
 
 {% block mainContent %}
 
+	
 	{{headings.h1('Sign in')}}
+	<p>Forgotten your password? <a href="/">Reset password</a></p>
 
-	{{formElements.errorSummary("There's a problem", [{
-		fieldName: 'email',
-		message: 'Enter your email address.'
-	}, {
-		fieldName: 'password',
-		message: 'Enter your password.'
-	}])}}
+	{{formElements.errorSummary("There's a problem")}}
 
 	<form novalidate>
-		{{formElements.textBox('email', 'Email address', {error: 'Enter your email address.'})}}
-		{{formElements.textBox('password', 'Password', type='password', {error: 'Enter your password.', hint: 'Must contain 8+ characters with at least 1 number.'})}}
+		{{formElements.textBox('email', 'Email address', {attributes: ' autocapitalize="none" autocorrect="off" spellcheck="false" '})}}
+		{{formElements.textBox('password', 'Password', type='password', { hint: 'Must contain 8+ characters with at least 1 number.'})}}
 		{{buttons.primaryButton('Sign in')}}
 	</form>
+
 
 {% endblock mainContent %}
