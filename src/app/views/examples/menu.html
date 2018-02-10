@@ -3,6 +3,7 @@
 {% block pageScript %}
 	<script>
 		new Menu($('.menu'), '(min-width: 45em)');
+		new SelectAll($('.selectAll'), $('.inbox [type=checkbox]'));
 	</script>
 {% endblock pageScript %}
 
@@ -11,6 +12,7 @@
 	<h1>Inbox</h1>
 
 	<form>
+		<div class="selectAll"></div>
 		<div class="menu">
 			<div role="menu">
 				<input type="submit" name="archive" value="Archive" role="menuitem"> 

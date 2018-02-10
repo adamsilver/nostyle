@@ -1,3 +1,9 @@
+.selectAll {
+	display: inline-block;
+	vertical-align: top;
+}
+
+
 .inbox {
 	list-style: none;
 	margin-left: 0px;
@@ -6,7 +12,7 @@
 .inbox li {
 	overflow: hidden;
 	border-bottom: 1px solid #ccc;
-	
+	margin-bottom: 0;
 }
 
 .inbox li a {

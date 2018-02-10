@@ -1,6 +1,7 @@
 .menu {
 	padding: 0 0 20px;
 	position: relative;
+	display: inline-block;
 }
 
 .menu [type=button] {
@@ -34,6 +35,7 @@
 	position: relative;
 	top: 0px;
 	left: 2px;
+	line-height: 0;
 }
 
 [role=menuitem] {
@@ -66,7 +68,6 @@
 }
 
 [role=menu] {
-	padding-top: 5px;
 	width: 10em;
 	background-color: #fff;
 }
