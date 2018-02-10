@@ -3,7 +3,6 @@
 {% import "macros/headings.html" as headings %}
 {% import "macros/form-elements.html" as formElements %}
 {% import "macros/buttons.html" as buttons %}
-{% import "macros/navigation.html" as navigation %}
 
 {% block pageScript %}
 	<script>
@@ -45,7 +44,10 @@
 
 	
 	{{headings.h1('Sign in')}}
-	<p>Forgotten your password? <a href="/">Reset password</a></p>
+	<ul>
+		<li>Not signed up? <a href="/examples/registration-form">Register</a></li>
+		<li>Forgot password? <a href="#">Reset password</a></li>
+	</ul>
 
 	{{formElements.errorSummary("There's a problem")}}
 

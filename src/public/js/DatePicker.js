@@ -5,7 +5,6 @@ function supportsDateInput() {
 	} catch(e) {
 
 	}
-	return false;
 	return el.type == 'date';
 }
 

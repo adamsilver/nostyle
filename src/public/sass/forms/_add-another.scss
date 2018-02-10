@@ -1,5 +1,6 @@
 .addAnother {
 	margin-bottom: 50px;
+	max-width: 40em;
 }
 
 .addAnother-heading {
@@ -20,6 +21,10 @@
 
 .addAnother-removeButton {
 	position: absolute;
-	top: 20px;
-	right: 20px;
+	top: 0px;
+	right: 0px;
+	@media(min-width: 25em) {
+		top: 20px;
+		right: 20px;
+	}
 }

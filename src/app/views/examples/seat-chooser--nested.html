@@ -12,17 +12,14 @@
 	</script>
 {% endblock pageScript %}
 
-{% block pageHeader %}
-	{{headings.h1('Seat chooser nested')}}
-{% endblock pageHeader %}
-
 {% block mainContent %}
+	{{headings.h1('Choose seat')}}
 
 	<form novalidate>
 		<div class="field">
 			<fieldset>
 				<legend>
-					<span class="field-legend">Choose seat</span>
+					<span class="field-legend">Seat</span>
 				</legend>
 				<div class="firstClass">
 					{{formElements.seats('seat', 'First class', [{

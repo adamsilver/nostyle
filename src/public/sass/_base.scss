@@ -131,6 +131,10 @@ ul {
 	margin-left: 25px;
 }
 
+li {
+	margin-bottom: 5px;
+}
+
 .wifi-icon {
 	padding-left: 135px;
 	height: 128px;
@@ -178,7 +182,7 @@ ul {
 
 .primaryNav {
 	border-top: 7px solid #0074D9; 
-	padding: 20px 20px 25px;
+	padding: 20px 20px;
 	background-color: #f5f5f5;
 }
 
@@ -192,6 +196,7 @@ ul {
 	display: inline-block;
 	font-size: 1em;
 	margin-right: 10px;
+	margin-bottom: 5px;
 }
 
 @media(min-width: 37.5em) {
