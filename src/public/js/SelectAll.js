@@ -9,8 +9,10 @@ function SelectAll(container, checkboxes) {
 SelectAll.prototype.onButtonClick = function(e) {
 	if(this.checked) {
 		this.uncheckAll();
+		this.button.text('Select all');
 	} else {
 		this.checkAll();
+		this.button.text('Deselect all');
 	}
 };
 
