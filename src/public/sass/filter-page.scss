@@ -1,15 +1,5 @@
-.pageContent {
-	// padding-left: 0;
-	// padding-right: 0;
-}
-
 .search {
   @include clearfix;
-}
-
-h1 {
-	// margin-left: 20px;
-	// margin-right: 20px;
 }
 
 .filter {
@@ -74,11 +64,10 @@ h1 {
 
 .products {
 	box-sizing: border-box;
-	padding-left: 20px;
-	padding-right: 20px;
 	@media(min-width: 50em) {
 		float: left;
 		width: 75%;
+		padding-left: 20px;
 	}
 }
 
@@ -89,9 +78,12 @@ h1 {
 	margin-bottom: 20px;
 }
 
-@media(min-width: 30em) {
-	.product {
+.product {
+	@media(min-width: 20em) {
 		float: left;
+		width: 135px;	
+	}
+	@media(min-width: 30em) {
 		width: 200px;
 	}
 }

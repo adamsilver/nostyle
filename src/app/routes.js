@@ -42,34 +42,6 @@ module.exports = function( express, app ){
 		}
 	} );
 
-	app.get('/examples/filter-form--without-buttons', function( req, res ){
-		var nunjucks = require('nunjucks');
-
-		var products = [1, 2, 3, 4, 5, 6, 7];
-
-		if(req.query.color) {
-			products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-		}
-		if(req.query.color && req.query.rating) {
-			products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-		}
-
-		var query = (Object.keys(req.query).length > 0) ? req.query : { };
-		if(req.headers['x-requested-with'] === 'XMLHttpRequest') {
-			res.json({
-				query: query,
-				productsHtml: JSON.stringify(nunjucks.render('partials/products.html', {
-					products: products
-				}))
-			});
-		} else {
-			res.render( 'examples/filter-form--without-buttons.html', {
-				products: products
-			});
-		}
-	} );
-
-
 	// const upload = multer( {
 	// 	dest: './tmp-uploads',
 	// 	limits: { fileSize: 20000000 },

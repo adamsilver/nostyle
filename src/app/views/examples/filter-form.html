@@ -5,10 +5,11 @@
 
 {% block pageScript %}
 <script>
-	new FilterCollapser($('fieldset').eq(0));
-	new FilterCollapser($('fieldset').eq(1));
-	new FilterCollapser($('fieldset').eq(2));
+	// new FilterCollapser($('fieldset').eq(0));
+	// new FilterCollapser($('fieldset').eq(1));
+	// new FilterCollapser($('fieldset').eq(2));
 
+	new FilterRequester();
 	new FilterMenu();
 </script>
 {% endblock pageScript %}
@@ -21,8 +22,17 @@
 			<div class="filter-wrapper">
 
 				<h2 id="filter-heading">Filter</h2>
+				<!-- <div class="current-filters">
+					<h3>Current filters</h3>
+					<ul>
+						<li><a href="">Color: Red (Remove)</a></li>
+					</ul>
+				</div> -->
+
 		
+
 				<form role="form" method="get" action="/examples/filter-form">
+				
 					{{formElements.checkboxes('color', 'Color', [{
 						label: 'Red',
 						id: 'color',
@@ -66,11 +76,11 @@
 {% endblock mainContent %}
 
 {% block header %}
-	<header style="clear: both;height: 100px; background: #ccc">
+	<header style="clear: both;height: 70px; background: #f5f5f5">
 	</header>
 {% endblock header %}
 
 {% block footer %}
-	<footer style="clear: both;height: 200px; background: #ccc">
+	<footer style="clear: both;height: 70px; background: #aaa">
 	</footer>
 {% endblock footer %}
