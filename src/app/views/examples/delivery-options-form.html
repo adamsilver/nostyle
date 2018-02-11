@@ -1,0 +1,15 @@
+{% extends 'layouts/raw.html' %}
+{% import "macros/headings.html" as headings %}
+{% import "macros/form-elements.html" as formElements %}
+{% import "macros/buttons.html" as buttons %}
+
+{% block mainContent %}
+	
+	<form>
+		{{formElements.radioButtons('deliveryoptions', 'Delivery options', [{ id: "1", label: "Standard (Free, 2-3 days)" },
+		{ id: "2", label: "Next day (£6)" }])}}
+
+		{{buttons.primaryButton('Continue', 'continue')}}
+	</form>
+
+{% endblock mainContent %}
