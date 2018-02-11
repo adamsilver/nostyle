@@ -1,42 +1,59 @@
+.pageContent {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .search {
   @include clearfix;
 }
 
 .filter {
-	padding-bottom: 30px;
-}
-
-.enhanced .filter {
-	position: relative;
-}
-
-@media(min-width: 50em) {
-	.filter {
+	padding-bottom: 20px;
+	@media(min-width: 50em) {
 		float: left;
 		width: 20%;
 		padding-right: 5%;
+		box-sizing: border-box;
+	}
+}
+
+.enhanced .filter {
+	position: sticky;
+	top: 0px;
+	padding-top: 10px;
+	padding-left: 20px;
+	border-bottom: 1px solid #ccc;
+	background-color: #fff;
+	margin-bottom: 20px;
+	@media(min-width: 50em) {
+		padding-top: 0;
+		margin-bottom: 0;
+		border-bottom: none;
+		position: static;
 	}
 }
 
 .filter-wrapper {
 	padding-top: 20px;
-	margin-top: 10px;
 	background-color: #fff;
+	margin-top: 10px;
 }
 
 .enhanced .filter-wrapper {
 	position: absolute;
-	box-shadow: 0 0 1px 4px #ddd;
-	padding: 10px 10px 0;
-	max-height: 50vh;
-	max-width: 45vw;
+	border: 1px solid #ccc;
+	padding: 10px;
+	top: 61px;
+	left: -1px;
+	max-height: 80vh;
+	max-width: 200px;
 	overflow: scroll;
 }
 
 @media(min-width: 50em) {
 	.enhanced .filter-wrapper {
 		position: static;
-		box-shadow: none;
+		border: none;
 		padding: 0;
 		overflow: auto;
 		max-height: 100%;
@@ -48,8 +65,15 @@
 	margin-bottom: 30px;
 }
 
-@media(min-width: 50em) {
-	.products {
+.products-wrapper {
+	overflow: hidden;
+}
+
+.products {
+	box-sizing: border-box;
+	padding-left: 20px;
+	padding-right: 20px;
+	@media(min-width: 50em) {
 		float: left;
 		width: 75%;
 	}

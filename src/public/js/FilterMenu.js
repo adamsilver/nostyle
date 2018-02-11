@@ -18,7 +18,7 @@ FilterMenu.prototype.setupResponsiveChecks = function() {
 };
 
 FilterMenu.prototype.createToggleButton = function() {
-	this.menuButton = $('<button class="menu-button" type="button" aria-haspopup="true" aria-expanded="false">Filter...</button>');
+	this.menuButton = $('<button class="filter-button secondaryButton" type="button" aria-haspopup="true" aria-expanded="false">Filter...</button>');
 	this.menuButton.on('click', $.proxy(this, 'onMenuButtonClick'));
 };
 
