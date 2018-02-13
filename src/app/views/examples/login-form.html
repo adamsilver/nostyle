@@ -43,7 +43,7 @@
 {% block mainContent %}
 
 	
-	{{headings.h1('Sign in')}}
+	{{headings.h1('Log in')}}
 	<ul>
 		<li>Not signed up? <a href="/examples/registration-form">Register</a></li>
 		<li>Forgot password? <a href="#">Reset password</a></li>
@@ -54,7 +54,7 @@
 	<form novalidate>
 		{{formElements.textBox('email', 'Email address', {attributes: ' autocapitalize="none" autocorrect="off" spellcheck="false" '})}}
 		{{formElements.textBox('password', 'Password', type='password', { hint: 'Must contain 8+ characters with at least 1 number.'})}}
-		{{buttons.primaryButton('Sign in')}}
+		{{buttons.primaryButton('Log in')}}
 	</form>
 
 
