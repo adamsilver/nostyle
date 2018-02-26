@@ -19,8 +19,8 @@ Stepper.prototype.createStatusBox = function() {
 
 Stepper.prototype.setOptions = function(options) {
 	var defaults = {
-		decrementLabel: 'Remove',
-		incrementLabel: 'Add'
+		removeLabel: 'Remove',
+		addLabel: 'Add'
 	};
 	this.options = $.extend(defaults, options);
 };
