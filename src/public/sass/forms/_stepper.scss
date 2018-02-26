@@ -1,5 +1,5 @@
-.stepper-decrementButton,
-.stepper-incrementButton {
+.stepper-removeButton,
+.stepper-addButton {
 	font-size: inherit;
 	font-family: inherit;
 	line-height: 1.25;
@@ -13,24 +13,24 @@
 	color: #fff;
 }
 
-.stepper-decrementButton:hover,
-.stepper-incrementButton:hover {
+.stepper-removeButton:hover,
+.stepper-addButton:hover {
 	background-color: #0074D9;
 	border-color: #0074D9;
 }
 
-.stepper-decrementButton:focus,
-.stepper-incrementButton:focus {
+.stepper-removeButton:focus,
+.stepper-addButton:focus {
 	outline: none;
   box-shadow: 0 0 1px 4px #ffbf47;
 }
 
-.stepper-decrementButton {
+.stepper-removeButton {
 	right: -2px;
 	border-radius: 6px 0 0 6px;
 }
 
-.stepper-incrementButton {
+.stepper-addButton {
 	left: -2px;
 	border-radius: 0 6px 6px 0;
 }
