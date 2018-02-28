@@ -6,19 +6,19 @@
 
 .menu [type=button] {
 	@include secondaryButton;
-	margin-bottom: 5px;
+	border-radius: 0;
 }
 
 .menu [type=button] span {
-	font-size: 1.2em;
+	font-size: 2em;
 	position: relative;
-	top: 0px;
+	top: 0.1em;
 	left: 2px;
 	line-height: 0;
 }
 
 [role=menuitem] {
-	@include secondaryButton;
+	@include button(#fff);
 	display: block;
 	text-align: left;
 	width: 100%;
@@ -28,10 +28,12 @@
 	&:focus {
 		position: relative; 
 		z-index: 10;
+		background-color: #ccc;
 	}
 
 	@media(min-width: 45em) {
-		border-radius: 25px;
+		@include secondaryButton;
+		border-radius: 0;
 		border-bottom: none;
 		width: auto;
 		display: inline-block;

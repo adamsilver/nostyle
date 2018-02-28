@@ -1,5 +1,5 @@
 function SelectAll(container, checkboxes) {
-	this.button = $('<button type="button" class="secondaryButton">Select all</button>');
+	this.button = $('<button type="button" class="selectAll-button">Select all</button>');
 	this.button.on('click', $.proxy(this, 'onButtonClick'))
 	container.append(this.button);
 	this.checkboxes = checkboxes;
