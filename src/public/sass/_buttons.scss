@@ -1,15 +1,14 @@
-@mixin button {
+@mixin button($bg) {
 	border: none;
 	appearance: none;
 	-webkit-appearance: none;
 	font-size: 1.2em;
-	padding: 7px 16px;
-	border-style: solid;
-	border-width: 1px 1px 3px 1px;
-	border-radius: 4px;
-	// &:active {
-	// 	border-width: 1px 3px 1px 1px;
-	// }
+	padding: 10px 25px;
+	border-radius: 25px;
+	background-color: $bg;
+	&:hover {
+		background-color: darken($bg, 15%);
+	}
 }
 
 /**************************************
@@ -17,13 +16,8 @@
 **************************************/
 
 .primaryButton {
-	@include button;
-	background-color: #0074D9;
+	@include button($colour-blue);
 	color: white;
-	border-color: #004077;
-	&:hover {
-		background-color: #004077;
-	}
 }
 
 /**************************************
@@ -31,15 +25,9 @@
 **************************************/
 
 @mixin secondaryButton {
-	@include button;
-	background-color: #ddd;
-	color: #222;
-	border-color: #bbb;
+	@include button($colour-grey);
 }
 
 .secondaryButton {
 	@include secondaryButton;
-	&:hover {
-		background-color: #bbb;
-	}
 } 

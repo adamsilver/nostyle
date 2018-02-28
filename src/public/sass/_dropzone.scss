@@ -103,24 +103,24 @@
 }
 
 .files button {
-	@include button;
+	@include secondaryButton;
 	float: right;
 	font-size: 1em;
 	padding: 4px 8px;
 }
 
 .dropzone-enhanced label {
-	@include button;
+	@include secondaryButton;
 	font-size: 1em;
 	background-color: #ddd;
 	color: #222;
 	font-weight: normal;
-	border-color: #bbb;
+	// border-color: #bbb;
 }
 
-.dropzone-enhanced label:hover {
-	background-color: #bbb;
-}
+// .dropzone-enhanced label:hover {
+// 	background-color: #bbb;
+// }
 
 .dropzone-focused {
 	outline: none;

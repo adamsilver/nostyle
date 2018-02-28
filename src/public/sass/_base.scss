@@ -48,7 +48,7 @@ body {
 }
 
 a:link, a:visited {
-	color: #0074D9;
+	color: $colour-blue;
 }
 
 @mixin clearfix {
@@ -181,7 +181,7 @@ li {
 }
 
 .primaryNav {
-	border-top: 7px solid #0074D9; 
+	border-top: 7px solid $colour-blue; 
 	padding: 20px 20px;
 	background-color: #f5f5f5;
 }

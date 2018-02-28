@@ -5,29 +5,8 @@
 }
 
 .menu [type=button] {
-	background-color: #ddd;
-	border: none;
-	appearance: none;
-	-webkit-appearance: none;
-	color: #222;
-	font-size: 1.2em;
-	padding: 7px 16px;
-	border-left: 1px solid #aaa;
-	border-top: 1px solid #aaa;
-	border-bottom: 3px solid #aaa;
-	border-right: 1px solid #aaa;
-	border-radius: 4px;
-}
-
-.menu [type=button]:active {
-	border-left: 1px solid #aaa;
-	border-top: 3px solid #aaa;
-	border-bottom: 1px solid #aaa;
-	border-right: 1px solid #aaa;
-}
-
-.menu [type=button]:hover {
-	background-color: #aaa;
+	@include secondaryButton;
+	margin-bottom: 5px;
 }
 
 .menu [type=button] span {
@@ -39,28 +18,21 @@
 }
 
 [role=menuitem] {
+	@include secondaryButton;
 	display: block;
 	text-align: left;
 	width: 100%;
-	background-color: #ddd;
-	appearance: none;
 	color: #222;
-	font-size: 1.2em;
-	padding: 7px 16px;
-	margin-bottom: 4px;
-	border-left: 1px solid #bbb;
-	border-top: 1px solid #bbb;
-	border-bottom: 3px solid #aaa;
-	border-right: 1px solid #bbb;
-	border-radius: 4px;
-}
+	border-radius: 0;
+	border-bottom: 1px solid #ccc;
+	&:focus {
+		position: relative; 
+		z-index: 10;
+	}
 
-[role=menuitem]:hover {
-	background-color: #aaa;
-}
-
-@media(min-width: 45em) {
-	[role=menuitem] {
+	@media(min-width: 45em) {
+		border-radius: 25px;
+		border-bottom: none;
 		width: auto;
 		display: inline-block;
 		vertical-align: top;
@@ -70,15 +42,12 @@
 [role=menu] {
 	width: 10em;
 	background-color: #fff;
+	border: 3px solid #aaa;
 }
 
 .enhanced [role=menu] {
 	position: absolute;
-}
-
-
-@media(min-width: 45em) {
-	.enhanced [role=menu] {
+	@media(min-width: 45em) {
 		border: none;
 		width: auto;
 		position: static;

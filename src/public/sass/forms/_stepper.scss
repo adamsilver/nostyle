@@ -1,38 +1,19 @@
 .stepper-removeButton,
 .stepper-addButton {
-	font-size: inherit;
-	font-family: inherit;
-	line-height: 1.25;
-	padding: 0.5em;
-	border: 2px solid #222;
-	background: #fff;
-	position: relative;
-	width: 3em;
-	font-weight: bold;
-	background-color: #222;
-	color: #fff;
-}
-
-.stepper-removeButton:hover,
-.stepper-addButton:hover {
-	background-color: #0074D9;
-	border-color: #0074D9;
-}
-
-.stepper-removeButton:focus,
-.stepper-addButton:focus {
-	outline: none;
-  box-shadow: 0 0 1px 4px #ffbf47;
+	@include secondaryButton;
+	padding-top: 5px;
+	padding-bottom: 7px;
+	line-height: 1.2em;
+	font-size: 1.5em;
+	vertical-align: bottom;
 }
 
 .stepper-removeButton {
-	right: -2px;
-	border-radius: 6px 0 0 6px;
+	border-radius: 15px 0 0 15px;
 }
 
 .stepper-addButton {
-	left: -2px;
-	border-radius: 0 6px 6px 0;
+	border-radius: 0 15px 15px 0;
 }
 
 .stepper input {
