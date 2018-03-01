@@ -1,0 +1,38 @@
+.primaryNav {
+	border-top: 4px solid $colour-blue; 
+	background-color: $colour-grey-light;
+}
+
+.primaryNav ul {
+	list-style: none;
+	display: block;
+	margin: 0;
+	@include clearfix;
+}
+
+.primaryNav li {
+	float: left;
+	font-size: 1em;
+	margin: 0;
+}
+
+@media(min-width: 37.5em) {
+	.primaryNav li {
+		font-size: 1.2em;
+	}
+}
+
+.primaryNav a:link,
+.primaryNav a:visited {
+	text-decoration: none;
+	display: block;
+	padding: 12px 20px 8px;
+	border-bottom: 4px solid $colour-grey-light;
+}
+
+.primaryNav a:hover,
+.primaryNav a.primaryNav-active {
+	text-decoration: none;
+	border-bottom: 4px solid $colour-blue;
+	background-color: $colour-grey-medium;
+}
