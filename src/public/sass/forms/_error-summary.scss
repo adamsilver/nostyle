@@ -5,6 +5,10 @@
 	max-width: 40em;
 }
 
+.errorSummary h2 {
+	margin-top: 0;
+}
+
 .errorSummary:focus {
 	outline: none;
   box-shadow: 0 0 1px 4px #ffbf47;
