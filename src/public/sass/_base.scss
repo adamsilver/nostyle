@@ -211,3 +211,11 @@ input[id$="[amount]"] {
 		max-width: 250px;
 	}
 }
+
+.introBits {
+	display: grid;
+	max-width: 40em;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+	grid-gap: 20px;
+}
+
