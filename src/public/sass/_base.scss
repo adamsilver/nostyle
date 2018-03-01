@@ -145,12 +145,23 @@ li {
 .example {
 	margin-bottom: 20px;
 	overflow: hidden;
+	position: relative;
 }
 
 .example iframe {
 	width: 100%;
 	border: 1px solid #ccc;
 	box-sizing: border-box;
+	display: block;
+}
+
+.example-link {
+	position: absolute;
+	bottom: 1px;
+	right: 1px;
+	background-color: #eee;
+	margin-bottom: 0;
+	padding: 7px 14px;
 }
 
 .html {
