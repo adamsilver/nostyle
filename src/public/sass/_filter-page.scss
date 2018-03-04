@@ -4,10 +4,12 @@
 
 .filter {
 	padding-bottom: 20px;
+	text-align: right;
 	@media(min-width: 50em) {
 		float: left;
 		width: 20%;
 		box-sizing: border-box;
+		text-align: left;
 	}
 }
 
@@ -17,10 +19,8 @@
 	padding-top: 10px;
 	border-bottom: 1px solid #ccc;
 	background-color: #fff;
-	margin-bottom: 20px;
 	@media(min-width: 50em) {
 		padding-top: 0;
-		margin-bottom: 0;
 		border-bottom: none;
 		position: static;
 	}
@@ -30,16 +30,17 @@
 	padding-top: 20px;
 	background-color: #fff;
 	margin-top: 10px;
+	text-align: left;
 }
 
 .enhanced .filter-wrapper {
 	position: absolute;
 	border: 1px solid #ccc;
 	padding: 10px;
-	top: 61px;
-	left: -1px;
+	top: 63px;
+	right: -1px;
 	max-height: 80vh;
-	max-width: 200px;
+	width: 200px;
 	overflow: scroll;
 }
 
@@ -55,11 +56,8 @@
 }
 
 .filter h2 {
+	margin-top: 0;
 	margin-bottom: 30px;
-}
-
-.products-wrapper {
-	overflow: hidden;
 }
 
 .products {
@@ -67,25 +65,22 @@
 	@media(min-width: 50em) {
 		float: left;
 		width: 75%;
-		padding-left: 20px;
 	}
+}
+
+.products-wrapper {
+	display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  margin-bottom: 30px;
+  @media(min-width: 50em) {
+  	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }
 
 .product {
 	background-color: #eee;
 	height: 200px;
-	margin-right: 20px;
-	margin-bottom: 20px;
-}
-
-.product {
-	@media(min-width: 20em) {
-		float: left;
-		width: 135px;	
-	}
-	@media(min-width: 30em) {
-		width: 200px;
-	}
 }
 
 .filter .field {

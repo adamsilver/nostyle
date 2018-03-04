@@ -5,9 +5,9 @@
 
 {% block pageScript %}
 <script>
-	// new FilterCollapser($('fieldset').eq(0));
-	// new FilterCollapser($('fieldset').eq(1));
-	// new FilterCollapser($('fieldset').eq(2));
+	new FilterCollapser($('fieldset').eq(0));
+	new FilterCollapser($('fieldset').eq(1));
+	new FilterCollapser($('fieldset').eq(2));
 
 	new FilterRequester();
 	new FilterMenu();
@@ -22,14 +22,6 @@
 			<div class="filter-wrapper">
 
 				<h2 id="filter-heading">Filter</h2>
-				<!-- <div class="current-filters">
-					<h3>Current filters</h3>
-					<ul>
-						<li><a href="">Color: Red (Remove)</a></li>
-					</ul>
-				</div> -->
-
-		
 
 				<form role="form" method="get" action="/examples/filter-form">
 				

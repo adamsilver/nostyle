@@ -1,6 +1,6 @@
+<h2>Products</h2>
 <div class="products-wrapper">
-	<h2>Products</h2>
 	{% for product in products %}
-		<div class="product"></div>
+		<div class="product">{{loop.index}}</div>
 	{% endfor %}
 </div>
