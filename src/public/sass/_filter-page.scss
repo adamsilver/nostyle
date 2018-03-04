@@ -31,7 +31,6 @@
 .filter-wrapper {
 	padding-top: 20px;
 	background-color: #fff;
-	// margin-top: 10px;
 	text-align: left;
 }
 
@@ -41,13 +40,11 @@
 	padding: 10px;
 	top: 63px;
 	right: -1px;
-	// max-height: 45vh;
+  max-height: 45vh;
 	width: 200px;
-	overflow: scroll;
-}
+	overflow-y: scroll;
 
-@media(min-width: 50em) {
-	.enhanced .filter-wrapper {
+	@media(min-width: 50em) {
 		position: static;
 		border: none;
 		padding: 0;
