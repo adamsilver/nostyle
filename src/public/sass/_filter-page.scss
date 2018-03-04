@@ -2,6 +2,10 @@
   @include clearfix;
 }
 
+.filter-heading {
+
+}
+
 .filter {
 	text-align: right;
 	@media(min-width: 50em) {
@@ -18,6 +22,7 @@
 	top: 0;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	background-color: #fff;
 	margin-bottom: 20px;
@@ -40,7 +45,7 @@
 	padding: 10px;
 	top: 63px;
 	right: -1px;
-  max-height: 45vh;
+  // max-height: 47vh;
 	width: 200px;
 	overflow-y: scroll;
 
