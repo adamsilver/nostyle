@@ -3,6 +3,7 @@ function FilterMenu() {
 	this.setupOptions();
 	this.createToggleButton();
 	this.setupResponsiveChecks();
+	// $(window).on('scroll', $.proxy(this, 'onScroll'));
 }
 
 FilterMenu.prototype.setupOptions = function(options) {
@@ -50,6 +51,7 @@ FilterMenu.prototype.showMenu = function(first_argument) {
 
 FilterMenu.prototype.onMenuButtonClick = function() {
 	this.toggle();
+	// this.fit();
 };
 
 FilterMenu.prototype.toggle = function() {
@@ -58,4 +60,21 @@ FilterMenu.prototype.toggle = function() {
 	} else {
 		this.hideMenu();
 	}
+};
+
+FilterMenu.prototype.onScroll = function(e) {
+	// this.fit();
+};
+
+FilterMenu.prototype.fit = function() {
+	var vh = $(window).height();
+	var top = $('.filter-wrapper').offset().top;
+	var scrollTop = $(window).scrollTop();
+
+	console.log($('.filter').offset().top);
+
+
+	var paddingTop = parseInt($('.filter-wrapper').css('paddingTop'), 10);
+	var paddingBottom = parseInt($('.filter-wrapper').css('paddingBottom'),10);
+	$('.filter-wrapper').height(vh-top-paddingTop-paddingBottom-30);
 };

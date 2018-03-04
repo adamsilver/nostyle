@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const urlBodyParser = bodyParser.urlencoded({ extended: true, limit: '1mb' });
 const jsonBodyParser = bodyParser.json();
 const defaultBodyParser = bodyParser();
+const faker = require('faker');
+const products = require("./data/products").products;
 
 module.exports = function( express, app ){
 
@@ -18,13 +20,18 @@ module.exports = function( express, app ){
 	app.get('/examples/filter-form', function( req, res ){
 		var nunjucks = require('nunjucks');
 
-		var products = [1, 2, 3, 4, 5, 6, 7];
+		var p = products;
 
 		if(req.query.color) {
-			products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+			p = products.filter(function(item) {
+				return item.color == req.query.color;
+			});
 		}
-		if(req.query.color && req.query.rating) {
-			products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+
+		if(req.query.rating) {
+			p = p.filter(function(item) {
+				return item.rating == parseInt(req.query.rating, 10);
+			});
 		}
 
 		var query = (Object.keys(req.query).length > 0) ? req.query : { };
@@ -32,12 +39,12 @@ module.exports = function( express, app ){
 			res.json({
 				query: query,
 				productsHtml: JSON.stringify(nunjucks.render('partials/products.html', {
-					products: products
+					products: p
 				}))
 			});
 		} else {
 			res.render( 'examples/filter-form.html', {
-				products: products
+				products: p
 			});
 		}
 	} );
