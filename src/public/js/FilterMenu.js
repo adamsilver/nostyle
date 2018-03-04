@@ -75,7 +75,6 @@ FilterMenu.prototype.fit = function() {
 	if(star.offset().top < $(window).scrollTop()) {
 		wrapper.height(vh - (filter.height() + 50));
 	} else {
-		var pos = $(window).scrollTop() + $('.products').offset().top;
 		wrapper.height(vh + $(window).scrollTop() - $('.products').offset().top - 10);
 	}
 };
