@@ -20,7 +20,7 @@ if(!supportsDateInput()) {
 		this.calendarClass = 'datepicker';
 		this.setupKeys();
 		this.setupMonthNames();
-		this.monthDate = this.options.currentDate
+		this.monthDate = this.options.currentDate;
 		this.selectedDate = null;
 		this.createToggleButton();
 		this.buildCalendar();
