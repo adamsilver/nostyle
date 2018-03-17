@@ -4,11 +4,11 @@ function FormValidator(form) {
   this.validators = [];
   $(this.form).on("submit", $.proxy(this, "onSubmit"));
   this.summary = $(".errorSummary");
-  this.summary.on('click', 'a', $.proxy(this, 'onErrorClicked'));
+  this.summary.on('click', 'a', $.proxy(this, 'onErrorClick'));
   this.originalTitle = document.title;
 };
 
-FormValidator.prototype.onErrorClicked = function(e) {
+FormValidator.prototype.onErrorClick = function(e) {
   e.preventDefault();
   var href = e.target.href;
   var id = href.substring(href.indexOf("#"), href.length);
