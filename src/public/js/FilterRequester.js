@@ -8,19 +8,25 @@ function FilterRequester() {
 
 FilterRequester.prototype.onInputChange = function(e) {
 	var query = this.form.serialize();
-	history.pushState(query, null, '/examples/filter-form?'+query);
 	this.requestResults(query);
 };
 
 FilterRequester.prototype.requestResults = function(data) {
+
+	var query = data;
+	var self = this;
+
 	$.ajax({
 		url: '/examples/filter-form',
-    type: 'get',
-    data: data,
-    error: function() {
-    	console.log(arguments);
-    },
-    success: $.proxy(this, 'onRequestSuccess')
+		type: 'get',
+		data: data,
+		error: function() {
+			console.log(arguments);
+		},
+		success: function( data ){
+			history.pushState(data, null, '/examples/filter-form?'+query);
+			self.onRequestSuccess( data );
+		}
 	});
 };
 
@@ -53,5 +59,10 @@ FilterRequester.prototype.updateFilterForm = function(query) {
 };
 
 FilterRequester.prototype.onPopState = function(e) {
-	this.requestResults(e.originalEvent.state);
+	var state = e.originalEvent.state;
+	if( state ){
+		this.onRequestSuccess(state);
+	} else {
+		history.back();
+	}
 };
