@@ -1,10 +1,11 @@
 function FilterRequester() {
+	this.url = '/examples/filter-form';
 	this.form = $('.filter form');
 	this.products = $('.products');
 	this.form.find('input').on('change', $.proxy(this, 'onInputChange'));
 	$(window).on('popstate', $.proxy(this, 'onPopState'));
 	this.form.find('[type=submit]').addClass('visually-hidden').attr('tabindex', '-1');
-	history.replaceState({query: '', productsHtml: JSON.stringify($('.products').html()) }, null, '/examples/filter-form');
+	history.replaceState({query: '', productsHtml: JSON.stringify($('.products').html()) }, null, this.url);
 }
 
 FilterRequester.prototype.onInputChange = function(e) {
@@ -12,20 +13,18 @@ FilterRequester.prototype.onInputChange = function(e) {
 	this.requestResults(query);
 };
 
-FilterRequester.prototype.requestResults = function(data) {
-	var query = data;
+FilterRequester.prototype.requestResults = function(query) {
 	$.ajax({
-		url: '/examples/filter-form',
+		url: this.url,
 		type: 'get',
-		data: data,
-		error: function() {
-			console.log(arguments);
-		},
-		success: $.proxy(function( data ){
-			history.pushState(data, null, '/examples/filter-form?'+query);
-			this.renderUpdates( data );
-		}, this)
+		data: query,
+		success: $.proxy(this, 'onRequestSuccess', query)
 	});
+};
+
+FilterRequester.prototype.onRequestSuccess = function(query, response) {
+	history.pushState(response, null, this.url+'?'+query);
+	this.renderUpdates(response);
 };
 
 FilterRequester.prototype.renderUpdates = function(data) {
@@ -40,7 +39,6 @@ FilterRequester.prototype.updateFilterForm = function(query) {
 		if($.isArray(controlValue)) {
 			controlValue.forEach(function(value) {
 				$('.filter [name='+key+']').each(function(i, input) {
-					// console.log(input, value);
 					if(input.value == value) {
 						input.checked = true;
 					}
