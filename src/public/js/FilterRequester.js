@@ -1,30 +1,33 @@
 function FilterRequester() {
+	this.url = '/examples/filter-form';
 	this.form = $('.filter form');
 	this.products = $('.products');
 	this.form.find('input').on('change', $.proxy(this, 'onInputChange'));
 	$(window).on('popstate', $.proxy(this, 'onPopState'));
 	this.form.find('[type=submit]').addClass('visually-hidden').attr('tabindex', '-1');
+	history.replaceState({query: '', productsHtml: JSON.stringify($('.products').html()) }, null, this.url);
 }
 
 FilterRequester.prototype.onInputChange = function(e) {
 	var query = this.form.serialize();
-	history.pushState(query, null, '/examples/filter-form?'+query);
 	this.requestResults(query);
 };
 
-FilterRequester.prototype.requestResults = function(data) {
+FilterRequester.prototype.requestResults = function(query) {
 	$.ajax({
-		url: '/examples/filter-form',
-    type: 'get',
-    data: data,
-    error: function() {
-    	console.log(arguments);
-    },
-    success: $.proxy(this, 'onRequestSuccess')
+		url: this.url,
+		type: 'get',
+		data: query,
+		success: $.proxy(this, 'onRequestSuccess', query)
 	});
 };
 
-FilterRequester.prototype.onRequestSuccess = function(data) {
+FilterRequester.prototype.onRequestSuccess = function(query, response) {
+	history.pushState(response, null, this.url+'?'+query);
+	this.renderUpdates(response);
+};
+
+FilterRequester.prototype.renderUpdates = function(data) {
 	this.updateFilterForm(data.query);
 	this.products.html(JSON.parse(data.productsHtml));
 };
@@ -36,7 +39,6 @@ FilterRequester.prototype.updateFilterForm = function(query) {
 		if($.isArray(controlValue)) {
 			controlValue.forEach(function(value) {
 				$('.filter [name='+key+']').each(function(i, input) {
-					// console.log(input, value);
 					if(input.value == value) {
 						input.checked = true;
 					}
@@ -53,5 +55,8 @@ FilterRequester.prototype.updateFilterForm = function(query) {
 };
 
 FilterRequester.prototype.onPopState = function(e) {
-	this.requestResults(e.originalEvent.state);
+	var state = e.originalEvent.state;
+	if(state) {
+		this.renderUpdates(state);
+	}
 };
