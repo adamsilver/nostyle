@@ -130,6 +130,7 @@ p {
 ul {
 	margin-bottom: 30px;
 	margin-left: 25px;
+	font-size: 1.2em;
 }
 
 li {
@@ -215,11 +216,22 @@ input[id$="[amount]"] {
 	width: 100px;
 }
 
-.passwordRevealer input {
-	vertical-align: top;
-	max-width: 180px;
-	@media(min-width: 30em) {
-		max-width: 250px;
+.passwordRevealer {
+	position: relative;
+
+	input {
+		padding-right: 70px;
+	}
+
+	button {
+		@include button(#000);
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		padding: 8px 0;
+		border-radius: 0;
+		color: #fff;
+		width: 80px;
 	}
 }
 

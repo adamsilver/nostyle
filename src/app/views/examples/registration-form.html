@@ -35,6 +35,8 @@
 			},
 			message: 'Your password must contain at least one number.'
 		}]);
+
+		new PasswordRevealer(document.getElementById('password'));
 	</script>
 {% endblock pageScript %}
 
@@ -43,7 +45,7 @@
 	{{headings.h1('Register')}}
 
 	<ul>
-		<li>Already got an account? <a href="/examples/signin-form">Sign in</a></li>
+		<li>Already got an account? <a href="/examples/login-form">Log in</a></li>
 	</ul>
 
 	{{formElements.errorSummary("There's a problem", [{
