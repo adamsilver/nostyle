@@ -5,6 +5,12 @@ function FilterRequester() {
 	this.form.find('input').on('change', $.proxy(this, 'onInputChange'));
 	$(window).on('popstate', $.proxy(this, 'onPopState'));
 	this.form.find('[type=submit]').addClass('visually-hidden').attr('tabindex', '-1');
+
+	// When this component kicks in we need to replace the history entry with this.
+	// This is because when popstate fires, there's no useful state to work with
+	// so we replace the current history entry with the state of the page on first entry.
+	// Using pushState would add an EXTRA entry, and mean users have to press back twice
+	// in their browser.
 	history.replaceState({query: '', productsHtml: JSON.stringify($('.products').html()) }, null, this.url);
 }
 
@@ -56,7 +62,5 @@ FilterRequester.prototype.updateFilterForm = function(query) {
 
 FilterRequester.prototype.onPopState = function(e) {
 	var state = e.originalEvent.state;
-	if(state) {
-		this.renderUpdates(state);
-	}
+	this.renderUpdates(state);
 };
