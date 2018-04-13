@@ -3,7 +3,6 @@ function FilterMenu() {
 	this.setupOptions();
 	this.createToggleButton();
 	this.setupResponsiveChecks();
-	$(window).on('scroll', $.proxy(this, 'onScroll'));
 }
 
 FilterMenu.prototype.setupOptions = function(options) {
@@ -34,11 +33,25 @@ FilterMenu.prototype.checkMode = function(mq) {
 FilterMenu.prototype.enableSmallMode = function() {
 	this.container.prepend(this.menuButton);
 	this.hideMenu();
+	this.addCloseButton();
+};
+
+FilterMenu.prototype.addCloseButton = function() {
+	var wrapper = $('.filter-wrapper');
+	this.closeButton = $('<button class="filter-close" type="button" aria-label="close filters" aria-hidden="true" focusable="false"><svg viewBox="0 0 10 10"><path d="m7.1 1.4 1.4 1.4-5.6 5.6-1.4-1.4zm-4.2 0l5.6 5.6-1.4 1.4-5.6-5.6z"/></svg></button>');
+	this.closeButton.on('click', $.proxy(this, 'onCloseClick'));
+	wrapper.prepend(this.closeButton);
+};
+
+FilterMenu.prototype.onCloseClick = function() {
+	this.hideMenu();
+	this.menuButton.focus();
 };
 
 FilterMenu.prototype.enableBigMode = function() {
 	this.menuButton.detach();
 	this.showMenu();
+	this.closeButton.remove();
 };
 
 FilterMenu.prototype.hideMenu = function() {
@@ -51,7 +64,7 @@ FilterMenu.prototype.showMenu = function(first_argument) {
 
 FilterMenu.prototype.onMenuButtonClick = function() {
 	this.toggle();
-	this.fit();
+	this.closeButton.focus();
 };
 
 FilterMenu.prototype.toggle = function() {
@@ -59,22 +72,5 @@ FilterMenu.prototype.toggle = function() {
 		this.showMenu();
 	} else {
 		this.hideMenu();
-	}
-};
-
-FilterMenu.prototype.onScroll = function(e) {
-	this.fit();
-};
-
-FilterMenu.prototype.fit = function() {
-	var vh = $(window).height();
-	var filter = $('.filter');
-	var wrapper = $('.filter-wrapper');
-	var star = $('.filter-marker');
-
-	if(star.offset().top < $(window).scrollTop()) {
-		wrapper.height(vh - (filter.height() + 50));
-	} else {
-		wrapper.height(vh + $(window).scrollTop() - $('.products').offset().top - 10);
 	}
 };
