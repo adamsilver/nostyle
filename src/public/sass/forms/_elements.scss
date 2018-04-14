@@ -42,7 +42,7 @@ fieldset {
 }
 
 .field-error {
-	color: #b10e1e;
+	color: $colour-red;
 	font-weight: bold;
 	margin-bottom: 2px;
     display: block;
@@ -52,7 +52,7 @@ fieldset {
     margin-top: 3px;
     vertical-align: bottom;
     width: 1.5em;
-    fill: #b10e1e;
+    fill: $colour-red;
 }
 
 /**************************************
@@ -86,7 +86,7 @@ textarea {
     box-sizing: border-box;
     -webkit-appearance: none;
     appearance: none;
-    border: 2px solid #222;
+    border: 2px solid $colour-black;
     /*border:inset 2px #EBE9ED;
     border-right:solid 2px #eee;
     border-bottom:solid 2px #eee;*/
@@ -112,7 +112,7 @@ textarea {
 }
 
 [type=file]:hover {
-    border: 2px solid #222;
+    border: 2px solid $colour-black;
 }
 
 /**************************************
@@ -145,7 +145,7 @@ textarea {
 }
 
 .field-radioButton label:hover {
-    border-color: #222;
+    border-color: $colour-black;
 }
 
 /**************************************
@@ -171,7 +171,7 @@ textarea {
 }
 
 .field-checkbox label:hover {
-    border-color: #222;
+    border-color: $colour-black;
 }
 
 /**************************************
@@ -212,7 +212,7 @@ textarea {
     font-family: inherit;
     line-height: 1.25;
     padding: 0.5em;
-    border: 2px solid #222;
+    border: 2px solid $colour-black;
     -moz-appearance:textfield;
 }
 
@@ -254,7 +254,7 @@ button:focus,
 textarea:focus,
 select:focus {
     outline: none;
-    box-shadow: 0 0 1px 4px #ffbf47;
+    box-shadow: 0 0 1px 4px $colour-yellow;
 }
 
 /**************************************

@@ -13,12 +13,12 @@
     font-family: inherit;
     line-height: 1.25;
     padding: 0.5em;
-    border: 2px solid #222;
+    border: 2px solid $colour-black;
 }
 
 .autocomplete-isFocused {
     outline-offset: 0;
-    outline: 3px solid #ffbf47;
+    outline: 3px solid $colour-yellow;
 }
 
 .autocomplete-button {
@@ -27,7 +27,7 @@
     top: .1em;
     -webkit-appearance: none;
     border: none;
-    background-color: #fff;
+    background-color: $colour-white;
     font-size: 2em;
     line-height: 0.8em;
     padding: .1em .35em;
@@ -40,7 +40,7 @@
     width: 1.5em;
     height: 1.5em;
     top: 0.8em;
-    color: #222;
+    color: $colour-black;
 }
 
 .autocomplete [role=listbox] {
@@ -55,13 +55,13 @@
     position: absolute;
     top: 2.3em;
     width: 100%;
-    background-color: #fff;
+    background-color: $colour-white;
     border-radius: 0;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     z-index: 2;
-    border: 2px solid #222;
+    border: 2px solid $colour-black;
 }
 
 .autocomplete [role=option] {
@@ -70,6 +70,7 @@
     display: block;
     border-bottom: 2px solid #ccc;
     outline: none;
+    margin: 0;
 }
 
 .autocomplete-optionNoResults {
@@ -84,5 +85,5 @@
 .autocomplete [role=option][aria-selected="true"] {
     background-color: #005EA5;
     border-color: #005EA5;
-    color: #ffffff;
+    color: $colour-white;
 }

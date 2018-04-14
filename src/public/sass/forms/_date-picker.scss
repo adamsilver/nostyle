@@ -10,7 +10,7 @@
 }
 
 .datepicker-wrapper {
-	border-left: 6px solid #222;
+	border-left: 6px solid $colour-black;
 	padding: 0px 10px;
 	max-width: 400px;
 	margin-top: 1em;
@@ -60,20 +60,20 @@
 .datepicker-next:hover,
 .datepicker-back:hover {
    background-color: #eee;
-   color: #222 !important;
+   color: $colour-black !important;
 }
 
 .datepicker-next:focus,
 .datepicker-back:focus {
 	outline-offset: 0;
-  outline: 3px solid #ffbf47;
+  outline: 3px solid $colour-yellow;
 }
 
 .datepicker [role=gridcell] {
 	cursor: default;
 	&:focus {
 		outline-offset: 0;
-  	outline: 3px solid #ffbf47;
+  	outline: 3px solid $colour-yellow;
 	}
 }
 

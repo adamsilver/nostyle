@@ -1,5 +1,5 @@
 .errorSummary {
-	border: 5px solid #B10E1E;
+	border: 5px solid $colour-red;
 	padding: 20px;
 	margin-bottom: 40px;
 	max-width: 40em;
@@ -11,7 +11,7 @@
 
 .errorSummary:focus {
 	outline: none;
-  box-shadow: 0 0 1px 4px #ffbf47;
+  box-shadow: 0 0 1px 4px $colour-yellow;
 }
 
 .errorSummary-isHidden {
@@ -23,18 +23,18 @@
 }
 
 .errorSummary ul {
-	color: #B10E1E;
+	color: $colour-red;
 	list-style: none;
     margin-left: 0;
     margin-bottom: 0;
 }
 
 .errorSummary a {
-	color: #B10E1E;
+	color: $colour-red;
 	font-weight: bold;
 }
 
 .errorSummary a:focus {
 	outline: none;
-  box-shadow: 0 0 1px 4px #ffbf47;
+  box-shadow: 0 0 1px 4px $colour-yellow;
 }

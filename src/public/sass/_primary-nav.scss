@@ -1,6 +1,6 @@
 .primaryNav {
-	border-top: 4px solid $colour-blue; 
-	background-color: $colour-grey-light;
+	// border-top: 4px solid $colour-blue; 
+	// background-color: $colour-grey-light;
 }
 
 .primaryNav ul {
@@ -8,17 +8,20 @@
 	display: block;
 	margin: 0;
 	@include clearfix;
+	font-size: 1em;
+	padding-top: 8px;
 }
 
 .primaryNav li {
 	float: left;
-	font-size: 1em;
+	// font-size: 1em;
 	margin: 0;
+	line-height: 0.5em;
 }
 
 @media(min-width: 37.5em) {
 	.primaryNav li {
-		font-size: 1.2em;
+		// font-size: 1em;
 	}
 }
 
@@ -26,13 +29,18 @@
 .primaryNav a:visited {
 	text-decoration: none;
 	display: block;
-	padding: 12px 20px 8px;
-	border-bottom: 4px solid $colour-grey-light;
+	padding: 12px 6px 8px;
+}
+
+.primaryNav a:first-child {
+	padding-left: 12px;
 }
 
 .primaryNav a:hover,
 .primaryNav a.primaryNav-active {
 	text-decoration: none;
-	border-bottom: 4px solid $colour-blue;
-	background-color: $colour-grey-medium;
+}
+
+.primaryNav a.primaryNav-active {
+	font-weight: bold;
 }

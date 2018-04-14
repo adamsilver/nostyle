@@ -43,7 +43,6 @@ body {
 	font-family: 'Open sans', helvetica, arial, sans-serif;
   text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
-  font-size: 62.5%;
   font-size: 100%;
 }
 
@@ -73,22 +72,7 @@ a:link, a:visited {
   width: 1px!important;
 }
 
-.header {
-	background-color: #222;
-	padding: 20px 20px;
-	overflow: hidden;
-}
 
-.logo {
-	font-size: 1.5em;
-	font-weight: bold;
-	float: left;
-}
-
-.logo a {
-	text-decoration: none;
-	color: #fff;
-}
 
 .main {
 
@@ -97,7 +81,7 @@ a:link, a:visited {
 h1 {
 	font-size: 2.2em;
 	line-height: 1;
-	color: #222;
+	color: $colour-black;
 	margin-bottom: 20px;
 }
 
@@ -111,7 +95,7 @@ h1 {
 h2 {
 	font-size: 1.6em;
 	line-height: 1;
-	color: #222;
+	color: $colour-black;
 	margin-top: 40px;
 	margin-bottom: 10px;
 }
@@ -130,7 +114,7 @@ p {
 ul {
 	margin-bottom: 30px;
 	margin-left: 25px;
-	font-size: 1.2em;
+	// font-size: 1.2em;
 }
 
 li {
@@ -230,7 +214,7 @@ input[id$="[amount]"] {
 		bottom: 0;
 		padding: 8px 0;
 		border-radius: 0;
-		color: #fff;
+		color: $colour-white;
 		width: 80px;
 	}
 }
@@ -239,6 +223,6 @@ input[id$="[amount]"] {
 	display: grid;
 	max-width: 40em;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-	grid-gap: 20px;
+	grid-gap: 0 20px;
 }
 

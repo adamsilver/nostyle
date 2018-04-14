@@ -13,7 +13,6 @@
 	text-align: center;
 	padding: 70px 40px 55px;
 	max-width: 520px;
-	background-color: #f9f9f9;
 	transition: outline-offset .1s ease-in-out, background-color .1s linear;
 }
 
@@ -113,7 +112,7 @@
 	@include secondaryButton;
 	font-size: 1em;
 	background-color: #ddd;
-	color: #222;
+	color: $colour-black;
 	font-weight: normal;
 	// border-color: #bbb;
 }
@@ -124,5 +123,5 @@
 
 .dropzone-focused {
 	outline: none;
-  box-shadow: 0 0 1px 4px #ffbf47;
+  box-shadow: 0 0 1px 4px $colour-yellow;
 }

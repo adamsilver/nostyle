@@ -18,7 +18,7 @@
 }
 
 [role=menuitem] {
-	@include button(#fff);
+	@include button($colour-white);
 	display: block;
 	text-align: left;
 	width: 100%;
@@ -43,7 +43,7 @@
 
 [role=menu] {
 	width: 10em;
-	background-color: #fff;
+	background-color: $colour-white;
 	border: 3px solid #aaa;
 }
 

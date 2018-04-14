@@ -3,10 +3,13 @@
 {% import "macros/headings.html" as headings %}
 {% import "macros/navigation.html" as navigation %}
 
+{% block header %}
+	{% include "partials/nav.html" %}
+{% endblock %}
+
 {% block content %}
 
 <div class="mainContent">
-	{% include "partials/nav.html" %}
 	<div class="pageContent">
 		{% block mainContent %}
 		{% endblock%}
