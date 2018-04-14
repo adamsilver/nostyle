@@ -25,8 +25,12 @@
 .errorSummary ul {
 	color: $colour-red;
 	list-style: none;
-    margin-left: 0;
-    margin-bottom: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+  font-size: 1em;
+  @media(min-width: 30em) {
+  	font-size: 1.2em;
+  }
 }
 
 .errorSummary a {
