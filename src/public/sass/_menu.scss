@@ -17,7 +17,12 @@
 	line-height: 0;
 }
 
-[role=menuitem] {
+.menu-item {
+	@include secondaryButton;
+	border-radius: 0;
+}
+
+.menu [role=menuitem] {
 	@include button($colour-white);
 	display: block;
 	text-align: left;
@@ -26,7 +31,7 @@
 	border-radius: 0;
 	border-bottom: 1px solid #ccc;
 	&:focus {
-		position: relative; 
+		position: relative;
 		z-index: 10;
 		background-color: #ccc;
 	}
@@ -41,13 +46,13 @@
 	}
 }
 
-[role=menu] {
+.menu [role=menu] {
 	width: 10em;
 	background-color: $colour-white;
 	border: 3px solid #aaa;
 }
 
-.enhanced [role=menu] {
+.menu [role=menu] {
 	position: absolute;
 	@media(min-width: 45em) {
 		border: none;
@@ -56,10 +61,10 @@
 	}
 }
 
-[aria-expanded="true"] + [role=menu] {
+.menu [aria-expanded="true"] + [role=menu] {
 	display: block;
 }
 
-[aria-expanded="false"] + [role=menu] {
+.menu [aria-expanded="false"] + [role=menu] {
 	display: none;
 }

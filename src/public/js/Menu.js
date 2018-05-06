@@ -1,6 +1,8 @@
 function Menu(container, mq) {
 	this.container = container;
-	this.menu = this.container.find('[role=menu]');
+	this.menu = this.container.find('.menu-wrapper');
+	this.menu.attr('role', 'menu');
+	this.container.find('.menu-item').attr('role', 'menuitem');
 	this.mq = mq;
 	this.keys = { esc: 27, up: 38, down: 40, tab: 9 };
 	this.menu.on('keydown', '[role=menuitem]', $.proxy(this, 'onButtonKeydown'));
