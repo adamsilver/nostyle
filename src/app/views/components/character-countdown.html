@@ -1,11 +1,13 @@
 {% extends 'layouts/default.html' %}
 
-{% block title %}Character countdown - Components{% endblock %} 
+{% block title %}Character countdown - Components{% endblock %}
 
 {% import "macros/headings.html" as headings %}
 
 {% block mainContent %}
 	{{headings.h1('Character countdown')}}
+
+	<p>Use the Character Countdown component to inform users how many characters they have left in a textarea.</p>
 
 	<div class="example">
 		<iframe src="/examples/character-countdown" width="400" height="200"></iframe>

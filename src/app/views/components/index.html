@@ -1,18 +1,18 @@
 {% extends 'layouts/default.html' %}
 {% set nav = "components" %}
 
-{% block title %}Components{% endblock %} 
+{% block title %}Components{% endblock %}
 
 {% import "macros/headings.html" as headings %}
 
 {% block mainContent %}
 	<h1>Components</h1>
-	
+
 	<ul>
 		<li><a {% if cnav == 'autocomplete'%}class="active"{%endif%} href="/components/autocomplete">Autocomplete</a></li>
 		<li><a {% if cnav == 'autocomplete'%}class="active"{%endif%} href="/components/buttons">Buttons</a></li>
 		<li><a {% if cnav == 'characters-countdown'%}class="active"{%endif%} href="/components/character-countdown">Character countdown</a></li>
-		<li><a {% if cnav == 'checkbox-group'%}class="active"{%endif%} href="/components/checkbox-group">Checkbox group</a></li>
+		<li><a {% if cnav == 'checkbox-group'%}class="active"{%endif%} href="/components/checkbox-group">Checkboxes</a></li>
 		<li><a {% if cnav == 'date-picker-field'%}class="active"{%endif%} href="/components/date-picker">Date picker</a></li>
 		<li><a {% if cnav == 'file-input'%}class="active"{%endif%} href="/components/file-picker">File picker</a></li>
 		<li><a {% if cnav == 'memorable-date'%}class="active"{%endif%} href="/components/memorable-date">Memorable date</a></li>

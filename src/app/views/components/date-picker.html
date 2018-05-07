@@ -1,19 +1,14 @@
 {% extends 'layouts/default.html' %}
 
-{% block title %}Date picker - Components{% endblock %} 
+{% block title %}Date picker - Components{% endblock %}
 
 {% import "macros/headings.html" as headings %}
 
 {% block mainContent %}
 	{{headings.h1('Date picker')}}
 
-	<p>Use this when:</p>
-	<ul>
-		<li>User is trying to find a date.</li>
-	</ul>
+	<p>Use the Date picker component to help users find a date.</p>
 
-	{{headings.h2('With detection')}}	
-	<p>This picker is only applied if the browser doesn't provide its own native picker.</p>
 	<div class="example">
 		<iframe src="/examples/date-picker" width="400" height="200"></iframe>
 		<p class="example-link"><a href="/examples/date-picker">Standalone</a></p>

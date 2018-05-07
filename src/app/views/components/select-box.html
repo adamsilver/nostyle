@@ -1,12 +1,14 @@
 {% extends 'layouts/default.html' %}
 
-{% block title %}Select box - Components{% endblock %} 
+{% block title %}Select box - Components{% endblock %}
 
 {% import "macros/headings.html" as headings %}
 {% import "macros/form-elements.html" as formElements %}
 
 {% block mainContent %}
 	{{headings.h1('Select box')}}
+
+	<p>Let users select one option from a list. Use this component as a last resort.</p>
 
 	<div class="example">
 		<iframe src="/examples/select-box" width="400" height="200"></iframe>
