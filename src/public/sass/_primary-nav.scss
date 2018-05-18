@@ -1,6 +1,6 @@
 .primaryNav {
-	// border-top: 4px solid $colour-blue; 
-	// background-color: $colour-grey-light;
+	padding-left: 14px;
+	padding-right: 14px;
 }
 
 .primaryNav ul {
@@ -14,15 +14,8 @@
 
 .primaryNav li {
 	float: left;
-	// font-size: 1em;
 	margin: 0;
 	line-height: 0.5em;
-}
-
-@media(min-width: 37.5em) {
-	.primaryNav li {
-		// font-size: 1em;
-	}
 }
 
 .primaryNav a:link,
@@ -30,10 +23,6 @@
 	text-decoration: none;
 	display: block;
 	padding: 12px 6px 8px;
-}
-
-.primaryNav a:first-child {
-	padding-left: 12px;
 }
 
 .primaryNav a:hover,

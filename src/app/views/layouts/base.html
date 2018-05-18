@@ -39,8 +39,11 @@
 		{% endblock footer %}
 
 		{% block script %}
+		<!-- build:js(src) /public/js/vendor.min.js -->
+		<script src="/public/js/vendor/jquery.js"></script>
+		<!-- endbuild -->
 		<!-- build:js(src) /public/js/app.min.js -->
-			<script src="/public/js/vendor/jquery.js"></script>
+			<script src="/components/graham/graham.js"></script>
 			<script src="/public/js/FormValidator.js"></script>
 			<script src="/public/js/CheckboxCollapser.js"></script>
 			<script src="/public/js/Stepper.js"></script>

@@ -18,9 +18,9 @@
     "dist-install": "cd dist && npm install --production",
     "dist": "npm run build:dist && npm run start",
     "heroku-postbuild": "npm run build:dist",
-    "watch:sass": "npm run sass:dev && node-sass src/public/sass/main.scss src/public/css/main.css --source-map src/public/css/main.css.map --source-map-contents --include-path ./src/public/sass/ -w -r",
-    "sass:dev": "node-sass src/public/sass/main.scss src/public/css/main.css --source-map src/public/css/main.css.map --source-map-contents --include-path ./src/public/sass/",
-    "sass:prod": "node-sass src/public/sass/main.scss src/public/css/main.css --include-path ./src/public/sass/ -x --output-style compressed"
+    "watch:sass": "npm run sass:dev && node-sass src/public/sass/main.scss src/public/css/main.css --source-map src/public/css/main.css.map --source-map-contents --include-path ./src/public/sass/ --include-path ./src/components/ -w -r",
+    "sass:dev": "node-sass src/public/sass/main.scss src/public/css/main.css --source-map src/public/css/main.css.map --source-map-contents --include-path ./src/public/sass/ --include-path ./src/components/",
+    "sass:prod": "node-sass src/public/sass/main.scss src/public/css/main.css --include-path ./src/public/sass/ --include-path ./src/components/ -x --output-style compressed"
   },
   "repository": {
     "type": "git",

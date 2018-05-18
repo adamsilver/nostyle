@@ -29,13 +29,14 @@ function startApp(){
 	var app = express();
 	var serverConfig = config.server;
 	var pathToPublic = path.resolve( __dirname, '../public' );
+	var pathToComponents = path.resolve( __dirname, '../components' );
 	var env = app.get( 'env' );
 	var isDev = ( 'development' === env );
 
 	app.set( 'view engine', 'html' );
 	app.set( 'view cache', config.views.cache );
 
-	nunjucks.configure( ( __dirname + '/views' ), {
+	nunjucks.configure( [( __dirname + '/views' ), pathToComponents], {
 		autoescape: true,
 		watch: config.isDev,
 		noCache: !config.views.cache,
@@ -43,6 +44,9 @@ function startApp(){
 	} );
 
 	app.use( '/public', serveStatic( pathToPublic ) );
+	if(isDev) {
+		app.use( '/components', serveStatic( pathToComponents ) );
+	}
 	app.use( logger( ( isDev ? 'dev' : 'combined' ) ) );
 
 	// Strip .html and .htm if provided
