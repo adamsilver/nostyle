@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const urlBodyParser = bodyParser.urlencoded({ extended: true, limit: '1mb' });
 const jsonBodyParser = bodyParser.json();
 const defaultBodyParser = bodyParser();
-const faker = require('faker');
 const products = require("./data/products").products;
 
 module.exports = function( express, app ){
@@ -48,23 +47,6 @@ module.exports = function( express, app ){
 			});
 		}
 	} );
-
-	// const upload = multer( {
-	// 	dest: './tmp-uploads',
-	// 	limits: { fileSize: 20000000 },
-	// 	fileFilter: function( req, file, cb ){
-
-	// 		let ok = false;
-
-	// 		if( file.mimetype !== 'image/png' ){
-	// 			ok = true;
-	// 		} else {
-	// 			req.failedfiles = req.failedfiles || [];
-	// 			req.failedfiles.push(file);
-	// 		}
-	// 		cb( null, ok );
-	// 	}
-	// } ).array('documents', 10);
 
 	const upload = multer( {
 		dest: './tmp-uploads',

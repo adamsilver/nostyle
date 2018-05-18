@@ -1,10 +1,5 @@
 {% extends 'layouts/raw.html' %}
 
-{% import "macros/headings.html" as headings %}
-{% import "macros/form-elements.html" as formElements %}
-{% import "macros/buttons.html" as buttons %}
-{% import "macros/navigation.html" as navigation %}
-
 {% block pageScript %}
 	<script>
 		var validator = new FormValidator(document.forms[0]);
@@ -21,13 +16,13 @@
 		}]);
 		validator.addValidator('notes', [{
 			method: function(field) {
-				return field.value.trim().length > 0; 
+				return field.value.trim().length > 0;
 			},
 			message: 'Enter notes.'
 		}]);
 		validator.addValidator('like', [{
 			method: function(field) {
-				return field.value.trim().length > 0; 
+				return field.value.trim().length > 0;
 			},
 			message: 'Select your favourite item.'
 		}]);

@@ -1,11 +1,6 @@
 {% extends 'layouts/raw.html' %}
 {% set cnav = "upload" %}
 
-{% import "macros/headings.html" as headings %}
-{% import "macros/form-elements.html" as formElements %}
-{% import "macros/buttons.html" as buttons %}
-{% import "macros/navigation.html" as navigation %}
-
 {% block pageScript %}
 <script>
 	if(typeof Dropzone != 'undefined') {
@@ -29,7 +24,7 @@
 	</svg>
 
 	<h1>Upload files</h1>
-	
+
 	<div class="files {% if not files.length %}hidden{% endif%}">
 		<h2>Files</h2>
 		<ul>

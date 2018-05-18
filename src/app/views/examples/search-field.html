@@ -1,9 +1,6 @@
 {% extends 'layouts/raw.html' %}
 {% set cnav = "search-box" %}
 
-{% import "macros/headings.html" as headings %}
-{% import "macros/form-elements.html" as formElements %}
-
 {% block mainContent %}
 	{{formElements.textBox('search', 'Search', type='search')}}
 {% endblock mainContent %}

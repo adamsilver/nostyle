@@ -1,11 +1,6 @@
 {% extends 'layouts/raw.html' %}
 {% set cnav = "seat" %}
 
-{% import "macros/headings.html" as headings %}
-{% import "macros/form-elements.html" as formElements %}
-{% import "macros/buttons.html" as buttons %}
-{% import "macros/navigation.html" as navigation %}
-
 {% block pageScript %}
 	<script>
 		new SeatLimiter(2);
@@ -167,7 +162,7 @@
 				})}}
 			</div>
 		</fieldset>
-		
+
 
 		{{buttons.primaryButton('Continue')}}
 	</form>

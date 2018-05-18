@@ -1,9 +1,7 @@
 {% extends 'layouts/raw.html' %}
 
-{% import "macros/form-elements.html" as formElements %}
-
 {% block mainContent %}
 
 	{{formElements.textBox('email', 'Email address', type='email')}}
-	
+
 {% endblock mainContent %}

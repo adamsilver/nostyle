@@ -1,14 +1,6 @@
 {% extends 'layouts/raw.html' %}
 {% set cnav = "radio-buttons" %}
 
-{% import "macros/headings.html" as headings %}
-{% import "macros/form-elements.html" as formElements %}
-{% import "macros/navigation.html" as navigation %}
-
-{% block pageHeader %}
-	{{headings.h1('Radio buttons')}}
-{% endblock pageHeader %}
-
 {% block mainContent %}
 
 	{{formElements.radioButtons('destination', 'Destination', [	{ id: "destination", label: "Afghanistan" },

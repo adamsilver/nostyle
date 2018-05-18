@@ -1,11 +1,6 @@
 {% extends 'layouts/raw.html' %}
 {% set cnav = "payment" %}
 
-{% import "macros/headings.html" as headings %}
-{% import "macros/form-elements.html" as formElements %}
-{% import "macros/buttons.html" as buttons %}
-{% import "macros/navigation.html" as navigation %}
-
 {% block pageScript %}
 	<script>
 		var validator = new FormValidator(document.forms[0]);

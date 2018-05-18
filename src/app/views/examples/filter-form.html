@@ -1,21 +1,18 @@
 {% extends 'layouts/raw.html' %}
 
-{% import "macros/form-elements.html" as formElements %}
-{% import "macros/buttons.html" as buttons %}
-
 {% block pageScript %}
-<script>
-	new FilterCollapser($('fieldset').eq(0));
-	new FilterCollapser($('fieldset').eq(1));
-	new FilterCollapser($('fieldset').eq(2));
+	<script>
+		new FilterCollapser($('fieldset').eq(0));
+		new FilterCollapser($('fieldset').eq(1));
+		new FilterCollapser($('fieldset').eq(2));
 
-	new FilterRequester();
-	new FilterMenu();
-</script>
+		new FilterRequester();
+		new FilterMenu();
+	</script>
 {% endblock pageScript %}
 
 {% block mainContent %}
-		
+
 
 		<h1 class="filter-heading">Wallets</h1>
 		<div class="filter-marker"></div>
@@ -26,7 +23,7 @@
 				<h2 id="filter-heading">Filter</h2>
 
 				<form role="form" method="get" action="/examples/filter-form">
-				
+
 					{{formElements.checkboxes('color', 'Color', [{
 						label: 'Red',
 						id: 'color',

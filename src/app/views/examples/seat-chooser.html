@@ -1,10 +1,6 @@
 {% extends 'layouts/raw.html' %}
 {% set cnav = "seat" %}
 
-{% import "macros/headings.html" as headings %}
-{% import "macros/form-elements.html" as formElements %}
-{% import "macros/buttons.html" as buttons %}
-
 {% block pageScript %}
 	<script>
 		new SeatLimiter(2);

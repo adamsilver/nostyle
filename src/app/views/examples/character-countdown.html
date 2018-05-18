@@ -1,9 +1,6 @@
 {% extends 'layouts/raw.html' %}
 {% set cnav = "characters-remaining" %}
 
-{% import "macros/headings.html" as headings %}
-{% import "macros/form-elements.html" as formElements %}
-
 {% block pageScript %}
 	<script>
 		var ci = new CharacterCountdown(document.getElementById('notes'));

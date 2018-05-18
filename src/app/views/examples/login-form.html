@@ -1,9 +1,5 @@
 {% extends 'layouts/raw.html' %}
 
-{% import "macros/headings.html" as headings %}
-{% import "macros/form-elements.html" as formElements %}
-{% import "macros/buttons.html" as buttons %}
-
 {% block pageScript %}
 	<script>
 		var validator = new FormValidator(document.forms[0]);
@@ -42,7 +38,7 @@
 
 {% block mainContent %}
 
-	
+
 	{{headings.h1('Log in')}}
 	<ul>
 		<li>Not signed up? <a href="/examples/registration-form">Register</a></li>

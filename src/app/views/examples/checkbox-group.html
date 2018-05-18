@@ -1,9 +1,6 @@
 {% extends 'layouts/raw.html' %}
 {% set cnav = "checkbox-group" %}
 
-{% import "macros/headings.html" as headings %}
-{% import "macros/form-elements.html" as formElements %}
-
 {% block mainContent %}
 	{{formElements.checkboxes('things', 'Things you like', [{
 		label: 'Chocolate',
