@@ -2,16 +2,18 @@
 @import 'buttons';
 @import 'base';
 @import 'primary-nav';
-@import 'dropzone';
-@import 'menu';
-@import 'select-all';
 @import 'inbox';
 @import 'filter-page';
 @import 'search-page';
+
 @import 'forms/elements';
-@import 'forms/autocomplete';
-@import 'forms/date-picker';
 @import 'forms/seat-chooser';
-@import 'forms/add-another';
+
 @import 'error-summary/error-summary';
+@import 'dropzone/dropzone';
 @import 'stepper/stepper';
+@import 'select-all/select-all';
+@import 'autocomplete/autocomplete';
+@import 'menu/menu';
+@import 'add-another-form/add-another';
+@import 'date-picker/date-picker';

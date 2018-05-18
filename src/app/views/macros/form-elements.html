@@ -100,10 +100,10 @@
     {% for choice in choices %}
       <div class="field-radioButton">
         <label for="{{choice.id}}">
-          <input type="radio" name="{{name}}" value="{{choice.value}}" id="{{choice.id}}" 
+          <input type="radio" name="{{name}}" value="{{choice.value}}" id="{{choice.id}}"
 
           {% if choice.attributes %}{{choice.attributes | safe}}{%endif%}
-          
+
           {% if choice.checked %}checked{% endif %}>
           {{choice.label}}
         </label>
@@ -206,19 +206,6 @@
     </div>
   {% endif %}
 </fieldset>
-{% endmacro %}
-
-{% macro errorSummary(heading, errors) %}
-<div tabindex="-1" role="group" class="errorSummary {% if not errors %}hidden{%endif%}" aria-labelledby="errorSummary-heading">
-  {% if errors %}
-    {{headings.h2(heading, { id: 'errorSummary-heading' })}}
-    <ul>
-      {% for error in errors %}
-        <li><a href="#{{error.fieldName}}">{{error.message}}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-</div>
 {% endmacro %}
 
 

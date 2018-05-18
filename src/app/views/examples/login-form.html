@@ -45,7 +45,7 @@
 		<li>Forgot password? <a href="#">Reset password</a></li>
 	</ul>
 
-	{{formElements.errorSummary("There's a problem")}}
+	{{errorSummary({ heading: "There's a problem" })}}
 
 	<form novalidate>
 		{{formElements.textBox('email', 'Email address', {attributes: ' autocapitalize="none" autocorrect="off" spellcheck="false" '})}}

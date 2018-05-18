@@ -43,7 +43,7 @@
 		<li>Already got an account? <a href="/examples/login-form">Log in</a></li>
 	</ul>
 
-	{{formElements.errorSummary("There's a problem")}}
+	{{errorSummary({heading: "There's a problem"})}}
 
 	<form novalidate>
 		{{formElements.textBox('email', 'Email address')}}

@@ -3,7 +3,7 @@
 {% import "macros/headings.html" as headings %}
 {% import "macros/form-elements.html" as formElements %}
 {% import "macros/buttons.html" as buttons %}
-{% import "error-summary/macro.html" as errorSummary %}
+{% from "error-summary/macro.html" import errorSummary %}
 
 <html lang="en">
 	<head>
@@ -45,22 +45,22 @@
 		<!-- endbuild -->
 		<!-- build:js(src) /public/js/app.min.js -->
 			<script src="/components/stepper/Stepper.js"></script>
-			<script src="/public/js/FormValidator.js"></script>
-			<script src="/public/js/CheckboxCollapser.js"></script>
-			<script src="/public/js/CharacterCountdown.js"></script>
-			<script src="/public/js/Autocomplete.js"></script>
-			<script src="/public/js/DatePicker.js"></script>
-			<script src="/public/js/SeatLayoutEnhancer.js"></script>
-			<script src="/public/js/SeatLimiter.js"></script>
-			<script src="/public/js/Menu.js"></script>
-			<script src="/public/js/AddAnotherForm.js"></script>
-			<script src="/public/js/Dropzone.js"></script>
-			<script src="/public/js/SearchForm.js"></script>
-			<script src="/public/js/PasswordRevealer.js"></script>
-			<script src="/public/js/FilterCollapser.js"></script>
-			<script src="/public/js/FilterRequester.js"></script>
-			<script src="/public/js/FilterMenu.js"></script>
-			<script src="/public/js/SelectAll.js"></script>
+			<script src="/components/select-all/SelectAll.js"></script>
+			<script src="/components/autocomplete/Autocomplete.js"></script>
+			<script src="/components/form-validator/FormValidator.js"></script>
+			<script src="/components/checkbox-collapser/CheckboxCollapser.js"></script>
+			<script src="/components/character-countdown/CharacterCountdown.js"></script>
+			<script src="/components/date-picker/DatePicker.js"></script>
+			<script src="/components/seat-layout-enhancer/SeatLayoutEnhancer.js"></script>
+			<script src="/components/seat-limiter/SeatLimiter.js"></script>
+			<script src="/components/menu/Menu.js"></script>
+			<script src="/components/add-another-form/AddAnotherForm.js"></script>
+			<script src="/components/dropzone/Dropzone.js"></script>
+			<script src="/components/search-form/SearchForm.js"></script>
+			<script src="/components/password-revealer/PasswordRevealer.js"></script>
+			<script src="/components/filter-collapser/FilterCollapser.js"></script>
+			<script src="/components/filter-requester/FilterRequester.js"></script>
+			<script src="/components/filter-menu/FilterMenu.js"></script>
 		<!-- endbuild -->
 		{% endblock script %}
 
