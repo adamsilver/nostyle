@@ -1,0 +1,37 @@
+.stepper-removeButton,
+.stepper-addButton {
+	@include button($colour-black);
+	padding-top: 5px;
+	padding-bottom: 7px;
+	line-height: 1.2em;
+	font-size: 1.5em;
+	vertical-align: bottom;
+	color: $colour-white;
+	&:hover {
+		color: $colour-yellow;
+	}
+}
+
+.stepper-removeButton {
+	border-radius: 15px 0 0 15px;
+	padding-right: 20px;
+}
+
+.stepper-addButton {
+	border-radius: 0 15px 15px 0;
+	padding-left: 20px;
+}
+
+.stepper input {
+	display: inline-block;
+	width: 4em;
+	text-align: center;
+	z-index: 2;
+	position: relative;
+}
+
+.stepper input[type=number]::-webkit-inner-spin-button,
+.stepper input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

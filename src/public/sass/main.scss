@@ -9,10 +9,9 @@
 @import 'filter-page';
 @import 'search-page';
 @import 'forms/elements';
-@import 'forms/error-summary';
 @import 'forms/autocomplete';
 @import 'forms/date-picker';
-@import 'forms/stepper';
 @import 'forms/seat-chooser';
 @import 'forms/add-another';
-@import 'graham/graham';
+@import 'error-summary/error-summary';
+@import 'stepper/stepper';

@@ -33,7 +33,7 @@
 
 	{{headings.h1('Page title')}}
 
-	{{formElements.errorSummary("There's a problem", [{
+	{{errorSummary.errorSummary({heading: "There's a problem", errors: [{
 		fieldName: 'email',
 		message: 'Enter your email address.'
 	}, {
@@ -51,7 +51,7 @@
 	}, {
 		fieldName: 'country',
 		message: 'Choose a country.'
-	}])}}
+	}]})}}
 
 
 	<form novalidate>

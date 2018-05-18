@@ -3,6 +3,7 @@
 {% import "macros/headings.html" as headings %}
 {% import "macros/form-elements.html" as formElements %}
 {% import "macros/buttons.html" as buttons %}
+{% import "error-summary/macro.html" as errorSummary %}
 
 <html lang="en">
 	<head>
@@ -43,10 +44,9 @@
 		<script src="/public/js/vendor/jquery.js"></script>
 		<!-- endbuild -->
 		<!-- build:js(src) /public/js/app.min.js -->
-			<script src="/components/graham/graham.js"></script>
+			<script src="/components/stepper/Stepper.js"></script>
 			<script src="/public/js/FormValidator.js"></script>
 			<script src="/public/js/CheckboxCollapser.js"></script>
-			<script src="/public/js/Stepper.js"></script>
 			<script src="/public/js/CharacterCountdown.js"></script>
 			<script src="/public/js/Autocomplete.js"></script>
 			<script src="/public/js/DatePicker.js"></script>
