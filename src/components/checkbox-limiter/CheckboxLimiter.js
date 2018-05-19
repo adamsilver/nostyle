@@ -1,11 +1,11 @@
-function SeatLimiter(max) {
+function CheckboxLimiter(max) {
 	this.max = max;
 	this.checkboxes = $('.plane-seat input');
 	this.checkboxes.on('click', $.proxy(this, 'onCheckboxClick'));
 	this.lastChecked = null;
 }
 
-SeatLimiter.prototype.onCheckboxClick = function(e) {
+CheckboxLimiter.prototype.onCheckboxClick = function(e) {
 	var checkbox = e.target;
 	var selected = this.checkboxes.filter(':checked');
 	if(selected.length > this.max) {
