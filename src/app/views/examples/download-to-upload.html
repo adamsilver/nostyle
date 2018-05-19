@@ -3,13 +3,13 @@
 
 {% block mainContent %}
 
-	{{headings.h1('Download to upload')}}
+	{{h1('Download to upload')}}
 
 	<p><a href="#">Download previous version</a></p>
 
 	<form novalidate enctype="multipart/form-data" method="post" action="/">
 		{{fileInput('documents', 'Upload file')}}
-		{{buttons.primaryButton('Continue', 'continue')}}
+		{{primaryButton('Continue', 'continue')}}
 	</form>
 
 {% endblock mainContent %}

@@ -1,20 +1,20 @@
 {% extends 'layouts/default.html' %}
 
-{% block title %}Choosing a seat - Patterns{% endblock %} 
+{% block title %}Choosing a seat - Patterns{% endblock %}
 
 {% import "macros/headings.html" as headings %}
 
 {% block mainContent %}
 
-	{{headings.h1('Choosing a seat')}}
+	{{h1('Choosing a seat')}}
 
-	{{headings.h2('One seat class')}}
+	{{h2('One seat class')}}
 	<div class="example">
 		<iframe src="/examples/seat-chooser" width="400" height="400"></iframe>
 		<p class="example-link"><a href="/examples/seat-chooser">Standalone</a></p>
 	</div>
 
-	{{headings.h2('Both seat classes')}}	
+	{{h2('Both seat classes')}}
 	<div class="example">
 		<iframe src="/examples/seat-chooser--nested" width="400" height="400"></iframe>
 		<p class="example-link"><a href="/examples/seat-chooser--nested">Standalone</a></p>

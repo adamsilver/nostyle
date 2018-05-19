@@ -37,7 +37,7 @@
 
 {% block mainContent %}
 
-	{{headings.h1('Register')}}
+	{{h1('Register')}}
 
 	<ul>
 		<li>Already got an account? <a href="/examples/login-form">Log in</a></li>
@@ -48,7 +48,7 @@
 	<form novalidate>
 		{{textBox('email', 'Email address')}}
 		{{textBox('password', 'Password', type='password', {hint: 'Must contain 8+ characters with at least 1 number.'})}}
-		{{buttons.primaryButton('Register')}}
+		{{primaryButton('Register')}}
 	</form>
 
 {% endblock mainContent %}

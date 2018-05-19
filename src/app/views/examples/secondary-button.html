@@ -1,8 +1,6 @@
 {% extends 'layouts/raw.html' %}
 {% set cnav = "primary-button" %}
 
-{% import "macros/buttons.html" as buttons %}
-
 {% block mainContent %}
-	{{buttons.secondaryButton('Search', 'search')}}
+	{{secondaryButton('Search', 'search')}}
 {% endblock mainContent %}

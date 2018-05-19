@@ -31,7 +31,7 @@
 
 {% block mainContent %}
 
-	{{headings.h1('Page title')}}
+	{{h1('Page title')}}
 
 	{{errorSummary({heading: "There's a problem", errors: [{
 		fieldName: 'email',
@@ -90,7 +90,7 @@
 			value: 'Brazil'
 		}], {error: 'Choose a country.'})}}
 
-		{{buttons.primaryButton('Continue')}}
+		{{primaryButton('Continue')}}
 	</form>
 
 {% endblock mainContent %}
