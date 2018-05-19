@@ -55,9 +55,9 @@
 
 
 	<form novalidate>
-		{{formElements.textBox('email', 'Email address', {error: 'Enter your email address.'})}}
+		{{textBox('email', 'Email address', {error: 'Enter your email address.'})}}
 
-		{{formElements.fileInput('document', 'Upload file', {error: 'The document is too large.'})}}
+		{{fileInput('document', 'Upload file', {error: 'The document is too large.'})}}
 
 		{{formElements.textarea('notes', 'Notes', {error: 'Enter notes.'})}}
 
