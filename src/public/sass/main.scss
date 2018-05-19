@@ -5,10 +5,9 @@
 @import 'inbox';
 @import 'filter-page';
 @import 'search-page';
-
 @import 'forms/elements';
-@import 'forms/seat-chooser';
 
+@import 'seat-chooser/seat-chooser';
 @import 'error-summary/error-summary';
 @import 'dropzone/dropzone';
 @import 'stepper/stepper';
