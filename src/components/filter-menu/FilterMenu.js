@@ -51,7 +51,9 @@ FilterMenu.prototype.onCloseClick = function() {
 FilterMenu.prototype.enableBigMode = function() {
 	this.menuButton.detach();
 	this.showMenu();
-	this.closeButton.remove();
+	if(this.closeButton) {
+		this.closeButton.remove();
+	}
 };
 
 FilterMenu.prototype.hideMenu = function() {
