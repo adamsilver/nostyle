@@ -59,9 +59,9 @@
 
 		{{fileInput('document', 'Upload file', {error: 'The document is too large.'})}}
 
-		{{formElements.textarea('notes', 'Notes', {error: 'Enter notes.'})}}
+		{{textarea('notes', 'Notes', {error: 'Enter notes.'})}}
 
-		{{formElements.radioButtons('like', 'What do you like the most?', [{
+		{{radioButtons('like', 'What do you like the most?', [{
 			label: 'Chocolate',
 			id: 'like',
 			value: 'Chocolate'
@@ -82,7 +82,7 @@
 			id: 'colours2'
 		}], { error: 'Select at least one favourite colour.'})}}
 
-		{{formElements.selectBox('country', 'Country',[{
+		{{selectBox('country', 'Country',[{
 			text: 'Select',
 			value: ''
 		}, {

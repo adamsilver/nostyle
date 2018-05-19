@@ -1,0 +1,17 @@
+<div class="field">
+  <label for="{{name}}">
+    <span class="field-label">{{label}}</span>
+    {% if options.hint %}
+      <span class="field-hint">{{options.hint}}</span>
+    {% endif %}
+    {% if options.error %}
+      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{-options.error}}</span>
+    {% endif %}
+  </label>
+  <input type="search" id="{{name}}" name="{{name}}" {% if options.error %}aria-invalid="true"{%endif%} list="{{name}}_list">
+  <datalist id="{{name}}_list">
+    {% for choice in choices %}
+      <option value="{{choice.text}}">
+    {% endfor %}
+  </datalist>
+</div>
