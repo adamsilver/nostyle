@@ -45,7 +45,7 @@ function startApp(){
 
 	app.use( '/public', serveStatic( pathToPublic ) );
 	if(isDev) {
-		app.use( '/components', serveStatic( pathToComponents ) );
+		app.use( '/public/components', serveStatic( pathToComponents ) );
 	}
 	app.use( logger( ( isDev ? 'dev' : 'combined' ) ) );
 

@@ -13,7 +13,8 @@ module.exports = function( grunt ){
 		},
 
 		clean: {
-			dist: [ 'dist' ]
+			dist: [ 'dist' ],
+			components: [ 'src/public/components' ]
 		},
 
 		copy: {
@@ -37,7 +38,11 @@ module.exports = function( grunt ){
 					{
 						expand: true,
 						cwd: 'src/',
-						src: [ 'app/**/*', 'components/**/*.html', '!**/*.{js,es}hintrc' ],
+						src: [
+							'app/**/*',
+							'components/**/*.html',
+							'!**/*.{js,es}hintrc'
+						],
 						dest: 'dist/'
 					}
 				]
@@ -48,8 +53,26 @@ module.exports = function( grunt ){
 					{
 						expand: true,
 						cwd: 'src/',
-						src: [ 'public/**/*', '!*/{css,js}/**', '!**/*.{js,es}hintrc', '!**/*.map' ],
+						src: [
+							'public/**/*',
+							'!*/{css,js}/**',
+							'!**/*.{js,es}hintrc',
+							'!**/*.map'
+						],
 						dest: 'dist/'
+					}
+				]
+			},
+
+			componentJs: {
+				files: [
+					{
+						expand: true,
+						cwd: 'src/',
+						src: [
+							'components/**/*.js'
+						],
+						dest: 'src/public/'
 					}
 				]
 			}
@@ -98,7 +121,8 @@ module.exports = function( grunt ){
 			'cssmin:generated',
 			'uglify:generated',
 			'filerev',
-			'usemin'
+			'usemin',
+			'clean:components'
 		]);
 	} );
 };
