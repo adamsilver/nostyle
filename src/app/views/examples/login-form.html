@@ -50,7 +50,10 @@
 	<form novalidate>
 		{{textBox('email', 'Email address', {attributes: ' autocapitalize="none" autocorrect="off" spellcheck="false" '})}}
 		{{textBox('password', 'Password', type='password', { hint: 'Must contain 8+ characters with at least 1 number.'})}}
-		{{primaryButton('Log in')}}
+		{{primaryButton({
+			text: 'Log in',
+			name: 'login'
+		})}}
 	</form>
 
 

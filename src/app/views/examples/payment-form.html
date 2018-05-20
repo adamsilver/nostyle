@@ -37,7 +37,10 @@
 				{{textBox('postcode', 'Postcode')}}
 			</div>
 
-			{{primaryButton('Continue')}}
+			{{primaryButton({
+				text: 'Continue',
+				name: 'pay'
+			})}}
 		</form>
 
 {% endblock mainContent %}

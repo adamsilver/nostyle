@@ -9,7 +9,10 @@
 
 	<form novalidate enctype="multipart/form-data" method="post" action="/">
 		{{fileInput('documents', 'Upload file')}}
-		{{primaryButton('Continue', 'continue')}}
+		{{primaryButton({
+			text: 'Continue',
+			name: 'continue'
+		})}}
 	</form>
 
 {% endblock mainContent %}

@@ -2,5 +2,8 @@
 {% set cnav = "primary-button" %}
 
 {% block mainContent %}
-	{{primaryButton('Save', 'save')}}
+	{{primaryButton({
+		text: 'Save',
+		name: 'save'
+	})}}
 {% endblock mainContent %}

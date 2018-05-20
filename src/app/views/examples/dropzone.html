@@ -47,7 +47,10 @@
 			})}}
 			{{secondaryButton('Upload file', 'upload')}}
 		</div>
-		{{primaryButton('Continue', 'continue')}}
+		{{primaryButton({
+			text: 'Continue',
+			name: 'continue'
+		})}}
 	</form>
 
 {% endblock mainContent %}

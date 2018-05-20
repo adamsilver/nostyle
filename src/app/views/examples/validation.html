@@ -90,7 +90,10 @@
 			value: 'Brazil'
 		}], {error: 'Choose a country.'})}}
 
-		{{primaryButton('Continue')}}
+		{{primaryButton({
+			text: 'Continue',
+			name: 'continue'
+		})}}
 	</form>
 
 {% endblock mainContent %}

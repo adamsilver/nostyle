@@ -10,7 +10,10 @@
 			{{textBox('search', 'Search products', type='search', {
 				hint: 'For example, “black wallet”'
 			})}}
-			{{primaryButton('Search')}}
+			{{primaryButton({
+				text: 'Search',
+				name: 'search'
+			})}}
 		</form>
 	</div>
 {% endblock header %}

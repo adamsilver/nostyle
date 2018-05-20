@@ -33,7 +33,10 @@
 			})}}
 		</div>
 
-		{{primaryButton('Submit expenses', 'submitExpenses')}}
+		{{primaryButton({
+			text: 'Submit expenses',
+			name: 'submitExpenses'
+		})}}
 	</form>
 
 {% endblock mainContent %}
