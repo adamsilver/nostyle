@@ -15,13 +15,19 @@
 {% block mainContent %}
 	<h1>Payment details</h2>
 		<form novalidate>
-			{{textBox('cardnumber', 'Card number', {
+			{{textBox({
+				name: 'cardnumber',
+				label: 'Card number',
 				hint: 'The long number on the front of your card'
 			})}}
-			{{textBox('expiry', 'Expiry date', {
+			{{textBox({
+				name: 'expiry',
+				label: 'Expiry date',
 				hint: 'MMYY'
 			})}}
-			{{textBox('cvc', 'Card', {
+			{{textBox({
+				name: 'cvc',
+				label: 'Card',
 				hint: 'The last 3 numbers on the back of your card'
 			})}}
 
@@ -32,9 +38,18 @@
 			}])}}
 
 			<div class="billingAddress">
-				{{textBox('address1', 'Street')}}
-				{{textBox('address2', 'Town')}}
-				{{textBox('postcode', 'Postcode')}}
+				{{textBox({
+					name: 'address1',
+					label: 'Street'
+				})}}
+				{{textBox({
+					name: 'address2',
+					label: 'Town'
+				})}}
+				{{textBox({
+					name: 'postcode',
+					label: 'Postcode'
+				})}}
 			</div>
 
 			{{primaryButton({

@@ -13,9 +13,20 @@
 		<div class="addAnother">
 			<h1 tabindex="-1" class="addAnother-heading">Expenses</h1>
 			<div class="addAnother-item">
-				{{textBox('items[0][description]', 'Description', { id: 'items[0][description]', attributes: 'data-name="items[%index%][description]" data-id="items[%index%][description]"' })}}
+				{{textBox({
+					label: 'Description',
+					name: 'items[0][description]',
+					id: 'items[0][description]',
+					attributes: 'data-name="items[%index%][description]" data-id="items[%index%][description]"'
+				})}}
 
-				{{textBox('items[0][amount]', 'Amount (£)', type='number', { id: 'items[0][amount]', attributes: 'data-name="items[%index%][amount]" data-id="items[%index%][amount]"' })}}
+				{{textBox({
+					label: 'Amount (£)',
+					name: 'items[0][amount]',
+					type: 'number',
+					id: 'items[0][amount]',
+					attributes: 'data-name="items[%index%][amount]" data-id="items[%index%][amount]"'
+				})}}
 
 
 				<!-- {{radioButtons('choice', 'Favourite colour', [{

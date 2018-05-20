@@ -2,6 +2,9 @@
 
 {% block mainContent %}
 
-	{{textBox('name', 'First name')}}
+	{{textBox({
+		name: 'name',
+		label: 'First name'
+	})}}
 
 {% endblock mainContent %}

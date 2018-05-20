@@ -2,5 +2,9 @@
 {% set cnav = "search-box" %}
 
 {% block mainContent %}
-	{{textBox('search', 'Search', type='search')}}
+	{{textBox({
+		name: 'search',
+		label: 'Search',
+		type: 'search'
+	})}}
 {% endblock mainContent %}

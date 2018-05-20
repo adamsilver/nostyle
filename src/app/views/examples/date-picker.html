@@ -10,7 +10,10 @@
 
 {% block mainContent %}
 
-	{{textBox('date', 'Date', type='date', {
+	{{textBox({
+		name: 'date',
+		label: 'Date',
+		type: 'date',
 		placeholder: 'DD/MM/YYYY'
 	})}}
 

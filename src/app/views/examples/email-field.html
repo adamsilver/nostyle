@@ -2,6 +2,10 @@
 
 {% block mainContent %}
 
-	{{textBox('email', 'Email address', type='email')}}
+	{{textBox({
+		name: 'email',
+		label: 'Email address',
+		type: 'email'
+	})}}
 
 {% endblock mainContent %}

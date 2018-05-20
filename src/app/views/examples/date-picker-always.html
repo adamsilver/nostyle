@@ -9,7 +9,10 @@
 
 {% block mainContent %}
 
-	{{textBox('tdate', 'Departure date', type='text')}}
+	{{textBox({
+		name: 'tdate',
+		label: 'Departure date'
+	})}}
 
 	<p><a href="http://google.co.uk">Raise issue</a></p>
 

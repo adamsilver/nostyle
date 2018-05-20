@@ -19,17 +19,24 @@
 {% endblock pageHeader %}
 
 {% block mainContent %}
-	{{textBox('adults', 'How many people aged 16 and over are flying?', type='number', {
+	{{textBox({
+		name: 'adults',
+		label: 'How many people aged 16 and over are flying?', type: 'number',
 		value: '0',
 		attributes: 'min="0" max="9"',
 		labelId: 'adults-label'
 	})}}
-	{{textBox('children', 'How many children, aged between 2 and 15 years old, are flying?', type='number', {
+	{{textBox({
+		name: 'children',
+		label: 'How many children, aged between 2 and 15 years old, are flying?',
+		type: 'number',
 		value: '0',
 		attributes: 'min="0" max="9"',
 		labelId: 'children-label'
 	})}}
-	{{textBox('infants', 'How many infants, under 2 years old, are flying?', type='number', {
+	{{textBox({
+		name: 'infants',
+		label: 'How many infants, under 2 years old, are flying?', type: 'number',
 		value: '0',
 		attributes: 'min="0" max="9"',
 		labelId: 'infants-label'

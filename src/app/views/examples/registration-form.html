@@ -46,8 +46,16 @@
 	{{errorSummary({heading: "There's a problem"})}}
 
 	<form novalidate>
-		{{textBox('email', 'Email address')}}
-		{{textBox('password', 'Password', type='password', {hint: 'Must contain 8+ characters with at least 1 number.'})}}
+		{{textBox({
+			name: 'email',
+			label: 'Email address'
+		})}}
+		{{textBox({
+			name: 'password',
+			label: 'Password',
+			type: 'password',
+			hint: 'Must contain 8+ characters with at least 1 number.'
+		})}}
 		{{primaryButton({
 			text: 'Register',
 			name: 'register'

@@ -7,7 +7,10 @@
 	</header>
 	<div role="search">
 		<form class="searchForm">
-			{{textBox('search', 'Search products', type='search', {
+			{{textBox({
+				name: 'search',
+				label: 'Search products',
+				type: 'search',
 				hint: 'For example, “black wallet”'
 			})}}
 			{{primaryButton({
