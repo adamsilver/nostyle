@@ -2,5 +2,8 @@
 {% set cnav = "primary-button" %}
 
 {% block mainContent %}
-	{{secondaryButton('Search', 'search')}}
+	{{secondaryButton({
+		text: 'Search',
+		name: 'search'
+	})}}
 {% endblock mainContent %}

@@ -45,7 +45,10 @@
 			{{fileInput('documents', 'Choose file(s)', {
 				multiple: true
 			})}}
-			{{secondaryButton('Upload file', 'upload')}}
+			{{secondaryButton({
+				text: 'Upload file',
+				name: 'upload'
+			})}}
 		</div>
 		{{primaryButton({
 			text: 'Continue',

@@ -1,9 +1,9 @@
 <input
 type="submit"
-class="secondaryButton {% if options.class %}{{options.class}}{% endif %}"
-name="{{name}}"
-value="{{text}}"
-{% if options.role %}
-  role="{{options.role}}"
+class="secondaryButton {% if params.class %}{{params.class}}{% endif %}"
+name="{{params.name}}"
+value="{{params.text}}"
+{% if params.role %}
+  role="{{params.role}}"
 {% endif %}
 >

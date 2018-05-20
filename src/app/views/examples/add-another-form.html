@@ -28,7 +28,9 @@
 					attributes: 'data-name="items[%index%][choice]" data-id="items[%index%][choice1]"'
 				}])}} -->
 			</div>
-			{{secondaryButton('Add another', 'add', {
+			{{secondaryButton({
+				text: 'Add another',
+				name: 'add',
 				class: 'addAnother-addButton'
 			})}}
 		</div>
