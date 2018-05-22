@@ -61,7 +61,11 @@
 			error: 'Enter your email address.'
 		})}}
 
-		{{fileInput('document', 'Upload file', {error: 'The document is too large.'})}}
+		{{fileInput({
+			name: 'document',
+			label: 'Upload file',
+			error: 'The document is too large.'
+		})}}
 
 		{{textarea('notes', 'Notes', {error: 'Enter notes.'})}}
 

@@ -1,12 +1,12 @@
 <div class="field">
-  <label for="{{name}}">
-    <span class="field-label">{{label}}</span>
-    {% if options.hint %}
-      <span class="field-hint">{{options.hint}}</span>
+  <label for="{{params.name}}">
+    <span class="field-label">{{params.label}}</span>
+    {% if params.hint %}
+      <span class="field-hint">{{params.hint}}</span>
     {% endif %}
-    {% if options.error %}
-      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{-options.error}}</span>
+    {% if params.error %}
+      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{-params.error}}</span>
     {% endif %}
   </label>
-  <input type="file" id="{{name}}" name="{{name}}" value="{{options.value}}" {% if options.multiple %}multiple{%endif%} {% if options.error %}aria-invalid="true"{%endif%}>
+  <input type="file" id="{{params.name}}" name="{{params.name}}" value="{{params.value}}" {% if params.multiple %}multiple{%endif%} {% if params.error %}aria-invalid="true"{%endif%}>
 </div>

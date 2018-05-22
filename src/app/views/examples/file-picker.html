@@ -2,5 +2,8 @@
 {% set cnav = "file-input" %}
 
 {% block mainContent %}
-	{{fileInput('file', 'Choose file')}}
+	{{fileInput({
+		name: 'file',
+		label: 'Choose file'
+	})}}
 {% endblock mainContent %}

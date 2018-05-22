@@ -42,7 +42,9 @@
 
 	<form enctype="multipart/form-data" method="post" action="/examples/upload">
 		<div class="dropzone">
-			{{fileInput('documents', 'Choose file(s)', {
+			{{fileInput({
+				name: 'documents',
+				labe: 'Choose file(s)',
 				multiple: true
 			})}}
 			{{secondaryButton({

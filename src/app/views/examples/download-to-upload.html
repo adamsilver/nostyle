@@ -8,7 +8,10 @@
 	<p><a href="#">Download previous version</a></p>
 
 	<form novalidate enctype="multipart/form-data" method="post" action="/">
-		{{fileInput('documents', 'Upload file')}}
+		{{fileInput({
+			name: 'documents',
+			label: 'Upload file'
+		})}}
 		{{primaryButton({
 			text: 'Continue',
 			name: 'continue'
