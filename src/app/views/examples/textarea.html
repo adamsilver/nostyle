@@ -2,5 +2,8 @@
 {% set cnav = "textarea" %}
 
 {% block mainContent %}
-	{{textarea('notes', 'Delivery notes')}}
+	{{textarea({
+		name: 'notes',
+		label: 'Delivery notes'
+	})}}
 {% endblock mainContent %}

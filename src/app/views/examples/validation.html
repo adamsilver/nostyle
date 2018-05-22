@@ -67,7 +67,11 @@
 			error: 'The document is too large.'
 		})}}
 
-		{{textarea('notes', 'Notes', {error: 'Enter notes.'})}}
+		{{textarea({
+			name: 'notes',
+			labels: 'Notes',
+			error: 'Enter notes.'
+		})}}
 
 		{{radioButtons({
 			name: 'like',
