@@ -17,147 +17,153 @@
 					<span class="field-legend">Seat</span>
 				</legend>
 				<div class="firstClass">
-					{{seatChooser('seat', 'First class', [{
-						seats: [{
-							label: '1A <span class="visually-hidden">Window</span>',
-							id: 'seat',
-							value: '1A'
-						},{
-							label: '1B',
-							id: 'seat1B',
-							value: '1B',
-							disabled: true
-						},{
-							label: '1C',
-							id: 'seat1C',
-							value: '1C'
-						},{
-							label: '1D <span class="visually-hidden">Window</span>',
-							id: 'seat1D',
-							value: '1D'
-						}]
-					}, {
-						seats: [{
-							label: '2A <span class="visually-hidden">Window</span>',
-							id: 'seat2A',
-							value: '2A'
-						},{
-							label: '2B',
-							id: 'seat2B',
-							value: '2B'
-						},{
-							label: '2C',
-							id: 'seat2C',
-							value: '2C'
-						},{
-							label: '2D <span class="visually-hidden">Window</span>',
-							id: 'seat2D',
-							value: '2D'
-						}]
-					}, {
-						seats: [{
-							label: '3A <span class="visually-hidden">Window</span>',
-							id: 'seat3A',
-							value: '3A'
-						},{
-							label: '3B',
-							id: 'seat3B',
-							value: '3B'
-						},{
-							label: '3C',
-							id: 'seat3C',
-							value: '3C'
-						},{
-							label: '3D <span class="visually-hidden">Window</span>',
-							id: 'seat3D',
-							value: '3D'
-						}]
-					}], {
+					{{seatChooser({
+						name: 'seat',
+						legend: 'First class',
+						rows: [{
+							seats: [{
+								label: '1A <span class="visually-hidden">Window</span>',
+								id: 'seat',
+								value: '1A'
+							},{
+								label: '1B',
+								id: 'seat1B',
+								value: '1B',
+								disabled: true
+							},{
+								label: '1C',
+								id: 'seat1C',
+								value: '1C'
+							},{
+								label: '1D <span class="visually-hidden">Window</span>',
+								id: 'seat1D',
+								value: '1D'
+							}]
+						}, {
+							seats: [{
+								label: '2A <span class="visually-hidden">Window</span>',
+								id: 'seat2A',
+								value: '2A'
+							},{
+								label: '2B',
+								id: 'seat2B',
+								value: '2B'
+							},{
+								label: '2C',
+								id: 'seat2C',
+								value: '2C'
+							},{
+								label: '2D <span class="visually-hidden">Window</span>',
+								id: 'seat2D',
+								value: '2D'
+							}]
+						}, {
+							seats: [{
+								label: '3A <span class="visually-hidden">Window</span>',
+								id: 'seat3A',
+								value: '3A'
+							},{
+								label: '3B',
+								id: 'seat3B',
+								value: '3B'
+							},{
+								label: '3C',
+								id: 'seat3C',
+								value: '3C'
+							},{
+								label: '3D <span class="visually-hidden">Window</span>',
+								id: 'seat3D',
+								value: '3D'
+							}]
+						}],
 						seatModifier: 'plane-seat--firstClass'
 					})}}
 				</div>
 				<div class="economyClass">
 
-				{{seatChooser('seat', 'Economy class', [{
-					seats: [{
-						label: '4A <span class="visually-hidden">Window</span>',
-						id: 'seat4A',
-						value: '4A'
-					},{
-						label: '4B',
-						id: 'seat4B',
-						value: '4B',
-						disabled: true
-					},{
-						label: '4C <span class="visually-hidden">Isle</span>',
-						id: 'seat4C',
-						value: '4C'
-					},{
-						label: '4D <span class="visually-hidden">Isle</span>',
-						id: 'seat4D',
-						value: '4D'
-					},{
-						label: '4E',
-						id: 'seat4E',
-						value: '4E'
-					},{
-						label: '4F <span class="visually-hidden">Window</span>',
-						id: 'seat4F',
-						value: '4F'
-					}]
-				}, {
-					seats: [{
-						label: '5A <span class="visually-hidden">Window</span>',
-						id: 'seat5A',
-						value: '5A'
-					},{
-						label: '5B',
-						id: 'seat5B',
-						value: '5B'
-					},{
-						label: '5C <span class="visually-hidden">Isle</span>',
-						id: 'seat5C',
-						value: '5C'
-					},{
-						label: '5D <span class="visually-hidden">Isle</span>',
-						id: 'seat5D',
-						value: '5D'
-					},{
-						label: '5E',
-						id: 'seat5E',
-						value: '5E'
-					},{
-						label: '5F <span class="visually-hidden">Window</span>',
-						id: 'seat5F',
-						value: '5F'
-					}]
-				}, {
-					seats: [{
-						label: '6A <span class="visually-hidden">Window</span>',
-						id: 'seat6A',
-						value: '6A'
-					},{
-						label: '6B',
-						id: 'seat6B',
-						value: '6B'
-					},{
-						label: '6C <span class="visually-hidden">Isle</span>',
-						id: 'seat6C',
-						value: '6C'
-					},{
-						label: '6D <span class="visually-hidden">Isle</span>',
-						id: 'seat6D',
-						value: '6D'
-					},{
-						label: '6E',
-						id: 'seat6E',
-						value: '6E'
-					},{
-						label: '6F <span class="visually-hidden">Window</span>',
-						id: 'seat6F',
-						value: '6F'
-					}]
-				}], {
+				{{seatChooser({
+					name: 'seat',
+					legend: 'Economy class',
+					rows: [{
+						seats: [{
+							label: '4A <span class="visually-hidden">Window</span>',
+							id: 'seat4A',
+							value: '4A'
+						},{
+							label: '4B',
+							id: 'seat4B',
+							value: '4B',
+							disabled: true
+						},{
+							label: '4C <span class="visually-hidden">Isle</span>',
+							id: 'seat4C',
+							value: '4C'
+						},{
+							label: '4D <span class="visually-hidden">Isle</span>',
+							id: 'seat4D',
+							value: '4D'
+						},{
+							label: '4E',
+							id: 'seat4E',
+							value: '4E'
+						},{
+							label: '4F <span class="visually-hidden">Window</span>',
+							id: 'seat4F',
+							value: '4F'
+						}]
+					}, {
+						seats: [{
+							label: '5A <span class="visually-hidden">Window</span>',
+							id: 'seat5A',
+							value: '5A'
+						},{
+							label: '5B',
+							id: 'seat5B',
+							value: '5B'
+						},{
+							label: '5C <span class="visually-hidden">Isle</span>',
+							id: 'seat5C',
+							value: '5C'
+						},{
+							label: '5D <span class="visually-hidden">Isle</span>',
+							id: 'seat5D',
+							value: '5D'
+						},{
+							label: '5E',
+							id: 'seat5E',
+							value: '5E'
+						},{
+							label: '5F <span class="visually-hidden">Window</span>',
+							id: 'seat5F',
+							value: '5F'
+						}]
+					}, {
+						seats: [{
+							label: '6A <span class="visually-hidden">Window</span>',
+							id: 'seat6A',
+							value: '6A'
+						},{
+							label: '6B',
+							id: 'seat6B',
+							value: '6B'
+						},{
+							label: '6C <span class="visually-hidden">Isle</span>',
+							id: 'seat6C',
+							value: '6C'
+						},{
+							label: '6D <span class="visually-hidden">Isle</span>',
+							id: 'seat6D',
+							value: '6D'
+						},{
+							label: '6E',
+							id: 'seat6E',
+							value: '6E'
+						},{
+							label: '6F <span class="visually-hidden">Window</span>',
+							id: 'seat6F',
+							value: '6F'
+						}]
+					}],
 					seatModifier: 'plane-seat--economyclass'
 				})}}
 			</div>
