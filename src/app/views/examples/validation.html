@@ -69,15 +69,20 @@
 
 		{{textarea('notes', 'Notes', {error: 'Enter notes.'})}}
 
-		{{radioButtons('like', 'What do you like the most?', [{
-			label: 'Chocolate',
-			id: 'like',
-			value: 'Chocolate'
-		}, {
-			label: 'Beer',
-			id: 'like1',
-			value: 'Beer'
-		}], {error: 'Select your favourite item.'})}}
+		{{radioButtons({
+			name: 'like',
+			legend: 'What do you like the most?',
+			choices: [{
+				label: 'Chocolate',
+				id: 'like',
+				value: 'Chocolate'
+			}, {
+				label: 'Beer',
+				id: 'like1',
+				value: 'Beer'
+			}],
+			error: 'Select your favourite item.'
+		})}}
 
 		{{checkboxes({
 			name: 'colours',

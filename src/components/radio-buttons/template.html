@@ -1,18 +1,18 @@
-<fieldset class="field" {% if options.error %}aria-invalid="true"{%endif%}>
+<fieldset class="field" {% if params.error %}aria-invalid="true"{%endif%}>
   <legend>
-    <span class="field-legend">{{legend}}</span>
-    {% if options.hint %}
-      <span class="field-hint">{{options.hint}}</span>
+    <span class="field-legend">{{params.legend}}</span>
+    {% if params.hint %}
+      <span class="field-hint">{{params.hint}}</span>
     {% endif %}
-    {% if options.error %}
-      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{-options.error}}</span>
+    {% if params.error %}
+      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{-params.error}}</span>
     {% endif %}
   </legend>
   <div class="field-options">
-    {% for choice in choices %}
+    {% for choice in params.choices %}
       <div class="field-radioButton">
         <label for="{{choice.id}}">
-          <input type="radio" name="{{name}}" value="{{choice.value}}" id="{{choice.id}}"
+          <input type="radio" name="{{params.name}}" value="{{choice.value}}" id="{{choice.id}}"
 
           {% if choice.attributes %}{{choice.attributes | safe}}{%endif%}
 

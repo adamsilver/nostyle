@@ -29,15 +29,19 @@
 				})}}
 
 
-				<!-- {{radioButtons('choice', 'Favourite colour', [{
-					label: 'Blue',
-					id: 'choice',
-					attributes: 'data-name="items[%index%][choice]" data-id="items[%index%][choice]"'
-				}, {
-					label: 'Red',
-					id: 'choice1',
-					attributes: 'data-name="items[%index%][choice]" data-id="items[%index%][choice1]"'
-				}])}} -->
+				<!-- {{radioButtons({
+					name: 'choice',
+					legend: 'Favourite colour',
+					choices: [{
+						label: 'Blue',
+						id: 'choice',
+						attributes: 'data-name="items[%index%][choice]" data-id="items[%index%][choice]"'
+					}, {
+						label: 'Red',
+						id: 'choice1',
+						attributes: 'data-name="items[%index%][choice]" data-id="items[%index%][choice1]"'
+					}]
+				})}} -->
 			</div>
 			{{secondaryButton({
 				text: 'Add another',

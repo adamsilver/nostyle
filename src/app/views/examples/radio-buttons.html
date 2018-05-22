@@ -3,10 +3,16 @@
 
 {% block mainContent %}
 
-	{{radioButtons('destination', 'Destination', [	{ id: "destination", label: "Afghanistan" },
-{ id: "destination2", label: "Åland Islands" },
-{ id: "destination3",  label: "Albania" },
-{ id: "destination4",  label: "Algeria" }])}}
+	{{radioButtons({
+		name: 'destination',
+		legend: 'Destination',
+		choices: [
+			{ id: "destination", label: "Afghanistan" },
+			{ id: "destination2", label: "Åland Islands" },
+			{ id: "destination3",  label: "Albania" },
+			{ id: "destination4",  label: "Algeria" }
+		]
+	})}}
 
 
 

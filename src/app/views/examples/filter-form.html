@@ -42,23 +42,27 @@
 						}]
 					})}}
 
-					{{radioButtons('rating', 'Rating', [{
-						label: '4 stars and up',
-						id: 'popularity0',
-						value: '4'
-					},  {
-						label: '3 stars and up',
-						id: 'popularity1',
-						value: '3'
-					}, {
-						label: '2 stars and up',
-						id: 'popularity2',
-						value: '2'
-					}, {
-						label: '1 star and up',
-						id: 'popularity3',
-						value: '1'
-					}])}}
+					{{radioButtons({
+						name: 'rating',
+						legend: 'Rating',
+						choices: [{
+							label: '4 stars and up',
+							id: 'popularity0',
+							value: '4'
+						},  {
+							label: '3 stars and up',
+							id: 'popularity1',
+							value: '3'
+						}, {
+							label: '2 stars and up',
+							id: 'popularity2',
+							value: '2'
+						}, {
+							label: '1 star and up',
+							id: 'popularity3',
+							value: '1'
+						}]
+					})}}
 
 					{{primaryButton({
 						text: 'Apply filters',
