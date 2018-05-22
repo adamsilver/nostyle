@@ -31,7 +31,7 @@
 
 {% block mainContent %}
 
-	{{h1('Page title')}}
+	{{h1({ text: 'Page title' })}}
 
 	{{errorSummary({heading: "There's a problem", errors: [{
 		fieldName: 'email',
