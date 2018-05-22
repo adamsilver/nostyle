@@ -2,15 +2,19 @@
 {% set cnav = "checkbox-group" %}
 
 {% block mainContent %}
-	{{checkboxes('things', 'Things you like', [{
-		label: 'Chocolate',
-		id: 'things'
-	}, {
-		label: 'Money',
-		id: 'things1'
-	},  {
-		label: 'Sleep',
-		id: 'things2'
-	}])}}
+	{{checkboxes({
+		name: 'things',
+		legend: 'Things you like',
+		choices: [{
+			label: 'Chocolate',
+			id: 'things'
+		}, {
+			label: 'Money',
+			id: 'things1'
+		},  {
+			label: 'Sleep',
+			id: 'things2'
+		}]
+	})}}
 
 {% endblock mainContent %}

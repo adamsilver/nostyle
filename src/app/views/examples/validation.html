@@ -75,16 +75,21 @@
 			value: 'Beer'
 		}], {error: 'Select your favourite item.'})}}
 
-		{{checkboxes('colours', 'Favourite colours', [{
-			label: 'Red',
-			id: 'colours'
-		}, {
-			label: 'Blue',
-			id: 'colours1'
-		},  {
-			label: 'Green',
-			id: 'colours2'
-		}], { error: 'Select at least one favourite colour.'})}}
+		{{checkboxes({
+			name: 'colours',
+			legend: 'Favourite colours',
+			choices: [{
+				label: 'Red',
+				id: 'colours'
+			}, {
+				label: 'Blue',
+				id: 'colours1'
+			},  {
+				label: 'Green',
+				id: 'colours2'
+			}],
+			error: 'Select at least one favourite colour.'
+		})}}
 
 		{{selectBox('country', 'Country',[{
 			text: 'Select',

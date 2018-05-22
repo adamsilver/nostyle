@@ -31,11 +31,15 @@
 				hint: 'The last 3 numbers on the back of your card'
 			})}}
 
-			{{checkboxes('same', 'Is your billing address the same as delivery?', [{
-				label: 'Yes, my billing address is the same',
-				id: 'same',
-				checked: true
-			}])}}
+			{{checkboxes({
+				name: 'same',
+				lagend: 'Is your billing address the same as delivery?',
+				choices: [{
+					label: 'Yes, my billing address is the same',
+					id: 'same',
+					checked: true
+				}]
+			})}}
 
 			<div class="billingAddress">
 				{{textBox({
