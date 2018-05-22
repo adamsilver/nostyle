@@ -1,15 +1,15 @@
 <div class="field">
-  <label for="{{name}}">
-    <span class="field-label">{{label}}</span>
-    {% if options.hint %}
-      <span class="field-hint">{{options.hint}}</span>
+  <label for="{{params.name}}">
+    <span class="field-label">{{params.label}}</span>
+    {% if params.hint %}
+      <span class="field-hint">{{params.hint}}</span>
     {% endif %}
-    {% if options.error %}
-      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{-options.error}}</span>
+    {% if params.error %}
+      <span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg> {{-params.error}}</span>
     {% endif %}
   </label>
-  <select id="{{name}}" name="{{name}}" {% if options.error %}aria-invalid="true"{%endif%}>
-    {% for choice in choices %}
+  <select id="{{params.name}}" name="{{params.name}}" {% if params.error %}aria-invalid="true"{%endif%}>
+    {% for choice in params.choices %}
       <option value="{{choice.value}}" {% if choice.selected%}selected{% endif %} {% if choice.alt%}data-alt="{{choice.alt}}"{% endif %}>{{choice.text}}</option>
     {% endfor %}
   </select>

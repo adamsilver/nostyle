@@ -100,13 +100,18 @@
 			error: 'Select at least one favourite colour.'
 		})}}
 
-		{{selectBox('country', 'Country',[{
-			text: 'Select',
-			value: ''
-		}, {
-			text: 'Brazil',
-			value: 'Brazil'
-		}], {error: 'Choose a country.'})}}
+		{{selectBox({
+			name: 'country',
+			label: 'Country',
+			choices: [{
+				text: 'Select',
+				value: ''
+			}, {
+				text: 'Brazil',
+				value: 'Brazil'
+			}],
+			error: 'Choose a country.'
+		})}}
 
 		{{primaryButton({
 			text: 'Continue',

@@ -2,11 +2,16 @@
 {% set cnav = "select-box" %}
 
 {% block mainContent %}
-	{{selectBox('destination', 'Destination', [
-{ value: "", text: "Select" },
-{ value: "1", alt:"AF", text: "Afghanistan" },
-{ value: "2", alt:"AX Aaland Aland" , text: "Åland Islands" },
-{ value: "3", alt:"AL", text: "Albania" },
-{ value: "4", alt:"DZ", text: "Algeria" }])}}
+	{{selectBox({
+		name: 'destination',
+		legend: 'Destination',
+		choices: [
+			{ value: "", text: "Select" },
+			{ value: "1", alt:"AF", text: "Afghanistan" },
+			{ value: "2", alt:"AX Aaland Aland" , text: "Åland Islands" },
+			{ value: "3", alt:"AL", text: "Albania" },
+			{ value: "4", alt:"DZ", text: "Algeria" }
+		]
+	})}}
 
 {% endblock mainContent %}
