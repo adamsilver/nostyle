@@ -11,10 +11,10 @@ AddAnotherForm.prototype.onAddButtonClick = function(e) {
 	this.resetItem(item);
 	var firstItem = this.getItems().first();
 	if(!this.hasRemoveButton(firstItem)) {
-		this.createRemoveButton(firstItem);	
+    this.createRemoveButton(firstItem);
 	}
 	this.getItems().last().after(item);
-	item.find('.field').first().find('input, textarea, select').focus();
+	item.find('input, textarea, select').first().focus();
 };
 
 AddAnotherForm.prototype.hasRemoveButton = function(item) {
