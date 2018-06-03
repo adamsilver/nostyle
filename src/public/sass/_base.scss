@@ -178,15 +178,6 @@ li {
     color: white;
 }
 
-
-.pageContent {
-	padding: 50px 20px;
-}
-
-.pageContent p {
-	max-width: 30em;
-}
-
 .hidden {
 	display: none;
 }
@@ -227,3 +218,33 @@ input[id$="[amount]"] {
 	grid-gap: 0 20px;
 }
 
+.wrapperPane {
+	height: 100vh;
+	display: grid;
+	grid-template-rows: min-content auto;
+}
+
+.bodyPane {
+	min-height: 0;
+	display: grid;
+	grid-template-columns: 300px 1fr;
+}
+
+.subNavPane {
+	border-right: 1px solid #ccc;
+	overflow-x: scroll;
+	padding: 40px 20px;
+	// grid-column: span 1;
+	// float: left;
+	// width: 300px;
+}
+
+.pageContent {
+	padding: 50px 20px;
+	overflow-x: scroll;
+	grid-column: span 1;
+}
+
+.pageContent p {
+	max-width: 30em;
+}

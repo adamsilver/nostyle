@@ -1,6 +1,13 @@
-{% extends 'layouts/default.html' %}
+{% extends 'layouts/item.html' %}
 
 {% block title %}Character countdown - Components{% endblock %}
+
+{% set nav = 'components' %}
+{% set cnav = 'character-countdown' %}
+
+{% block menu %}
+	{% include "partials/components-nav.html" %}
+{% endblock %}
 
 {% block mainContent %}
 	{{h1({ text: 'Character countdown' })}}
@@ -8,7 +15,7 @@
 	<p>Use the Character Countdown component to inform users how many characters they have left in a textarea.</p>
 
 	<div class="example">
-		<iframe src="/examples/character-countdown" width="400" height="200"></iframe>
+		<iframe src="/examples/character-countdown" width="400" height="350"></iframe>
 		<p class="example-link"><a href="/examples/character-countdown">Standalone</a></p>
 	</div>
 

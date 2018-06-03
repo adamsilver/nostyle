@@ -1,6 +1,7 @@
 .primaryNav {
 	padding-left: 14px;
 	padding-right: 14px;
+	background-color: #eee;
 }
 
 .primaryNav ul {
@@ -9,7 +10,6 @@
 	margin: 0;
 	@include clearfix;
 	font-size: 1em;
-	padding-top: 8px;
 }
 
 .primaryNav li {
@@ -22,7 +22,8 @@
 .primaryNav a:visited {
 	text-decoration: none;
 	display: block;
-	padding: 12px 6px 8px;
+	padding: 20px 10px 16px;
+	border-bottom: 4px solid #eee;
 }
 
 .primaryNav a:hover,
@@ -32,4 +33,5 @@
 
 .primaryNav a.primaryNav-active {
 	font-weight: bold;
+	border-bottom: 4px solid #0074D9;
 }
