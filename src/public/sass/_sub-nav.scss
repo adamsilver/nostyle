@@ -1,34 +1,63 @@
 .subNav {
-
+  white-space: nowrap;
+  @media(min-width: 45em) {
+    @supports ( display: grid ) {
+      white-space: normal;
+    }
+  }
 }
 
 .subNav p {
   font-weight: bold;
+  display: none;
+  @media(min-width: 45em) {
+    @supports ( display: grid ) {
+      display: block;
+    }
+  }
 }
 
 .subNav ul {
-  margin: 0 0 40px;
+  display: inline-block;
+  margin: 0;
   list-style: none;
+  white-space: nowrap;
+  @media(min-width: 45em) {
+    @supports ( display: grid ) {
+      white-space: normal;
+      margin-bottom: 40px;
+    }
+  }
 }
 
 .subNav li {
   margin-bottom: 0;
+  display: inline-block;
+  @media(min-width: 45em) {
+    @supports ( display: grid ) {
+      display: block;
+    }
+  }
 }
 
 .subNav a {
   padding: 8px;
-  display: block;
   text-decoration: none;
-  border-left: 4px solid #fff;
+  @media(min-width: 45em) {
+    @supports ( display: grid ) {
+      display: block;
+      border-left: 4px solid #fff;
+    }
+	}
+
 }
 
 .subNav a:hover {
-  border-left: 4px solid $colour-blue;
+  background-color: $colour-grey-light;
 }
 
 .subNav .subNav-link--active {
   font-weight: bold;
-  border-left: 4px solid $colour-darkblue;
   color: $colour-darkblue;
   background-color: $colour-grey-light;
 }

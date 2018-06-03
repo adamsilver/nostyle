@@ -219,30 +219,39 @@ input[id$="[amount]"] {
 }
 
 .wrapperPane {
-	height: 100vh;
-	display: grid;
-	grid-template-rows: min-content auto;
+	@supports ( display: grid ) {
+		height: 100vh;
+		display: grid;
+		grid-template-rows: min-content auto;
+		grid-template-columns: 100%;
+	}
 }
 
 .bodyPane {
-	min-height: 0;
-	display: grid;
-	grid-template-columns: 300px 1fr;
+	@media(min-width: 45em) {
+		@supports ( display: grid ) {
+			min-height: 0;
+			display: grid;
+			grid-template-columns: 300px auto;
+		}
+	}
 }
 
 .subNavPane {
 	border-right: 1px solid #ccc;
 	overflow-x: scroll;
-	padding: 40px 20px;
-	// grid-column: span 1;
-	// float: left;
-	// width: 300px;
+	padding: 20px;
+	@media(min-width: 45em) {
+		@supports ( display: grid ) {
+			padding: 40px 20px;
+		}
+	}
 }
 
 .pageContent {
 	padding: 50px 20px;
 	overflow-x: scroll;
-	grid-column: span 1;
+	// grid-column: span 1;
 }
 
 .pageContent p {

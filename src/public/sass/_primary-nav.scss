@@ -8,21 +8,23 @@
 	list-style: none;
 	display: block;
 	margin: 0;
-	@include clearfix;
 	font-size: 1em;
+	white-space: nowrap;
+	overflow-x: scroll;
 }
 
 .primaryNav li {
-	float: left;
+	display: inline-block;
 	margin: 0;
 	line-height: 0.5em;
+	font-size: 1.2em;
 }
 
 .primaryNav a:link,
 .primaryNav a:visited {
 	text-decoration: none;
 	display: block;
-	padding: 24px 10px 20px;
+	padding: 24px 14px 20px;
 	border-bottom: 4px solid $colour-grey-light;
 }
 
