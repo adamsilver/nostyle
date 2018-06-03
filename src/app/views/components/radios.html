@@ -1,0 +1,23 @@
+{% extends 'layouts/item.html' %}
+
+{% block title %}Radios - Components{% endblock %}
+
+{% set nav = 'components' %}
+{% set cnav = 'radios' %}
+
+{% block menu %}
+	{% include "partials/components-nav.html" %}
+{% endblock %}
+
+
+{% block mainContent %}
+	{{h1({ text: 'Radios' })}}
+
+	<p>Let users select one option by using the Radios component.</p>
+
+	<div class="example">
+		<iframe src="/examples/radios" width="400" height="500"></iframe>
+		<p class="example-link"><a href="/examples/radios">Standalone</a></p>
+	</div>
+
+{% endblock mainContent %}
