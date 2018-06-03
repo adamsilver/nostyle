@@ -1,11 +1,11 @@
-function AddAnotherForm(container) {
+function AddAnother(container) {
   this.container = $(container);
   this.container.on('click', '.addAnother-removeButton', $.proxy(this, 'onRemoveButtonClick'));
   this.container.on('click', '.addAnother-addButton', $.proxy(this, 'onAddButtonClick'));
   this.container.find('.addAnother-addButton, .addAnother-removeButton').prop('type', 'button');
 }
 
-AddAnotherForm.prototype.onAddButtonClick = function(e) {
+AddAnother.prototype.onAddButtonClick = function(e) {
   var item = this.getNewItem();
   this.updateAttributes(this.getItems().length, item);
   this.resetItem(item);
@@ -17,15 +17,15 @@ AddAnotherForm.prototype.onAddButtonClick = function(e) {
   item.find('input, textarea, select').first().focus();
 };
 
-AddAnotherForm.prototype.hasRemoveButton = function(item) {
+AddAnother.prototype.hasRemoveButton = function(item) {
   return item.find('.addAnother-removeButton').length;
 };
 
-AddAnotherForm.prototype.getItems = function() {
+AddAnother.prototype.getItems = function() {
   return this.container.find('.addAnother-item');
 };
 
-AddAnotherForm.prototype.getNewItem = function() {
+AddAnother.prototype.getNewItem = function() {
   var item = this.getItems().first().clone();
   if(!this.hasRemoveButton(item)) {
     this.createRemoveButton(item);
@@ -33,7 +33,7 @@ AddAnotherForm.prototype.getNewItem = function() {
   return item;
 };
 
-AddAnotherForm.prototype.updateAttributes = function(index, item) {
+AddAnother.prototype.updateAttributes = function(index, item) {
   item.find('[data-name]').each(function(i, el) {
     el.name = $(el).attr('data-name').replace(/%index%/, index);
     el.id = $(el).attr('data-id').replace(/%index%/, index);
@@ -41,11 +41,11 @@ AddAnotherForm.prototype.updateAttributes = function(index, item) {
   });
 };
 
-AddAnotherForm.prototype.createRemoveButton = function(item) {
+AddAnother.prototype.createRemoveButton = function(item) {
   item.append('<button type="button" class="secondaryButton addAnother-removeButton">Remove</button>');
 };
 
-AddAnotherForm.prototype.resetItem = function(item) {
+AddAnother.prototype.resetItem = function(item) {
   item.find('[data-name], [data-id]').each(function(index, el) {
     if(el.type == 'checkbox' || el.type == 'radio') {
       el.checked = false;
@@ -55,7 +55,7 @@ AddAnotherForm.prototype.resetItem = function(item) {
   });
 };
 
-AddAnotherForm.prototype.onRemoveButtonClick = function(e) {
+AddAnother.prototype.onRemoveButtonClick = function(e) {
   $(e.currentTarget).parents('.addAnother-item').remove();
   var items = this.getItems();
   if(items.length === 1) {
@@ -67,6 +67,6 @@ AddAnotherForm.prototype.onRemoveButtonClick = function(e) {
   this.focusHeading();
 };
 
-AddAnotherForm.prototype.focusHeading = function() {
+AddAnother.prototype.focusHeading = function() {
   this.container.find('.addAnother-heading').focus();
 };
