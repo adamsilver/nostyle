@@ -1,5 +1,5 @@
 {% extends 'layouts/raw.html' %}
-{% set cnav = "memorable-date-field" %}
+{% set cnav = "memorable-date" %}
 
 {% block pageHeader %}
 	{{h1({ text: 'Memorable date' })}}
@@ -7,7 +7,7 @@
 
 {% block mainContent %}
 
-	{{memorableDateField({
+	{{memorableDate({
 		legend: 'Date of birth',
 		day: {
 			name: 'day',
