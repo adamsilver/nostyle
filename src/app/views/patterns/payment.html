@@ -1,13 +1,20 @@
-{% extends 'layouts/default.html' %}
+{% extends 'layouts/item.html' %}
 
 {% block title %}Asking for payment - Patterns{% endblock %}
+
+{% set nav = 'patterns' %}
+{% set pnav = 'payment' %}
+
+{% block menu %}
+	{% include "partials/patterns-nav.html" %}
+{% endblock %}
 
 {% block mainContent %}
 
 	{{h1({ text: 'Asking for payment' })}}
 
 	<div class="example">
-		<iframe src="/examples/payment-form" width="400" height="400"></iframe>
+		<iframe src="/examples/payment-form" width="400" height="800"></iframe>
 		<p class="example-link"><a href="/examples/payment-form">Standalone</a></p>
 	</div>
 

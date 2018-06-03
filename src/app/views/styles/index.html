@@ -1,13 +1,15 @@
-{% extends 'layouts/default.html' %}
-{% set nav = "styles" %}
+{% extends 'layouts/item.html' %}
 
 {% block title %}Styles{% endblock %}
 
+{% set nav = 'styles' %}
+
+{% block menu %}
+	{% include "partials/style-nav.html" %}
+{% endblock %}
+
 {% block mainContent %}
 	<h1>Styles</h1>
+	<p>The core styles (or perceptual patterns) that affect the general look and feel, such as colour.</p>
 
-	<ul>
-		<li><a href="/styles/colours">Colours</a></li>
-		<li><a href="/styles/typography">Typography</a></li>
-	</ul>
 {% endblock mainContent %}

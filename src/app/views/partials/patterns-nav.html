@@ -1,0 +1,16 @@
+<nav class="subNav">
+  <p>Ask users for</p>
+	<ul>
+		<li><a {% if pnav == 'payment'%}class="subNav-link--active"{%endif%} href="/patterns/payment">Payment</a></li>
+		<li><a {% if pnav == 'dates'%}class="subNav-link--active"{%endif%}  href="/patterns/dates">Dates</a></li>
+	</ul>
+
+	<p>Help users</p>
+	<ul>
+		<li><a {% if pnav == 'add-another'%}class="subNav-link--active"{%endif%}  href="/patterns/add-another">Add multiple items</a></li>
+		<li><a {% if pnav == 'seat-chooser'%}class="subNav-link--active"{%endif%}  href="/patterns/seats">Select a seat</a></li>
+		<li><a {% if pnav == 'upload-file'%}class="subNav-link--active"{%endif%}  href="/patterns/upload">Upload a file</a></li>
+		<li><a {% if pnav == 'recover-from-errors'%}class="subNav-link--active"{%endif%}  href="/patterns/validation">Recover from errors</a></li>
+		<li><a {% if pnav == 'search'%}class="subNav-link--active"{%endif%}  href="/patterns/search">Search for something</a></li>
+	</ul>
+</nav>

@@ -1,6 +1,13 @@
-{% extends 'layouts/default.html' %}
+{% extends 'layouts/item.html' %}
 
 {% block title %}Colours - Styles{% endblock %}
+
+{% set nav = 'styles' %}
+{% set snav = 'colours' %}
+
+{% block menu %}
+	{% include "partials/style-nav.html" %}
+{% endblock %}
 
 {% block mainContent %}
 	{{h1({ text: 'Colours' })}}

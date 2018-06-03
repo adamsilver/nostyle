@@ -1,6 +1,13 @@
-{% extends 'layouts/default.html' %}
+{% extends 'layouts/item.html' %}
 
 {% block title %}Asking for dates - Patterns{% endblock %}
+
+{% set nav = 'patterns' %}
+{% set pnav = 'dates' %}
+
+{% block menu %}
+	{% include "partials/patterns-nav.html" %}
+{% endblock %}
 
 {% block mainContent %}
 
@@ -9,14 +16,14 @@
 	{{h2({ text:  'Date picker' })}}
 	<p>Use this when users need to find a date.</p>
 	<div class="example">
-		<iframe src="/examples/date-picker" width="400" height="200"></iframe>
+		<iframe src="/examples/date-picker" width="400" height="250"></iframe>
 		<p class="example-link"><a href="/examples/date-picker">Standalone</a></p>
 	</div>
 
 	{{h2({ text:  'Memorable date' })}}
 	<p>Use this for dates that people know.</p>
 	<div class="example">
-		<iframe src="/examples/memorable-date" width="400" height="200"></iframe>
+		<iframe src="/examples/memorable-date" width="400" height="300"></iframe>
 		<p class="example-link"><a href="/examples/memorable-date">Standalone</a></p>
 	</div>
 

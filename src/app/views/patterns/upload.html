@@ -1,6 +1,13 @@
-{% extends 'layouts/default.html' %}
+{% extends 'layouts/item.html' %}
 
 {% block title %}Upload a file - Patterns{% endblock %}
+
+{% set nav = 'patterns' %}
+{% set pnav = 'upload-file' %}
+
+{% block menu %}
+	{% include "partials/patterns-nav.html" %}
+{% endblock %}
 
 {% block mainContent %}
 
@@ -9,7 +16,7 @@
 	{{h2({ text: 'Dropzone' })}}
 	<p>Uses the ever present form pattern</p>
 	<div class="example">
-		<iframe src="/examples/dropzone" width="400" height="400"></iframe>
+		<iframe src="/examples/dropzone" width="400" height="500"></iframe>
 		<p class="example-link"><a href="/examples/dropzone">Standalone</a></p>
 	</div>
 

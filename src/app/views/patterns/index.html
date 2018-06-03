@@ -1,25 +1,15 @@
-{% extends 'layouts/default.html' %}
-{% set nav = "patterns" %}
-
+{% extends 'layouts/item.html' %}
 
 {% block title %}Patterns{% endblock %}
 
+{% set nav = 'patterns' %}
+{% set cnav = 'add-another' %}
+
+{% block menu %}
+	{% include "partials/patterns-nav.html" %}
+{% endblock %}
+
 {% block mainContent %}
 	<h1>Patterns</h1>
-
-	<p>Ask users for</p>
-	<ul>
-		<li><a href="/patterns/payment">Payment</a></li>
-		<li><a href="/patterns/dates">Dates</a></li>
-	</ul>
-
-	<p>Help users</p>
-	<ul>
-		<li><a href="/patterns/add-another">Add multiple items</a></li>
-		<li><a href="/patterns/seats">Select a seat</a></li>
-		<li><a href="/patterns/upload">Upload a file</a></li>
-		<li><a href="/patterns/validation">Recover from errors</a></li>
-		<li><a href="/patterns/search">Search for something</a></li>
-	</ul>
 
 {% endblock mainContent %}

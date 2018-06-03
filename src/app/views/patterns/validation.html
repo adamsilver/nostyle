@@ -1,13 +1,20 @@
-{% extends 'layouts/default.html' %}
+{% extends 'layouts/item.html' %}
 
 {% block title %}Recover from errors - Patterns{% endblock %}
+
+{% set nav = 'patterns' %}
+{% set pnav = 'recover-from-errors' %}
+
+{% block menu %}
+	{% include "partials/patterns-nav.html" %}
+{% endblock %}
 
 {% block mainContent %}
 
 	{{h1({ text: 'Recover from errors' })}}
 
 	<div class="example">
-		<iframe src="/examples/validation" width="400" height="400"></iframe>
+		<iframe src="/examples/validation" width="400" height="1750"></iframe>
 		<p class="example-link"><a href="/examples/validation">Standalone</a></p>
 	</div>
 
