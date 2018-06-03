@@ -1,6 +1,14 @@
-{% extends 'layouts/default.html' %}
+{% extends 'layouts/item.html' %}
 
 {% block title %}Menu - Components{% endblock %}
+
+{% set nav = 'components' %}
+{% set cnav = 'menu' %}
+
+{% block menu %}
+	{% include "partials/components-nav.html" %}
+{% endblock %}
+
 
 {% block mainContent %}
 	{{h1({ text: 'Menu' })}}

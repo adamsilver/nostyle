@@ -1,11 +1,19 @@
-{% extends 'layouts/default.html' %}
+{% extends 'layouts/item.html' %}
 
 {% block title %}Text field - Components{% endblock %}
+
+{% set nav = 'components' %}
+{% set cnav = 'text-box' %}
+
+{% block menu %}
+	{% include "partials/components-nav.html" %}
+{% endblock %}
+
 
 {% block mainContent %}
 	{{h1({ text: 'Text field' })}}
 
-	<p>Use the Stepper component to let users make small adjustments to a number/quantity field.</p>
+	<p>Use the Text Field component to let users enter information.</p>
 
 	{{h2({ text: 'Text field' })}}
 	<div class="example">

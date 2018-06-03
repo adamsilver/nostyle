@@ -1,7 +1,7 @@
 .primaryNav {
 	padding-left: 14px;
 	padding-right: 14px;
-	background-color: #eee;
+	background-color: $colour-grey-light;
 }
 
 .primaryNav ul {
@@ -22,8 +22,8 @@
 .primaryNav a:visited {
 	text-decoration: none;
 	display: block;
-	padding: 20px 10px 16px;
-	border-bottom: 4px solid #eee;
+	padding: 24px 10px 20px;
+	border-bottom: 4px solid $colour-grey-light;
 }
 
 .primaryNav a:hover,
@@ -33,5 +33,5 @@
 
 .primaryNav a.primaryNav-active {
 	font-weight: bold;
-	border-bottom: 4px solid #0074D9;
+	border-bottom: 4px solid $colour-darkblue;
 }

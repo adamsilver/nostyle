@@ -1,9 +1,15 @@
-{% extends 'layouts/default.html' %}
-{% set nav = "components" %}
+{% extends 'layouts/item.html' %}
 
 {% block title %}Components{% endblock %}
 
+{% set nav = 'components' %}
+{% set cnav = 'autocomplete' %}
+
+{% block menu %}
+	{% include "partials/components-nav.html" %}
+{% endblock %}
+
 {% block mainContent %}
 	<h1>Components</h1>
-	{% include "partials/components-nav.html" %}
+	<p>Re-usable parts of the interface. From buttons to form elements to menus.</p>
 {% endblock mainContent %}

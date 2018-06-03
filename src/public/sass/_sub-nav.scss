@@ -7,11 +7,19 @@
   list-style: none;
 }
 
+.subNav li {
+  margin-bottom: 0;
+}
+
 .subNav a {
-  padding: 6px;
+  padding: 8px;
   display: block;
   text-decoration: none;
   border-left: 4px solid #fff;
+}
+
+.subNav a:hover {
+  border-left: 4px solid $colour-blue;
 }
 
 .subNav .subNav-link--active {
