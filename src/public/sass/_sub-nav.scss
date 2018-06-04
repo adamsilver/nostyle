@@ -1,8 +1,13 @@
 .subNav {
   white-space: nowrap;
+  border-top: 1px solid $colour-grey;
+  border-bottom: 1px solid $colour-grey;
   @media(min-width: 45em) {
     @supports ( display: grid ) {
       white-space: normal;
+      border-top: none;
+      border-bottom: none;
+      padding: 0;
     }
   }
 }
@@ -22,10 +27,24 @@
   margin: 0;
   list-style: none;
   white-space: nowrap;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 20px;
   @media(min-width: 45em) {
     @supports ( display: grid ) {
       white-space: normal;
       margin-bottom: 40px;
+      padding: 0;
+    }
+  }
+}
+
+.subNav ul:last-child {
+  padding-right: 20px;
+  padding-left: 0;
+  @media(min-width: 45em) {
+    @supports ( display: grid ) {
+      padding-right: 0;
     }
   }
 }

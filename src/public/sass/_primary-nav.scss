@@ -8,7 +8,7 @@
 	list-style: none;
 	display: block;
 	margin: 0;
-	font-size: 1em;
+	// font-size: 1em;
 	white-space: nowrap;
 	overflow-x: scroll;
 }
@@ -17,14 +17,14 @@
 	display: inline-block;
 	margin: 0;
 	line-height: 0.5em;
-	font-size: 1.2em;
+	font-size: 1.1875em;
 }
 
 .primaryNav a:link,
 .primaryNav a:visited {
 	text-decoration: none;
 	display: block;
-	padding: 24px 14px 20px;
+	padding: 22px 15px 18px;
 	border-bottom: 4px solid $colour-grey-light;
 }
 

@@ -114,7 +114,6 @@ p {
 ul {
 	margin-bottom: 30px;
 	margin-left: 25px;
-	// font-size: 1.2em;
 }
 
 li {
@@ -136,7 +135,7 @@ li {
 
 .example iframe {
 	width: 100%;
-	border: 1px solid #ccc;
+	border: 1px solid $colour-grey;
 	box-sizing: border-box;
 	display: block;
 }
@@ -145,9 +144,13 @@ li {
 	position: absolute;
 	top: 1px;
 	right: 1px;
-	background-color: #eee;
+	background-color: $colour-grey-light;
 	margin-bottom: 0;
 	padding: 7px 14px;
+
+	a {
+		text-decoration: none;
+	}
 }
 
 .html {
@@ -161,21 +164,6 @@ li {
   font-size: 1.5em;
   overflow: auto;
   position: relative;
-}
-
-.html:before {
-	content: "HTML";
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0.21053em 0.78947em 0.21053em 0.78947em;
-    font-family: "nta", Arial, sans-serif;
-    font-weight: 400;
-    text-transform: none;
-    font-size: 12px;
-    line-height: 1.25;
-    background: #bfc1c3;
-    color: white;
 }
 
 .hidden {
@@ -240,7 +228,6 @@ input[id$="[amount]"] {
 .subNavPane {
 	border-right: 1px solid #ccc;
 	overflow-x: scroll;
-	padding: 20px;
 	@media(min-width: 45em) {
 		@supports ( display: grid ) {
 			padding: 40px 20px;
