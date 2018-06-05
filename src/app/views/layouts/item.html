@@ -2,23 +2,17 @@
 
 {% block body %}
   <div class="wrapperPane">
-    {% block header %}
-      {% include "partials/nav.html" %}
-    {% endblock %}
-
-    {% block content %}
-      <div class="bodyPane">
-        <div class="subNavPane">
-          {% block menu %}
-          {% endblock %}
-        </div>
-        <div class="contentPane">
-          <div class="pageContent">
-            {% block mainContent %}
-            {% endblock%}
-          </div>
+    {% include "partials/nav.html" %}
+    <div class="bodyPane">
+      <div class="subNavPane">
+        {% block menu %} {% endblock %}
+      </div>
+      <div class="contentPane">
+        <div class="pageContent">
+          {% block mainContent %}
+          {% endblock%}
         </div>
       </div>
-    {% endblock %}
+    </div>
   </div>
 {% endblock %}

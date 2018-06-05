@@ -25,9 +25,9 @@
 **************************************/
 
 @mixin secondaryButton {
-	@include button($colour-grey);
+	@include button($colour-grey-medium);
 }
 
 .secondaryButton {
 	@include secondaryButton;
-} 
+}
