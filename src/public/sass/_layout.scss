@@ -1,0 +1,32 @@
+.wrapperPane {
+	@supports ( display: grid ) {
+		height: 100vh;
+		display: grid;
+		grid-template-rows: min-content min-content auto;
+		grid-template-columns: 100%;
+	}
+}
+
+.bodyPane {
+	@media(min-width: 45em) {
+		@supports ( display: grid ) {
+			min-height: 0;
+			display: grid;
+			grid-template-columns: 300px auto;
+		}
+	}
+}
+
+.subNavPane {
+	border-right: 1px solid #ccc;
+	overflow-x: scroll;
+	@media(min-width: 45em) {
+		@supports ( display: grid ) {
+			padding: 32px 15px 32px 16px;
+		}
+	}
+}
+
+.contentPane {
+	overflow-x: scroll;
+}

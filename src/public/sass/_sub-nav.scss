@@ -27,14 +27,13 @@
   margin: 0;
   list-style: none;
   white-space: nowrap;
-  padding-top: 9px;
-  padding-bottom: 9px;
-  padding-left: 20px;
+  padding: 8px 16px;
   @media(min-width: 45em) {
     @supports ( display: grid ) {
       white-space: normal;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
       padding: 0;
+      display: block;
     }
   }
 }
@@ -65,10 +64,8 @@
   @media(min-width: 45em) {
     @supports ( display: grid ) {
       display: block;
-      border-left: 4px solid #fff;
     }
 	}
-
 }
 
 .subNav a:hover {

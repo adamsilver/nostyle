@@ -1,27 +1,24 @@
 .searchHeader {
-	padding: 10px 15px 10px 20px;
+	padding: 8px 16px;
 	background-color: $colour-black;
 	color: $colour-white;
 	overflow: hidden;
 }
 
 .searchHeader div {
-	font-size: 1.2em;
 	float: left;
 	line-height: 1em;
-	padding: 7px 0;
+	padding: 8px 0;
 }
 
 .searchHeader button {
 	float: right;
 	background: none;
 	border: none;
-	padding: 5px 7px;
-	border: 1px solid $colour-white;
+	padding: 8px;
 }
 
 .searchForm {
-	padding: 20px 20px 25px;
-	border-bottom: 2px solid $colour-black;
+	padding: 32px 24px;
 	background-color: $colour-grey-light;
 }

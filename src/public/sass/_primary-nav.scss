@@ -1,6 +1,4 @@
 .primaryNav {
-	padding-left: 14px;
-	padding-right: 14px;
 	background-color: $colour-grey-light;
 }
 
@@ -8,7 +6,6 @@
 	list-style: none;
 	display: block;
 	margin: 0;
-	// font-size: 1em;
 	white-space: nowrap;
 	overflow-x: scroll;
 }
@@ -16,21 +13,22 @@
 .primaryNav li {
 	display: inline-block;
 	margin: 0;
-	line-height: 0.5em;
-	font-size: 1.1875em;
+	line-height: 0;
 }
 
 .primaryNav a:link,
 .primaryNav a:visited {
 	text-decoration: none;
 	display: block;
-	padding: 22px 15px 18px;
+	padding: 24px 16px 20px;
 	border-bottom: 4px solid $colour-grey-light;
 }
 
 .primaryNav a:hover,
 .primaryNav a.primaryNav-active {
 	text-decoration: none;
+	background-color: $colour-grey-medium;
+	border-bottom: 4px solid $colour-grey-medium;
 }
 
 .primaryNav a.primaryNav-active {

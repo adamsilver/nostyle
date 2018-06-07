@@ -6,24 +6,24 @@
 
 .plane-row {
 	overflow: hidden;
-	margin-bottom: 10px;
+	margin-bottom: 8px;
 }
 
 .plane-seat {
 	float: left;
-	margin-right: 3px;
+	margin-right: 4px;
 }
 
 .plane-seat--economyClass:nth-child(3) {
-	margin-right: 10px;
+	margin-right: 8px;
 }
 
 .plane-seat--firstClass:nth-child(2) {
-	margin-right: 30px;
+	margin-right: 32px;
 }
 
 .plane-seat label {
-	padding: 0.5em;
+	padding: 8px;
 	margin-bottom: 0;
 	background-color: $colour-grey-light;
 	position: relative;
@@ -53,12 +53,12 @@
 }
 
 .enhanced .plane-seatNumber {
-	border-radius: 5px;
-	margin: 5px 1px 3px 0px;
-	border: 3px solid $colour-grey-medium;
-	border-top: 3px solid $colour-grey-light;
+	border-radius: 4px;
+	margin: 4px 0px;
+	border: 2px solid $colour-grey-medium;
+	border-top: 2px solid $colour-grey-light;
 	width: 1.3em;
-	padding: 0.3em;
+	padding: 8px;
 	text-align: center;
 	display: block;
 	background-color: $colour-grey-light;
@@ -70,7 +70,7 @@
 }
 
 .enhanced [type="checkbox"]:focus + .plane-seatNumber {
-	border: 3px solid $colour-yellow;
+	border: 2px solid $colour-yellow;
 }
 
 .enhanced [type="checkbox"]:checked + .plane-seatNumber {

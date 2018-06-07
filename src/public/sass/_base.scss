@@ -79,55 +79,49 @@ a:link, a:visited {
 }
 
 h1 {
-	font-size: 2.2em;
-	line-height: 1;
+	// font-size: 2.2em;
+	// line-height: 1;
 	color: $colour-black;
-	margin-bottom: 20px;
+	margin-bottom: 24px;
 }
 
 @media(min-width: 30em) {
 	h1 {
-		font-size: 2.8em;
-		margin-bottom: 40px;
+		// font-size: 2.8em;
+		margin-bottom: 32px;
 	}
 }
 
 h2 {
-	font-size: 1.6em;
-	line-height: 1;
+	// font-size: 1.6em;
+	// line-height: 1;
 	color: $colour-black;
-	margin-top: 40px;
-	margin-bottom: 10px;
+	margin-top: 32px;
+	margin-bottom: 8px;
 }
 
 @media(min-width: 30em) {
 	h2 {
-		font-size: 1.9em;
+		// font-size: 1.9em;
 	}
 }
 
 
 p {
-	margin-bottom: 20px;
+	margin-bottom: 24px;
 }
 
 ul {
-	margin-bottom: 30px;
-	margin-left: 25px;
+	margin-bottom: 24px;
+	margin-left: 24px;
 }
 
 li {
-	margin-bottom: 5px;
-}
-
-.wifi-icon {
-	padding-left: 135px;
-	height: 128px;
-	background: transparent url( /public/img/wifi_icon.png ) 0 0 no-repeat;
+	margin-bottom: 4px;
 }
 
 .example {
-	margin-bottom: 20px;
+	margin-bottom: 24px;
 	overflow: hidden;
 	position: relative;
 	max-width: 760px;
@@ -146,7 +140,7 @@ li {
 	right: 1px;
 	background-color: $colour-grey-light;
 	margin-bottom: 0;
-	padding: 7px 14px;
+	padding: 8px 16px;
 
 	a {
 		text-decoration: none;
@@ -180,65 +174,15 @@ input[id$="[amount]"] {
 	width: 100px;
 }
 
-.passwordRevealer {
-	position: relative;
-
-	input {
-		padding-right: 70px;
-	}
-
-	button {
-		@include button(#000);
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		padding: 8px 0;
-		border-radius: 0;
-		color: $colour-white;
-		width: 80px;
-	}
-}
-
 .introBits {
 	display: grid;
 	max-width: 40em;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-	grid-gap: 0 20px;
-}
-
-.wrapperPane {
-	@supports ( display: grid ) {
-		height: 100vh;
-		display: grid;
-		grid-template-rows: min-content auto;
-		grid-template-columns: 100%;
-	}
-}
-
-.bodyPane {
-	@media(min-width: 45em) {
-		@supports ( display: grid ) {
-			min-height: 0;
-			display: grid;
-			grid-template-columns: 300px auto;
-		}
-	}
-}
-
-.subNavPane {
-	border-right: 1px solid #ccc;
-	overflow-x: scroll;
-	@media(min-width: 45em) {
-		@supports ( display: grid ) {
-			padding: 40px 20px;
-		}
-	}
+	grid-template-columns: repeat(auto-fit, minmax(304px, 2fr));
+	grid-gap: 0 16px;
 }
 
 .pageContent {
-	padding: 50px 20px;
-	overflow-x: scroll;
-	// grid-column: span 1;
+	padding: 48px 24px;
 }
 
 .pageContent p {

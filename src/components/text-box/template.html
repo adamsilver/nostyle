@@ -1,5 +1,5 @@
 <div class="field {% if params.modifierClasses %}{{params.modifierClasses}}{% endif %}">
-  <label for="{% if params.id %}{{params.id}}{%else%}{{name}}{%endif%}" {% if params.labelId %}id="{{params.labelId}}"{% endif %}>
+  <label for="{% if params.id %}{{params.id}}{%else%}{{params.name}}{%endif%}" {% if params.labelId %}id="{{params.labelId}}"{% endif %}>
     <span class="field-label">{{params.label}}</span>
     {%- if params.hint %}
       <span class="field-hint">{{ params.hint }}</span>

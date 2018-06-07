@@ -1,9 +1,9 @@
 .stepper-removeButton,
 .stepper-addButton {
 	@include button($colour-black);
-	padding-top: 5px;
-	padding-bottom: 7px;
-	line-height: 1.2em;
+	padding-top: 4px;
+	padding-bottom: 8px;
+	line-height: 1.17em;
 	font-size: 1.5em;
 	vertical-align: bottom;
 	color: $colour-white;
@@ -13,13 +13,15 @@
 }
 
 .stepper-removeButton {
-	border-radius: 15px 0 0 15px;
-	padding-right: 20px;
+	border-radius: 8px 0 0 8px;
+	padding-right: 14px;
+	padding-left: 16px;
 }
 
 .stepper-addButton {
-	border-radius: 0 15px 15px 0;
-	padding-left: 20px;
+	border-radius: 0 8px 8px 0;
+	padding-left: 14px;
+	padding-right: 16px;
 }
 
 .stepper input {

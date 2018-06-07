@@ -3,8 +3,8 @@
 	appearance: none;
 	-webkit-appearance: none;
 	font-size: 1.2em;
-	padding: 10px 25px;
-	border-radius: 25px;
+	padding: 8px 24px;
+	border-radius: 24px;
 	background-color: $bg;
 	&:hover {
 		background-color: darken($bg, 15%);
