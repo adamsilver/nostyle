@@ -13,14 +13,14 @@
 .primaryNav li {
 	display: inline-block;
 	margin: 0;
-	line-height: 0;
+	line-height: 1;
 }
 
 .primaryNav a:link,
 .primaryNav a:visited {
 	text-decoration: none;
 	display: block;
-	padding: 24px 16px 20px;
+	padding: 16px 16px 12px;
 	border-bottom: 4px solid $colour-grey-light;
 }
 

@@ -15,6 +15,7 @@
 .subNav p {
   font-weight: bold;
   display: none;
+  margin-bottom: 8px;
   @media(min-width: 45em) {
     @supports ( display: grid ) {
       display: block;
@@ -27,7 +28,6 @@
   margin: 0;
   list-style: none;
   white-space: nowrap;
-  padding: 8px 16px;
   @media(min-width: 45em) {
     @supports ( display: grid ) {
       white-space: normal;
@@ -59,9 +59,10 @@
 }
 
 .subNav a {
-  padding: 8px 16px 7px;
+  padding: 16px;
   text-decoration: none;
   display: block;
+  line-height: 1;
 }
 
 .subNav a:hover {
