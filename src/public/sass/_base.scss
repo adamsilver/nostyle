@@ -72,42 +72,23 @@ a:link, a:visited {
   width: 1px!important;
 }
 
-
-
-.main {
-
-}
-
 h1 {
-	// font-size: 2.2em;
-	// line-height: 1;
-	color: $colour-black;
+	font-size: 48px;
+	line-height: 1.16667;
 	margin-bottom: 24px;
-}
-
-@media(min-width: 30em) {
-	h1 {
-		// font-size: 2.8em;
-		margin-bottom: 32px;
-	}
+	color: $colour-black;
 }
 
 h2 {
-	// font-size: 1.6em;
-	// line-height: 1;
+	font-size: 36px;
+	line-height: 1.33333;
+	margin-bottom: 16px;
 	color: $colour-black;
-	margin-top: 32px;
-	margin-bottom: 8px;
 }
-
-@media(min-width: 30em) {
-	h2 {
-		// font-size: 1.9em;
-	}
-}
-
 
 p {
+	font-size: 16px;
+  line-height: 1.5;
 	margin-bottom: 24px;
 }
 
@@ -118,6 +99,8 @@ ul {
 
 li {
 	margin-bottom: 4px;
+	font-size: 16px;
+  line-height: 1.5;
 }
 
 .example {
