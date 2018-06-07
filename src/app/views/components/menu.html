@@ -9,15 +9,15 @@
 	{% include "partials/components-nav.html" %}
 {% endblock %}
 
-
 {% block mainContent %}
 	{{h1({ text: 'Menu' })}}
 
 	<p>Use the Menu component when you have a group of menu items you need to group together.</p>
 
-	<div class="example">
-		<iframe src="/examples/menu" width="400" height="200"></iframe>
-		<p class="example-link"><a href="/examples/menu">Standalone</a></p>
-	</div>
+	{{example({
+		url: '/examples/menu',
+		width: 400,
+		height: 200
+	})}}
 
 {% endblock mainContent %}

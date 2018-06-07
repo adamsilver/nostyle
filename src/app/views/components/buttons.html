@@ -25,15 +25,18 @@
 
 	{{h2({ text: 'Primary button' })}}
 
-	<div class="example">
-		<iframe src="/examples/primary-button" width="400" height="140"></iframe>
-		<p class="example-link"><a href="/examples/primary-button">Standalone</a></p>
-	</div>
+	{{example({
+		url: '/examples/primary-button',
+		width: 400,
+		height: 140
+	})}}
 
 	{{h2({ text: 'Secondary button' })}}
 
-	<div class="example">
-		<iframe src="/examples/secondary-button" width="400" height="140"></iframe>
-		<p class="example-link"><a href="/examples/secondary-button">Standalone</a></p>
-	</div>
+	{{example({
+		url: '/examples/secondary-button',
+		width: 400,
+		height: 140
+	})}}
+
 {% endblock mainContent %}

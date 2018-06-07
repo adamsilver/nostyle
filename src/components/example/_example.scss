@@ -1,0 +1,26 @@
+.example {
+	margin-bottom: 24px;
+	overflow: hidden;
+	position: relative;
+	max-width: 760px;
+}
+
+.example iframe {
+	width: 100%;
+	border: 1px solid $colour-grey;
+	box-sizing: border-box;
+	display: block;
+}
+
+.example-link {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	background-color: $colour-grey-light;
+	margin-bottom: 0;
+	padding: 8px 16px;
+
+	a {
+		text-decoration: none;
+	}
+}

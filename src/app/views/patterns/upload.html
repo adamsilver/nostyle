@@ -14,18 +14,18 @@
 	{{h1({ text: 'Upload' })}}
 
 	{{h2({ text: 'Dropzone' })}}
-	<p>Uses the ever present form pattern</p>
-	<div class="example">
-		<iframe src="/examples/dropzone" width="400" height="500"></iframe>
-		<p class="example-link"><a href="/examples/dropzone">Standalone</a></p>
-	</div>
+	{{example({
+		url: '/examples/dropzone',
+		width: 400,
+		height: 500
+	})}}
 
 	{{h2({ text: 'Download to upload' })}}
 	<p>Download a thing, make edits, upload it again</p>
-	<div class="example">
-		<iframe src="/examples/download-to-upload" width="400" height="400"></iframe>
-		<p class="example-link"><a href="/examples/download-to-upload">Standalone</a></p>
-	</div>
-
+	{{example({
+		url: '/examples/download-to-upload',
+		width: 400,
+		height: 400
+	})}}
 
 {% endblock mainContent %}

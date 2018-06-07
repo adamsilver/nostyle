@@ -13,9 +13,10 @@
 
 	{{h1({ text: 'Asking for payment' })}}
 
-	<div class="example">
-		<iframe src="/examples/payment-form" width="400" height="800"></iframe>
-		<p class="example-link"><a href="/examples/payment-form">Standalone</a></p>
-	</div>
+	{{example({
+		url: '/examples/payment-form',
+		width: 400,
+		height: 800
+	})}}
 
 {% endblock mainContent %}

@@ -128,11 +128,11 @@ textarea {
 **************************************/
 
 .field-radioButton label {
-  background-color: #eee;
+  background-color: $colour-grey-medium;
   margin-bottom: 8px;
   display: block;
   padding: 12px 20px;
-  border: 2px solid #eee;
+  border: 2px solid $colour-grey-medium;
 }
 
 .field-radioButton input {
@@ -153,12 +153,12 @@ textarea {
 **************************************/
 
 .field-checkbox label {
-  background-color: #eee;
-  border: 2px solid #eee;
-  margin-bottom: 7px;
+  background-color: $colour-grey-medium;
+  border: 2px solid $colour-grey-medium;
+  margin-bottom: 8px;
   display: block;
-  padding: 0.7em 1.2em;
-  border: 2px solid #eee;
+  padding: 12px 20px;
+  border: 2px solid $colour-grey-medium;
 }
 
 .field-checkbox input {

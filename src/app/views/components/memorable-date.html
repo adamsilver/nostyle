@@ -9,15 +9,15 @@
 	{% include "partials/components-nav.html" %}
 {% endblock %}
 
-
 {% block mainContent %}
 	{{h1({ text: 'Memorable date' })}}
 
 	<p>Use the Memorable Date component to help users enter a date they already know.</p>
 
-	<div class="example">
-		<iframe src="/examples/memorable-date" width="400" height="200"></iframe>
-		<p class="example-link"><a href="/examples/memorable-date">Standalone</a></p>
-	</div>
+	{{example({
+		url: '/examples/memorable-date',
+		width: 400,
+		height: 250
+	})}}
 
 {% endblock mainContent %}

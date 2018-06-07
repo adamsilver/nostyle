@@ -15,14 +15,20 @@
 
 	<p>Let users select one or more plane seats. Pattern applicable for theatre or cinema tickets.</p>
 
-	<div class="example">
-		<iframe src="/examples/seat-chooser" width="400" height="500"></iframe>
-		<p class="example-link"><a href="/examples/seat-chooser">Standalone</a></p>
-  </div>
+	{{h2({ text: 'Single class' })}}
 
-  <div class="example">
-		<iframe src="/examples/seat-chooser--nested" width="400" height="800"></iframe>
-		<p class="example-link"><a href="/examples/seat-chooser--nested">Standalone</a></p>
-	</div>
+	{{example({
+		url: '/examples/seat-chooser',
+		width: 400,
+		height: 450
+	})}}
+
+	{{h2({ text: 'Multiple classes' })}}
+
+	{{example({
+		url: '/examples/seat-chooser--nested',
+		width: 400,
+		height: 750
+	})}}
 
 {% endblock mainContent %}

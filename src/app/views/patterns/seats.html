@@ -13,16 +13,18 @@
 
 	{{h1({ text: 'Choosing a seat' })}}
 
-	{{h2({ text: 'One seat class' })}}
-	<div class="example">
-		<iframe src="/examples/seat-chooser" width="400" height="500"></iframe>
-		<p class="example-link"><a href="/examples/seat-chooser">Standalone</a></p>
-	</div>
+	{{h2({ text: 'Single class' })}}
+	{{example({
+		url: '/examples/seat-chooser',
+		width: 400,
+		height: 500
+	})}}
 
-	{{h2({ text: 'Both seat classes' })}}
-	<div class="example">
-		<iframe src="/examples/seat-chooser--nested" width="400" height="800"></iframe>
-		<p class="example-link"><a href="/examples/seat-chooser--nested">Standalone</a></p>
-	</div>
+	{{h2({ text: 'Multiple classes' })}}
+	{{example({
+		url: '/examples/seat-chooser--nested',
+		width: 400,
+		height: 800
+	})}}
 
 {% endblock mainContent %}

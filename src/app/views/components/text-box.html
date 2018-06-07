@@ -16,28 +16,36 @@
 	<p>Use the Text Field component to let users enter information.</p>
 
 	{{h2({ text: 'Text field' })}}
-	<div class="example">
-		<iframe src="/examples/text-input" width="400" height="200"></iframe>
-		<p class="example-link"><a href="/examples/text-input">Standalone</a></p>
-	</div>
+
+	{{example({
+		url: '/examples/text-input',
+		width: 400,
+		height: 200
+	})}}
 
 	{{h2({ text: 'Password field' })}}
-	<div class="example">
-		<iframe src="/examples/password-input" width="400" height="200"></iframe>
-		<p class="example-link"><a href="/examples/password-input">Standalone</a></p>
-	</div>
 
-	{{h2({ text: 'Email field' })}}
-	<div class="example">
-		<iframe src="/examples/email-input" width="400" height="200"></iframe>
-		<p class="example-link"><a href="/examples/email-input">Standalone</a></p>
-	</div>
+	{{example({
+		url: '/examples/password-input',
+		width: 400,
+		height: 200
+	})}}
 
-	{{h2({ text: 'Search field' })}}
-	<div class="example">
-		<iframe src="/examples/search-input" width="400" height="200"></iframe>
-		<p class="example-link"><a href="/examples/search-input">Standalone</a></p>
-	</div>
+	{{h2({ text: 'Email input' })}}
+
+	{{example({
+		url: '/examples/email-input',
+		width: 400,
+		height: 200
+	})}}
+
+	{{h2({ text: 'Search input' })}}
+
+	{{example({
+		url: '/examples/search-input',
+		width: 400,
+		height: 200
+	})}}
 
 
 {% endblock mainContent %}
