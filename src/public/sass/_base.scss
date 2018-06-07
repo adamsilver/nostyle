@@ -137,6 +137,11 @@ input[id$="[amount]"] {
 	grid-gap: 0 16px;
 }
 
+.introBits > div {
+	display: grid;
+	grid-template-rows: min-content auto min-content;
+}
+
 .pageContent {
 	padding: 48px 40px;
 }
