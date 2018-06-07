@@ -39,7 +39,7 @@
 }
 
 .subNav ul:last-child {
-  padding-right: 20px;
+  padding-right: 16px;
   padding-left: 0;
   @media(min-width: 45em) {
     @supports ( display: grid ) {
@@ -59,13 +59,9 @@
 }
 
 .subNav a {
-  padding: 8px;
+  padding: 8px 16px 7px;
   text-decoration: none;
-  @media(min-width: 45em) {
-    @supports ( display: grid ) {
-      display: block;
-    }
-	}
+  display: block;
 }
 
 .subNav a:hover {
