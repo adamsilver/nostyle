@@ -1,8 +1,9 @@
 @mixin button($bg) {
+	font: inherit;
 	border: none;
 	appearance: none;
 	-webkit-appearance: none;
-	font-size: 1.125em;
+	@include typography(font18);
 	padding: 8px 16px;
 	border-radius: 8px;
 	background-color: $bg;

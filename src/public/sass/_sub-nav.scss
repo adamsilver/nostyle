@@ -50,6 +50,7 @@
 
 .subNav li {
   margin-bottom: 0;
+  line-height: 1;
   display: inline-block;
   @media(min-width: 45em) {
     @supports ( display: grid ) {
@@ -59,10 +60,9 @@
 }
 
 .subNav a {
-  padding: 16px;
+  padding: $spacing-scale-2 $spacing-scale-2 ($spacing-scale-2 - 1);
   text-decoration: none;
   display: block;
-  line-height: 1;
 }
 
 .subNav a:hover {

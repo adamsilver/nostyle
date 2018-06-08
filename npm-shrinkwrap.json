@@ -7245,6 +7245,11 @@
         }
       }
     },
+    "sass-mq": {
+      "version": "5.0.0",
+      "resolved": "https://registry.npmjs.org/sass-mq/-/sass-mq-5.0.0.tgz",
+      "integrity": "sha512-GCN6wGY+l4n10mASeMe2vqISvEEFjv6/NVcywaMU9saZgzw+DKM+fUUAnv07LlxXvDdnHSRf5jGJ10u/iF1BKA=="
+    },
     "scss-tokenizer": {
       "version": "0.2.3",
       "resolved": "https://registry.npmjs.org/scss-tokenizer/-/scss-tokenizer-0.2.3.tgz",

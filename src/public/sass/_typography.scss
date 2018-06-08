@@ -1,0 +1,116 @@
+$type: (
+
+  font64: (
+
+    base: (
+      font-size: 48px,
+      line-height: (56/48)
+    ),
+
+    lg: (
+      font-size: 64px,
+      line-height: (72/64)
+    )
+
+  ),
+
+  font48: (
+
+    base: (
+      font-size: 36px,
+      line-height: (48/36)
+    ),
+
+    lg: (
+      font-size: 48px,
+      line-height: (56/48)
+    )
+
+  ),
+
+  font36: (
+
+    base: (
+      font-size: 24px,
+      line-height: (32/24)
+    ),
+
+    lg: (
+      font-size: 36px,
+      line-height: (48/36)
+    )
+
+  ),
+
+  font24: (
+
+    base: (
+      font-size: 18px,
+      line-height: (24/18)
+    ),
+
+    lg: (
+      font-size: 24px,
+      line-height: (32/24)
+    )
+
+  ),
+
+  font18: (
+
+    base: (
+      font-size: 16px,
+      line-height: (24/16)
+    ),
+
+    lg: (
+      font-size: 18px,
+      line-height: (24/18)
+    )
+
+  ),
+
+  font16: (
+
+    base: (
+      font-size: 16px,
+      line-height: (24/16)
+    )
+
+  ),
+
+  font14: (
+
+    base: (
+      font-size: 14px,
+      line-height: (24/14)
+    )
+
+  )
+
+);
+
+
+@mixin propValue($map) {
+  @each $prop, $value in $map {
+    #{$prop}: #{$value};
+  }
+}
+
+
+@mixin typography($element) {
+
+  $map: map-get($type, $element);
+  $base: map-get($map, base);
+
+  @include propValue($base);
+
+  $mq: map-remove($map, base);
+
+  @each $bp, $attr in $mq {
+    @include mq($bp) {
+      @include propValue($attr);
+    }
+  }
+
+}

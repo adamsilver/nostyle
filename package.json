@@ -44,6 +44,7 @@
     "morgan": "*",
     "multer": "*",
     "nunjucks": "*",
+    "sass-mq": "^5.0.0",
     "serve-static": "*"
   },
   "devDependencies": {
