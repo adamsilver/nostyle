@@ -1,0 +1,34 @@
+{% extends 'layouts/item.html' %}
+
+{% block title %}Button - Components{% endblock %}
+
+{% set nav = 'components' %}
+{% set cnav = 'button' %}
+
+{% block menu %}
+	{% include "partials/components-nav.html" %}
+{% endblock %}
+
+{% block mainContent %}
+
+	{{h1({ text: 'Button' })}}
+
+	<p>Use the Button to help users submit forms or perform actions with JavaScript.</p>
+
+	{{h2({ text: 'Primary button' })}}
+
+	{{example({
+		url: '/examples/primary-button',
+		width: 400,
+		height: 112
+	})}}
+
+	{{h2({ text: 'Secondary button' })}}
+
+	{{example({
+		url: '/examples/secondary-button',
+		width: 400,
+		height: 112
+	})}}
+
+{% endblock mainContent %}

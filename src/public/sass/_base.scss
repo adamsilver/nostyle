@@ -36,34 +36,6 @@ a:link, a:visited {
   width: 1px!important;
 }
 
-h1 {
-	@include typography(font48);
-	margin-bottom: $spacing-scale-3;
-	color: $colour-black;
-}
-
-h2 {
-	@include typography(font36);
-	margin-bottom: $spacing-scale-2;
-	color: $colour-black;
-}
-
-p {
-	@include typography(font16);
-	margin-bottom: $spacing-scale-2;
-}
-
-ul {
-	margin-bottom: $spacing-scale-3;
-	margin-top: $spacing-scale-3;
-	padding-left: $spacing-scale-3;
-}
-
-li {
-	margin-bottom: 4px;
-	@include typography(font16);
-}
-
 .html {
   border: 1px solid #bfc1c3;
   margin-top: 15px;
@@ -110,6 +82,34 @@ input[id$="[amount]"] {
 	}
 }
 
-.pageContent p {
+.h1, .prose h1 {
+	@include typography(xl);
+	margin-bottom: $spacing-scale-3;
+	color: $colour-black;
+	max-width: 15em;
+}
+
+.h2, .prose h2 {
+	@include typography(l);
+	margin-bottom: $spacing-scale-2;
+	color: $colour-black;
+	max-width: 20em;
+}
+
+.p, .prose p {
+	@include typography(body);
+	margin-bottom: $spacing-scale-4;
 	max-width: 30em;
+}
+
+.list, .prose ul {
+	margin-bottom: $spacing-scale-4;
+	margin-top: $spacing-scale-3;
+	padding-left: $spacing-scale-3;
+	max-width: 30em;
+}
+
+.listItem, .prose li {
+	@include typography(body);
+	margin-bottom: $spacing-scale-1;
 }

@@ -9,53 +9,55 @@
 {% endblock pageScript %}
 
 {% block mainContent %}
-	<h1>Payment details</h2>
-		<form novalidate>
-			{{textBox({
-				name: 'cardnumber',
-				label: 'Card number',
-				hint: 'The long number on the front of your card'
-			})}}
-			{{textBox({
-				name: 'expiry',
-				label: 'Expiry date',
-				hint: 'MMYY'
-			})}}
-			{{textBox({
-				name: 'cvc',
-				label: 'Card',
-				hint: 'The last 3 numbers on the back of your card'
-			})}}
 
-			{{checkboxes({
-				name: 'same',
-				legend: 'Is your billing address the same as delivery?',
-				choices: [{
-					label: 'Yes, my billing address is the same',
-					id: 'same',
-					checked: true
-				}]
-			})}}
+	{{h1({text: 'Payment'})}}
 
-			<div class="billingAddress">
-				{{textBox({
-					name: 'address1',
-					label: 'Street'
-				})}}
-				{{textBox({
-					name: 'address2',
-					label: 'Town'
-				})}}
-				{{textBox({
-					name: 'postcode',
-					label: 'Postcode'
-				})}}
-			</div>
+	<form novalidate>
+		{{textBox({
+			name: 'cardnumber',
+			label: 'Card number',
+			hint: 'The long number on the front of your card'
+		})}}
+		{{textBox({
+			name: 'expiry',
+			label: 'Expiry date',
+			hint: 'MMYY'
+		})}}
+		{{textBox({
+			name: 'cvc',
+			label: 'Card',
+			hint: 'The last 3 numbers on the back of your card'
+		})}}
 
-			{{primaryButton({
-				text: 'Continue',
-				name: 'pay'
+		{{checkboxes({
+			name: 'same',
+			legend: 'Is your billing address the same as delivery?',
+			choices: [{
+				label: 'Yes, my billing address is the same',
+				id: 'same',
+				checked: true
+			}]
+		})}}
+
+		<div class="billingAddress">
+			{{textBox({
+				name: 'address1',
+				label: 'Street'
 			})}}
-		</form>
+			{{textBox({
+				name: 'address2',
+				label: 'Town'
+			})}}
+			{{textBox({
+				name: 'postcode',
+				label: 'Postcode'
+			})}}
+		</div>
+
+		{{primaryButton({
+			text: 'Continue',
+			name: 'pay'
+		})}}
+	</form>
 
 {% endblock mainContent %}

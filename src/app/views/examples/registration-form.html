@@ -38,10 +38,11 @@
 {% block mainContent %}
 
 	{{h1({ text: 'Register' })}}
-
-	<ul>
-		<li>Already got an account? <a href="/examples/login-form">Log in</a></li>
-	</ul>
+	<div class="prose">
+		<ul>
+			<li>Already got an account? <a href="/examples/login-form">Log in</a></li>
+		</ul>
+	</div>
 
 	{{errorSummary({heading: "There's a problem"})}}
 

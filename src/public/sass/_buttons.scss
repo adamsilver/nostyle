@@ -3,7 +3,7 @@
 	border: none;
 	appearance: none;
 	-webkit-appearance: none;
-	@include typography(font18);
+	@include typography(button);
 	padding: 8px 16px;
 	border-radius: 8px;
 	background-color: $bg;
