@@ -23,7 +23,22 @@ $type: (
 
     md: (
       font-size: 36px,
-      line-height: (48/36)
+
+      line-height: 1.111111 // intended pixels (40) / font size (36)
+    )
+
+  ),
+
+  m: (
+
+    base: (
+      font-size: 16px,
+      line-height: (24/16)
+    ),
+
+    md: (
+      font-size: 18px,
+      line-height: (24/18)
     )
 
   ),

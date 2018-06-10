@@ -83,14 +83,14 @@ input[id$="[amount]"] {
 }
 
 .h1, .prose h1 {
-	@include typography(xl);
+	@include typography(l);
 	margin-bottom: $spacing-scale-3;
 	color: $colour-black;
 	max-width: 15em;
 }
 
 .h2, .prose h2 {
-	@include typography(l);
+	@include typography(m);
 	margin-bottom: $spacing-scale-2;
 	color: $colour-black;
 	max-width: 20em;
