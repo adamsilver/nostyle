@@ -9,7 +9,7 @@ function supportsDateInput() {
 }
 
 if(!supportsDateInput()) {
-	function DatePicker(input, options) {
+	var DatePicker = function(input, options) {
 		this.input = input;
 		this.container = input.parent();
 		this.wrapper = $('<div class="datepicker"></div>');
@@ -24,7 +24,7 @@ if(!supportsDateInput()) {
 		this.selectedDate = null;
 		this.createToggleButton();
 		this.buildCalendar();
-	}
+	};
 
 	DatePicker.prototype.setupMonthNames = function() {
 		this.monthNames = [
@@ -176,7 +176,7 @@ if(!supportsDateInput()) {
 	DatePicker.prototype.getCellHtml = function(date, options) {
 		var label = date.getDate() + ' ' + this.monthNames[date.getMonth()] + ', ' + date.getFullYear();
 		var shortLabel = ' ' + this.monthNames[date.getMonth()] + ', ' + date.getFullYear();
-		
+
 		var tdClass = '';
 		if(options.today) {
 			tdClass += ' '+this.calendarClass+'-day-isToday';
