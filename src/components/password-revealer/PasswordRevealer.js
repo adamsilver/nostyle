@@ -11,7 +11,7 @@ PasswordRevealer.prototype.createButton = function() {
   this.button.on('click', $.proxy(this, 'onButtonClick'));
 };
 
-PasswordRevealer.prototype.onButtonClick = function(e) {
+PasswordRevealer.prototype.onButtonClick = function() {
   if(this.el.type === 'password') {
     this.el.type = 'text';
     this.button.text('Hide');
