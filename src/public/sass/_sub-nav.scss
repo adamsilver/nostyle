@@ -1,13 +1,12 @@
 .subNav {
   white-space: nowrap;
-  border-top: 1px solid $colour-grey;
-  border-bottom: 1px solid $colour-grey;
+  line-height: 1;
+  font-size: 1.0625em;
+  background-color: $colour-grey-extra-light;
   @media(min-width: 45em) {
     @supports ( display: grid ) {
+      background-color: $colour-white;
       white-space: normal;
-      border-top: none;
-      border-bottom: none;
-      padding: 0;
     }
   }
 }
@@ -63,14 +62,23 @@
   padding: $spacing-scale-2;
   text-decoration: none;
   display: block;
+  color: $colour-black;
+  @media(min-width: 45em) {
+    border-left: 5px solid $colour-white;
+  }
 }
 
 .subNav a:hover {
-  background-color: $colour-grey-light;
+  background-color: $colour-grey-extra-light;
+  @media(min-width: 45em) {
+    border-left: 5px solid $colour-black;
+  }
 }
 
 .subNav .subNav-link--active {
   font-weight: bold;
-  color: $colour-darkblue;
   background-color: $colour-grey-light;
+  @media(min-width: 45em) {
+    border-left: 5px solid $colour-black;
+  }
 }

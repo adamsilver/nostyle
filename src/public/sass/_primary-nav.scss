@@ -1,5 +1,5 @@
 .primaryNav {
-	background-color: $colour-grey-extra-light;
+	background-color: $colour-black;
 }
 
 .primaryNav ul {
@@ -20,19 +20,20 @@
 
 .primaryNav a:link,
 .primaryNav a:visited {
-	text-decoration: none;
 	display: block;
 	padding: 16px 16px 12px;
-	border-bottom: 4px solid $colour-grey-extra-light;
+	background-color: $colour-black;
+	color: $colour-white;
+	border-bottom: 4px solid $colour-black;
+	text-decoration: none;
 }
 
-.primaryNav a:hover,
-.primaryNav a.primaryNav-active {
-	text-decoration: none;
-	border-bottom: 4px solid $colour-grey-medium;
+.primaryNav a:hover {
+	border-bottom: 4px solid $colour-yellow;
 }
 
 .primaryNav a.primaryNav-active {
 	font-weight: bold;
-	border-bottom: 4px solid $colour-darkblue;
+	text-decoration: none;
+	border-bottom: 4px solid $colour-yellow;
 }
