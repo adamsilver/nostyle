@@ -1,5 +1,5 @@
 .primaryNav {
-	background-color: $colour-grey-light;
+	background-color: $colour-grey-extra-light;
 }
 
 .primaryNav ul {
@@ -15,6 +15,7 @@
 	display: inline-block;
 	margin: 0;
 	line-height: 1;
+	font-size: 1.0625em;
 }
 
 .primaryNav a:link,
@@ -22,13 +23,12 @@
 	text-decoration: none;
 	display: block;
 	padding: 16px 16px 12px;
-	border-bottom: 4px solid $colour-grey-light;
+	border-bottom: 4px solid $colour-grey-extra-light;
 }
 
 .primaryNav a:hover,
 .primaryNav a.primaryNav-active {
 	text-decoration: none;
-	background-color: $colour-grey-medium;
 	border-bottom: 4px solid $colour-grey-medium;
 }
 

@@ -7,7 +7,6 @@ body {
 	font-family: 'Open sans', helvetica, arial, sans-serif;
   text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
-  font-size: 100%;
 }
 
 a:link, a:visited {
@@ -91,7 +90,7 @@ input[id$="[amount]"] {
 
 .h2, .prose h2 {
 	@include typography(m);
-	margin-bottom: $spacing-scale-2;
+	margin-bottom: $spacing-scale-1;
 	color: $colour-black;
 	max-width: 20em;
 }
