@@ -38,7 +38,7 @@
 }
 
 .subNav ul:last-child {
-  padding-right: 16px;
+  padding-right: $spacing-scale-2;
   padding-left: 0;
   @media(min-width: 45em) {
     @supports ( display: grid ) {
@@ -65,11 +65,12 @@
   color: $colour-black;
   @media(min-width: 45em) {
     border-left: 5px solid $colour-white;
+    padding: $spacing-scale-2 $spacing-scale-2 $spacing-scale-2 $spacing-scale-2 - 5;
   }
 }
 
 .subNav a:hover {
-  background-color: $colour-grey-extra-light;
+  background-color: $colour-grey-light;
   @media(min-width: 45em) {
     border-left: 5px solid $colour-black;
   }
