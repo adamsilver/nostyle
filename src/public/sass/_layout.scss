@@ -20,7 +20,7 @@
 .subNavPane {
 	overflow-x: scroll;
 	@media(min-width: 45em) {
-		border-right: 1px solid #ccc;
+		border-right: 1px solid $colour-black;
 		@supports ( display: grid ) {
 			padding: 32px 15px 32px 16px;
 		}

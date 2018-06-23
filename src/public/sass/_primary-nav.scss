@@ -14,14 +14,14 @@
 .primaryNav li {
 	display: inline-block;
 	margin: 0;
-	line-height: 0.941176471;
+	line-height: 24 / 17;
 	font-size: 1.0625em;
 }
 
 .primaryNav a:link,
 .primaryNav a:visited {
 	display: block;
-	padding: $spacing-scale-2 $spacing-scale-2 $spacing-scale-2 - 4;
+	padding: $spacing-scale-1 $spacing-scale-2 $spacing-scale-2 - 4;
 	background-color: $colour-black;
 	color: $colour-white;
 	border-bottom: 4px solid $colour-black;

@@ -3,12 +3,12 @@ $type: (
   xl: (
 
     base: (
-      font-size: 36px,
+      font-size: em(36),
       line-height: (48/36)
     ),
 
     md: (
-      font-size: 60px,
+      font-size: em(60),
       line-height: (72/60)
     )
 
@@ -17,13 +17,12 @@ $type: (
   l: (
 
     base: (
-      font-size: 24px,
+      font-size: em(24),
       line-height: (32/24)
     ),
 
     md: (
-      font-size: 36px,
-
+      font-size: em(36),
       line-height: 1.111111 // intended pixels (40) / font size (36)
     )
 
@@ -60,87 +59,16 @@ $type: (
   button: (
 
     base: (
-      font-size: 16px,
+      font-size: em(16),
       line-height: (24/16)
-    )
-
-  ),
-
-
-  font48: (
-
-    base: (
-      font-size: 36px,
-      line-height: (48/36)
     ),
 
-    lg: (
-      font-size: 48px,
-      line-height: (56/48)
-    )
-
-  ),
-
-  font36: (
-
-    base: (
-      font-size: 24px,
-      line-height: (32/24)
-    ),
-
-    lg: (
-      font-size: 36px,
-      line-height: (48/36)
-    )
-
-  ),
-
-  font24: (
-
-    base: (
-      font-size: 18px,
+    md: (
+      font-size: em(18),
       line-height: (24/18)
-    ),
-
-    lg: (
-      font-size: 24px,
-      line-height: (32/24)
-    )
-
-  ),
-
-  font18: (
-
-    base: (
-      font-size: 16px,
-      line-height: (24/16)
-    ),
-
-    lg: (
-      font-size: 18px,
-      line-height: (24/18)
-    )
-
-  ),
-
-  font16: (
-
-    base: (
-      font-size: 16px,
-      line-height: (24/16)
-    )
-
-  ),
-
-  font14: (
-
-    base: (
-      font-size: 14px,
-      line-height: (24/14)
     )
 
   )
-
 );
 
 

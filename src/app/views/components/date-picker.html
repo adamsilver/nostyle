@@ -13,12 +13,14 @@
 {% block mainContent %}
 	{{h1({ text:  'Date picker' })}}
 
-	<p>Use the Date picker component to help users find a date. In browsers that <a href="https://caniuse.com/#feat=input-datetime">don't support the native date input</a>, users will get a custom accessible date picker inline.</p>
+	<p>Use the Date picker component to help users find a date.</p>
 
 	{{example({
 		url: '/examples/date-picker',
 		width: 400,
 		height: 200
 	})}}
+
+	<p>In browsers that <a href="https://caniuse.com/#feat=input-datetime">don't support the native date input</a>, users will get a custom, inline and accessible date picker that works with text inputs.</p>
 
 {% endblock mainContent %}

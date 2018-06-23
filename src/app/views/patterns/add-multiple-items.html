@@ -1,0 +1,23 @@
+{% extends 'layouts/item.html' %}
+
+{% block title %}Add another - Patterns{% endblock %}
+
+{% set nav = 'patterns' %}
+{% set pnav = 'add-another' %}
+
+{% block menu %}
+	{% include "partials/patterns-nav.html" %}
+{% endblock %}
+
+{% block mainContent %}
+
+	{{h1({ text: 'Add multiple items' })}}
+	<p>Use this when you users need to any many items in bulk.</p>
+
+	{{example({
+		url: '/examples/add-another',
+		width: 400,
+		height: 600
+	})}}
+
+{% endblock mainContent %}

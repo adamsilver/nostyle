@@ -16,11 +16,12 @@
 	position: absolute;
 	top: 1px;
 	right: 1px;
-	background-color: $colour-grey-light;
+	background-color: $colour-black;
 	margin-bottom: 0;
-	padding: 8px 16px;
+	padding: $spacing-scale-1 $spacing-scale-2;
 
 	a {
-		text-decoration: none;
+		color: $colour-yellow;
+		font-size: em(14);
 	}
 }

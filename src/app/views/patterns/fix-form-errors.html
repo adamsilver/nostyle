@@ -1,9 +1,9 @@
 {% extends 'layouts/item.html' %}
 
-{% block title %}Add another - Patterns{% endblock %}
+{% block title %}Recover from errors - Patterns{% endblock %}
 
 {% set nav = 'patterns' %}
-{% set pnav = 'add-another' %}
+{% set pnav = 'recover-from-errors' %}
 
 {% block menu %}
 	{% include "partials/patterns-nav.html" %}
@@ -11,13 +11,12 @@
 
 {% block mainContent %}
 
-	{{h1({ text: 'Add another' })}}
-	<p>Use this when you users need to any many items in bulk</p>
+	{{h1({ text: 'Fix form errors' })}}
 
 	{{example({
-		url: '/examples/add-another',
+		url: '/examples/validation',
 		width: 400,
-		height: 600
+		height: 1750
 	})}}
 
 {% endblock mainContent %}

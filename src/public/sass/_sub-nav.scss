@@ -12,9 +12,10 @@
 }
 
 .subNav p {
+  @include typography(m);
   font-weight: bold;
   display: none;
-  margin-bottom: 8px;
+  margin-bottom: $spacing-scale-2;
   @media(min-width: 45em) {
     @supports ( display: grid ) {
       display: block;

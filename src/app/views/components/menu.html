@@ -12,12 +12,15 @@
 {% block mainContent %}
 	{{h1({ text: 'Menu' })}}
 
-	<p>Use the Menu component when you have a group of menu items you need to group together.</p>
+	<p>Use the Menu component to group menu items together.</p>
 
 	{{example({
 		url: '/examples/menu',
 		width: 400,
 		height: 200
 	})}}
+
+	{{h2({ text: 'How it works' })}}
+	<p>In large screens the menu items are laid out horizontally. In small screens, the menu items are collapsed inside a menu.</p>
 
 {% endblock mainContent %}
