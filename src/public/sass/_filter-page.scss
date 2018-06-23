@@ -22,8 +22,8 @@
 	top: 0;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
+	border-top: 1px solid $colour-grey;
+	border-bottom: 1px solid $colour-grey;
 	background-color: $colour-white;
 	margin-bottom: 20px;
 	@media(min-width: 50em) {
@@ -42,11 +42,11 @@
 
 .enhanced .filter-wrapper {
 	position: fixed;
-	border: 1px solid #ccc;
+	border-left: 1px solid $colour-grey-light;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
 	padding: 10px;
 	top: 63px;
 	right: -1px;
-  // max-height: 47vh;
 	width: 200px;
 	overflow-y: scroll;
 	top: 0;
@@ -55,6 +55,7 @@
 	@media(min-width: 50em) {
 		position: static;
 		border: none;
+		box-shadow: none;
 		padding: 0;
 		overflow: auto;
 		max-height: 100%;
@@ -129,7 +130,7 @@
   display: none;
 }
 
-.filter legend button:focus svg {  
+.filter legend button:focus svg {
   box-shadow: 0 0 1px 4px $colour-yellow;
 }
 

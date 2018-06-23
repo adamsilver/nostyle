@@ -91,7 +91,7 @@ input[id$="[amount]"] {
 .h2, .prose h2 {
 	@include typography(m);
 	margin-bottom: $spacing-scale-1;
-	margin-top: $spacing-scale-5;
+	margin-top: $spacing-scale-3;
 	color: $colour-black;
 	max-width: 20em;
 }

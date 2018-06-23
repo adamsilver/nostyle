@@ -21,9 +21,13 @@ module.exports = function( express, app ){
 
 		var p = products;
 
-		if(req.query.color) {
+		if(typeof req.query.color === 'string') {
 			p = products.filter(function(item) {
 				return item.color == req.query.color;
+			});
+		} else if(Array.isArray(req.query.color)) {
+			p = products.filter(function(product) {
+				return req.query.color.includes(product.color);
 			});
 		}
 

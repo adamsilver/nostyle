@@ -6,46 +6,54 @@ module.exports = {
 	}, {
 		color: "blue",
 		rating: 1,
-		id: 2 
+		id: 2
 	}, {
 		color: "green",
 		rating: 1,
-		id: 3 
+		id: 3
 	}, {
 		color: "red",
 		rating: 1,
-		id: 4 
+		id: 4
 	}, {
 		color: "blue",
 		rating: 1,
-		id: 5 
+		id: 5
 	}, {
 		color: "green",
 		rating: 2,
-		id: 6 
+		id: 6
 	}, {
 		color: "red",
 		rating: 1,
-		id: 7 
+		id: 7
 	}, {
 		color: "blue",
 		rating: 1,
-		id: 8 
+		id: 8
 	}, {
 		color: "green",
 		rating: 2,
-		id: 9 
+		id: 9
 	}, {
 		color: "red",
 		rating: 1,
-		id: 10 
+		id: 10
 	}, {
 		color: "blue",
 		rating: 2,
 		id: 11
 	}, {
 		color: "green",
-		rating: 1,
-		id: 12 
+		rating: 3,
+		id: 12
+	}, {
+		color: "red",
+		rating: 4,
+		id: 13
+	}, {
+		color: "green",
+		rating: 3,
+		id: 14
 	}]
 }
