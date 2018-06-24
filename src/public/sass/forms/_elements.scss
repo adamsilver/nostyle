@@ -20,7 +20,7 @@ fieldset {
 
 .field label,
 .field legend {
-  font-size: 1.125em;
+  @include typography(body);
 	margin-bottom: 4px;
 	display: block;
 }
@@ -61,7 +61,7 @@ fieldset {
 
 select {
 	width: 100%;
-	font-size: 1.1em;
+	@include typography(body);
 }
 
 /**************************************
@@ -78,8 +78,7 @@ select {
 textarea {
   width: 100%;
   padding: 8px;
-  line-height: 1.25;
-  font-size: inherit;
+  @include typography(body);
   font-family: inherit;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
