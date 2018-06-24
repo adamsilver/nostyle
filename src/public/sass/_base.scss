@@ -74,6 +74,10 @@ input[id$="[amount]"] {
 	grid-template-rows: min-content auto min-content;
 }
 
+.introBits h2 {
+	margin-top: 0;
+}
+
 .pageContent {
 	padding: $spacing-scale-4 $spacing-scale-2;
 	@include mq($from: md) {
@@ -112,4 +116,12 @@ input[id$="[amount]"] {
 .listItem, .prose li {
 	@include typography(body);
 	margin-bottom: $spacing-scale-1;
+}
+
+.hero {
+	background-color: $colour-yellow;
+	padding: $spacing-scale-4 $spacing-scale-2;
+	@include mq($from: md) {
+		padding: $spacing-scale-8 $spacing-scale-4;
+	}
 }
