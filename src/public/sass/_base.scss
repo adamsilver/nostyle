@@ -67,15 +67,23 @@ input[id$="[amount]"] {
 	max-width: 40em;
 	grid-template-columns: repeat(auto-fit, minmax(304px, 2fr));
 	grid-gap: 0 16px;
+	border-bottom: 1px solid $colour-grey;
 }
 
-.introBits > div {
+.introBits-bit {
 	display: grid;
 	grid-template-rows: min-content auto min-content;
 }
 
 .introBits h2 {
 	margin-top: 0;
+}
+
+.section {
+	border-bottom: 1px solid $colour-grey;
+	max-width: 40em;
+	padding-top: $spacing-scale-3;
+	padding-bottom: $spacing-scale-3;
 }
 
 .pageContent {
@@ -86,13 +94,21 @@ input[id$="[amount]"] {
 }
 
 .h1, .prose h1 {
-	@include typography(l);
+	@include typography(xl);
 	margin-bottom: $spacing-scale-3;
 	color: $colour-black;
 	max-width: 15em;
 }
 
 .h2, .prose h2 {
+	@include typography(l);
+	margin-bottom: $spacing-scale-1;
+	margin-top: $spacing-scale-3;
+	color: $colour-black;
+	max-width: 20em;
+}
+
+.h3, .prose h3 {
 	@include typography(m);
 	margin-bottom: $spacing-scale-1;
 	margin-top: $spacing-scale-3;
