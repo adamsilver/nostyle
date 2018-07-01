@@ -1,9 +1,11 @@
 .wrapperPane {
-	@supports ( display: grid ) {
-		height: 100vh;
-		display: grid;
-		grid-template-rows: min-content min-content auto;
-		grid-template-columns: 100%;
+	@media(min-width: 45em) {
+		@supports ( display: grid ) {
+			height: 100vh;
+			display: grid;
+			grid-template-rows: min-content min-content auto;
+			grid-template-columns: 100%;
+		}
 	}
 }
 
@@ -18,7 +20,8 @@
 }
 
 .subNavPane {
-	overflow-x: scroll;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
 	@media(min-width: 45em) {
 		border-right: 1px solid $colour-black;
 		@supports ( display: grid ) {
@@ -28,5 +31,8 @@
 }
 
 .contentPane {
-	overflow-x: scroll;
+	@media(min-width: 45em) {
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
 }
