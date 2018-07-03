@@ -20,7 +20,9 @@ function listenForWorkerMessages( worker ){
 function startApp(){
 
 	var express = require( 'express' );
-	var routes = require( './routes' );
+	var indexRoutes = require( './routes/index' );
+	var uploadRoutes = require( './routes/upload' );
+	var autoRoutes = require( './routes/auto' );
 	var nunjucks = require( 'nunjucks' );
 	var serveStatic = require( 'serve-static' );
 	var path = require( 'path' );
@@ -49,48 +51,9 @@ function startApp(){
 	}
 	app.use( logger( ( isDev ? 'dev' : 'combined' ) ) );
 
-	// Strip .html and .htm if provided
-	app.get(/\.html?$/i, function (req, res) {
-	  var path = req.path;
-	  var parts = path.split('.');
-	  parts.pop();
-	  path = parts.join('.');
-	  res.redirect(path);
-	});
-
-	// Auto render any view that exists
-
-	// Try to match a request to a template, for example a request for /test
-	// would look for /app/views/test.html
-	// or /app/views/text/index.html
-	function matchRoutes(req, res) {
-	  var path = (req.params[0]);
-	  res.render(path, function (err, html) {
-	    if (err) {
-	      res.render(path + '/index', function (err2, html) {
-	        if (err2) {
-	          res.status(404).send(err + '<br>' + err2);
-	        } else {
-	          res.end(html);
-	        }
-	      })
-	    } else {
-	      res.end(html);
-	    }
-	  });
-	}
-
-	routes( express, app );
-
-	// App folder routes get priority
-	app.get(/^\/([^.]+)$/, function (req, res) {
-	  matchRoutes(req, res);
-	});
-
-	// Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
-	app.post(/^\/([^.]+)$/, function (req, res) {
-	  res.redirect('/' + req.params[0]);
-	});
+	app.use(indexRoutes);
+	app.use(uploadRoutes);
+	app.use(autoRoutes); // must be the last one
 
 	var server = app.listen( serverConfig.port, function(){
 
