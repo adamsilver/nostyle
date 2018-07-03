@@ -57,19 +57,16 @@
 }
 
 .files li {
-	padding-bottom: 10px;
-	margin-bottom: 10px;
-	padding-top: 10px;
+	padding-top: $spacing-scale-1;
+	padding-bottom: $spacing-scale-1;
 	border-bottom: 1px solid #ccc;
-	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1fr 200px 100px;
 }
 
 .file-name {
 	display: inline-block;
-	width: 100px;
-	text-overflow: ellipsis;
 	white-space: nowrap;
-	overflow: hidden;
 	vertical-align: top;
 }
 
