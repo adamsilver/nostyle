@@ -1,6 +1,6 @@
 .subNav {
   white-space: nowrap;
-  line-height: 1;
+  line-height: 1.5;
   font-size: 1.0625em;
   background-color: $colour-grey-extra-light;
   @media(min-width: 45em) {
@@ -50,7 +50,6 @@
 
 .subNav li {
   margin-bottom: 0;
-  line-height: 1;
   display: inline-block;
   @media(min-width: 45em) {
     @supports ( display: grid ) {
@@ -66,7 +65,7 @@
   color: $colour-black;
   @media(min-width: 45em) {
     border-left: 5px solid $colour-white;
-    padding: $spacing-scale-2 $spacing-scale-2 $spacing-scale-2 $spacing-scale-2 - 5;
+    padding: $spacing-scale-1 $spacing-scale-2 $spacing-scale-1 $spacing-scale-2 - 5;
   }
 }
 

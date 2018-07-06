@@ -64,9 +64,8 @@ input[id$="[amount]"] {
 
 .introBits {
 	display: grid;
-	max-width: 40em;
 	grid-template-columns: repeat(auto-fit, minmax(304px, 2fr));
-	grid-gap: 0 16px;
+	grid-gap: 0 $spacing-scale-4;
 	border-bottom: 1px solid $colour-grey;
 }
 
@@ -81,9 +80,20 @@ input[id$="[amount]"] {
 
 .section {
 	border-bottom: 1px solid $colour-grey;
-	max-width: 40em;
-	padding-top: $spacing-scale-3;
-	padding-bottom: $spacing-scale-3;
+	padding-top: $spacing-scale-6;
+	padding-bottom: $spacing-scale-6;
+
+	h2 {
+		margin-top: 0;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.section:last-child {
+	border-bottom: 0;
 }
 
 .pageContent {
@@ -139,5 +149,9 @@ input[id$="[amount]"] {
 	padding: $spacing-scale-4 $spacing-scale-2;
 	@include mq($from: md) {
 		padding: $spacing-scale-8 $spacing-scale-4;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
 	}
 }
