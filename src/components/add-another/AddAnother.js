@@ -2,7 +2,12 @@ function AddAnother(container) {
   this.container = $(container);
   this.container.on('click', '.addAnother-removeButton', $.proxy(this, 'onRemoveButtonClick'));
   this.container.on('click', '.addAnother-addButton', $.proxy(this, 'onAddButtonClick'));
-  this.container.find('.addAnother-addButton, .addAnother-removeButton').prop('type', 'button').attr('type', 'button'); // setAttribute is for older IE verions. An alternative is to replace the button.
+
+  // Replace <input type=submit> with <button type=button>
+  // because older versions of IE won't allow changing type property
+  // via script. Shame.
+  this.container.find('.addAnother-removeButton').replaceWith('<button type="button" class="secondaryButton addAnother-removeButton">Remove</button>');
+  this.container.find('.addAnother-addButton').replaceWith('<button type="button" class="secondaryButton addAnother-addButton">Add another</button>');
 }
 
 AddAnother.prototype.onAddButtonClick = function(e) {
