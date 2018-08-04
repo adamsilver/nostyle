@@ -2,7 +2,7 @@ function AddAnother(container) {
   this.container = $(container);
   this.container.on('click', '.addAnother-removeButton', $.proxy(this, 'onRemoveButtonClick'));
   this.container.on('click', '.addAnother-addButton', $.proxy(this, 'onAddButtonClick'));
-  this.container.find('.addAnother-addButton, .addAnother-removeButton').prop('type', 'button');
+  this.container.find('.addAnother-addButton, .addAnother-removeButton').prop('type', 'button').attr('type', 'button'); // setAttribute is for older IE verions. An alternative is to replace the button.
 }
 
 AddAnother.prototype.onAddButtonClick = function(e) {
