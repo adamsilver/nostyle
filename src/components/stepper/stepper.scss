@@ -1,8 +1,8 @@
 .stepper-removeButton,
 .stepper-addButton {
 	@include button($colour-black);
-	padding-top: 4px;
-	padding-bottom: 8px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	line-height: 1.17em;
 	font-size: 1.5em;
 	vertical-align: bottom;
