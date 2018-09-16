@@ -1,3 +1,7 @@
+.stepper {
+	display: flex;
+}
+
 .stepper-removeButton,
 .stepper-addButton {
 	@include button($colour-black);
