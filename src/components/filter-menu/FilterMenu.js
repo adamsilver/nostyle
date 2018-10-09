@@ -1,6 +1,6 @@
-function FilterMenu() {
+function FilterMenu(options) {
 	this.container = $('.filter');
-	this.setupOptions();
+	this.setupOptions(options);
 	this.createToggleButton();
 	this.setupResponsiveChecks();
 }
