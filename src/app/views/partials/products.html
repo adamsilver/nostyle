@@ -1,6 +1,6 @@
 <h2>Products</h2>
 <div class="products-wrapper">
 	{% for product in products %}
-		<div class="product" style="background-color: {{product.color}}">{{product.id}}</div>
+		<div class="product" style="background-color: {{product.hex}}">{{product.id}}</div>
 	{% endfor %}
 </div>

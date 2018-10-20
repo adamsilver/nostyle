@@ -2,6 +2,7 @@ function FilterRequester() {
 	this.url = '/examples/filter-form';
 	this.form = $('.filter form');
 	this.products = $('.products');
+	this.createStatusBox();
 	this.form.find('input').on('change', $.proxy(this, 'onInputChange'));
 	$(window).on('popstate', $.proxy(this, 'onPopState'));
 	this.form.find('[type=submit]').addClass('visually-hidden').attr('tabindex', '-1');
@@ -14,12 +15,32 @@ function FilterRequester() {
 	history.replaceState({query: '', productsHtml: JSON.stringify($('.products').html()) }, null, this.url);
 }
 
+FilterRequester.prototype.createStatusBox = function() {
+	this.status = $('<div aria-live="polite" role="status" class="visually-hidden" />');
+	this.form.append(this.status);
+};
+
+FilterRequester.prototype.updateStatusBox = function(text) {
+	this.status.text(text);
+};
+
+FilterRequester.prototype.showLoadingIndicator = function() {
+	this.loadingText = $('<div class="progress"><div>Loading…</div></div>');
+	this.products.append(this.loadingText);
+};
+
+FilterRequester.prototype.hideLoadingIndicator = function() {
+	this.loadingText.remove();
+};
+
 FilterRequester.prototype.onInputChange = function(e) {
 	var query = this.form.serialize();
 	this.requestResults(query);
 };
 
 FilterRequester.prototype.requestResults = function(query) {
+	this.updateStatusBox('Loading products');
+	this.showLoadingIndicator();
 	$.ajax({
 		url: this.url,
 		type: 'get',
@@ -30,6 +51,8 @@ FilterRequester.prototype.requestResults = function(query) {
 
 FilterRequester.prototype.onRequestSuccess = function(query, response) {
 	history.pushState(response, null, this.url+'?'+query);
+	this.updateStatusBox('Products loaded');
+	// this.hideLoadingIndicator();
 	this.renderUpdates(response);
 };
 
