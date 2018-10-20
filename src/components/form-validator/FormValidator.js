@@ -8,6 +8,23 @@ function FormValidator(form) {
   this.originalTitle = document.title;
 };
 
+FormValidator.entityMap = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+    '/': '&#x2F;',
+    '`': '&#x60;',
+    '=': '&#x3D;'
+  };
+
+FormValidator.escapeHtml = function(string) {
+    return String(string).replace(/[&<>"'`=\/]/g, function fromEntityMap (s) {
+      return FormValidator.entityMap[s];
+    });
+};
+
 FormValidator.prototype.onErrorClick = function(e) {
   e.preventDefault();
   var href = e.target.href;
@@ -35,8 +52,8 @@ FormValidator.prototype.getSummaryHtml = function() {
   for (var i = 0, j = this.errors.length; i < j; i++) {
     var error = this.errors[i];
     html += '<li>';
-    html +=   '<a href="#' + error.fieldName + '">';
-    html +=     error.message;
+    html +=   '<a href="#' + FormValidator.escapeHtml(error.fieldName) + '">';
+    html +=     FormValidator.escapeHtml(error.message);
     html +=   '</a>';
     html += '</li>';
   }
@@ -67,7 +84,7 @@ FormValidator.prototype.showInlineErrors = function() {
 };
 
 FormValidator.prototype.showInlineError = function (error) {
-  var errorSpan = '<span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg>'+error.message+'</span>';
+  var errorSpan = '<span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg>'+FormValidator.escapeHtml(error.message)+'</span>';
   var control = $("#" + error.fieldName);
   var fieldContainer = control.parents(".field");
   var label = fieldContainer.find('label');
