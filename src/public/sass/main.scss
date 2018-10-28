@@ -29,3 +29,22 @@
 @import 'date-picker/date-picker';
 @import 'password-revealer/password-revealer';
 @import 'example/example';
+
+
+.announcement {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid #e1eef9;
+  background-color: #f2f8fd;
+  padding: 16px;
+  margin: 16px 16px 32px;
+  max-width: 500px;
+  img {
+    // float: left;
+    margin-right: 16px;
+    width: 80px;
+  }
+  div {
+    margin: 0;
+  }
+}
