@@ -60,7 +60,7 @@ FilterMenu.prototype.hideMenu = function() {
 	this.menuButton.attr('aria-expanded', 'false');
 };
 
-FilterMenu.prototype.showMenu = function(first_argument) {
+FilterMenu.prototype.showMenu = function() {
 	this.menuButton.attr('aria-expanded', 'true');
 };
 
