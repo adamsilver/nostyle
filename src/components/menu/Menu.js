@@ -11,7 +11,7 @@ function Menu(container, mq) {
 }
 
 Menu.prototype.createToggleButton = function() {
-	this.menuButton = $('<button type="button" aria-haspopup="true" aria-expanded="false">Actions<span aria-hidden="true">&#x25be;</span></button>');
+	this.menuButton = $('<button type="button" aria-haspopup="true" aria-expanded="false">Actions</button>');
 	this.menuButton.on('click', $.proxy(this, 'onMenuButtonClick'));
 	this.menuButton.on('keydown', $.proxy(this, 'onMenuKeyDown'));
 };

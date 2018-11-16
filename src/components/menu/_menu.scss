@@ -7,6 +7,17 @@
 .menu [type=button] {
 	@include secondaryButton;
 	border-radius: 0;
+
+	&:after {
+		background-repeat: no-repeat;
+    background-image: url(/public/img/icon-arrow-black-down.svg);
+    content: '';
+    display: inline-block;
+    height: 5px;
+    margin-left: 10px;
+    width: 10px;
+    vertical-align: middle;
+	}
 }
 
 .menu [type=button] span {
@@ -23,17 +34,15 @@
 }
 
 .menu [role=menuitem] {
-	@include button($colour-white);
+	// @include button($colour-white);
 	display: block;
 	text-align: left;
 	width: 100%;
 	color: #222;
 	border-radius: 0;
-	border-bottom: 1px solid #ccc;
 	&:focus {
 		position: relative;
 		z-index: 10;
-		background-color: #ccc;
 	}
 
 	@media(min-width: 45em) {
@@ -48,14 +57,12 @@
 
 .menu [role=menu] {
 	width: 10em;
-	background-color: $colour-white;
-	border: 3px solid #aaa;
 }
 
 .menu [role=menu] {
 	position: absolute;
+	top: 50px;
 	@media(min-width: 45em) {
-		border: none;
 		width: auto;
 		position: static;
 	}
