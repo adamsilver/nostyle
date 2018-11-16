@@ -4,12 +4,12 @@ $type: (
 
     base: (
       font-size: em(36),
-      line-height: (48/36)
+      line-height: (40/36)
     ),
 
     md: (
       font-size: em(60),
-      line-height: (72/60)
+      line-height: (60/60)
     )
 
   ),
@@ -18,12 +18,12 @@ $type: (
 
     base: (
       font-size: em(24),
-      line-height: (32/24)
+      line-height: (30/24)
     ),
 
     md: (
       font-size: em(36),
-      line-height: 1.111111 // intended pixels (40) / font size (36)
+      line-height: (40/36)
     )
 
   ),
@@ -32,12 +32,12 @@ $type: (
 
     base: (
       font-size: 16px,
-      line-height: (24/16)
+      line-height: (20/16)
     ),
 
     md: (
       font-size: 19px,
-      line-height: (24/19)
+      line-height: (20/19)
     )
 
   ),
@@ -46,12 +46,12 @@ $type: (
 
     base: (
       font-size: em(16),
-      line-height: (24/16)
+      line-height: (20/16)
     ),
 
     md: (
       font-size: em(18),
-      line-height: (24/18)
+      line-height: (25/18)
     )
 
   ),
@@ -60,12 +60,12 @@ $type: (
 
     base: (
       font-size: em(16),
-      line-height: (24/16)
+      line-height: (25/16)
     ),
 
     md: (
       font-size: em(18),
-      line-height: (24/18)
+      line-height: (25/18)
     )
 
   )

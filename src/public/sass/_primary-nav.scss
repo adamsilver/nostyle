@@ -21,19 +21,19 @@
 .primaryNav a:link,
 .primaryNav a:visited {
 	display: block;
-	padding: $spacing-scale-1 $spacing-scale-2 $spacing-scale-2 - 4;
+	padding: $spacing-scale-1 $spacing-scale-3 $spacing-scale-2;
 	background-color: $colour-black;
 	color: $colour-white;
-	border-bottom: 4px solid $colour-black;
+	border-bottom: 5px solid $colour-black;
 	text-decoration: none;
 }
 
 .primaryNav a:hover {
-	border-bottom: 4px solid $colour-yellow;
+	border-bottom: 5px solid $colour-yellow;
 }
 
 .primaryNav a.primaryNav-active {
 	font-weight: bold;
 	text-decoration: none;
-	border-bottom: 4px solid $colour-yellow;
+	border-bottom: 5px solid $colour-yellow;
 }

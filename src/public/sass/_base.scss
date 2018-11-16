@@ -4,7 +4,7 @@
 }
 
 body {
-	font-family: 'Open sans', helvetica, arial, sans-serif;
+	font-family: 'Roboto', helvetica, arial, sans-serif;
   text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
@@ -105,15 +105,15 @@ input[id$="[amount]"] {
 
 .h1, .prose h1 {
 	@include typography(xl);
-	margin-bottom: $spacing-scale-3;
+	margin-bottom: $spacing-scale-5;
 	color: $colour-black;
 	max-width: 15em;
 }
 
 .h2, .prose h2 {
 	@include typography(l);
-	margin-bottom: $spacing-scale-1;
-	margin-top: $spacing-scale-3;
+	margin-bottom: $spacing-scale-2;
+	margin-top: $spacing-scale-5;
 	color: $colour-black;
 	max-width: 20em;
 }
@@ -121,21 +121,21 @@ input[id$="[amount]"] {
 .h3, .prose h3 {
 	@include typography(m);
 	margin-bottom: $spacing-scale-1;
-	margin-top: $spacing-scale-3;
+	margin-top: $spacing-scale-4;
 	color: $colour-black;
 	max-width: 20em;
 }
 
 .p, .prose p {
 	@include typography(body);
-	margin-bottom: $spacing-scale-4;
+	margin-bottom: $spacing-scale-6;
 	max-width: 30em;
 }
 
 .list, .prose ul {
-	margin-bottom: $spacing-scale-4;
-	margin-top: $spacing-scale-3;
-	padding-left: $spacing-scale-3;
+	margin-bottom: $spacing-scale-6;
+	margin-top: $spacing-scale-4;
+	padding-left: $spacing-scale-4;
 	max-width: 30em;
 }
 

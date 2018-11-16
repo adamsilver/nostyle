@@ -9,6 +9,7 @@
 .dropzone-enhanced {
 	outline: 2px dashed #777;
 	display: flex;
+	align-items: flex-start;
 	justify-content: center;
 	text-align: center;
 	padding: 70px 40px 55px;
@@ -60,31 +61,52 @@
 	padding-top: $spacing-scale-1;
 	padding-bottom: $spacing-scale-1;
 	border-bottom: 1px solid #ccc;
-	display: grid;
-	grid-template-columns: 1fr 200px 100px;
+	overflow: hidden;
 }
 
 .file-name {
-	display: inline-block;
+	float: left;
+	width: 80px;
+	margin-right: $spacing-scale-2;
+	@include mq($from: md) {
+		width: 160px;
+	}
 	white-space: nowrap;
-	vertical-align: top;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .files .error {
 	color: #b10e1e;
 	font-weight: bold;
+	float: left;
+	width: 150px;
+	margin-right: $spacing-scale-2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	@include mq($from: md) {
+		width: 300px;
+	}
 }
 
 .files .error svg {
   margin-top: 3px;
   vertical-align: bottom;
   width: 1.5em;
-  fill: #b10e1e;
+	fill: #b10e1e;
 }
 
 .files .success {
 	color: green;
 	font-weight: bold;
+	float: left;
+	width: 150px;
+	margin-right: $spacing-scale-2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	@include mq($from: md) {
+		width: 300px;
+	}
 }
 
 .files .success svg {
@@ -101,9 +123,8 @@
 
 .files button {
 	@include secondaryButton;
-	float: right;
 	font-size: 1em;
-	padding: 4px 8px;
+	float: right;
 }
 
 .dropzone-enhanced label {
