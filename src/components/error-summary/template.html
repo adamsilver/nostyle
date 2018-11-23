@@ -1,4 +1,4 @@
-<div tabindex="-1" role="group" class="errorSummary {% if not params.errors %}hidden{%endif%}" aria-labelledby="errorSummary-heading">
+<div tabindex="-1" role="group" class="errorSummary {% if not params.errors %}hidden{%endif%}" {% if params.errors %} aria-labelledby="errorSummary-heading" {% endif%}>
   {% if params.errors %}
     <h2 id="errorSummary-heading">{{params.heading}}</h2>
     <ul>

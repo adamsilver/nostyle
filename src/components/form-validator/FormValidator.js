@@ -43,11 +43,12 @@ FormValidator.prototype.updateTitle = function() {
 FormValidator.prototype.showSummary = function () {
   this.summary.html(this.getSummaryHtml());
   this.summary.removeClass('hidden');
+  this.summary.attr('aria-labelledby', 'errorSummary-heading');
   this.summary.focus();
 };
 
 FormValidator.prototype.getSummaryHtml = function() {
-  var html = '<h2>There\'s a problem</h2>';
+  var html = '<h2 id="errorSummary-heading">There\'s a problem</h2>';
   html += '<ul>';
   for (var i = 0, j = this.errors.length; i < j; i++) {
     var error = this.errors[i];
@@ -63,6 +64,7 @@ FormValidator.prototype.getSummaryHtml = function() {
 
 FormValidator.prototype.hideSummary = function() {
     this.summary.addClass('hidden');
+    this.summary.removeAttr('aria-labelledby');
 };
 
 FormValidator.prototype.onSubmit = function (e) {
