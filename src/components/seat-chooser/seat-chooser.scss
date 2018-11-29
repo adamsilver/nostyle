@@ -6,24 +6,24 @@
 
 .plane-row {
 	overflow: hidden;
-	margin-bottom: 8px;
+	margin-bottom: $spacing-scale-2;
 }
 
 .plane-seat {
 	float: left;
-	margin-right: 4px;
+	margin-right: $spacing-scale-1;
 }
 
 .plane-seat--economyClass:nth-child(3) {
-	margin-right: 8px;
+	margin-right: $spacing-scale-2;
 }
 
 .plane-seat--firstClass:nth-child(2) {
-	margin-right: 32px;
+	margin-right: $spacing-scale-6;
 }
 
 .plane-seat label {
-	padding: 8px;
+	padding: $spacing-scale-2;
 	margin-bottom: 0;
 	background-color: $colour-grey-light;
 	position: relative;
@@ -42,7 +42,7 @@
 	content: "X";
     text-indent: 0;
     position: absolute;
-    top: 4px;
+    top: $spacing-scale-1;
     left: 50%;
     transform: translate(-50%, 0%);
 }*/
@@ -53,12 +53,12 @@
 }
 
 .enhanced .plane-seatNumber {
-	border-radius: 4px;
-	margin: 4px 0px;
+	border-radius: $spacing-scale-1;
+	margin: $spacing-scale-1 0px;
 	border: 2px solid $colour-grey-medium;
 	border-top: 2px solid $colour-grey-light;
 	width: 1.3em;
-	padding: 8px;
+	padding: $spacing-scale-2;
 	text-align: center;
 	display: block;
 	background-color: $colour-grey-light;

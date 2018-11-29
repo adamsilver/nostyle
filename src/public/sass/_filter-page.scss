@@ -3,7 +3,7 @@
 }
 
 .filter-heading {
-
+	margin-bottom: $spacing-scale-4;
 }
 
 .filter {
@@ -13,7 +13,7 @@
 		width: 20%;
 		box-sizing: border-box;
 		text-align: left;
-		margin-right: 20px;
+		margin-right: $spacing-scale-4;
 	}
 }
 
@@ -21,12 +21,12 @@
 	position: sticky;
 	z-index: 10;
 	top: 0;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: $spacing-scale-2 - 1;
+	padding-bottom: $spacing-scale-2 - 1;
 	border-top: 1px solid $colour-grey;
 	border-bottom: 1px solid $colour-grey;
 	background-color: $colour-white;
-	margin-bottom: 20px;
+	margin-bottom: $spacing-scale-4;
 	@media(min-width: 50em) {
 		padding-top: 0;
 		border-top: none;
@@ -36,7 +36,7 @@
 }
 
 .filter-wrapper {
-	padding-top: 20px;
+	padding-top: $spacing-scale-4;
 	background-color: $colour-white;
 	text-align: left;
 }
@@ -45,7 +45,7 @@
 	position: fixed;
 	border-left: 1px solid $colour-grey-light;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
-	padding: 10px;
+	padding: $spacing-scale-2 - 1;
 	top: 63px;
 	right: -1px;
 	width: 200px;
@@ -66,7 +66,7 @@
 
 .filter h2 {
 	margin-top: 0;
-	margin-bottom: 30px;
+	margin-bottom: $spacing-scale-3;
 }
 
 .products {
@@ -79,14 +79,15 @@
 
 	h2 {
 		margin-top: 0;
+		margin-bottom: $spacing-scale-3;
 	}
 }
 
 .products-wrapper {
 	display: grid;
-  grid-gap: 10px;
+  grid-gap: $spacing-scale-2;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  margin-bottom: 30px;
+  margin-bottom: $spacing-scale-6;
   @media(min-width: 50em) {
   	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
@@ -102,7 +103,7 @@
 }
 
 .filter .field-options {
-	margin-bottom: 30px;
+	margin-bottom: $spacing-scale-6;
 }
 
 .filter legend {
@@ -164,19 +165,19 @@
 }
 
 .current-filters {
-	margin-bottom: 50px;
+	margin-bottom: $spacing-scale-10;
 }
 
 .current-filters h3 {
-	margin-bottom: 20px;
+	margin-bottom: $spacing-scale-4;
 }
 
 .filter-close {
 	border: 0;
   font-weight: bold;
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	top: $spacing-scale-2;
+	right: $spacing-scale-2;
 	height: 2.5em;
 	width: 2.5em;
 	background: none;
@@ -216,7 +217,7 @@
 }
 
 .large.progress {
-	font-size: 24px;
+	font-size: $spacing-scale-5;
 }
 
 .progress:before,

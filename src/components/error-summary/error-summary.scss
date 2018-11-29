@@ -1,6 +1,6 @@
 .errorSummary {
 	border: 4px solid $colour-red;
-	padding: $spacing-scale-2;
+	padding: $spacing-scale-4 - 4;
 	margin-bottom: $spacing-scale-4;
 	max-width: 40em;
 }
@@ -14,12 +14,8 @@
   box-shadow: 0 0 1px 4px $colour-yellow;
 }
 
-.errorSummary-isHidden {
-	display: none;
-}
-
 .errorSummary h2 {
-	margin-bottom: 8px;
+	margin-bottom: $spacing-scale-2;
 }
 
 .errorSummary ul {

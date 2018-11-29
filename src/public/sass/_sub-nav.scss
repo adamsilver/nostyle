@@ -31,7 +31,7 @@
   @media(min-width: 45em) {
     @supports ( display: grid ) {
       white-space: normal;
-      margin-bottom: 48px;
+      margin-bottom: $spacing-scale-10;
       padding: 0;
       display: block;
     }

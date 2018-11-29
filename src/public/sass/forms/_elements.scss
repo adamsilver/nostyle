@@ -9,7 +9,7 @@ fieldset {
 
 .field {
 	max-width: 26em;
-	margin-bottom: 32px;
+	margin-bottom: $spacing-scale-6;
 }
 
 .field--inline {
@@ -21,7 +21,7 @@ fieldset {
 .field label,
 .field legend {
   @include typography(body);
-	margin-bottom: 4px;
+	margin-bottom: $spacing-scale-1;
 	display: block;
 }
 
@@ -37,22 +37,23 @@ fieldset {
 
 .field-hint {
 	color: #000;
-	margin-bottom: 4px;
+	margin-bottom: $spacing-scale-1;
 	display: block;
 }
 
 .field-error {
 	color: $colour-red;
 	font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: $spacing-scale-2;
   display: block;
 }
 
 .field-error svg {
-  margin-top: 4px;
+  margin-top: $spacing-scale-1;
   vertical-align: bottom;
-  width: 1.5em;
+  width: 1.5625em;
   fill: $colour-red;
+  margin-right: $spacing-scale-1;
 }
 
 /**************************************
@@ -77,7 +78,7 @@ select {
 [type=search],
 textarea {
   width: 100%;
-  padding: 8px;
+  padding: $spacing-scale-2 - 2;
   @include typography(body);
   font-family: inherit;
   -webkit-box-sizing: border-box;
@@ -86,9 +87,6 @@ textarea {
   -webkit-appearance: none;
   appearance: none;
   border: 2px solid $colour-black;
-  /*border:inset 2px #EBE9ED;
-  border-right:solid 2px #eee;
-  border-bottom:solid 2px #eee;*/
 }
 
 /**************************************
@@ -128,9 +126,9 @@ textarea {
 
 .field-radioButton label {
   background-color: $colour-grey-medium;
-  margin-bottom: 8px;
+  margin-bottom: $spacing-scale-2;
   display: block;
-  padding: 12px 20px;
+  padding: ($spacing-scale-3 - 2) ($spacing-scale-4 - 2);
   border: 2px solid $colour-grey-medium;
 }
 
@@ -153,10 +151,9 @@ textarea {
 
 .field-checkbox label {
   background-color: $colour-grey-medium;
-  border: 2px solid $colour-grey-medium;
-  margin-bottom: 8px;
+  margin-bottom: $spacing-scale-10;
   display: block;
-  padding: 12px 20px;
+  padding: ($spacing-scale-3 - 2) ($spacing-scale-4 - 2);
   border: 2px solid $colour-grey-medium;
 }
 
@@ -210,7 +207,7 @@ textarea {
   font-size: inherit;
   font-family: inherit;
   line-height: 1.25;
-  padding: 0.5em;
+  padding: $spacing-scale-2 - 2;
   border: 2px solid $colour-black;
   -moz-appearance:textfield;
 }
