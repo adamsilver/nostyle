@@ -36,6 +36,7 @@
 {% endblock pageScript %}
 
 {% block mainContent %}
+	{{errorSummary({heading: "There's a problem"})}}
 
 	{{h1({ text: 'Register' })}}
 	<div class="prose">
@@ -43,8 +44,6 @@
 			<li>Already got an account? <a href="/examples/login-form">Log in</a></li>
 		</ul>
 	</div>
-
-	{{errorSummary({heading: "There's a problem"})}}
 
 	<form novalidate>
 		{{textBox({

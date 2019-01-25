@@ -1,28 +1,28 @@
-function FormValidator(form) {
+function FormValidator(form, options) {
   this.form = form;
   this.errors = [];
   this.validators = [];
-  $(this.form).on("submit", $.proxy(this, "onSubmit"));
-  this.summary = $(".errorSummary");
+  $(this.form).on('submit', $.proxy(this, 'onSubmit'));
+  this.summary = (options && options.summary) ? $(options.summary) : $('.errorSummary');
   this.summary.on('click', 'a', $.proxy(this, 'onErrorClick'));
   this.originalTitle = document.title;
 };
 
 FormValidator.entityMap = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#39;',
-    '/': '&#x2F;',
-    '`': '&#x60;',
-    '=': '&#x3D;'
-  };
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;',
+  '/': '&#x2F;',
+  '`': '&#x60;',
+  '=': '&#x3D;'
+};
 
 FormValidator.escapeHtml = function(string) {
-    return String(string).replace(/[&<>"'`=\/]/g, function fromEntityMap (s) {
-      return FormValidator.entityMap[s];
-    });
+  return String(string).replace(/[&<>"'`=\/]/g, function fromEntityMap (s) {
+    return FormValidator.entityMap[s];
+  });
 };
 
 FormValidator.prototype.onErrorClick = function(e) {
