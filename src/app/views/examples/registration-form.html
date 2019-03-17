@@ -5,7 +5,7 @@
 		var validator = new FormValidator(document.forms[0]);
 		validator.addValidator('email', [{
 		 	method: function(field) {
-		    	return field.value.trim().length > 0;
+		    	return field.value.length > 0;
 			},
 			message: 'Enter your email address.'
 		},{
@@ -16,7 +16,7 @@
 		}]);
 		validator.addValidator('password', [{
 			method: function(field) {
-		    	return field.value.trim().length > 0;
+		    	return field.value.length > 0;
 			},
 			message: 'Enter your password.'
 		}, {
