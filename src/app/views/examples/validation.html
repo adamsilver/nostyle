@@ -31,8 +31,6 @@
 
 {% block mainContent %}
 
-	{{h1({ text: 'Page title' })}}
-
 	{{errorSummary({heading: "There's a problem", errors: [{
 		fieldName: 'email',
 		message: 'Enter your email address.'
@@ -53,6 +51,7 @@
 		message: 'Choose a country.'
 	}]})}}
 
+	{{h1({ text: 'Page title' })}}
 
 	<form novalidate>
 		{{textBox({
