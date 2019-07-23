@@ -4,7 +4,7 @@ function CharacterCountdown(field, options) {
 	this.setOptions(options);
 	this.updateStatus(this.options.maxLength);
 	this.field.parent().append(this.status);
-	this.field.on("keydown keyup", $.proxy(this, 'onChange'));
+	this.field.on("input", $.proxy(this, 'onChange'));
 };
 
 CharacterCountdown.prototype.setOptions = function(options) {
