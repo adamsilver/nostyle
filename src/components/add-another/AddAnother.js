@@ -73,6 +73,5 @@ AddAnother.prototype.onRemoveButtonClick = function(e) {
 };
 
 AddAnother.prototype.focusHeading = function() {
-  debugger;
   this.container.find('.addAnother-heading').focus();
 };
