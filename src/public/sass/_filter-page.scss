@@ -23,9 +23,9 @@
 	top: 0;
 	padding-top: $spacing-scale-2 - 1;
 	padding-bottom: $spacing-scale-2 - 1;
-	border-top: 1px solid $colour-grey;
-	border-bottom: 1px solid $colour-grey;
-	background-color: $colour-white;
+	border-top: 1px solid $colour-gray-600;
+	border-bottom: 1px solid $colour-gray-600;
+	background-color: $colour-gray-100;
 	margin-bottom: $spacing-scale-4;
 	@media(min-width: 50em) {
 		padding-top: 0;
@@ -37,13 +37,13 @@
 
 .filter-wrapper {
 	padding-top: $spacing-scale-4;
-	background-color: $colour-white;
+	background-color: $colour-gray-100;
 	text-align: left;
 }
 
 .enhanced .filter-wrapper {
 	position: fixed;
-	border-left: 1px solid $colour-grey-light;
+	border-left: 1px solid $colour-gray-600;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
 	padding: $spacing-scale-2 - 1;
 	top: 63px;
@@ -134,7 +134,7 @@
 }
 
 .filter legend button:focus svg {
-  box-shadow: 0 0 1px 4px $colour-yellow;
+  box-shadow: 0 0 1px 4px $colour-yellow-500;
 }
 
 

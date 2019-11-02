@@ -23,7 +23,7 @@
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
 	@media(min-width: 45em) {
-		border-right: 1px solid $colour-black;
+		background-color: $colour-gray-300;
 		@supports ( display: grid ) {
 			padding: $spacing-scale-6 ($spacing-scale-3 - 1) $spacing-scale-6 $spacing-scale-3;
 		}

@@ -4,13 +4,13 @@
 }
 
 body {
-	font-family: 'Roboto', helvetica, arial, sans-serif;
+	font-family: 'helvetica neue', arial, sans-serif;
   text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
 
 a:link, a:visited {
-	color: $colour-blue;
+	color: $colour-gray-700;
 }
 
 @mixin clearfix {
@@ -66,7 +66,7 @@ input[id$="[amount]"] {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(304px, 2fr));
 	grid-gap: 0 $spacing-scale-4;
-	border-bottom: 1px solid $colour-grey;
+	border-bottom: 1px solid $colour-gray-300;
 }
 
 .introBits-bit {
@@ -79,7 +79,7 @@ input[id$="[amount]"] {
 }
 
 .section {
-	border-bottom: 1px solid $colour-grey;
+	border-bottom: 1px solid $colour-gray-300;
 	padding-top: $spacing-scale-6;
 	padding-bottom: $spacing-scale-6;
 
@@ -103,10 +103,17 @@ input[id$="[amount]"] {
 	}
 }
 
+.item-layout .pageContent {
+	padding: $spacing-scale-4;
+	@include mq($from: md) {
+		padding: $spacing-scale-8;
+	}
+}
+
 .h1, .prose h1 {
 	@include typography(xl);
 	margin-bottom: $spacing-scale-5;
-	color: $colour-black;
+	color: $colour-gray-800;
 	max-width: 15em;
 }
 
@@ -114,7 +121,7 @@ input[id$="[amount]"] {
 	@include typography(l);
 	margin-bottom: $spacing-scale-2;
 	margin-top: $spacing-scale-5;
-	color: $colour-black;
+	color: $colour-gray-800;
 	max-width: 20em;
 }
 
@@ -122,7 +129,7 @@ input[id$="[amount]"] {
 	@include typography(m);
 	margin-bottom: $spacing-scale-1;
 	margin-top: $spacing-scale-4;
-	color: $colour-black;
+	color: $colour-gray-800;
 	max-width: 20em;
 }
 
@@ -130,6 +137,7 @@ input[id$="[amount]"] {
 	@include typography(body);
 	margin-bottom: $spacing-scale-6;
 	max-width: 30em;
+	color: $colour-gray-800;
 }
 
 .list, .prose ul {
@@ -137,6 +145,7 @@ input[id$="[amount]"] {
 	margin-top: $spacing-scale-4;
 	padding-left: $spacing-scale-4;
 	max-width: 30em;
+	color: $colour-gray-800;
 }
 
 .listItem, .prose li {
@@ -145,13 +154,19 @@ input[id$="[amount]"] {
 }
 
 .hero {
-	background-color: $colour-yellow;
+	background-color: $colour-gray-200;
 	padding: $spacing-scale-4 $spacing-scale-2;
 	@include mq($from: md) {
-		padding: $spacing-scale-8 $spacing-scale-4;
+		padding: $spacing-scale-10 $spacing-scale-4;
 	}
 
 	p:last-child {
 		margin-bottom: 0;
 	}
+
+	a:link,
+	a:visited {
+		color: $colour-gray-800;
+	}
+
 }

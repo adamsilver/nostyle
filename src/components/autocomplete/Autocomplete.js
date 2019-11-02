@@ -176,7 +176,7 @@ Autocomplete.prototype.onTextBoxDownPressed = function(e) {
 	var option;
 	var options;
 	var value = this.textBox.val().trim();
-	// Empty value or exactly matches an option 
+	// Empty value or exactly matches an option
 	// then show all the options
 	if(value.length === 0 || this.isExactMatch(value)) {
 		options = this.getAllOptions();
@@ -278,9 +278,9 @@ Autocomplete.prototype.getOptions = function(value) {
 	this.select.find('option').each(function(i, el) {
 		if($(el).val().trim().length > 0 && $(el).text().toLowerCase().indexOf(value.toLowerCase()) > -1
 				|| $(el).attr('data-alt') && $(el).attr('data-alt').toLowerCase().indexOf(value.toLowerCase()) > -1) {
-			matches.push({ 
-				text: $(el).text(), 
-				value: $(el).val() 
+			matches.push({
+				text: $(el).text(),
+				value: $(el).val()
 			});
 		}
 	});
@@ -399,7 +399,7 @@ Autocomplete.prototype.getOptionsId = function() {
 };
 
 Autocomplete.prototype.createArrowIcon = function() {
-	var arrow = $('<svg focusable="false" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" fill="none" fill-rule="evenodd"><polygon fill="#000000" points="0 0 22 0 11 17"></polygon></g></svg>');
+	var arrow = $('<svg focusable="false" version="1.1" xmlns="http://www.w3.org/2000/svg"><g><polygon points="0 0 22 0 11 17"></polygon></g></svg>');
 	this.wrapper.append(arrow);
 	arrow.on('click', $.proxy(this, 'onArrowClick'));
 };

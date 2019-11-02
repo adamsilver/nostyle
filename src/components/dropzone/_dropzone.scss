@@ -7,7 +7,7 @@
 }
 
 .dropzone-enhanced {
-	outline: 2px dashed #777;
+	outline: 2px dashed $colour-gray-800;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -37,10 +37,8 @@
 }
 
 .dropzone-dragover {
-	background: #eee;
-	background: #333;
-	outline: 2px dashed #111;
-	outline: 2px dashed #f5f5f5;
+	background: $colour-gray-500;
+	outline: 2px dashed $colour-gray-300;
 	outline-offset: -10px;
 }
 
@@ -130,17 +128,17 @@
 .dropzone-enhanced label {
 	@include secondaryButton;
 	font-size: 1.2em;
-	background-color: #ddd;
-	color: $colour-black;
+	background-color: $colour-gray-300;
+	color: $colour-gray-800;
 	font-weight: normal;
 	// border-color: #bbb;
 }
 
-// .dropzone-enhanced label:hover {
-// 	background-color: #bbb;
-// }
+.dropzone-enhanced label:hover {
+	background-color: $colour-gray-500;
+}
 
 .dropzone-focused {
 	outline: none;
-  box-shadow: 0 0 1px 4px $colour-yellow;
+  box-shadow: 0 0 1px 4px $colour-yellow-500;
 }

@@ -1,5 +1,5 @@
 .errorSummary {
-	border: 4px solid $colour-red;
+	border: 4px solid $colour-red-600;
 	padding: $spacing-scale-4 - 4;
 	margin-bottom: $spacing-scale-4;
 	max-width: 40em;
@@ -11,7 +11,7 @@
 
 .errorSummary:focus {
 	outline: none;
-  box-shadow: 0 0 1px 4px $colour-yellow;
+  box-shadow: 0 0 1px 4px $colour-yellow-500;
 }
 
 .errorSummary h2 {
@@ -20,18 +20,18 @@
 
 .errorSummary ul {
 	@include typography(body);
-	color: $colour-red;
+	color: $colour-red-600;
 	list-style: none;
   margin-left: 0;
 	margin-bottom: 0;
 }
 
 .errorSummary a {
-	color: $colour-red;
+	color: $colour-red-600;
 	font-weight: bold;
 }
 
 .errorSummary a:focus {
 	outline: none;
-  box-shadow: 0 0 1px 4px $colour-yellow;
+  box-shadow: 0 0 1px 4px $colour-yellow-500;
 }

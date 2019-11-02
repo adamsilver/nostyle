@@ -25,27 +25,18 @@
 .plane-seat label {
 	padding: $spacing-scale-2;
 	margin-bottom: 0;
-	background-color: $colour-grey-light;
 	position: relative;
+	color: $colour-gray-800;
 }
 
 .plane-seat label:hover {
-	background-color: $colour-grey-medium;
+	background-color: $colour-gray-500;
 }
 
 .enhanced .plane-seat input {
 	position: absolute;
 	left: -9999em;
 }
-
-/*.plane-seat-isTaken label:after {
-	content: "X";
-    text-indent: 0;
-    position: absolute;
-    top: $spacing-scale-1;
-    left: 50%;
-    transform: translate(-50%, 0%);
-}*/
 
 .enhanced .plane-seat label {
 	padding: 0;
@@ -55,33 +46,33 @@
 .enhanced .plane-seatNumber {
 	border-radius: $spacing-scale-1;
 	margin: $spacing-scale-1 0px;
-	border: 2px solid $colour-grey-medium;
-	border-top: 2px solid $colour-grey-light;
+	border: 2px solid $colour-gray-600;
+	border-top: 2px solid $colour-gray-600;
 	width: 1.3em;
 	padding: $spacing-scale-2;
 	text-align: center;
 	display: block;
-	background-color: $colour-grey-light;
+	background-color: $colour-gray-300;
 }
 
 .enhanced .plane-seatNumber:hover {
-	border-color: $colour-grey-medium;
-	background-color: $colour-grey-medium;
+	border-color: $colour-gray-600;
+	background-color: $colour-gray-600;
 }
 
 .enhanced [type="checkbox"]:focus + .plane-seatNumber {
-	border: 2px solid $colour-yellow;
+	border: 2px solid $colour-yellow-500;
 }
 
 .enhanced [type="checkbox"]:checked + .plane-seatNumber {
-	background-color: $colour-darkblue;
-  border-color: $colour-darkblue;
+	background-color: $colour-green-700;
+  border-color: $colour-green-700;
   color: white;
 }
 
 .enhanced [type="checkbox"]:disabled + .plane-seatNumber {
 	text-decoration: line-through;
-	background-color: $colour-grey-light;
-	border-color: $colour-grey-light;
-	color: $colour-grey;
+	background-color: $colour-gray-600;
+	border-color: $colour-gray-600;
+	color: $colour-gray-700;
 }
