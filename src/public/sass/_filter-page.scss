@@ -25,7 +25,6 @@
 	padding-bottom: $spacing-scale-2 - 1;
 	border-top: 1px solid $colour-gray-600;
 	border-bottom: 1px solid $colour-gray-600;
-	background-color: $colour-gray-100;
 	margin-bottom: $spacing-scale-4;
 	@media(min-width: 50em) {
 		padding-top: 0;
@@ -37,7 +36,7 @@
 
 .filter-wrapper {
 	padding-top: $spacing-scale-4;
-	background-color: $colour-gray-100;
+	background-color: $colour-gray-300;
 	text-align: left;
 }
 
@@ -57,10 +56,11 @@
 		position: static;
 		border: none;
 		box-shadow: none;
-		padding: 0;
+		padding: $spacing-scale-3;
 		overflow: auto;
 		max-height: 100%;
 		max-width: 100%;
+		width: auto;
 	}
 }
 
@@ -253,4 +253,11 @@
 .progress > div:after {
 	transform: rotate(-135deg);
 	background: #bbb;
+}
+
+.filter .field-checkbox label,
+.filter .field-radioButton label {
+	padding: 0;
+	background: none;
+	border: none;
 }

@@ -4,7 +4,7 @@
 }
 
 body {
-	font-family: 'helvetica neue', arial, sans-serif;
+	font-family: 'Inter', 'helvetica neue', arial, sans-serif;
   text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
@@ -118,17 +118,9 @@ input[id$="[amount]"] {
 }
 
 .h2, .prose h2 {
-	@include typography(l);
+	@include typography(m);
 	margin-bottom: $spacing-scale-2;
 	margin-top: $spacing-scale-5;
-	color: $colour-gray-800;
-	max-width: 20em;
-}
-
-.h3, .prose h3 {
-	@include typography(m);
-	margin-bottom: $spacing-scale-1;
-	margin-top: $spacing-scale-4;
 	color: $colour-gray-800;
 	max-width: 20em;
 }
