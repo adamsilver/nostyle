@@ -49,16 +49,20 @@
 	margin-bottom: 30px;
 }
 
+.files h2 {
+	margin-bottom: 20px;
+}
+
 .files ul {
 	list-style: none;
 	margin: 0;
-	border-top: 1px solid #ccc;
+	// border-top: 1px solid $colour-gray-500;
 }
 
 .files li {
 	padding-top: $spacing-scale-1;
 	padding-bottom: $spacing-scale-1;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid $colour-gray-500;
 	overflow: hidden;
 }
 
@@ -75,7 +79,7 @@
 }
 
 .files .error {
-	color: #b10e1e;
+	color: $colour-red-600;
 	font-weight: bold;
 	float: left;
 	width: 150px;
@@ -91,11 +95,11 @@
   margin-top: 3px;
   vertical-align: bottom;
   width: 1.5em;
-	fill: #b10e1e;
+	fill: $colour-red-600;
 }
 
 .files .success {
-	color: green;
+	color: $colour-green-600;
 	font-weight: bold;
 	float: left;
 	width: 150px;
@@ -111,7 +115,7 @@
   margin-top: 3px;
   vertical-align: bottom;
   width: 1.5em;
-  fill: green;
+  fill: $colour-green-600;
 }
 
 .files progress {
@@ -131,7 +135,6 @@
 	background-color: $colour-gray-300;
 	color: $colour-gray-800;
 	font-weight: normal;
-	// border-color: #bbb;
 }
 
 .dropzone-enhanced label:hover {

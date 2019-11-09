@@ -7,28 +7,28 @@
 		 	method: function(field) {
 		    	return field.value.length > 0;
 			},
-			message: 'Enter your email address.'
+			message: 'Enter your email address'
 		},{
 			method: function(field) {
 		    	return (field.value.indexOf('@') > -1);
 		  	},
-			message: 'You need to enter the ‘at’ symbol in the email address.'
+			message: 'You need to enter the ‘at’ symbol in the email address'
 		}]);
 		validator.addValidator('password', [{
 			method: function(field) {
 		    	return field.value.length > 0;
 			},
-			message: 'Enter your password.'
+			message: 'Enter your password'
 		}, {
 			method: function(field) {
 		    	return field.value.length > 8;
 			},
-			message: 'Your password must contain at least 8 characters.'
+			message: 'Your password must contain at least 8 characters'
 		}, {
 			method: function(field) {
 		    return /\d/.test(field.value);
 			},
-			message: 'Your password must contain at least one number.'
+			message: 'Your password must contain at least one number'
 		}]);
 
 		new PasswordRevealer(document.getElementById('password'));
@@ -40,9 +40,7 @@
 
 	{{h1({ text: 'Register' })}}
 	<div class="prose">
-		<ul>
-			<li>Already got an account? <a href="/examples/login-form">Log in</a></li>
-		</ul>
+		<p>Already got an account? <a href="/examples/login-form">Log in</a></p>
 	</div>
 
 	<form novalidate>
@@ -54,7 +52,7 @@
 			name: 'password',
 			label: 'Password',
 			type: 'password',
-			hint: 'Must contain 8+ characters with at least 1 number.'
+			hint: 'Must contain 8+ characters with at least 1 number'
 		})}}
 		{{primaryButton({
 			text: 'Register',

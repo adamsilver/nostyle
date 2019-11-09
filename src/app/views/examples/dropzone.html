@@ -11,12 +11,6 @@
 
 {% block mainContent %}
 
-	<svg style="display: none">
-	  <symbol id="tick" viewBox="0 0 10 10">
-	   	<path d="m7.5125 1.123 1.7321 1-4 6.9282-4.3301-2.5 1-1.7321 2.5981 1.5z" />
-	  </symbol>
-	</svg>
-
 	{{h1({text: 'Upload files'})}}
 
 	<div class="prose">
@@ -24,7 +18,7 @@
 	</div>
 
 	<div class="files {% if not files.length %}hidden{% endif%}">
-		<h2>Files</h2>
+		<h2>Files added</h2>
 		<ul>
 			{% if files.length > 0 %}
 				{% for file in files %}
