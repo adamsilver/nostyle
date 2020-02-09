@@ -16,8 +16,8 @@
 **************************************/
 
 .primaryButton {
-	@include button($colour-blue);
-	color: white;
+	@include button($colour-green-600);
+	color: $colour-gray-100;
 }
 
 /**************************************
@@ -25,7 +25,8 @@
 **************************************/
 
 @mixin secondaryButton {
-	@include button($colour-grey-medium);
+	@include button($colour-gray-600);
+	color: $colour-gray-100;
 }
 
 .secondaryButton {

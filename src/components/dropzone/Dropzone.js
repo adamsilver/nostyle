@@ -87,14 +87,14 @@ if(dragAndDropSupported() && formDataSupported() && fileApiSupported()) {
 
   Dropzone.prototype.getSuccessHtml = function(file) {
     var html = '<a class="file-name" href="/'+file.path+'">'+file.originalname+'</a>';
-    html += '<span class="success"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tick"></use></svg>File uploaded</span>';
+    html += '<span class="success"><svg width="1.3em" height="1.3em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tick"></use></svg>File uploaded</span>';
     html += '<button type="button" class="file-remove">Remove</button>';
     return html;
   };
 
   Dropzone.prototype.getErrorHtml = function(error) {
     var html = '<span class="file-name">'+error.file.originalname+'</span>';
-    html += '<span class="error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg>'+error.text+'</span>';
+    html += '<span class="error"><svg width="1.3em" height="1.3em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#error-icon"></use></svg>'+error.text+'</span>';
     html += '<button type="button" class="file-remove">Remove</button>';
     return html;
   };

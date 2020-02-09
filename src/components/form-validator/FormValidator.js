@@ -86,7 +86,7 @@ FormValidator.prototype.showInlineErrors = function() {
 };
 
 FormValidator.prototype.showInlineError = function (error) {
-  var errorSpan = '<span class="field-error"><svg width="1.5em" height="1.5em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-icon"></use></svg>'+FormValidator.escapeHtml(error.message)+'</span>';
+  var errorSpan = '<span class="field-error"><svg width="1.3em" height="1.3em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#error-icon"></use></svg>'+FormValidator.escapeHtml(error.message)+'</span>';
   var control = $("#" + error.fieldName);
   var fieldContainer = control.parents(".field");
   var label = fieldContainer.find('label');

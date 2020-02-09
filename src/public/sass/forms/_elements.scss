@@ -27,22 +27,24 @@ fieldset {
 
 .field-label {
 	display: block;
-	font-weight: bold;
+  font-weight: bold;
+  color: $colour-gray-800;
 }
 
 .field-legend {
 	display: block;
-	font-weight: bold;
+  font-weight: bold;
+  color: $colour-gray-800;
 }
 
 .field-hint {
-	color: #000;
+	color: $colour-gray-700;
 	margin-bottom: $spacing-scale-1;
 	display: block;
 }
 
 .field-error {
-	color: $colour-red;
+	color: $colour-red-600;
 	font-weight: bold;
   margin-bottom: $spacing-scale-2;
   display: block;
@@ -52,7 +54,7 @@ fieldset {
   margin-top: $spacing-scale-1;
   vertical-align: bottom;
   width: 1.5625em;
-  fill: $colour-red;
+  fill: $colour-red-600;
   margin-right: $spacing-scale-1;
 }
 
@@ -86,7 +88,7 @@ textarea {
   box-sizing: border-box;
   -webkit-appearance: none;
   appearance: none;
-  border: 2px solid $colour-black;
+  border: 2px solid $colour-gray-600;
 }
 
 /**************************************
@@ -102,14 +104,14 @@ textarea {
   font-size: inherit;
   font-family: inherit;
   line-height: 1.25;
-  padding: 0.5em;
-  border: 2px solid #eee;
-  background-color: #eee;
+  padding: $spacing-scale-3 $spacing-scale-2;
+  border: 2px solid $colour-gray-300;
+  background-color: $colour-gray-300;
   width: 100%;
 }
 
 [type=file]:hover {
-  border: 2px solid $colour-black;
+  border: 2px solid $colour-gray-800;
 }
 
 /**************************************
@@ -125,11 +127,12 @@ textarea {
 **************************************/
 
 .field-radioButton label {
-  background-color: $colour-grey-medium;
-  margin-bottom: $spacing-scale-2;
+  background-color: $colour-gray-300;
+  margin-bottom: $spacing-scale-1;
   display: block;
   padding: ($spacing-scale-3 - 2) ($spacing-scale-4 - 2);
-  border: 2px solid $colour-grey-medium;
+  border: 2px solid $colour-gray-300;
+  color: $colour-gray-800;
 }
 
 .field-radioButton input {
@@ -142,7 +145,7 @@ textarea {
 }
 
 .field-radioButton label:hover {
-  border-color: $colour-black;
+  border-color: $colour-gray-700;
 }
 
 /**************************************
@@ -150,11 +153,12 @@ textarea {
 **************************************/
 
 .field-checkbox label {
-  background-color: $colour-grey-medium;
-  margin-bottom: $spacing-scale-2;
+  background-color: $colour-gray-300;
+  margin-bottom: $spacing-scale-1;
   display: block;
   padding: ($spacing-scale-3 - 2) ($spacing-scale-4 - 2);
-  border: 2px solid $colour-grey-medium;
+  border: 2px solid $colour-gray-300;
+  color: $colour-gray-800;
 }
 
 .field-checkbox input {
@@ -167,7 +171,7 @@ textarea {
 }
 
 .field-checkbox label:hover {
-  border-color: $colour-black;
+  border-color: $colour-gray-700;
 }
 
 /**************************************
@@ -193,7 +197,8 @@ textarea {
 .field-dayWrapper label,
 .field-monthWrapper label,
 .field-yearWrapper label {
-	display: block;
+  display: block;
+  color: $colour-gray-800;
 }
 
 .field-dayBox,
@@ -208,7 +213,7 @@ textarea {
   font-family: inherit;
   line-height: 1.25;
   padding: $spacing-scale-2 - 2;
-  border: 2px solid $colour-black;
+  border: 2px solid $colour-gray-600;
   -moz-appearance:textfield;
 }
 
@@ -243,7 +248,7 @@ button:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  box-shadow: 0 0 1px 4px $colour-yellow;
+  box-shadow: 0 0 1px 4px $colour-yellow-500;
 }
 
 /**************************************

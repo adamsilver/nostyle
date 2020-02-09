@@ -2,10 +2,9 @@
   white-space: nowrap;
   line-height: 1.5;
   font-size: 1.0625em;
-  background-color: $colour-grey-extra-light;
+  background-color: $colour-gray-300;
   @media(min-width: 45em) {
     @supports ( display: grid ) {
-      background-color: $colour-white;
       white-space: normal;
     }
   }
@@ -28,6 +27,7 @@
   margin: 0;
   list-style: none;
   white-space: nowrap;
+  background-color: $colour-gray-300;
   @media(min-width: 45em) {
     @supports ( display: grid ) {
       white-space: normal;
@@ -59,27 +59,27 @@
 }
 
 .subNav a {
-  padding: $spacing-scale-2;
+  padding: $spacing-scale-2 $spacing-scale-3;
   text-decoration: none;
   display: block;
-  color: $colour-black;
+  color: $colour-gray-800;
   @media(min-width: 45em) {
-    border-left: 5px solid $colour-white;
-    padding: $spacing-scale-1 $spacing-scale-2 $spacing-scale-1 $spacing-scale-2 - 5;
+    border-left: 5px solid $colour-gray-300;
+    padding: $spacing-scale-1 $spacing-scale-2 $spacing-scale-1 $spacing-scale-3 - 5;
   }
 }
 
 .subNav a:hover {
-  background-color: $colour-grey-light;
+  background-color: $colour-gray-400;
   @media(min-width: 45em) {
-    border-left: 5px solid $colour-black;
+    border-left: 5px solid $colour-gray-800;
   }
 }
 
 .subNav .subNav-link--active {
   font-weight: bold;
-  background-color: $colour-grey-light;
+  background-color: $colour-gray-400;
   @media(min-width: 45em) {
-    border-left: 5px solid $colour-black;
+    border-left: 5px solid $colour-gray-800;
   }
 }

@@ -10,21 +10,21 @@
 }
 
 .datepicker-wrapper {
-	border-left: 6px solid $colour-black;
+	border-left: 6px solid $colour-gray-800;
 	padding: 0px 10px;
 	max-width: 400px;
 	margin-top: 1em;
 }
 
 .datepicker-calendar {
-	border: 1px solid #ccc;
+	border: 1px solid $colour-gray-500;
 	max-width: 400px;
 	padding-bottom: 20px;
 }
 
 .datepicker-actions {
 	text-align: center;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid $colour-gray-500;
 	margin-bottom: 6px;
 }
 
@@ -37,6 +37,7 @@
 	font-weight: bold;
 	font-size: 1.2em;
 	padding-top: 12px;
+	color: $colour-gray-800;
 }
 
 .datepicker-actions button {
@@ -59,27 +60,27 @@
 
 .datepicker-next:hover,
 .datepicker-back:hover {
-   background-color: #eee;
-   color: $colour-black !important;
+   background-color: $colour-gray-300;
+   color: $colour-gray-800 !important;
 }
 
 .datepicker-next:focus,
 .datepicker-back:focus {
 	outline-offset: 0;
-  outline: 3px solid $colour-yellow;
+  outline: 3px solid $colour-yellow-500;
 }
 
 .datepicker [role=gridcell] {
 	cursor: default;
 	&:focus {
 		outline-offset: 0;
-  	outline: 3px solid $colour-yellow;
+  	outline: 3px solid $colour-yellow-500;
 	}
 }
 
 .datepicker-previousMonthDay,
 .datepicker-nextMonthDay {
-	color: #999;
+	color: $colour-gray-500;
 }
 
 .datepicker-day-isToday {
@@ -97,9 +98,9 @@
 
 .datepicker [aria-selected=true],
 .datepicker [role=gridcell]:hover {
-  background-color: #005EA5;
-  border-color: #005EA5;
-  color: white;
+  background-color: $colour-green-500;
+  border-color: $colour-green-500;
+  color: $colour-gray-100;
 }
 
 .datepicker table {
@@ -115,6 +116,7 @@
 	padding: 9px 0px;
 	text-align: center;
 	font-size: 1.2em;
+	color: $colour-gray-800;
 }
 
 .datepicker tr:last-child td {

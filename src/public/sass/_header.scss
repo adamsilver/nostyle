@@ -1,8 +1,8 @@
 header {
   display: block;
-  background-color: $colour-black;
+  background-color: $colour-gray-800;
   padding: $spacing-scale-3;
-  color: $colour-white;
+  color: $colour-gray-100;
   font-weight: bold;
   font-size: 1.25em;
   line-height: 0.8;
@@ -10,5 +10,4 @@ header {
 
 header span {
   font-weight: normal;
-  color: $colour-yellow;
 }

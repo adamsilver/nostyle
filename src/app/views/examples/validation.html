@@ -7,24 +7,24 @@
 		 	method: function(field) {
 		    return field.value.trim().length > 0;
 			},
-			message: 'Enter your email address.'
+			message: 'Enter your email address'
 		},{
 			method: function(field) {
 	    	return (field.value.indexOf('@') > -1);
 	  	},
-			message: 'You need to enter the ‘at’ symbol in the email address.'
+			message: 'You need to enter the ‘at’ symbol in the email address'
 		}]);
 		validator.addValidator('notes', [{
 			method: function(field) {
 				return field.value.trim().length > 0;
 			},
-			message: 'Enter notes.'
+			message: 'Enter notes'
 		}]);
 		validator.addValidator('like', [{
 			method: function(field) {
 				return field.value.trim().length > 0;
 			},
-			message: 'Select your favourite item.'
+			message: 'Select your favourite item'
 		}]);
 	</script>
 {% endblock pageScript %}
@@ -33,22 +33,22 @@
 
 	{{errorSummary({heading: "There's a problem", errors: [{
 		fieldName: 'email',
-		message: 'Enter your email address.'
+		message: 'Enter your email address'
 	}, {
 		fieldName: 'document',
-		message: 'The document is too large.'
+		message: 'The document is too large'
 	}, {
 		fieldName: 'notes',
-		message: 'Enter notes.'
+		message: 'Enter notes'
 	}, {
 		fieldName: 'like',
-		message: 'Select your favourite item.'
+		message: 'Select your favourite item'
 	}, {
 		fieldName: 'colours',
-		message: 'Select at least one favourite colour.'
+		message: 'Select at least one favourite colour'
 	}, {
 		fieldName: 'country',
-		message: 'Choose a country.'
+		message: 'Choose a country'
 	}]})}}
 
 	{{h1({ text: 'Page title' })}}
@@ -57,19 +57,19 @@
 		{{textBox({
 			name: 'email',
 			label: 'Email address',
-			error: 'Enter your email address.'
+			error: 'Enter your email address'
 		})}}
 
 		{{fileInput({
 			name: 'document',
 			label: 'Upload file',
-			error: 'The document is too large.'
+			error: 'The document is too large'
 		})}}
 
 		{{textarea({
 			name: 'notes',
 			label: 'Notes',
-			error: 'Enter notes.'
+			error: 'Enter notes'
 		})}}
 
 		{{radioButtons({
@@ -84,7 +84,7 @@
 				id: 'like1',
 				value: 'Beer'
 			}],
-			error: 'Select your favourite item.'
+			error: 'Select your favourite item'
 		})}}
 
 		{{checkboxes({
@@ -100,7 +100,7 @@
 				label: 'Green',
 				id: 'colours2'
 			}],
-			error: 'Select at least one favourite colour.'
+			error: 'Select at least one favourite colour'
 		})}}
 
 		{{selectBox({
@@ -113,7 +113,7 @@
 				text: 'Brazil',
 				value: 'Brazil'
 			}],
-			error: 'Choose a country.'
+			error: 'Choose a country'
 		})}}
 
 		{{primaryButton({

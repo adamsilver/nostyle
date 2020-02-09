@@ -1,7 +1,7 @@
 .searchHeader {
 	padding: $spacing-scale-2 $spacing-scale-3;
-	background-color: $colour-black;
-	color: $colour-white;
+	background-color: $colour-gray-800;
+	color: $colour-gray-100;
 	overflow: hidden;
 }
 
@@ -20,5 +20,5 @@
 
 .searchForm {
 	padding: $spacing-scale-6 $spacing-scale-5;
-	background-color: $colour-grey-light;
+	background-color: $colour-gray-300;
 }
