@@ -48,3 +48,78 @@
     margin: 0;
   }
 }
+
+
+
+
+/**
+ * Scrolling shadows by @kizmarh and @leaverou
+ * Only works in browsers supporting background-attachment: local; & CSS gradients
+ * Degrades gracefully
+ */
+
+ html {
+	background: white;
+	font: 120% sans-serif;
+}
+
+.scrollbox {
+	overflow: auto;
+	width: 200px;
+	max-height: 200px;
+	margin: 50px auto;
+
+  background:
+		/* Shadow covers */
+		linear-gradient(white 30%, rgba(255,255,255,0)),
+		linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+
+		/* Shadows */
+		radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
+		radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+	background-repeat: no-repeat;
+	background-color: white;
+	background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+
+	/* Opera doesn't support this in the shorthand */
+	background-attachment: local, local, scroll, scroll;
+}
+
+
+.scrollbox2 {
+	overflow: auto;
+	width: 100%;
+	max-height: 100%;
+
+	background:
+		/* Shadow covers */
+		linear-gradient(white 100%, rgba(255,255,255,0)),
+		linear-gradient(rgba(255,255,255,0), white 0%) 100% 0,
+    /* Shadows */
+    radial-gradient(farthest-side at 0% 50%, rgba(45,55,72,.5), rgba(45,55,72,0)),
+    radial-gradient(farthest-side at 100% 50%, rgba(45,55,72,.5), rgba(45,55,72,0)) 100% 0;
+	background-repeat: no-repeat;
+	background-color: white;
+	background-size: 40px 100%, 40px 100%, 20px 100%, 20px 100%;
+
+	background-attachment: local, local, scroll, scroll;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  display: block;
+  border-collapse: collapse;
+}
+
+table td,
+table th {
+  text-align: left;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.testing {
+  width: 50%;
+  margin: 0 auto;
+}
