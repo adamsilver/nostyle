@@ -4,8 +4,10 @@
 	appearance: none;
 	-webkit-appearance: none;
 	@include typography(button);
-	padding: $spacing-scale-2 $spacing-scale-4;
+	padding: $spacing-scale-3 $spacing-scale-6;
 	background-color: $bg;
+	font-weight: bold;
+	border-radius: 4px;
 	&:hover {
 		background-color: darken($bg, 15%);
 	}

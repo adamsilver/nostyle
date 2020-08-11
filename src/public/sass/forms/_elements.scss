@@ -20,19 +20,21 @@ fieldset {
 
 .field label,
 .field legend {
-  @include typography(body);
-	margin-bottom: $spacing-scale-1;
 	display: block;
 }
 
 .field-label {
-	display: block;
+  @include typography(body);
+  display: block;
   font-weight: bold;
   color: $colour-gray-800;
+  margin-bottom: $spacing-scale-1;
 }
 
 .field-legend {
-	display: block;
+  @include typography(body);
+  margin-bottom: $spacing-scale-1;
+  display: block;
   font-weight: bold;
   color: $colour-gray-800;
 }
@@ -44,10 +46,11 @@ fieldset {
 }
 
 .field-error {
+	@include typography(body);
 	color: $colour-red-600;
 	font-weight: bold;
-  margin-bottom: $spacing-scale-2;
-  display: block;
+	margin-bottom: $spacing-scale-2;
+	display: block;
 }
 
 .field-error svg {
@@ -80,7 +83,7 @@ select {
 [type=search],
 textarea {
   width: 100%;
-  padding: $spacing-scale-2 - 2;
+  padding: $spacing-scale-3 - 2;
   @include typography(body);
   font-family: inherit;
   -webkit-box-sizing: border-box;
