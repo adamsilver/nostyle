@@ -48,3 +48,13 @@
     margin: 0;
   }
 }
+
+.left-aligned-labels {
+	display: flex;
+	align-items: flex-start;
+
+	label {
+		width: 250px;
+		margin-right: 20px;
+	}
+}

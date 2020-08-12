@@ -1,0 +1,22 @@
+{% extends 'layouts/raw.html' %}
+
+{% block mainContent %}
+
+	{{h1({ text: 'Workshop' })}}
+
+	{{h2({ text: 'Day 1 – part 1' })}}
+
+	<nav>
+		<ul>
+		  <li><a href="/examples/workshop/01/01-sign-up--placeholder">Sign up form</a></li>
+		  <li><a href="/examples/workshop/01/02-sign-up--long-placeholder">Long placeholder</a></li>
+		  <li><a href="/examples/workshop/01/03-sign-up--redundant-placeholders">Redundant placeholders</a></li>
+		  <li><a href="/examples/workshop/01/04-sign-up--hint-text">Hint text</a></li>
+		  <li><a href="/examples/workshop/01/05-sign-up--hint-text-aria">Hint text (ARIA)</a></li>
+		  <li><a href="/examples/workshop/01/06-sign-up--left-aligned-labels">Left aligned labels</a></li>
+		</ul>
+	 </nav>
+
+	 {{h2({ text: 'Day 1 – part 2' })}}
+
+{% endblock mainContent %}

@@ -1,0 +1,39 @@
+{% extends 'layouts/raw.html' %}
+
+
+{% block mainContent %}
+
+	{{h1({ text: 'Sign up' })}}
+
+	<form novalidate>
+		{{textBox({
+			name: 'first-name',
+			label: 'First name'
+		})}}
+
+		{{textBox({
+			name: 'last-name',
+			label: 'Last name'
+		})}}
+
+		{{textBox({
+			name: 'email',
+			label: 'Email address'
+		})}}
+
+		{% set hint = "Must contain 8+ characters" %}
+
+		{{textBox({
+			name: 'password',
+			label: 'Password',
+			type: 'password',
+			placeholder: hint
+		})}}
+
+		{{primaryButton({
+			text: 'Sign up',
+			name: 'signup'
+		})}}
+	</form>
+
+{% endblock mainContent %}
