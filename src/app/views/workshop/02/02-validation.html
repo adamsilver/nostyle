@@ -1,0 +1,67 @@
+{% extends 'layouts/raw.html' %}
+
+{% block title %}
+	Sign up
+{% endblock %}
+
+{% block mainContent %}
+
+	{{errorSummary({heading: "There's a problem"})}}
+
+	{{h1({ text: 'Sign up' })}}
+
+	<form>
+		{{textBox({
+			name: 'email',
+			label: 'Email address',
+			type: 'email'
+		})}}
+
+		<div class="field ">
+			<label for="password">
+			  <span class="field-label">Password</span>
+			</label>
+			<span class="field-hint" id="password-hint">Must be at least eight characters and include at least one number and one symbol</span>
+			<input type="password" id="password" name="password" aria-describedby="password-hint">
+		 </div>
+
+		{{primaryButton({
+			text: 'Sign up',
+			name: 'signup'
+		})}}
+	</form>
+
+	<br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br>
+
+{% endblock %}
+
+{% block pageScript %}
+	<script>
+		var validator = new FormValidator(document.forms[0]);
+		validator.addValidator('email', [{
+		 	method: function(field) {
+		    	return field.value.length > 0;
+			},
+			message: 'Enter your email address'
+		},{
+			method: function(field) {
+		    	return (field.value.indexOf('@') > -1);
+		  	},
+			message: 'You need to enter the ‘at’ symbol in the email address'
+		}]);
+		validator.addValidator('password', [{
+			method: function(field) {
+		    	return field.value.length > 0;
+			},
+			message: 'Enter your password'
+		}, {
+			method: function(field) {
+		    	return field.value.length > 8;
+			},
+			message: 'Your password must contain at least 8 characters'
+		}]);
+	</script>
+{% endblock pageScript %}

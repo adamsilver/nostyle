@@ -1,0 +1,40 @@
+{% extends 'layouts/raw.html' %}
+
+
+{% block mainContent %}
+
+	{{h1({ text: 'Sign up' })}}
+
+	<form>
+		{{textBox({
+			name: 'first-name',
+			label: 'First name'
+		})}}
+
+		{{textBox({
+			name: 'last-name',
+			label: 'Last name'
+		})}}
+
+		{{textBox({
+			name: 'email',
+			label: 'Email address',
+			type: 'email',
+			attributes: "required"
+		})}}
+
+		<div class="field ">
+			<label for="password">
+			  <span class="field-label">Password</span>
+			</label>
+			<span class="field-hint" id="password-hint">Must be at least eight characters and include at least one number and one symbol</span>
+			<input type="password" id="password" name="password" aria-describedby="password-hint">
+		 </div>
+
+		{{primaryButton({
+			text: 'Sign up',
+			name: 'signup'
+		})}}
+	</form>
+
+{% endblock mainContent %}
