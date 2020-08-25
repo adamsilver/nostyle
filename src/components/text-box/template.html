@@ -1,12 +1,29 @@
+{% set id = params.name %}
+{% if params.id %}
+	{% set id = params.id %}
+{% endif %}
+
 <div class="field {% if params.modifierClasses %}{{params.modifierClasses}}{% endif %}">
-  <label for="{% if params.id %}{{params.id}}{%else%}{{params.name}}{%endif%}" {% if params.labelId %}id="{{params.labelId}}"{% endif %}>
+  <label for="{{id}}" {% if params.labelId %}id="{{params.labelId}}"{% endif %}>
     <span class="field-label">{{params.label}}</span>
-    {%- if params.hint %}
-      <span class="field-hint">{{ params.hint }}</span>
-    {% endif %}
-    {%- if params.error %}
-      <span class="field-error"><svg width="1.3em" height="1.3em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#error-icon"></use></svg>  {{-params.error}}</span>
-    {% endif %}
   </label>
-  <input type="{% if params.type %}{{params.type}}{%else%}text{%endif%}" id="{% if params.id %}{{params.id}}{%else%}{{params.name}}{%endif%}" name="{{params.name}}" value="{{params.value}}" {%- if params.attributes -%}{{params.attributes | safe}}{%endif%} {% if params.placeholder %}placeholder="{{params.placeholder}}"{%endif%} {% if params.error %}aria-invalid="true"{%endif%}>
+  {%- if params.hint %}
+	<span class="field-hint" id="{{id}}-hint">{{ params.hint }}</span>
+  {% endif %}
+  {%- if params.error %}
+	<span class="field-error" id="{{id}}-error"><svg width="1.3em" height="1.3em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#error-icon"></use></svg>  {{-params.error}}</span>
+  {% endif %}
+
+  <input
+	  type="{% if params.type %}{{params.type}}{%else%}text{%endif%}"
+	  id="{% if params.id %}{{params.id}}{%else%}{{params.name}}{%endif%}"
+	  name="{{params.name}}"
+	  value="{{params.value}}"
+	  {%- if params.attributes -%}{{params.attributes | safe}}{%endif%}
+	  {% if params.placeholder %}placeholder="{{params.placeholder}}"{%endif%} {% if params.error %}aria-invalid="true"{%endif%}
+
+	  {%- if params.hint or params.error -%}
+	  aria-describedby="{%- if params.hint -%}{{id}}-hint{%endif%} {%- if params.error -%}{{id}}-error{%endif%}"
+	  {% endif %}
+	>
 </div>

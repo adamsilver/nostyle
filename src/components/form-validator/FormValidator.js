@@ -1,3 +1,31 @@
+var removeAttributeValue = function(el, attr, value) {
+	var re, m;
+	if (el.getAttribute(attr)) {
+	  if (el.getAttribute(attr) == value) {
+		 el.removeAttribute(attr);
+	  } else {
+		 re = new RegExp('(^|\\s)' + value + '(\\s|$)');
+		 m = el.getAttribute(attr).match(re);
+		 if (m && m.length == 3) {
+			el.setAttribute(attr, el.getAttribute(attr).replace(re, (m[1] && m[2])?' ':''))
+		 }
+	  }
+	}
+ }
+
+var addAttributeValue = function(el, attr, value) {
+	var re;
+	if (!el.getAttribute(attr)) {
+	  el.setAttribute(attr, value);
+	}
+	else {
+	  re = new RegExp('(^|\\s)' + value + '(\\s|$)');
+	  if (!re.test(el.getAttribute(attr))) {
+		 el.setAttribute(attr, el.getAttribute(attr) + ' ' + value);
+	  }
+	}
+ };
+
 function FormValidator(form, options) {
   this.form = form;
   this.errors = [];
@@ -87,18 +115,21 @@ FormValidator.prototype.showInlineErrors = function() {
 };
 
 FormValidator.prototype.showInlineError = function (error) {
-  var errorSpan = '<span class="field-error"><svg width="1.3em" height="1.3em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#error-icon"></use></svg>'+FormValidator.escapeHtml(error.message)+'</span>';
-  var control = $("#" + error.fieldName);
-  var fieldContainer = control.parents(".field");
-  var label = fieldContainer.find('label');
-  var legend = fieldContainer.find("legend");
-  fieldContainer.find(".field-error").remove();
+  var errorSpanId = error.fieldName + '-error';
+  var errorSpan = '<span class="field-error" id="'+ errorSpanId +'"><svg width="1.3em" height="1.3em"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#error-icon"></use></svg>'+FormValidator.escapeHtml(error.message)+'</span>';
+  var control = $('#' + error.fieldName);
+  var fieldContainer = control.parents('.field');
+  var legend = fieldContainer.find('legend');
+  var fieldset = fieldContainer.find('fieldset');
+  fieldContainer.find('.field-error').remove();
   if(legend.length) {
-    legend.append(errorSpan);
-    fieldContainer.attr('aria-invalid', 'true');
+    legend.after(errorSpan);
+	 fieldContainer.attr('aria-invalid', 'true');
+	 addAttributeValue(fieldset[0], 'aria-describedby', errorSpanId);
   } else {
-    label.append(errorSpan);
-    control.attr('aria-invalid', 'true');
+    control.before(errorSpan);
+	 control.attr('aria-invalid', 'true');
+	 addAttributeValue(control[0], 'aria-describedby', errorSpanId);
   }
 };
 

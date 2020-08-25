@@ -17,24 +17,18 @@
 			type: 'email'
 		})}}
 
-		<div class="field ">
-			<label for="password">
-			  <span class="field-label">Password</span>
-			</label>
-			<span class="field-hint" id="password-hint">Must be at least eight characters and include at least one number and one symbol</span>
-			<input type="password" id="password" name="password" aria-describedby="password-hint">
-		 </div>
+		{{textBox({
+			name: 'password',
+			label: 'Password',
+			type: 'password',
+			hint: 'Must be at least eight characters and include at least one number and one symbol'
+		})}}
 
 		{{primaryButton({
 			text: 'Sign up',
 			name: 'signup'
 		})}}
 	</form>
-
-	<br><br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br><br>
 
 {% endblock %}
 
